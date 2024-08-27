@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.code.CodeDao">
+					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
+					
+	<resultMap type="com.loras.infra.code.CodeDto" id="resultMapObj"></resultMap>
+			<!-- 	담아줄객체 -->
+	<select id="codeSelectList" resultMap="resultMapObj">
+	
+		select
+			b.seq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.delNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		from
+			code b
+		order by
+			b.seq desc   
+		</select>
+		
+	</mapper>
