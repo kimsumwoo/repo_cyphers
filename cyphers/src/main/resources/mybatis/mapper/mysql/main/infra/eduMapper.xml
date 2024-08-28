@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.edu.EduDao">
+
+<resultMap type="com.loras.infra.edu.EduDto" id="resultMapObj"></resultMap>
+
+<select id="eduSelectList" resultMap = "resultMapObj">
+	select
+		d.seq
+		,d.type
+		,d.name
+		,d.pay
+		,d.teacher
+		,d.classStart
+		,d.classEnd
+		,d.eduStart
+		,d.eduEnd
+		,d.place
+		,d.placeDesc
+		,d.date
+		,d.fixDate
+		,d.user_seq
+	from
+		education d
+	order by
+		d.seq desc
+</select>
+	  
+</mapper>

@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CodeService {
+public class userService {
 	@Autowired
-	public CodeDao CodeDao;
-	
-	public List<CodeDto> codeSelectList(){
-		List<CodeDto> codes = CodeDao.codeSelectList();
-				return codes;
+	public userDao userDao;
+	public List<userDto> userSelectList(){
+		List<userDto> users = userDao.userSelectList();
+			return users;
 	}
 }

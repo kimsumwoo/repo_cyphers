@@ -1,16 +1,17 @@
 package com.loras.infra.code;
 
 public class CodeDto {
+	
 	private String seq;
-	private	String cdName;
-	private	Integer cdUseNy;
+	private String cdName;
+	private Integer cdUseNy;
 	private	String cdTurn;
-	private	String cdDesc;
-	private	Integer delNy;
+	private String cdDesc;
+	private Integer delNy;
 	private	String cdDateTime;
 	private	String cdFixDate;
 	private String codegroup_seq;
-	//-------
+//	------
 	public String getSeq() {
 		return seq;
 	}
@@ -65,5 +66,8 @@ public class CodeDto {
 	public void setCodegroup_seq(String codegroup_seq) {
 		this.codegroup_seq = codegroup_seq;
 	}
+	
+	
+	
 	
 }
