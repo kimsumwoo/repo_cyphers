@@ -1,5 +1,7 @@
 package com.loras.infra.codegroup;
 
+import java.util.Date;
+
 public class CodeGroupDto {
 	
 	private String seq;
@@ -8,7 +10,13 @@ public class CodeGroupDto {
 	private	String cgTurn;
 	private String cgDesc;
 	private	Integer delNy;
-	private	String cgDateTime;
+	private	Date cgDateTime;
+	public Date getCgDateTime() {
+		return cgDateTime;
+	}
+	public void setCgDateTime(Date cgDateTime) {
+		this.cgDateTime = cgDateTime;
+	}
 	private String cgFixDate;
 //	-----
 	public String getSeq() {
@@ -53,12 +61,7 @@ public class CodeGroupDto {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
-	public String getCgDateTime() {
-		return cgDateTime;
-	}
-	public void setCgDateTime(String cgDateTime) {
-		this.cgDateTime = cgDateTime;
-	}
+
 	public String getCgFixDate() {
 		return cgFixDate;
 	}

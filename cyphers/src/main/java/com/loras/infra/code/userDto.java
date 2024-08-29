@@ -1,5 +1,7 @@
 package com.loras.infra.code;
 
+import java.util.Date;
+
 public class userDto {
 	private String seq;
 	private String Name;
@@ -10,8 +12,8 @@ public class userDto {
 	private String birthday;
 	private	String email;
 	private String phone;
-	private String dateTime;
-	private String fixDate;
+	private Date dateTime;
+	private Date fixDate;
 //------
 	public String getSeq() {
 		return seq;
@@ -67,18 +69,19 @@ public class userDto {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getDateTime() {
+	public Date getDateTime() {
 		return dateTime;
 	}
-	public void setDateTime(String dateTime) {
+	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
-	public String getFixDate() {
+	public Date getFixDate() {
 		return fixDate;
 	}
-	public void setFixDate(String fixDate) {
+	public void setFixDate(Date fixDate) {
 		this.fixDate = fixDate;
 	}
+	
 	
 	
 }

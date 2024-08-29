@@ -1,5 +1,7 @@
 package com.loras.infra.edu;
 
+import java.util.Date;
+
 public class EduDto {
 	private String seq;
 	private String type;
@@ -12,8 +14,8 @@ public class EduDto {
 	private String eduEnd;
 	private String place;
 	private String placeDesc;
-	private String date;
-	private String fixDate;
+	private Date date;
+	private Date fixDate;
 	private String user_seq;
 //	-----
 	public String getSeq() {
@@ -82,16 +84,17 @@ public class EduDto {
 	public void setPlaceDesc(String placeDesc) {
 		this.placeDesc = placeDesc;
 	}
-	public String getDate() {
+	
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getFixDate() {
+	public Date getFixDate() {
 		return fixDate;
 	}
-	public void setFixDate(String fixDate) {
+	public void setFixDate(Date fixDate) {
 		this.fixDate = fixDate;
 	}
 	public String getUser_seq() {

@@ -1,5 +1,7 @@
 package com.loras.infra.eats;
 
+import java.util.Date;
+
 public class EatsDto {
 	private String seq;
 	private String type;
@@ -12,8 +14,8 @@ public class EatsDto {
 	private Integer bookingNy;
 	private Integer freecallNy;
 	private String eatsDesc;
-	private String date;
-	private String fixDate;
+	private Date date;
+	private Date fixDate;
 //	------
 	public String getSeq() {
 		return seq;
@@ -81,16 +83,16 @@ public class EatsDto {
 	public void setEatsDesc(String eatsDesc) {
 		this.eatsDesc = eatsDesc;
 	}
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getFixDate() {
+	public Date getFixDate() {
 		return fixDate;
 	}
-	public void setFixDate(String fixDate) {
+	public void setFixDate(Date fixDate) {
 		this.fixDate = fixDate;
 	}
 	

@@ -1,5 +1,7 @@
 package com.loras.infra.code;
 
+import java.util.Date;
+
 public class CodeDto {
 	
 	private String seq;
@@ -8,7 +10,7 @@ public class CodeDto {
 	private	String cdTurn;
 	private String cdDesc;
 	private Integer delNy;
-	private	String cdDateTime;
+	private	Date cdDateTime;
 	private	String cdFixDate;
 	private String codegroup_seq;
 //	------
@@ -48,12 +50,7 @@ public class CodeDto {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
-	public String getCdDateTime() {
-		return cdDateTime;
-	}
-	public void setCdDateTime(String cdDateTime) {
-		this.cdDateTime = cdDateTime;
-	}
+
 	public String getCdFixDate() {
 		return cdFixDate;
 	}
@@ -65,6 +62,12 @@ public class CodeDto {
 	}
 	public void setCodegroup_seq(String codegroup_seq) {
 		this.codegroup_seq = codegroup_seq;
+	}
+	public Date getCdDateTime() {
+		return cdDateTime;
+	}
+	public void setCdDateTime(Date cdDateTime) {
+		this.cdDateTime = cdDateTime;
 	}
 	
 	

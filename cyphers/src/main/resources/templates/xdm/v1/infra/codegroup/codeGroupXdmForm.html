@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 		<!-- Required meta tags -->
@@ -601,88 +601,24 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
+												<tr th:if="${!#lists.isEmpty(list)}">
+														<td colspan ="11">
+															<p>There are no data</p>
+														</td>
+													</tr>
+													<tr th:if ="${#lists.isEmpty(list)}" th:each="list : ${list}">
 														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>170</td>
+														<td th:text= ${list.seq}>170</td>
 														<td>33</td>
 														<td>로그인,로그인UI</td>
 														<td>272</td>
 														<td></td>
 														<td class="memmber">사용자</td>
 														<td></td>
-														<td>Y</td>
-														<td>1</td>
-														<td>2023-10-12 16:02:31</td>
-														
-													</tr>
-													<tr>
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>169</td>
-														<td>33</td>
-														<td>로그인,로그인UI</td>
-														<td>273</td>
-														<td></td>
-														<td class="memmber">ㅁㄴㅇㄹ</td>
-														<td></td>
-														<td>Y</td>
-														<td>2</td>
-														<td></td>
-														
-													</tr>
-													<tr>
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>168</td>
-														<td>32</td>
-														<td>qua타입</td>
-														<td>266</td>
-														<td></td>
-														<td class="memmber">관리자</td>
-														<td></td>
-														<td>Y</td>
-														<td>1</td>
-														<td></td>
-														
-														
-													</tr>
-													<tr>
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>167</td>
-														<td>31</td>
-														<td>qua상태</td>
-														<td>262</td>
-														<td></td>
-														<td class="memmber">미확인</td>
-														<td></td>
-														<td>Y</td>
-														<td>1</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>171</td>
-														<td>57</td>
-														<td class="memmber">테테테</td>
-														<td>278</td>
-														<td></td>
-														<td>ㅁㄴㅇㄹ</td>
-														<td></td>
-														<td>Y</td>
-														<td>1</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td>171</td>
-														<td>57</td>
-														<td class="memmber">테테테</td>
-														<td>278</td>
-														<td></td>
-														<td>ㅁㄴㅇㄹ</td>
-														<td></td>
-														<td>Y</td>
-														<td>1</td>
-														<td>
-														</td>
+														<td th:unless="${list.cgUseNy eq 0}">Y</td>
+														<td th:if="${list.cgUseNy eq 0}">N</td>
+														<td th:text=${list.cgTurn}></td>
+														<td th:text = "${#dates.format(list.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													</tr>
 													
 												</tbody>

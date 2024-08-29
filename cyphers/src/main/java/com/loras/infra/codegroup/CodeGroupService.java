@@ -9,9 +9,14 @@ public class CodeGroupService {
 	@Autowired
 	public CodeGroupDao CodeGroupDao;
 	
+//	public List<CodeGroupDto> selectList(){
+//		List<CodeGroupDto> CodeGroups = CodeGroupDao.selectList();
+//		return CodeGroups;
+//	}
+	
+//	안에 내용이 없을때
 	public List<CodeGroupDto> selectList(){
-		List<CodeGroupDto> CodeGroups = CodeGroupDao.selectList();
-		return CodeGroups;
+		return CodeGroupDao.selectList();
 	}
 	
 
