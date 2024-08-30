@@ -25,5 +25,35 @@
 	order by
 		eats.seq desc
 </select>
+<insert id="insert">
+	insert into eats(
+		type
+		,name
+		,timeStart
+		,timeEnd
+		,number
+		,site
+		,pakingNy
+		,bookingNy
+		,freecallNy
+		,eatsDesc
+		,date
+		,fixDate
+		)
+	values(
+		#{type}
+		,#{name}
+		,#{timeStart}
+		,#{timeEnd}
+		,#{number}
+		,#{site}
+		,#{pakingNy}
+		,#{bookingNy}
+		,#{freecallNy}
+		,#{eatsDesc}
+		,now()
+		,now()
+		)
+</insert>
 	  
 </mapper>

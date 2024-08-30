@@ -22,5 +22,34 @@
 	order by
 		c.seq desc
 </select>
+
+<insert id="insert">
+	insert into user(
+		adminNy
+		,Name
+		,id
+		,passwd
+		,gender
+		,birthday
+		,email
+		,phone
+		,urDesc
+		,dateTime
+		,fixDate
+		)
+	values(
+		#{adminNy}
+		,#{Name}
+		,#{id}
+		,#{passwd}
+		,#{gender}
+		,#{birthday}
+		,#{email}
+		,#{phone}
+		,#{urDesc}
+		,now()
+		,now()
+		)
+</insert>
 	  
 </mapper>

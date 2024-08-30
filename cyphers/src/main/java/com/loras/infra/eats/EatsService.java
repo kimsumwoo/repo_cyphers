@@ -13,4 +13,7 @@ public class EatsService {
 		List<EatsDto> eatss = EatsDao.eatsSelectList();
 		return eatss;
 	}
+	public int insert(EatsDto eatsDto) {
+		return EatsDao.insert(eatsDto);
+	}
 }

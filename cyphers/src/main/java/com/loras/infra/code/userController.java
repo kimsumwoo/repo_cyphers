@@ -15,5 +15,17 @@ public class userController {
 		
 		return "/xdm/v1/infra/code/usercodeXdmList";
 	}
+	
+	@RequestMapping(value ="/xdm/v1/infra/code/userInst")
+	public String userFormInst(userDto userDto) {
+		userService.insert(userDto);	
+		return "redirect:/xdm/v1/infra/code/usercodeXdmList";
+	}
+	
+	@RequestMapping(value ="/xdm/v1/infra/code/userForm")
+	public String userForm() {
+		return "/xdm/v1/infra/code/userForm";
+	}
+	
 
 }

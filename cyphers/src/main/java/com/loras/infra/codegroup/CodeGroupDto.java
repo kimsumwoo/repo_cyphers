@@ -11,6 +11,7 @@ public class CodeGroupDto {
 	private String cgDesc;
 	private	Integer delNy;
 	private	Date cgDateTime;
+	
 	public Date getCgDateTime() {
 		return cgDateTime;
 	}
@@ -22,6 +23,7 @@ public class CodeGroupDto {
 	public String getSeq() {
 		return seq;
 	}
+	
 	public String getCgName() {
 		return cgName;
 	}

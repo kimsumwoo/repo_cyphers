@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 	<head>
 		<!-- Required meta tags -->
@@ -24,6 +24,7 @@
 		<!-- *************
 			************ Common Css Files *************
 		************ -->
+
 		<!-- Animated css -->
 		<link rel="stylesheet" href="/xdm/v1/template/Arise/assets/css/animate.css">
 
@@ -40,20 +41,6 @@
 
 		<!-- Scrollbar CSS -->
 		<link rel="stylesheet" href="/xdm/v1/template/Arise/assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
-
-		<!-- Data Tables -->
-		<link rel="stylesheet" href="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.bs5.css" />
-		<link rel="stylesheet" href="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.bs5-custom.css" />
-		<style>
-			.member{
-				
-			}
-			td,th{
-				height: 50px;
-				text-align: center;
-			}
-			
-		</style>
 
 	</head>
 
@@ -76,7 +63,7 @@
 		<div class="page-wrapper">
 
 			<!-- Sidebar wrapper start -->
-			<nav class="sidebar-wrapper" style="text-align: ce;">
+			<nav class="sidebar-wrapper">
 
 				<!-- Sidebar brand starts -->
 				<div class="sidebar-brand">
@@ -230,7 +217,7 @@
 									<span class="menu-text">Calendar</span>
 								</a>
 							</li>
-							<li class="sidebar-dropdown">
+							<li class="sidebar-dropdown active">
 								<a href="#">
 									<i class="bi bi-columns-gap"></i>
 									<span class="menu-text">Forms</span>
@@ -262,7 +249,7 @@
 											<a href="editor.html">Editor</a>
 										</li>
 										<li>
-											<a href="form-layout1.html">Form Layout</a>
+											<a href="form-layout1.html" class="current-page">Form Layout</a>
 										</li>
 										<li>
 											<a href="form-layout2.html">Form Layout 2</a>
@@ -273,13 +260,10 @@
 										<li>
 											<a href="form-layout4.html">Form Horizontal</a>
 										</li>
-										<li>
-											<a href="form-layout5.html">Form Layout Tabs</a>
-										</li>
 									</ul>
 								</div>
 							</li>
-							<li class="sidebar-dropdown active">
+							<li class="sidebar-dropdown">
 								<a href="#">
 									<i class="bi bi-window-split"></i>
 									<span class="menu-text">Tables</span>
@@ -290,7 +274,7 @@
 											<a href="tables.html">Tables</a>
 										</li>
 										<li>
-											<a href="data-tables.html" class="current-page">Data Tables</a>
+											<a href="data-tables.html">Data Tables</a>
 										</li>
 									</ul>
 								</div>
@@ -379,10 +363,6 @@
 
 					<div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
 
-					<!-- Breadcrumb start -->
-					
-					<!-- Breadcrumb end -->
-
 					<!-- Header actions ccontainer start -->
 					<div class="header-actions-container">
 
@@ -467,22 +447,16 @@
 					<!-- Content wrapper start -->
 					<div class="content-wrapper">
 
-					
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-sm-12 col-12">
+
 								<!-- Card start -->
-								<div class="card">
-									
-									<div class="card-header" style="display: block;">
-										
-										</div>
-
-											
-									
-							
-							
 								
-								
-									<div class="card-body">
+									
 
+										<!-- Row start -->
+										 
 										<ol class="breadcrumb d-md-flex d-none">
 											<li class="breadcrumb-item">
 												<i class="bi bi-house"></i>
@@ -491,194 +465,146 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<h2 style="height: 80px;">Code </h2>
+										<h2 style="height: 40px;">code</h2>
+										<div class="card">
+										</div>
 										
-										<div class="card-title">
+										
+										<div class="card-body">
 											
-											<div class="row">
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
-													<div class="mb-3">
-														<select class="form-select" id="inputIndustryType">
-															<option value="Select">N</option>
-															<option value="Select">Y</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
-													<div class="mb-3">
-														<select class="form-select" id="inputIndustryType">
-															<option value="Select">Y</option>
-															<option value="Select">N</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
-													<div class="mb-3">
-														<select class="form-select" id="inputIndustryType">
-															<option value="Select">수정일</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
-													<div class="mb-2">
-														<input type="text" class="form-control" id="inputCompanyName"
-															placeholder=>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
-													<div class="mb-2">
-														<input type="text" class="form-control" id="inputBusinessAddress"
-															placeholder=>
-													</div>
-												</div>
-											</div>
-
-											<div class="row">
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
-													<div class="mb-3">
-														<select class="form-select" id="inputIndustryType">
-															<option value="Select">검색구분</option>
-															<option value="Select">Y</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
-													<div class="mb-3">
-														<input type="text" class="form-control" id="inputPostalCode" placeholder=>
-													</div>
-												</div>
-												<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
-													<div class="mb-3">
-														<button class="btn" type="button">
-															<i class="bi bi-search"></i>
-														</button>
-														<button class="btn" type="button">
-															<i class="bi bi-arrow-counterclockwise"></i>
-														</button>
-													</div>
-												</div>
-											</div>
-										
-										
-											<div class="col-1" style="float: right;">
+											
+										<form class="" method = "post" action = "/xdm/v1/infra/code/userInst">
+											<h3 style="height: 60px;">기본정보</h3>
+											
+											<div class="col-3">
 												<div class="mb-3">
-													<select class="form-select" id="inputIndustryType">
-														<option value="Select">5</option>
-														<option value="Select">10</option>
-														<option value="Select">15</option>
-														<option value="Select">20</option>
-														<option value="Select">25</option>
+													<label for="inputNumber" class="form-label">이름</label>
+													<input type="text" class="form-control" id="inputCompanyName"
+														placeholder="영대소문자,숫자" name = "Name">
+												</div>
+											</div>
+											
+											<div class="col-3">
+												<div class="mb-3">
+													<label for="inputNumber" class="form-label">아이디</label>
+													<input type="text" class="form-control" id="inputCompanyName"
+														placeholder="영대소문자,숫자" name = "id">
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom04" class="form-label">어드민여부</label>
+													<select class="form-select" id="validationCustom04"  name = "adminNy"> 
+														<option selected="" disabled="" value=""></option>
+														<option value="1" th:selected = "${item?.cgUseNy == 1}">어드민</option>
+														<option value="0" th:selected = "${item?.cgUseNy == 0}">유저</option>
 													</select>
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">항목을 선택해 주세요.</div>
 												</div>
 											</div>
-											
-										
-										
-										
-										
-											<div class="col-1">
+										</div>
+											<div class="col-3">
 												<div class="mb-3">
-													<p style= "font-size: 25px;">Total: 171</p>
+													<label for="inputBusinessAddress" class="form-label">성별</label>
+													<input type="text" class="form-control" id="inputBusinessAddress"
+														placeholder="영대소문자,숫자" name = "gender">
 												</div>
 											</div>
 										
-										<div class="table-responsive">
-											<div class="form-check">
-											<table id="apiCallbacks" class="table custom-table">
-												<thead>
-													<tr>
-														<th><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-														<th>#</th>
-														<th>코드그룹 코드</th>
-														<th>코드그룹 이름</th>
-														<th>코드</th>
-														<th>대체 코드</th>
-														<th>코드 이름</th>
-														<th>코드 이름(영문)</th>
-														<th>사용</th>
-														<th>순서</th>
-														<th>등록일</th>
-													</tr>
-												</thead>
-												<tbody>
-												<tr th:if="${#lists.isEmpty(list)}">
-														<td colspan ="11">
-															<p>There are no data</p>
-														</td>
-													</tr>
-													<tr th:if ="${!#lists.isEmpty(list)}" th:each="list : ${list}">
-														<td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-														<td th:text= "${list.seq}">170</td>
-														<td>33</td>
-														<td  th:text ="${list.cgName}">로그인,로그인UI</td>
-														<td>272</td>
-														<td></td>
-														<td class="memmber">사용자</td>
-														<td></td>
-														<td th:unless="${list.cgUseNy eq 0}">Y</td>
-														<td th:if="${list.cgUseNy eq 0}">N</td>
-														<td th:text=${list.cgTurn}></td>
-														<td th:text = "${#dates.format(list.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
-													</tr>
-													
-												</tbody>
-											</table>
-											<!--페이지-->
-															<div class="row">
-																<div class="col">
-																	<div class="card">
-																		<div class="card-body">
-																			<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
-																				<div class="btn-group me-2" role="group" aria-label="First group">
-																					<button type="button" class="btn btn-outline-secondary">1</button>
-																					<button type="button" class="btn btn-outline-secondary">2</button>
-																					<button type="button" class="btn btn-outline-secondary">3</button>
-																					<button type="button" class="btn btn-outline-secondary">4</button>
-																				
-																				<div class="btn-group me-2" role="group" aria-label="Second group">
-																					<button type="button" class="btn btn-outline-secondary">5</button>
-																					<button type="button" class="btn btn-outline-secondary">6</button>
-																					<button type="button" class="btn btn-outline-secondary">7</button>
-																			
-																				<div class="btn-group" role="group" aria-label="Third group">
-																					<button type="button" class="btn btn-outline-secondary">8</button>
-																				</div>
-																			</div>
-																		</div>
+											<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">생년월일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "birthday">
+													 
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">이메일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "email">
+													 
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">번호</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "phone">
+													 
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">설명</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "urDesc">
+													 
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">비밀번호</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "passwd">
+													 
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										
+										
+														<div class="col-3">
+															<button class="btn" type="button" style="float: left">
+																	<i class="bi bi-file-text"></i>
+																</button>
+														</div>
+														<div class="col-3">
+														<button class="btn" type="submit" style="float: right;">
+															<i class="bi bi-clipboard-plus"></i>
+														</button>
+														</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
+											</form>
 										</div>
-								<!---버튼--->
-										<div class="row">
-										<div class="col">
-											<button class="btn" type="button">
-											<i class="bi bi-x-circle-fill"></i>
-										</button>
-										<button class="btn" type="button">
-											<i class="bi bi-bucket-fill"></i>
-											</button>
-										</div>
-											<div class="col d-flex justify-content-end">
-											<button class="btn" type="button">
-												<i class="bi bi-plus-circle-fill"></i>
-											</button>
-												<button class="btn" type="button">
-													<i class="bi bi-bookmark-x-fill"></i>
-												</button>
-											</div>
-											</div>
-							
-								
-								
-							
-								
+										<!-- Row end -->
+								<!-- Card end -->
 
-									<!-- Card end -->
-									</div>
+							</div>
+
+						</div>
+						<!-- Row end -->
+
+					</div>
 					<!-- Content wrapper end -->
 
 					<!-- App Footer start -->
@@ -706,6 +632,7 @@
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/moment.js"></script>
+		
 
 		<!-- *************
 			************ Vendor Js Files *************
@@ -714,11 +641,6 @@
 		<!-- Overlay Scroll JS -->
 		<script src="/xdm/v1/template/Arise/assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
-
-		<!-- Data Tables -->
-		<script src="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.min.js"></script>
-		<script src="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
-
 
 		<!-- Main Js Required -->
 		<script src="/xdm/v1/template/Arise/assets/js/main.js"></script>

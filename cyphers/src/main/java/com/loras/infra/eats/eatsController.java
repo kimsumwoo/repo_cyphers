@@ -18,4 +18,19 @@ public class eatsController {
 		return "/xdm/v1/infra/eats/eatsList";
 	}
 
+	@RequestMapping(value = "/xdm/v1/infra/eats/eatsInst")
+	public String eatsInst(EatsDto eatsDto) {
+		
+		EatsService.insert(eatsDto);
+		
+		return "redirect:/xdm/v1/infra/eats/eatsList";
+	}
+	
+	@RequestMapping(value = "/xdm/v1/infra/eats/eatsForm")
+	public String eatsFrom() {
+		
+		return "/xdm/v1/infra/eats/eatsForm";
+	}
+	
+
 }
