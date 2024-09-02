@@ -20,11 +20,43 @@
 		,d.placeDesc
 		,d.date
 		,d.fixDate
-		,d.user_seq
 	from
 		education d
 	order by
 		d.seq desc
 </select>
+
+<insert id="insert">
+	insert into education(
+		type
+		,name
+		,pay
+		,teacher
+		,classStart
+		,classEnd 
+		,eduStart
+		,eduEnd
+		,place
+		,placeDesc
+		,date
+		,fixDate
+		,user_seq
+		)
+	values(
+		#{type}
+		,#{name}
+		,#{pay}
+		,#{teacher}
+		,#{classStart}
+		,#{classEnd}
+		,#{eduStart}
+		,#{eduEnd}
+		,#{place}
+		,#{placeDesc}
+		,now()
+		,now()
+		,1
+		)
+</insert>
 	  
 </mapper>

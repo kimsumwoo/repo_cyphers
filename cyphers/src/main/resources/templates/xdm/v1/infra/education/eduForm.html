@@ -473,7 +473,7 @@
 										<div class="card-body">
 											
 											
-										<form class="" method = "post" action = "/xdm/v1/infra/edu/eduInst">
+										<form class="" method = "post" action = "/xdm/v1/infra/education/eduInst">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											<div class="col-3">
@@ -491,19 +491,7 @@
 														placeholder="영대소문자,숫자" name = "name">
 												</div>
 											</div>
-											<div class="col-3">
-												<div class="mb-3">
-													<div>
-													<label for="validationCustom04" class="form-label">주차여부</label>
-													<select class="form-select" id="validationCustom04"  name = "pakingNy"> 
-														<option selected="" disabled="" value=""></option>
-														<option value="1" th:selected = "${item?.cgUseNy == 1}">사용</option>
-														<option value="0" th:selected = "${item?.cgUseNy == 0}">미사용</option>
-													</select>
-													<div class="valid-feedback"></div>
-													<div class="invalid-feedback">항목을 선택해 주세요.</div>
-												</div>
-											</div>
+											
 										</div>
 											<div class="col-3">
 												<div class="mb-3">
@@ -516,9 +504,9 @@
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">영업종료시간</label>
+													<label for="validationCustom02" class="form-label">교수</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "timeEnd">
+													 name= "teacher">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -529,9 +517,9 @@
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">가게번호</label>
+													<label for="validationCustom02" class="form-label">수업시작시간</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "number">
+													 name= "classStart">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -542,9 +530,9 @@
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">가게사이트</label>
+													<label for="validationCustom02" class="form-label">수업종료시간</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "site">
+													 name= "classEnd">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -555,9 +543,9 @@
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">예약가능여부</label>
+													<label for="validationCustom02" class="form-label">교육시작날짜</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "bookingNy">
+													 name= "eduStart">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -568,9 +556,9 @@
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">프리콜</label>
+													<label for="validationCustom02" class="form-label">교육종료날짜</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "freecallNy">
+													 name= "eduEnd">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -581,9 +569,21 @@
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">가게설명</label>
+													<label for="validationCustom02" class="form-label">장소</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "eatsDesc">
+													 name= "place">
+													 
+													<div class="eatsDesc"></div>
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">장소설명</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "placeDesc">
 													 
 													<div class="eatsDesc"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>

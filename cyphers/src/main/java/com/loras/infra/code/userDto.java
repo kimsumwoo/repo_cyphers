@@ -14,7 +14,9 @@ public class userDto {
 	private String phone;
 	private Date dateTime;
 	private Date fixDate;
-//------
+	private String urDesc;
+	
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -81,6 +83,18 @@ public class userDto {
 	public void setFixDate(Date fixDate) {
 		this.fixDate = fixDate;
 	}
+	public String getUrDesc() {
+		return urDesc;
+	}
+	public void setUrDesc(String urDesc) {
+		this.urDesc = urDesc;
+	}
+	
+	
+	
+//------
+	
+	
 	
 	
 	

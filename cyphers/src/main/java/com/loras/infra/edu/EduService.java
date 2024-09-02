@@ -14,5 +14,8 @@ public class EduService {
 		List<EduDto> edus = EduDao.eduSelectList();
 		return edus;
 	}
+	public int insert(EduDto eduDto) {
+		return EduDao.insert(eduDto);
+	}
 
 }

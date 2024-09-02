@@ -14,4 +14,16 @@ public class EduController {
 		model.addAttribute("edu",EduService.eduSelectList());
 		return "/xdm/v1/infra/education/educationList";
 	}
+		
+		@RequestMapping(value ="/xdm/v1/infra/education/eduForm")
+		public String eduForm() {
+			return "/xdm/v1/infra/education/eduForm";
+	}
+		@RequestMapping(value ="/xdm/v1/infra/education/eduInst")
+		public String eduInst(EduDto eduDto) {
+			
+			EduService.insert(eduDto);
+			
+			return "redirect:/xdm/v1/infra/education/educationList";
+	}
 }

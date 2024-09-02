@@ -57,6 +57,11 @@ public class CodeGroupController {
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 	
+	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmMfom")
+	public String codeGroupXdmMfom() {
+
+		return "/xdm/v1/infra/codegroup/codeGroupXdmMfom";
+	}
 	
 	
 

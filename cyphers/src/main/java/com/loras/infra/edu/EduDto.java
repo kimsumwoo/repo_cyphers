@@ -104,5 +104,6 @@ public class EduDto {
 		this.user_seq = user_seq;
 	}
 	
+	
 
 }

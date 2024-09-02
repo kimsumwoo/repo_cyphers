@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EduDao {
 	List<EduDto> eduSelectList();
+	
+public int insert(EduDto eduDto);
 
 }

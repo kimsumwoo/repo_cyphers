@@ -27,5 +27,10 @@ public class userController {
 		return "/xdm/v1/infra/code/userForm";
 	}
 	
+	@RequestMapping(value ="/xdm/v1/infra/code/userXdmForm")
+	public String userXdmForm() {
+		return "/xdm/v1/infra/code/userXdmForm";
+	}
+	
 
 }

@@ -25,6 +25,7 @@
 	order by
 		eats.seq desc
 </select>
+
 <insert id="insert">
 	insert into eats(
 		type
