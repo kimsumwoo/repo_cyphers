@@ -23,5 +23,9 @@ public class CodeGroupService {
 		return CodeGroupDao.insert(codeGroupDto);
 	}
 	
+	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {
+		return CodeGroupDao.selectOne(codeGroupDto);
+	}
+	
 
 }

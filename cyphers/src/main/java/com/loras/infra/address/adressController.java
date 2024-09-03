@@ -20,7 +20,15 @@ public class adressController {
 	public String addressInst(addressDto addressDto) {
 		addressService.Insert(addressDto);
 	return "redirect:/xdm/v1/infra/address/address2";
-}
+	}
+	@RequestMapping(value = "/xdm/v1/infra/address/addressMfom")
+	public String addressMfom() {
+	return "/xdm/v1/infra/address/addressMfom";
+	}
+	@RequestMapping(value = "/xdm/v1/infra/address/addressNfom")
+	public String addressNfom() {
+	return "/xdm/v1/infra/address/addressNfom";
+	}
 }
 	
 	

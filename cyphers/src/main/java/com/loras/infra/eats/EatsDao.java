@@ -7,6 +7,12 @@ import org.springframework.stereotype.Repository;
 public interface EatsDao {
 	List<EatsDto> eatsSelectList();
 	
-public int insert(EatsDto eatsDto); 
+public int insert(EatsDto eatsDto);
+
+public EatsDto selectOne(EatsDto eatsDto);
+
+
+
+
 
 }

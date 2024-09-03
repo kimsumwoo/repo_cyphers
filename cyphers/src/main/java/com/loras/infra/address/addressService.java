@@ -17,5 +17,7 @@ public class addressService {
 	public int Insert(addressDto addressDto){
 		return addressDao.insert(addressDto);
 	}
-
+	public addressDto selectOne(addressDto addressDto) {
+		return addressDao.selectOne(addressDto);
+	}
 }

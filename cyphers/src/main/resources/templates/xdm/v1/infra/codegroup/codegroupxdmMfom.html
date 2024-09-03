@@ -480,7 +480,7 @@
 												<div class="mb-3">
 													<label for="inputNumber" class="form-label">cgName</label>
 													<input type="text" class="form-control" id="inputCompanyName"
-														placeholder="영대소문자,숫자" name = "cgName">
+														placeholder="영대소문자,숫자" name = "cgName" th:value ="${item?.cgName}">
 												</div>
 											</div>
 											<div class="col-3">
@@ -488,7 +488,6 @@
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
 													<select class="form-select" id="validationCustom04"  name = "cgUseNy"> 
-														<option selected="" disabled="" value=""></option>
 														<option value="1" th:selected = "${item?.cgUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.cgUseNy == 0}">미사용</option>
 													</select>
@@ -501,7 +500,7 @@
 												<div class="mb-3">
 													<label for="inputBusinessAddress" class="form-label">cgTurn</label>
 													<input type="text" class="form-control" id="inputBusinessAddress"
-														placeholder="영대소문자,숫자" name = "cgTurn">
+														placeholder="" name = "cgTurn" th:value="${item?.cgTurn}">
 												</div>
 											</div>
 										
@@ -510,7 +509,7 @@
 													<div>
 													<label for="validationCustom02" class="form-label">cgDesc</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 name= "cgDesc">
+													 name= "cgDesc" th:value="${item?.cgDesc}">
 													 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>

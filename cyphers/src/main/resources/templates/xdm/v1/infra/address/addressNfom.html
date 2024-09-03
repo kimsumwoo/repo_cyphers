@@ -108,48 +108,98 @@
                     <div class="col-lg-8 ps-lg-0 pb-5">
                         <div class="ps-lg-5 pt-lg-5">
                             <div class="d-flex align-items-center justify-content-between w-100 mb-5">
-                                <h1 class="m-0 fw-bold">배송 주소</h1>
+                                <h1 class="m-0 fw-bold">배송 주소 생성</h1>
                             </div>
-                            <div>
-                                <div>
-                                    <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4" th:each = "address : ${address}" >
-                                        <div>
-                                            <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-2 badge" th:text = "${address.type}">집</span>
-                                            <h6 class="fw-bold mb-1 mt-2" th:text ="${address.addName}">집</h6>
-                                            <p class="text-secondary-emphasis mb-2" th:text = "${address.zip}">01178</p>
-                                            <p class="text-secondary-emphasis mb-2" th:text = "${address.add1}">서울시 노원구 동일로207길17</p>
-                                            <p class="text-secondary-emphasis mb-2" th:text = "${address.add2}">ㅇㅇ아파트 201동 302호</p>
-                                            <p class="fw-bold mb-0" th:text = "${address.num1} + ${address.num2}">010-2345-6780</p>
-                                        </div>
-                                        <div class="d-flex align-items-cneter gap-2">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#addaddress" class="btn btn-outline-secondary rounded-3"> <i class="ri-edit-box-fill"></i> </a>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </a>
-                                        </div>
+                            <div class="svg-border-rounded text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="#ffffff"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                            </div>
+                        </div>
+                        <div class="py-5">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-9 col-12">
+                                        <form class="row g-3">
+                                    
+                                            <label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" aria-label="inputFirstName">
+                                            </div>
+                                    
+                                      
+                                            <label for="inputCompnay" class="form-label small text-muted">우편번호</label>
+                                            <div class="col-4">
+                                                <input type="text" class="form-control" id="inputCompnay">
+                                            </div>
+                                            <div class="col-3">
+                                                <button type="button " class="btn btn-dark">주소검색</button>
+                                            </div>
+                                    
+                                            <div class="col-12">
+                                                <input type="text" class="form-control mb-3" id="inputAddress" placeholder="기본주소">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
+                                            </div><br><br><br><br><br>
+                                      
+                                        
+                                            <label for="inputAddress" class="form-label small text-muted">휴대전화</label>
+                                            <div class="col-3"> 
+                                                <select class="form-select mb-3" aria-label="selectcountry">
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="018">018</option>
+                                                    <option value="019">019</option>
+                                                </select>
+                                            </div>
+                                            <br>-
+                                            <div class="col-3">
+                                                <input type="inputphone" class="form-control mb-3" id="inputAddress" placeholder="">
+                                            </div>
+                                            <br>-
+                                            <div class="col-3">
+                                                <input type="" class="form-control mb-3" id="inputAddress" placeholder="">
+                                            </div>
+                                       
+                                            
+                         
+                                                <label for="inputTown" class="form-label small text-muted">이메일</label>
+                                            <div id ="email1" class="col-4">
+                                                <input type="email" class="form-control" id="inputTown">
+                                            </div>
+                                           <br> @
+                                            <div id ="email2" class="col-4">
+                                                <input type="text" class="form-control" id="inputCompnay">
+                                            </div>
+                                            <div class="col-3">
+                                                <select id ="emailSelection" class="form-select mb-3" aria-label="selectcountry" name ="emailSelection">
+                                                    <option value="email">-이메일 선택-</option>
+                                                    <option value="nave.com">naver.com</option>
+                                                    <option value="nate.com">nate.com</option>
+                                                    <option value="gmail.com">gmail.com</option>
+                                                    <option value="hanmail.com">hanmail.com</option>
+                                                    <option value="daum.com">daum.com</option>
+                                                    <option value="1">직접입력</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-4">
+                                                <input name="ma_main_flag" fw-filter="" fw-label="기본 배송지로 저장" fw-msg="" value="T" type="checkbox">
+                                                <span>기본 배송지로 저장</span>
+                                            </div>
+                                  
+                                                <button class="btn btn-purple btn-theme w-100 rounded-3" type ="submit"><a><i class="ri-add-fill me-2"></i>새 배송주소 생성</a></button>
+                                                <a href="/xdm/v1/infra/address/address2" class="btn btn-outline-secondary rounded-0 m-0 border-0 border-top rounded-0 py-3 w-100"> <i class="ri-close-fill me-2"></i>취소 </a>
+                                               
+                                        
+                                        </form>
                                     </div>
-                                    <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4">
-                                        <div>
-                                            <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-2 badge">직장</span>
-                                            <h6 class="fw-bold mb-1 mt-2">직장</h6>
-                                            <p class="text-secondary-emphasis mb-2">03378</p>
-                                            <p class="text-secondary-emphasis mb-2">서울시 노원구 동일로207길17</p>
-                                            <p class="text-secondary-emphasis mb-2">ㅇㅇ아파트 201동 302호</p>
-                                            <p class="fw-bold mb-0">010-1245-6890</p>
-                                        </div>
-                                        <div class="d-flex align-items-cneter gap-2">
-                                            <a href='#' data-bs-toggle="modal" data-bs-target="#addaddiress" class="btn btn-outline-secondary rounded-3"> <i class="ri-edit-box-fill"></i> </a>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </a>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-purple btn-theme w-100 rounded-3" type ="submit"><a href =/xdm/v1/infra/address/addressNfom <i class="ri-add-fill me-2"></i>새 배송주소 생성</a></button>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-         </form>
         
         <!-- Build Something Together -->
         <!-- footer -->

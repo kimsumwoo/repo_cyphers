@@ -51,6 +51,23 @@
 		)
 	
 	</insert>
+	<select id="selectOne" resultMap="resultMapObj">
+	select
+		ad.seq
+		,ad.addName
+		,ad.zip
+		,ad.add1
+		,ad.add2
+		,ad.num1
+		,ad.num2
+		,ad.type
+		,ad.date
+		,ad.fixDate
+	from
+		address ad
+	where 1=1
+	and ad.seq = #{seq}
+	</select>
 	
 	  
 </mapper>

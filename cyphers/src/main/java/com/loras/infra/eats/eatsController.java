@@ -32,5 +32,11 @@ public class eatsController {
 		return "/xdm/v1/infra/eats/eatsForm";
 	}
 	
+	@RequestMapping(value = "/xdm/v1/infra/eats/eatsMfom")
+	public String eatsMfom(EatsDto eatsDto, Model model) {
+		model.addAttribute("item", EatsService.selectOne(eatsDto));
+		return "/xdm/v1/infra/eats/eatsMfom";
+	}
+	
 
 }
