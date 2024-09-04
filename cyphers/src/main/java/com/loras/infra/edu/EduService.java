@@ -17,5 +17,11 @@ public class EduService {
 	public int insert(EduDto eduDto) {
 		return EduDao.insert(eduDto);
 	}
+	public EduDto selectOne(EduDto eduDto) {
+		return EduDao.selectOne(eduDto);
+	}
+	public int update(EduDto eduDto) {
+		return EduDao.update(eduDto);
+	}
 
 }

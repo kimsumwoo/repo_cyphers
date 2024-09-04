@@ -10,4 +10,8 @@ public interface EduDao {
 	
 public int insert(EduDto eduDto);
 
+public EduDto selectOne(EduDto eduDto);
+
+public int update(EduDto eduDto);
+
 }

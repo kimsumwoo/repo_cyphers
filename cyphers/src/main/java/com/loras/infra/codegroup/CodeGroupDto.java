@@ -7,19 +7,21 @@ public class CodeGroupDto {
 	private String seq;
 	private String cgName;
 	private	Integer cgUseNy;
-	private	String cgTurn;
+	private Integer cgTurn;
 	private String cgDesc;
 	private	Integer delNy;
 	private	Date cgDateTime;
+	private Date cgFixDate;
 	
+//	-----
 	public Date getCgDateTime() {
 		return cgDateTime;
 	}
 	public void setCgDateTime(Date cgDateTime) {
 		this.cgDateTime = cgDateTime;
 	}
-	private String cgFixDate;
-//	-----
+	
+
 	public String getSeq() {
 		return seq;
 	}
@@ -45,12 +47,7 @@ public class CodeGroupDto {
 	public void setUseNy(Integer useNy) {
 		this.cgUseNy = useNy;
 	}
-	public String getCgTurn() {
-		return cgTurn;
-	}
-	public void setCgTurn(String cgTurn) {
-		this.cgTurn = cgTurn;
-	}
+	
 	public String getCgDesc() {
 		return cgDesc;
 	}
@@ -63,13 +60,21 @@ public class CodeGroupDto {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
-
-	public String getCgFixDate() {
+	public Date getCgFixDate() {
 		return cgFixDate;
 	}
-	public void setCgFixDate(String cgFixDate) {
+	public void setCgFixDate(Date cgFixDate) {
 		this.cgFixDate = cgFixDate;
 	}
+	public Integer getCgTurn() {
+		return cgTurn;
+	}
+	public void setCgTurn(Integer cgTurn) {
+		this.cgTurn = cgTurn;
+	}
+	
+
+	
 	
 	
 	

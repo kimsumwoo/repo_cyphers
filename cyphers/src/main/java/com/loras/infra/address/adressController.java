@@ -22,12 +22,18 @@ public class adressController {
 	return "redirect:/xdm/v1/infra/address/address2";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/address/addressMfom")
-	public String addressMfom() {
+	public String addressMfom(addressDto addressDto,Model model) {
+		model.addAttribute("item", addressService.selectOne(addressDto));
 	return "/xdm/v1/infra/address/addressMfom";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/address/addressNfom")
-	public String addressNfom() {
-	return "/xdm/v1/infra/address/addressNfom";
+	@RequestMapping(value = "/xdm/v1/infra/address/addressForm")
+	public String addressForm() {
+	return "/xdm/v1/infra/address/addressForm";
+	}
+	@RequestMapping(value = "/xdm/v1/infra/address/addressUpdt")
+	public String addressUpdt(addressDto addressDto) {
+		addressService.update(addressDto);
+	return "redirect:/xdm/v1/infra/address/address2";
 	}
 }
 	

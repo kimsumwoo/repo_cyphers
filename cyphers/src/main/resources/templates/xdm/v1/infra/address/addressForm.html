@@ -118,25 +118,25 @@
                             <div class="container">
                                 <div class="row g-4">
                                     <div class="col-lg-9 col-12">
-                                        <form class="row g-3">
+                                        <form class="row g-3" method ="post" action="/xdm/v1/infra/address/address2Inst">
                                     
                                             <label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" aria-label="inputFirstName">
+                                                <input type="text" class="form-control" aria-label="inputFirstName" name ="addName">
                                             </div>
                                     
                                       
                                             <label for="inputCompnay" class="form-label small text-muted">우편번호</label>
                                             <div class="col-4">
-                                                <input type="text" class="form-control" id="inputCompnay">
+                                                <input type="text" class="form-control" id="inputCompnay" name = "zip">
                                             </div>
                                             <div class="col-3">
                                                 <button type="button " class="btn btn-dark">주소검색</button>
                                             </div>
                                     
                                             <div class="col-12">
-                                                <input type="text" class="form-control mb-3" id="inputAddress" placeholder="기본주소">
-                                                <input type="text" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
+                                                <input type="text" class="form-control mb-3" id="inputAddress" placeholder="기본주소" name ="add1">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="상세주소 입력" name = "add2">                               
                                             </div><br><br><br><br><br>
                                       
                                         
@@ -153,34 +153,12 @@
                                             </div>
                                             <br>-
                                             <div class="col-3">
-                                                <input type="inputphone" class="form-control mb-3" id="inputAddress" placeholder="">
+                                                <input type="inputphone" class="form-control mb-3" id="inputAddress" placeholder="" name ="num1">
                                             </div>
                                             <br>-
                                             <div class="col-3">
-                                                <input type="" class="form-control mb-3" id="inputAddress" placeholder="">
-                                            </div>
-                                       
-                                            
-                         
-                                                <label for="inputTown" class="form-label small text-muted">이메일</label>
-                                            <div id ="email1" class="col-4">
-                                                <input type="email" class="form-control" id="inputTown">
-                                            </div>
-                                           <br> @
-                                            <div id ="email2" class="col-4">
-                                                <input type="text" class="form-control" id="inputCompnay">
-                                            </div>
-                                            <div class="col-3">
-                                                <select id ="emailSelection" class="form-select mb-3" aria-label="selectcountry" name ="emailSelection">
-                                                    <option value="email">-이메일 선택-</option>
-                                                    <option value="nave.com">naver.com</option>
-                                                    <option value="nate.com">nate.com</option>
-                                                    <option value="gmail.com">gmail.com</option>
-                                                    <option value="hanmail.com">hanmail.com</option>
-                                                    <option value="daum.com">daum.com</option>
-                                                    <option value="1">직접입력</option>
-                                                </select>
-                                            </div>
+                                                <input type="" class="form-control mb-3" id="inputAddress" placeholder="" name ="num2">
+                                            </div>           
                                             <div class="col-4">
                                                 <input name="ma_main_flag" fw-filter="" fw-label="기본 배송지로 저장" fw-msg="" value="T" type="checkbox">
                                                 <span>기본 배송지로 저장</span>

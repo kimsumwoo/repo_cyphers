@@ -465,7 +465,7 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<h2 style="height: 40px;">code</h2>
+										<h2 style="height: 40px;">codeGroup</h2>
 										<div class="card">
 										</div>
 										
@@ -473,32 +473,19 @@
 										<div class="card-body">
 											
 											
-										<form class="needs-validation" novalidate>
+										<form class="needs-validation" method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmInst">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
 											
-										<div class="row">
-											<div class="col-3">
-												<div>
-												<label for="validationCustom04" class="form-label">코드그룹</label>
-													<select class="form-select" id="validationCustom04" required="">
-														<option selected="선택하세요" disabled="선택하세요" value=""></option>
-														<option value="Select">1</option>
-														<option value="Select">2</option>
-													</select>
-													<div class="valid-feedback"></div>
-													<div class="invalid-feedback">항목을 선택해 주세요.</div>
-												</div>
-											</div>
-										</div>
+		
 											<div class="row">
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">코드</label>
-													<input type="text" class="form-control" id="validationCustom02" required=""
-														placeholder="자동생성" name = "seq">
+													<label for="validationCustom02" class="form-label">코드그룹seq</label>
+													<input type="text" class="form-control" id="validationCustom02"
+														placeholder="자동생성" >
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
@@ -516,7 +503,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">코드 이름</label>
-													<input type="text" class="form-control" id="validationCustom02" required=""
+													<input type="text" class="form-control" id="validationCustom02" 
 														placeholder="한글,영대소문자,숫자" name = "cgName">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드이름을 생성해 주세요.</div>
@@ -534,10 +521,10 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="validationCustom04" required=""> 
+													<select class="form-select" id="validationCustom04"  name ="cgUseNy"> 
 														<option selected="" disabled="" value=""></option>
-														<option value="Select">사용</option>
-														<option value="Select">미사용</option>
+														<option value="1" th:selected = "${item?.cgUseNy == 1}">사용</option>
+														<option value="0" th:selected = "${item?.cgUseNy == 0}">미사용</option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">항목을 선택해 주세요.</div>
@@ -548,7 +535,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">순서</label>
-													<input type="text" class="form-control" id="validationCustom02"  required="" placeholder=""
+													<input type="text" class="form-control" id="validationCustom02"   placeholder=""
 													 Name= "cgTurn">
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
@@ -559,7 +546,7 @@
 											<div class="col-sm-6 col-3">
 												<div class="mb-3">
 													<label for="inputMessage" class="form-label">설명</label>
-													<textarea class="form-control" id="inputMessage" placeholder=></textarea>
+													<textarea class="form-control" id="inputMessage" name ="cgDesc"></textarea>
 											
 												</div>
 											</div>

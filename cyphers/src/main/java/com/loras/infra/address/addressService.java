@@ -20,4 +20,7 @@ public class addressService {
 	public addressDto selectOne(addressDto addressDto) {
 		return addressDao.selectOne(addressDto);
 	}
+	public int update(addressDto addressDto) {
+		return addressDao.update(addressDto);
+	}
 }

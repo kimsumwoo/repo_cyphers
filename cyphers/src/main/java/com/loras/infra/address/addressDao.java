@@ -13,5 +13,7 @@ public interface addressDao {
 	
 	public addressDto selectOne(addressDto addressDto);
 	
+	public int update(addressDto addressDto);
+	
 
 }

@@ -68,6 +68,20 @@
 	where 1=1
 	and ad.seq = #{seq}
 	</select>
+	<update id="update">
+	update address	
+	set
+		addName = #{addName}
+		,zip = #{zip}
+		,add1 = #{add1}
+		,add2 = #{add2}
+		,num1 = #{num1}
+		,num2 = #{num2}
+		,type = #{type}
+	
+	where 1=1
+		and seq = #{seq}	
+	</update>
 	
 	  
 </mapper>

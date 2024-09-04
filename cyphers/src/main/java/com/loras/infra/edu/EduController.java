@@ -20,10 +20,20 @@ public class EduController {
 			return "/xdm/v1/infra/education/eduForm";
 	}
 		@RequestMapping(value ="/xdm/v1/infra/education/eduInst")
-		public String eduInst(EduDto eduDto) {
-			
-			EduService.insert(eduDto);
-			
+		public String eduInst(EduDto eduDto) {	
+			EduService.insert(eduDto);	
 			return "redirect:/xdm/v1/infra/education/educationList";
 	}
+		@RequestMapping(value ="/xdm/v1/infra/education/eduMfom")
+		public String eduMfom(EduDto eduDto,Model model) {	
+			model.addAttribute("item", EduService.selectOne(eduDto));
+			return "/xdm/v1/infra/education/eduMfom";
+	}
+		@RequestMapping(value ="/xdm/v1/infra/education/eduUpdt")
+		public String eduUpdt(EduDto eduDto) {	
+				EduService.update(eduDto);
+			return "redirect:/xdm/v1/infra/education/educationList";
+	}
+		
+		
 }

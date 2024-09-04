@@ -78,8 +78,6 @@
 	
 </select>
 <update id="update">
-
-
 	update eats
 	set
 		name = #{name}

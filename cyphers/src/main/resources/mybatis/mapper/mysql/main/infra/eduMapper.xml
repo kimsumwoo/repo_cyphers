@@ -19,7 +19,7 @@
 		,d.place
 		,d.placeDesc
 		,d.date
-		,d.fixDate
+		,d.fixDate+
 	from
 		education d
 	order by
@@ -58,5 +58,45 @@
 		,1
 		)
 </insert>
+<select id="selectOne" resultMap = "resultMapObj">
+	select
+		d.seq
+		,d.type
+		,d.name
+		,d.pay
+		,d.teacher
+		,d.classStart
+		,d.classEnd
+		,d.eduStart
+		,d.eduEnd
+		,d.place
+		,d.placeDesc
+		,d.date
+		,d.fixDate
+	from
+		education d
+	where 1=1
+		and d.seq = #{seq}
+</select>
+
+<update id="update">
+	update education
+	set
+		type
+		,name = #{name}
+		,pay = #{pay}
+		,teacher = #{teacher}
+		,classStart = #{classStart}
+		,classEnd = #{classEnd}
+		,eduStart = #{eduStart}
+		,eduEnd = #{eduEnd}
+		,place = #{place}
+		,placeDesc = #{placeDesc}
+		,date = #{date}
+		,fixDate = #{fixDate}
+		,user_seq = #{user_seq}
+	where 1=1
+		and seq = #{seq}
+</update>
 	  
 </mapper>
