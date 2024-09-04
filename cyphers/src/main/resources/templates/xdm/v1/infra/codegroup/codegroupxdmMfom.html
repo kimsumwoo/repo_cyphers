@@ -456,6 +456,11 @@
 									
 
 										<!-- Row start -->
+										<div class="card">
+										
+										
+										
+										<div class="card-body">
 										 
 										<ol class="breadcrumb d-md-flex d-none">
 											<li class="breadcrumb-item">
@@ -465,12 +470,8 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<h2 style="height: 40px;">codeGroup</h2>
-										<div class="card">
-										</div>
+										<h2 style="height: 80px;">codeGroup</h2>
 										
-										
-										<div class="card-body">
 											
 											
 										<form class="needs-validation" method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmUpdt">
@@ -483,7 +484,7 @@
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">#</label>
+													<label for="validationCustom02" class="form-label">코드그룹seq</label>
 													<input type="text" class="form-control" id="validationCustom02" 
 														placeholder="자동생성" name = "seq" th:value="${item?.seq}">
 														<div class="valid-feedback"></div>
@@ -491,18 +492,12 @@
 												</div>
 											</div>
 										</div>
-								
-											<div class="col-3">
-												<div class="mb-3">
-													<label for="inputNumber" class="form-label">코드(ANOTHER)</label>
-													<input type="text" class="form-control" id="inputCompanyName"
-														placeholder="영대소문자,숫자">
-												</div>
-											</div>
+									</div>
+										<div class ="row">
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">코드 이름</label>
+													<label for="validationCustom02" class="form-label">코드그룹 이름</label>
 													<input type="text" class="form-control" id="validationCustom02" 
 														placeholder="한글,영대소문자,숫자" name = "cgName" th:value="${item?.cgName}">
 														<div class="valid-feedback"></div>
@@ -512,17 +507,9 @@
 										</div>
 											<div class="col-3">
 												<div class="mb-3">
-													<label for="inputBusinessAddress" class="form-label">코드 이름(영문)</label>
-													<input type="text" class="form-control" id="inputBusinessAddress"
-														placeholder="영대소문자,숫자">
-												</div>
-											</div>
-											<div class="col-3">
-												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
 													<select class="form-select" id="validationCustom04"  name ="cgUseNy" th:value ="${item?.cgUseNy}"> 
-														<option selected="" disabled="" value=""></option>
 														<option value="1" th:selected = "${item?.cgUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.cgUseNy == 0}">미사용</option>
 													</select>
@@ -546,142 +533,34 @@
 											<div class="col-sm-6 col-3">
 												<div class="mb-3">
 													<label for="inputMessage" class="form-label">설명</label>
-													<textarea class="form-control" id="inputMessage" name ="cgDesc" th:value = "${item?.cgDesc}"></textarea>
-											
+													<textarea class="form-control" id="inputMessage" name ="cgDesc" th:text = "${item?.cgDesc}"></textarea>
 												</div>
 											</div>
+										</div>	
+									</div>
+								</div>
+							<div class="row">
+									<div class="col">
+										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"<button class="btn" >
+										<i class="bi bi-file-text"></i>
+									</button></a>
+									</div>
+									<div class ="col">
+										<div class="col d-flex justify-content-end">
+										<button class="btn" type="submit" style="float: right;">
+														<i class="bi bi-clipboard-plus"></i>
+										</button>
 										</div>
-											
-											<div class="col-3">
-												<div class="mb-3">
-													<label for="inputEmail" class="form-label">다국어1</label>
-													<input type="text" class="form-control" id="inputCompanyName" placeholder="" style="float: left;">
-												</div>
-											</div>
-										
-											<div class="col-3">
-												<div class="mb-3">
-													<label for="inputNumber" class="form-label">다국어2</label>
-													<input type="text" class="form-control" id="inputCompanyName"
-														placeholder=>
-												</div>
-											</div>
-											<div class="col-3">
-												<div class="mb-3">
-													<label for="inputCompanyName" class="form-label">다국어3</label>
-													<input type="text" class="form-control" id="inputCompanyName"
-														placeholder=>
-												</div>
-											</div>
-											<div class="col-3">
-												<div class="mb-3">
-													<label for="inputBusinessAddress" class="form-label">다국어4</label>
-													<input type="text" class="form-control" id="inputBusinessAddress"
-														placeholder=>
-												</div>
-											</div>
-											</div>
-											<div class="row">
-												<div class="col-3">
-													<div class="mb-3">
-														<label for="inputEmail" class="form-label">다국어5</label>
-														<input type="text" class="form-control" id="inputCompanyName" placeholder=>
-													</div>
-												</div>
-												
-												<div class="col-3">
-													<div class="mb-3">
-														<label for="inputNumber" class="form-label">다국어6</label>
-														<input type="text" class="form-control" id="inputCompanyName"
-														placeholder=>
-													</div>
-												</div>
-												<div class="col-3">
-													<div class="mb-3">
-														<label for="inputCompanyName" class="form-label">다국어7</label>
-														<input type="text" class="form-control" id="inputCompanyName"
-															placeholder=>
-													</div>
-												</div>
-												<div class="col-3">
-													<div class="mb-3">
-														<label for="inputBusinessAddress" class="form-label">다국어8</label>
-														<input type="text" class="form-control" id="inputBusinessAddress"
-															placeholder=>
-													</div>
-												</div>
-												
-													<div class="col-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비1 (VARCHAR TYPE)</label>
-															<input type="text" class="form-control" id="inputCompanyName" placeholder=>
-														</div>
-													</div>
-													
-													<div class="col-3">
-														<div class="mb-3">
-															<label for="inputNumber" class="form-label">예비2 (VARCHAR TYPE)</label>
-															<input type="text" class="form-control" id="inputCompanyName"
-														placeholder=>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="mb-3">
-															<label for="inputCompanyName" class="form-label">예비3 (VARCHAR TYPE)</label>
-															<input type="text" class="form-control" id="inputCompanyName"
-																placeholder=>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="mb-3">
-															<label for="inputBusinessAddress" class="form-label">예비4 (VARCHAR TYPE)</label>
-															<input type="text" class="form-control" id="inputBusinessAddress"
-																placeholder=>
-														</div>
-													</div>
-													
-														<div class="col-3">
-															<div class="mb-3">
-																<label for="inputEmail" class="form-label">예비1(INT TYPE)</label>
-																<input type="email" class="form-control" id="inputEmail" placeholder=>
-																<button class="btn" type="button" style="float: left">
-																	<i class="bi bi-file-text"></i>
-																</button>
-															</div>
-														</div>
-														
-														<div class="col-xxl- col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
-															<div class="mb-3">
-																<label for="inputNumber" class="form-label">예비2(INT TYPE)</label>
-																<input type="text" class="form-control" id="inputCompanyName"
-														placeholder=>
-															</div>
-														</div>
-														<div class="col-3">
-															<div class="mb-3">
-																<label for="inputCompanyName" class="form-label">예비3(INT TYPE)</label>
-																<input type="text" class="form-control" id="inputCompanyName"
-																	placeholder=>
-															</div>
-														</div>
-														<div class="col-3">
-															<div class="mb-3">
-																<label for="inputBusinessAddress" class="form-label">예비4(INT TYPE)</label>
-																<input type="text" class="form-control" id="inputBusinessAddress"
-																	placeholder=>
-															<button class="btn" type="submit" style="float: right;">
-																<i class="bi bi-clipboard-plus"></i>
-															</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</form>
-										</div>
-										<!-- Row end -->
-								<!-- Card end -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</form>
+		</div>
+					<!-- Row end -->
+			<!-- Card end -->
 
 							</div>
 
