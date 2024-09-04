@@ -19,4 +19,7 @@ public class EatsService {
 	public EatsDto selectOne(EatsDto eatsDto) {
 		return EatsDao.selectOne(eatsDto);
 	}
+	public int update(EatsDto eatsDto) {
+		return EatsDao.update(eatsDto);
+	}
 }

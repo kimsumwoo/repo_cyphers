@@ -14,6 +14,9 @@ public interface CodeGroupDao {
 	
 	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto);
 	
+	public int update(CodeGroupDto codeGroupDto);
+	
+	
 	
 	
 	

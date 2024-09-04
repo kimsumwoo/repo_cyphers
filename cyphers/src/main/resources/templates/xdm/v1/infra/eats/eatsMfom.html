@@ -473,8 +473,16 @@
 										<div class="card-body">
 											
 											
-										<form class="" method = "post" action = "/xdm/v1/infra/eats/eatsInst">
+										<form class="" method = "post" action = "/xdm/v1/infra/eats/eatsUpdt">
 											<h3 style="height: 60px;">기본정보</h3>
+											
+											<div class="col-3">
+												<div class="mb-3">
+													<label for="inputNumber" class="form-label">종류</label>
+													<input type="text" class="form-control" id="inputCompanyName"
+														placeholder="영대소문자,숫자" name = "seq" th:value="${item?.seq}">
+												</div>
+											</div>
 											
 											<div class="col-3">
 												<div class="mb-3">

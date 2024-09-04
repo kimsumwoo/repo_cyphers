@@ -37,6 +37,11 @@ public class eatsController {
 		model.addAttribute("item", EatsService.selectOne(eatsDto));
 		return "/xdm/v1/infra/eats/eatsMfom";
 	}
+	@RequestMapping(value = "/xdm/v1/infra/eats/eatsUpdt")
+	public String eatsUpdt(EatsDto eatsDto) {
+		EatsService.update(eatsDto);
+		return "redirect:/xdm/v1/infra/eats/eatsList";
+	}
 	
 
 }

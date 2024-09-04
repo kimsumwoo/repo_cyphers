@@ -63,6 +63,12 @@ public class CodeGroupController {
 		return "/xdm/v1/infra/codegroup/codeGroupXdmMfom";
 	}
 	
+	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmUpdt")
+	public String codeGroupXdmUpdt(CodeGroupDto codeGroupDto) {
+		CodeGroupService.update(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
 	
 
 

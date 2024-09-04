@@ -27,5 +27,9 @@ public class CodeGroupService {
 		return CodeGroupDao.selectOne(codeGroupDto);
 	}
 	
+	public int update(CodeGroupDto codeGroupDto) {
+		return CodeGroupDao.update(codeGroupDto);
+	}
+	
 
 }

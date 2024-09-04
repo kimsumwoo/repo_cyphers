@@ -77,5 +77,24 @@
 	and eats.seq = #{seq}
 	
 </select>
+<update id="update">
+
+
+	update eats
+	set
+		name = #{name}
+		,timeStart = #{timeStart}
+		,timeEnd = #{timeEnd}
+		,number = #{number}
+		,site	= #{site}
+		,pakingNy = #{pakingNy}
+		,bookingNy = #{bookingNy}
+		,freecallNy = #{freecallNy}
+		,eatsDesc = #{eatsDesc}
+		,date = #{date}
+		,fixDate = #{fixDate}
+	where 1=1
+		and seq = #{seq}
+</update>
 	  
 </mapper>

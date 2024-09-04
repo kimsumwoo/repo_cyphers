@@ -11,6 +11,8 @@ public int insert(EatsDto eatsDto);
 
 public EatsDto selectOne(EatsDto eatsDto);
 
+public int update(EatsDto eatsDto);
+
 
 
 
