@@ -2,6 +2,7 @@ package com.loras.infra.code;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
 public class CodeDto {
 	
 	private String seq;
@@ -10,9 +11,11 @@ public class CodeDto {
 	private	String cdTurn;
 	private String cdDesc;
 	private Integer delNy;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cdDateTime;
-	private	String cdFixDate;
-	private String codegroup_seq;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private	Date cdFixDate;
+	private Integer codegroup_seq;
 //	------
 	public String getSeq() {
 		return seq;
@@ -51,16 +54,17 @@ public class CodeDto {
 		this.delNy = delNy;
 	}
 
-	public String getCdFixDate() {
+	public Date getCdFixDate() {
 		return cdFixDate;
 	}
-	public void setCdFixDate(String cdFixDate) {
+	public void setCdFixDate(Date cdFixDate) {
 		this.cdFixDate = cdFixDate;
 	}
-	public String getCodegroup_seq() {
+	
+	public Integer getCodegroup_seq() {
 		return codegroup_seq;
 	}
-	public void setCodegroup_seq(String codegroup_seq) {
+	public void setCodegroup_seq(Integer codegroup_seq) {
 		this.codegroup_seq = codegroup_seq;
 	}
 	public Date getCdDateTime() {
@@ -69,7 +73,7 @@ public class CodeDto {
 	public void setCdDateTime(Date cdDateTime) {
 		this.cdDateTime = cdDateTime;
 	}
-	
+
 	
 	
 	

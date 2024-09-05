@@ -1,8 +1,7 @@
 package com.loras.infra.codegroup;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,6 @@ public class CodeGroupController {
 	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model) {
 		model.addAttribute("list", CodeGroupService.selectList());
-		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 //	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmForm")

@@ -19,7 +19,7 @@
 		,d.place
 		,d.placeDesc
 		,d.date
-		,d.fixDate+
+		,d.fixDate
 	from
 		education d
 	order by

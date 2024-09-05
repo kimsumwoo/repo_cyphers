@@ -536,7 +536,38 @@
 													<textarea class="form-control" id="inputMessage" name ="cgDesc" th:text = "${item?.cgDesc}"></textarea>
 												</div>
 											</div>
-										</div>	
+										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom04" class="form-label">삭제여부</label>
+													<select class="form-select" id="validationCustom04"  name ="delNy" th:value ="${item?.delNy}"> 
+														<option value="1" th:selected = "${item?.delNy == 1}">Y</option>
+														<option value="0" th:selected = "${item?.delNy == 0}">N</option>
+													</select>
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback"></div>
+												</div>
+											</div>
+										</div>
+											<div class="col-3">
+												<div class="mb-3">
+													<label for="validationCustom02" class="form-label">등록일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 Name= "cgDateTime" th:value="${#dates.format(item?.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"disabled="disabled">
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback"></div>
+											</div>
+										</div>
+											<div class="col-3">
+												<div class="mb-3">
+													<label for="validationCustom02" class="form-label">수정일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 Name= "cgFixDate" th:value="${#dates.format(item?.cgFixDate, 'yyyy-MM-dd HH:mm:ss')}" readonly="readonly">
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback"></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							<div class="row">
@@ -549,8 +580,10 @@
 										<div class="col d-flex justify-content-end">
 										<button class="btn" type="submit" style="float: right;">
 														<i class="bi bi-clipboard-plus"></i></button>
+								
 										</div>
 									</div>
+									
 								</div>
 							</div>
 						</div>

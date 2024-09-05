@@ -15,10 +15,66 @@
 		    ,b.delNy
 		    ,b.cdDateTime
 		    ,b.cdFixDate
+		    ,b.codegroup_seq
 		from
 			code b
 		order by
 			b.seq desc   
 	</select>
+	<insert id="insert">
+	INSERT INTO code (
+	    cdName,
+	    cdUseNy,
+	    cdTurn,
+	    cdDesc,
+	    delNy,
+	    cdDateTime,
+	    cdFixDate,
+	    codegroup_seq
+		) 
+	VALUES (
+	    #{cdName}
+	    ,#{cdUseNy}
+	    ,#{cdTurn}
+	    ,#{cdDesc}
+	    ,0
+	    ,now()
+	    ,now()
+	    ,1
+		)
+	</insert>
+	
+	<select id="selectOne" resultMap ="resultMapObj">
+		select
+			b.seq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.delNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		from
+			code b
+		where 1=1
+		and b.seq = #{seq}
+	</select>
+	
+	<update id="update">
+		update code
+		set
+			cdName = #{cdName}
+			,cdUseNy = #{cdUseNy}
+			,cdTurn = #{cdTurn}
+			,cdDesc = #{cdDesc}
+			,codegroup_seq = #{codegroup_seq}
+			,cdFixDate = now()
+			
+		where 1=1
+			and seq = #{seq}
+	</update>
+
+	
 	  
 </mapper>

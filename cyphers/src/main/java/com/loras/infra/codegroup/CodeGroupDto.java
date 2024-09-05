@@ -2,6 +2,8 @@ package com.loras.infra.codegroup;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class CodeGroupDto {
 	
 	private String seq;
@@ -10,9 +12,11 @@ public class CodeGroupDto {
 	private Integer cgTurn;
 	private String cgDesc;
 	private	Integer delNy;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cgDateTime;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date cgFixDate;
-	
+
 //	-----
 	public Date getCgDateTime() {
 		return cgDateTime;
