@@ -1,5 +1,7 @@
 package com.loras.infra.code;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,18 +20,22 @@ public class CodeController {
 			return "/xdm/v1/infra/code/codeXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmForm")
-	public String codeXdmForm(CodeDto codeDto,Model model) {
-		model.addAttribute("item",CodeService.selectOne(codeDto));
+	public String codeXdmForm(Model model) {
+		List<CodeDto> codeGroups = CodeService.selectListCodeGroup();
+		model.addAttribute("listCodeGroup",codeGroups);
 		return "/xdm/v1/infra/code/codeXdmForm";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmInst")
 	public String codeXdmInst(CodeDto codeDto) {
 		CodeService.insert(codeDto);
+		System.out.println(codeDto.getCodegroup_seq());
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmMfom")
 	public String codeXdmMfom(CodeDto codeDto, Model model) {
-	
+		model.addAttribute("item", CodeService.selectOne(codeDto));
+		List<CodeDto> codeGroups = CodeService.selectListCodeGroup();
+		model.addAttribute("listCodeGroup",codeGroups);
 		return "/xdm/v1/infra/code/codeXdmMfom";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUpdt")

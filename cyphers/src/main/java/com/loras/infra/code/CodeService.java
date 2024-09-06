@@ -25,5 +25,8 @@ public class CodeService {
 	public int update(CodeDto codeDto) {
 		return CodeDao.update(codeDto);
 	}
+	public List<CodeDto> selectListCodeGroup(){
+		return CodeDao.selectListCodeGroup();
+	}
 
 }

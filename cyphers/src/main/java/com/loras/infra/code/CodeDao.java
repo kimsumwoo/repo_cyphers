@@ -12,10 +12,11 @@ public interface CodeDao {
 	
 	public int insert(CodeDto codeDto);
 	
-	public CodeDto selectOne(CodeDto codeDto);
+	public Co y ctOne(CodeDto codeDto);
 	
 	public int update(CodeDto codeDto);
 	
+	public List<CodeDto> selectListCodeGroup();
 
 
 }

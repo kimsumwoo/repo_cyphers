@@ -16,10 +16,15 @@
 		    ,b.cdDateTime
 		    ,b.cdFixDate
 		    ,b.codegroup_seq
+		    ,a.seq
+		    ,a.cgName
 		from
 			code b
+		join codegroup as a
+		on a.seq = b.codegroup_seq
 		order by
-			b.seq desc   
+			b.seq desc 
+			  
 	</select>
 	<insert id="insert">
 	INSERT INTO code (
@@ -40,13 +45,13 @@
 	    ,0
 	    ,now()
 	    ,now()
-	    ,1
+	    ,#{codegroup_seq}
 		)
 	</insert>
 	
 	<select id="selectOne" resultMap ="resultMapObj">
 		select
-			b.seq
+			b.seq 
 		    ,b.cdName
 		    ,b.cdUseNy
 		    ,b.cdTurn
@@ -55,6 +60,7 @@
 		    ,b.cdDateTime
 		    ,b.cdFixDate
 		    ,b.codegroup_seq
+		    
 		from
 			code b
 		where 1=1
@@ -62,18 +68,35 @@
 	</select>
 	
 	<update id="update">
-		update code
+		update code as b 
+		left join codegroup as a
+		on b.codegroup_seq = a.cdseq
 		set
-			cdName = #{cdName}
-			,cdUseNy = #{cdUseNy}
-			,cdTurn = #{cdTurn}
-			,cdDesc = #{cdDesc}
-			,codegroup_seq = #{codegroup_seq}
-			,cdFixDate = now()
-			
+			b.cdName = #{cdName}
+			,b.cdUseNy = #{cdUseNy}
+			,b.cdTurn = #{cdTurn}
+			,b.cdDesc = #{cdDesc}
+			,b.cdFixDate = now()
+			,b.codegroup_seq = #{codegroup_seq}
+			,a.codeName = #{codeName}
+			,a.seq as cdseq = #{cdseq}
 		where 1=1
-			and seq = #{seq}
+			and b.seq = #{seq}
 	</update>
+	<select id="selectListCodeGroup" resultMap ="resultMapObj">
+		select
+			a.seq as codegroup_seq
+			,a.cgName
+		from codegroup a
+		where 1=1
+			and a.delNy = 0
+		order by
+			a.cgTurn Desc				
+	</select>
+	
+	
+	
+	
 
 	
 	  

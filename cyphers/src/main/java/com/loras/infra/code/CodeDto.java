@@ -15,7 +15,9 @@ public class CodeDto {
 	private	Date cdDateTime;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cdFixDate;
-	private Integer codegroup_seq;
+	private String codegroup_seq;
+	private String cdseq;
+	private String cgName;
 //	------
 	public String getSeq() {
 		return seq;
@@ -61,10 +63,10 @@ public class CodeDto {
 		this.cdFixDate = cdFixDate;
 	}
 	
-	public Integer getCodegroup_seq() {
+	public String getCodegroup_seq() {
 		return codegroup_seq;
 	}
-	public void setCodegroup_seq(Integer codegroup_seq) {
+	public void setCodegroup_seq(String codegroup_seq) {
 		this.codegroup_seq = codegroup_seq;
 	}
 	public Date getCdDateTime() {
@@ -73,6 +75,20 @@ public class CodeDto {
 	public void setCdDateTime(Date cdDateTime) {
 		this.cdDateTime = cdDateTime;
 	}
+	public String getCgName() {
+		return cgName;
+	}
+	public void setCgName(String cgName) {
+		this.cgName = cgName;
+	}
+	public String getCdseq() {
+		return cdseq;
+	}
+	public void setCdseq(String cdseq) {
+		this.cdseq = cdseq;
+	}
+	
+	
 
 	
 	

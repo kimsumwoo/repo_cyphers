@@ -15,6 +15,7 @@ public class userDto {
 	private Date dateTime;
 	private Date fixDate;
 	private String urDesc;
+	private String cdseq;
 	
 	
 	public String getSeq() {
@@ -89,6 +90,14 @@ public class userDto {
 	public void setUrDesc(String urDesc) {
 		this.urDesc = urDesc;
 	}
+	public String getCdseq() {
+		return cdseq;
+	}
+	public void setCdseq(String cdseq) {
+		this.cdseq = cdseq;
+	}
+	
+	
 	
 	
 	
