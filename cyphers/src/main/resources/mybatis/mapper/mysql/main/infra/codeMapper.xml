@@ -20,7 +20,7 @@
 		    ,a.cgName
 		from
 			code b
-		join codegroup as a
+		left join codegroup a
 		on a.seq = b.codegroup_seq
 		order by
 			b.seq desc 
@@ -60,7 +60,6 @@
 		    ,b.cdDateTime
 		    ,b.cdFixDate
 		    ,b.codegroup_seq
-		    
 		from
 			code b
 		where 1=1
@@ -68,9 +67,8 @@
 	</select>
 	
 	<update id="update">
-		update code as b 
-		left join codegroup as a
-		on b.codegroup_seq = a.cdseq
+		update code b 
+		
 		set
 			b.cdName = #{cdName}
 			,b.cdUseNy = #{cdUseNy}
@@ -78,8 +76,7 @@
 			,b.cdDesc = #{cdDesc}
 			,b.cdFixDate = now()
 			,b.codegroup_seq = #{codegroup_seq}
-			,a.codeName = #{codeName}
-			,a.seq as cdseq = #{cdseq}
+	
 		where 1=1
 			and b.seq = #{seq}
 	</update>
@@ -91,8 +88,21 @@
 		where 1=1
 			and a.delNy = 0
 		order by
-			a.cgTurn Desc				
+			a.cgTurn				
 	</select>
+	
+	<select id="selectListMfom" resultMap ="resultMapObj">
+		select
+			a.seq as codegroup_seq
+			,a.cgName
+			
+		from codegroup a
+		where 1=1
+			and a.delNy = 0
+		order by
+			a.cgTurn 			
+	</select>
+	
 	
 	
 	

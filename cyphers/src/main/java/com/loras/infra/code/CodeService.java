@@ -28,5 +28,8 @@ public class CodeService {
 	public List<CodeDto> selectListCodeGroup(){
 		return CodeDao.selectListCodeGroup();
 	}
+	public List<CodeDto> selectListMfom(){
+		return CodeDao.selectListMfom();
+	}
 
 }

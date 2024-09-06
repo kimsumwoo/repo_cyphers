@@ -34,8 +34,8 @@ public class CodeController {
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmMfom")
 	public String codeXdmMfom(CodeDto codeDto, Model model) {
 		model.addAttribute("item", CodeService.selectOne(codeDto));
-		List<CodeDto> codeGroups = CodeService.selectListCodeGroup();
-		model.addAttribute("listCodeGroup",codeGroups);
+		List<CodeDto> codes = CodeService.selectListMfom();
+		model.addAttribute("mfom", codes);
 		return "/xdm/v1/infra/code/codeXdmMfom";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUpdt")
