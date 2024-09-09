@@ -31,5 +31,11 @@ public class CodeService {
 	public List<CodeDto> selectListMfom(){
 		return CodeDao.selectListMfom();
 	}
+	public int uelete(CodeDto codeDto) {
+		return CodeDao.uelete(codeDto);
+	}
+	public int delete(CodeDto codeDto) {
+		return CodeDao.delete(codeDto);
+	}
 
 }

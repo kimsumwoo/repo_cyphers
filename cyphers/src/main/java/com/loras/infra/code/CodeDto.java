@@ -5,26 +5,21 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 public class CodeDto {
 	
-	private String seq;
+	private String cdSeq;
 	private String cdName;
 	private Integer cdUseNy;
 	private	String cdTurn;
 	private String cdDesc;
-	private Integer delNy;
+	private Integer cdDelNy;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cdDateTime;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cdFixDate;
 	private String codegroup_seq;
-	private String cdseq;
 	private String cgName;
+	private String cgSeq;
 //	------
-	public String getSeq() {
-		return seq;
-	}
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
+
 	public String getCdName() {
 		return cdName;
 	}
@@ -49,13 +44,14 @@ public class CodeDto {
 	public void setCdDesc(String cdDesc) {
 		this.cdDesc = cdDesc;
 	}
-	public Integer getDelNy() {
-		return delNy;
-	}
-	public void setDelNy(Integer delNy) {
-		this.delNy = delNy;
-	}
 
+
+	public Integer getCdDelNy() {
+		return cdDelNy;
+	}
+	public void setCdDelNy(Integer cdDelNy) {
+		this.cdDelNy = cdDelNy;
+	}
 	public Date getCdFixDate() {
 		return cdFixDate;
 	}
@@ -81,12 +77,19 @@ public class CodeDto {
 	public void setCgName(String cgName) {
 		this.cgName = cgName;
 	}
-	public String getCdseq() {
-		return cdseq;
+	public String getCdSeq() {
+		return cdSeq;
 	}
-	public void setCdseq(String cdseq) {
-		this.cdseq = cdseq;
+	public void setCdSeq(String cdSeq) {
+		this.cdSeq = cdSeq;
 	}
+	public String getCgSeq() {
+		return cgSeq;
+	}
+	public void setCgSeq(String cgSeq) {
+		this.cgSeq = cgSeq;
+	}
+	
 	
 	
 

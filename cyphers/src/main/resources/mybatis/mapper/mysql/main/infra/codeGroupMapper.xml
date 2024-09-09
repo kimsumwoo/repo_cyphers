@@ -8,18 +8,18 @@
 			<!-- 	담아줄객체 -->
 	<select id="selectList" resultMap="resultMapObj">
 		select
-			a.seq
+			a.cgSeq 
 		    ,a.cgName
 		    ,a.cgUseNy
 		    ,a.cgTurn
 		    ,a.cgDesc
-		    ,a.delNy
+		    ,a.cgDelNy
 		    ,a.cgDateTime
 		    ,a.cgFixDate
 		from
 			codegroup a
 		order by
-			a.seq desc   
+			a.cgSeq desc   
 	</select>
 	
 	<insert id="insert">
@@ -28,7 +28,7 @@
 			,cgUseNy
 			,cgTurn
 			,cgDesc
-			,delNy
+			,cgDelNy
 			,cgDateTime
 			,cgFixDate
 			)
@@ -44,18 +44,18 @@
 	</insert>
 	<select id="selectOne" resultMap ="resultMapObj">
 		select
-			a.seq
+			a.cgSeq
 		    ,a.cgName
 		    ,a.cgUseNy
 		    ,a.cgTurn
 		    ,a.cgDesc
-		    ,a.delNy
+		    ,a.cgDelNy
 		    ,a.cgDateTime
 		    ,a.cgFixDate
 		from
 			codegroup a
 		where 1=1
-		and a.seq = #{seq}
+		and a.cgSeq = #{cgSeq}
 	</select>
 	
 	<update id="update">
@@ -66,9 +66,24 @@
 			,cgTurn = #{cgTurn}
 			,cgDesc = #{cgDesc}
 			,cgFixDate = now()
+			,cgDelNy = #{cgDelNy}
 		where 1=1
-			and seq = #{seq}
+			and cgSeq = #{cgSeq}
 	</update>
 	
+	<delete id="delete">
+		delete from codegroup
+		where 1=1
+			and cgSeq = #{cgSeq}
+	</delete>
+	
+	<update id="uelete">
+		update codegroup
+		set
+			cgDelNy = 1
+		where 1=1
+			and cgSeq = #{cgSeq}
+	</update>
+	 
 	  
 </mapper>

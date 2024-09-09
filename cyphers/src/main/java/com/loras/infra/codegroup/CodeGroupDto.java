@@ -6,30 +6,23 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class CodeGroupDto {
 	
-	private String seq;
+	private String cgSeq;
 	private String cgName;
 	private	Integer cgUseNy;
 	private Integer cgTurn;
 	private String cgDesc;
-	private	Integer delNy;
+	private	Integer cgDelNy;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date cgDateTime;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date cgFixDate;
-
-//	-----
-	public Date getCgDateTime() {
-		return cgDateTime;
+	//-----------
+	public String getCgSeq() {
+		return cgSeq;
 	}
-	public void setCgDateTime(Date cgDateTime) {
-		this.cgDateTime = cgDateTime;
+	public void setCgSeq(String cgSeq) {
+		this.cgSeq = cgSeq;
 	}
-	
-
-	public String getSeq() {
-		return seq;
-	}
-	
 	public String getCgName() {
 		return cgName;
 	}
@@ -42,27 +35,29 @@ public class CodeGroupDto {
 	public void setCgUseNy(Integer cgUseNy) {
 		this.cgUseNy = cgUseNy;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public Integer getCgTurn() {
+		return cgTurn;
 	}
-	public Integer getUseNy() {
-		return cgUseNy;
+	public void setCgTurn(Integer cgTurn) {
+		this.cgTurn = cgTurn;
 	}
-	public void setUseNy(Integer useNy) {
-		this.cgUseNy = useNy;
-	}
-	
 	public String getCgDesc() {
 		return cgDesc;
 	}
 	public void setCgDesc(String cgDesc) {
 		this.cgDesc = cgDesc;
 	}
-	public Integer getDelNy() {
-		return delNy;
+	public Integer getCgDelNy() {
+		return cgDelNy;
 	}
-	public void setDelNy(Integer delNy) {
-		this.delNy = delNy;
+	public void setCgDelNy(Integer cgDelNy) {
+		this.cgDelNy = cgDelNy;
+	}
+	public Date getCgDateTime() {
+		return cgDateTime;
+	}
+	public void setCgDateTime(Date cgDateTime) {
+		this.cgDateTime = cgDateTime;
 	}
 	public Date getCgFixDate() {
 		return cgFixDate;
@@ -70,12 +65,8 @@ public class CodeGroupDto {
 	public void setCgFixDate(Date cgFixDate) {
 		this.cgFixDate = cgFixDate;
 	}
-	public Integer getCgTurn() {
-		return cgTurn;
-	}
-	public void setCgTurn(Integer cgTurn) {
-		this.cgTurn = cgTurn;
-	}
+	
+	
 	
 
 	

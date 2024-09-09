@@ -497,15 +497,15 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td></td>
-													<td th:text="${list.seq}"></td>
-													<td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${list.seq})}" th:text="${list.cgName}">
+													<td th:text="${list.cgSeq}"></td>
+													<td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(cgSeq=${list.cgSeq})}" th:text="${list.cgName}">
 														</a>
 													</td>
 													<td th:text="${list.cgTurn}"></td>
 													<td th:if ="${list.cgUseNy eq 0}">N</td>
 													<td th:unless = "${list.cgUseNy eq 0}">Y</td>	
-													<td th:if ="${list.delNy eq 0}">N</td>
-													<td th:unless = "${list.delNy eq 0}">Y</td>
+													<td th:if ="${list.cgDelNy eq 0}">N</td>
+													<td th:unless = "${list.cgDelNy eq 0}">Y</td>
 													<td th:text="${#dates.format(list.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													<td th:text="${#dates.format(list.cgFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 												</tr>

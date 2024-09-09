@@ -474,17 +474,17 @@
 										
 											
 											
-										<form class="needs-validation" method="post" action="/xdm/v1/infra/code/codeXdmUpdt">
+										<form class="needs-validation" name="mfom" method="post" action="/xdm/v1/infra/code/codeXdmUpdt">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">코드그룹 seq</label>
-													<select class="form-select" id="validationCustom04"  name ="codegroup_seq"> 
+													 <select class="form-select" id="validationCustom04"  name="codegroup_seq"> 
 														
-														<option th:each="list: ${mfom}" th:value="${list.codegroup_seq}" th:text="${list.cgName}"></option>
-													</select>
+														<option th:each="list:${mfom}" th:value="${list.cgSeq}" th:text="${list.cgName}" th:selected="${list.cgSeq == item.codegroup_seq}"></option>
+													</select> 
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">항목을 선택해 주세요.</div>
 												</div>
@@ -496,7 +496,7 @@
 													<div>
 													<label for="validationCustom02" class="form-label">코드seq</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="자동생성" name = "seq" th:value="${item?.seq}" readonly>
+														placeholder="자동생성" name = "cdSeq" th:value="${item?.cdSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
@@ -551,9 +551,9 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">삭제여부</label>
-													<select class="form-select" id="validationCustom04"  name ="delNy" th:value ="${item?.delNy}"> 
-														<option value="1" th:selected = "${item?.delNy == 1}">Y</option>
-														<option value="0" th:selected = "${item?.delNy == 0}">N</option>
+													<select class="form-select" id="validationCustom04"  name ="cdDelNy" th:value ="${item?.cdDelNy}"> 
+														<option value="1" th:selected = "${item?.cdDelNy == 1}">Y</option>
+														<option value="0" th:selected = "${item?.cdDelNy == 0}">N</option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback"></div>
@@ -585,6 +585,9 @@
 										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"<button class="btn" >
 										<i class="bi bi-file-text"></i>
 									</button></a>
+									<button class="btn" id="delbtn" type ="button">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
 									</div>
 									<div class ="col">
 										<div class="col d-flex justify-content-end">
@@ -633,6 +636,21 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<!--  <script>
+			document.getElementById("delbtn").onclick=function(){
+			let form = document.querySelector("form[name=mfom]");
+			form.action="/xdm/v1/infra/code/codeXdmUete";
+			form.submit();
+			}
+		 </script> -->
+		 
+		 <script>
+			document.getElementById("delbtn").onclick=function(){
+			let form = document.querySelector("form[name=mfom]");
+			form.action="/xdm/v1/infra/code/codeXdmDete";
+			form.submit();
+			}
+		 </script>
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

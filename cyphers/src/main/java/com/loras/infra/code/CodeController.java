@@ -40,7 +40,18 @@ public class CodeController {
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUpdt")
 	public String codeXdmUpdt(CodeDto codeDto) {
+		System.out.println(codeDto.getCdSeq());
 		CodeService.update(codeDto);
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+	}
+	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUete")
+	public String codeXdmUete(CodeDto codeDto) {
+		CodeService.uelete(codeDto);
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+	}
+	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmDete")
+	public String codeXdmDete(CodeDto codeDto) {
+		CodeService.delete(codeDto);
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
 	}
 	

@@ -474,7 +474,7 @@
 										
 											
 											
-										<form class="needs-validation" method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmUpdt">
+										<form class="needs-validation" method="post" name="mfom" action="/xdm/v1/infra/codegroup/codeGroupXdmUpdt">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -486,7 +486,7 @@
 													<div>
 													<label for="validationCustom02" class="form-label">코드그룹seq</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="자동생성" name = "seq" th:value="${item?.seq}" readonly>
+														placeholder="자동생성" name = "cgSeq" th:value="${item?.cgSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
@@ -541,9 +541,9 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">삭제여부</label>
-													<select class="form-select" id="validationCustom04"  name ="delNy" th:value ="${item?.delNy}"> 
-														<option value="1" th:selected = "${item?.delNy == 1}">Y</option>
-														<option value="0" th:selected = "${item?.delNy == 0}">N</option>
+													<select class="form-select" id="validationCustom04"  name ="delNy" th:value ="${item?.cgDelNy}" disabled> 
+														<option value="1" th:selected = "${item?.cgDelNy == 1}">Y</option>
+														<option value="0" th:selected = "${item?.cgDelNy == 0}">N</option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback"></div>
@@ -572,10 +572,14 @@
 								</div>
 							<div class="row">
 									<div class="col">
-										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"<button class="btn" >
+										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"><button class="btn">
 										<i class="bi bi-file-text"></i>
-									</button></a>
+									</button></a>	
+										<button class="btn" id="delbtn" type ="button">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
 									</div>
+									
 									<div class ="col">
 										<div class="col d-flex justify-content-end">
 										<button class="btn" type="submit" style="float: right;">
@@ -623,10 +627,26 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<!-- <script>
+			document.getElementById("delbtn").onclick = function(){
+				let form= document.querySelector("form[name=mfom]");
+				form.action ="/xdm/v1/infra/codegroup/codeGroupXdmUete";
+				form.submit();
+			}
+		</script> -->
+			
+		 <script>
+			document.getElementById("delbtn").onclick = function(){
+				let form= document.querySelector("form[name=mfom]");
+				form.action ="/xdm/v1/infra/codegroup/codegroupXdmDete";
+				form.submit();
+			}
+		</script> 
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/moment.js"></script>
+		
 		
 
 		<!-- *************

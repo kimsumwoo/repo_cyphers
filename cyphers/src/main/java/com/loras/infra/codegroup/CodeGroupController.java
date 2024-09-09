@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.loras.infra.code.CodeDto;
+
 
 @Controller
 public class CodeGroupController {
@@ -60,6 +62,21 @@ public class CodeGroupController {
 		CodeGroupService.update(codeGroupDto);
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
+	
+	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmUete")
+	public String codeGroupXdmuete(CodeGroupDto codeGroupDto) {
+		CodeGroupService.uelete(codeGroupDto);
+		
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	@RequestMapping(value = "/xdm/v1/infra/codegroup/codegroupXdmDete")
+	public String codegroupXdmDete(CodeGroupDto codeGroupDto) {
+		CodeGroupService.delete(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+		
+	
 	
 	
 

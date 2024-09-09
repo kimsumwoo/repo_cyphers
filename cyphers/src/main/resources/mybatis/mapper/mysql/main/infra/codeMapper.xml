@@ -7,23 +7,23 @@
 		
 	<select id="codeSelectList" resultMap="resultMapObj">
 		select
-			b.seq
+			b.cdSeq
 		    ,b.cdName
 		    ,b.cdUseNy
 		    ,b.cdTurn
 		    ,b.cdDesc
-		    ,b.delNy
+		    ,b.cdDelNy
 		    ,b.cdDateTime
 		    ,b.cdFixDate
 		    ,b.codegroup_seq
-		    ,a.seq
+		    ,a.cgSeq
 		    ,a.cgName
 		from
 			code b
 		left join codegroup a
-		on a.seq = b.codegroup_seq
+		on a.cgSeq = b.codegroup_seq
 		order by
-			b.seq desc 
+			b.cdSeq desc 
 			  
 	</select>
 	<insert id="insert">
@@ -32,7 +32,7 @@
 	    cdUseNy,
 	    cdTurn,
 	    cdDesc,
-	    delNy,
+	    cdDelNy,
 	    cdDateTime,
 	    cdFixDate,
 	    codegroup_seq
@@ -51,19 +51,19 @@
 	
 	<select id="selectOne" resultMap ="resultMapObj">
 		select
-			b.seq 
+			b.cdSeq 
 		    ,b.cdName
 		    ,b.cdUseNy
 		    ,b.cdTurn
 		    ,b.cdDesc
-		    ,b.delNy
+		    ,b.cdDelNy
 		    ,b.cdDateTime
 		    ,b.cdFixDate
 		    ,b.codegroup_seq
 		from
 			code b
 		where 1=1
-		and b.seq = #{seq}
+		and b.cdSeq = #{cdSeq}
 	</select>
 	
 	<update id="update">
@@ -76,32 +76,44 @@
 			,b.cdDesc = #{cdDesc}
 			,b.cdFixDate = now()
 			,b.codegroup_seq = #{codegroup_seq}
+			,b.cdDelNy = #{cdDelNy}
 	
 		where 1=1
-			and b.seq = #{seq}
+			and b.cdSeq = #{cdSeq}
 	</update>
 	<select id="selectListCodeGroup" resultMap ="resultMapObj">
 		select
-			a.seq as codegroup_seq
+			a.cgSeq
 			,a.cgName
 		from codegroup a
-		where 1=1
-			and a.delNy = 0
-		order by
-			a.cgTurn				
+		where 1=1			
 	</select>
 	
 	<select id="selectListMfom" resultMap ="resultMapObj">
 		select
-			a.seq as codegroup_seq
+			a.cgSeq
 			,a.cgName
 			
 		from codegroup a
 		where 1=1
-			and a.delNy = 0
 		order by
 			a.cgTurn 			
 	</select>
+	
+		<delete id="delete">
+		delete from code
+		where 1=1
+			and cdSeq = #{cdSeq}
+	</delete>
+	
+	<update id="uelete">
+		update code
+		set
+			cdDelNy = 1
+		where 1=1
+			and cdSeq = #{cdSeq}
+	</update>
+	 
 	
 	
 	

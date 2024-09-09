@@ -483,8 +483,8 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">코드그룹 seq</label>
-													<select class="form-select" id="validationCustom04"  name ="codegroup_seq"> 
-														<option th:each="list: ${listCodeGroup}" th:value="${list.codegroup_seq}" th:text="${list.cgName}"></option>
+													<select class="form-select" id="validationCustom04"  name ="cgSeq"> 
+														<option th:each="list: ${listCodeGroup}" th:value="${list.cgSeq}" th:text="${list.cgName}"></option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">항목을 선택해 주세요.</div>
@@ -497,7 +497,7 @@
 													<div>
 													<label for="validationCustom02" class="form-label">코드seq</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="자동생성" name = "seq" th:value="${item?.seq}" disabled>
+														placeholder="자동생성" name = "cdSeq" th:value="${item?.cdSeq}" disabled>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
