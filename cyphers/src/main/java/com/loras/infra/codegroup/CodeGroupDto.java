@@ -16,6 +16,7 @@ public class CodeGroupDto {
 	private	Date cgDateTime;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date cgFixDate;
+	private Integer count;
 	//-----------
 	public String getCgSeq() {
 		return cgSeq;
@@ -65,6 +66,13 @@ public class CodeGroupDto {
 	public void setCgFixDate(Date cgFixDate) {
 		this.cgFixDate = cgFixDate;
 	}
+	public Integer getCount() {
+		return count;
+	}
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+	
 	
 	
 	

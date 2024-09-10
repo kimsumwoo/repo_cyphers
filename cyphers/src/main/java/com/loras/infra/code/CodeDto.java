@@ -19,7 +19,12 @@ public class CodeDto {
 	private String cgName;
 	private String cgSeq;
 //	------
-
+	public String getCdSeq() {
+		return cdSeq;
+	}
+	public void setCdSeq(String cdSeq) {
+		this.cdSeq = cdSeq;
+	}
 	public String getCdName() {
 		return cdName;
 	}
@@ -44,26 +49,11 @@ public class CodeDto {
 	public void setCdDesc(String cdDesc) {
 		this.cdDesc = cdDesc;
 	}
-
-
 	public Integer getCdDelNy() {
 		return cdDelNy;
 	}
 	public void setCdDelNy(Integer cdDelNy) {
 		this.cdDelNy = cdDelNy;
-	}
-	public Date getCdFixDate() {
-		return cdFixDate;
-	}
-	public void setCdFixDate(Date cdFixDate) {
-		this.cdFixDate = cdFixDate;
-	}
-	
-	public String getCodegroup_seq() {
-		return codegroup_seq;
-	}
-	public void setCodegroup_seq(String codegroup_seq) {
-		this.codegroup_seq = codegroup_seq;
 	}
 	public Date getCdDateTime() {
 		return cdDateTime;
@@ -71,17 +61,23 @@ public class CodeDto {
 	public void setCdDateTime(Date cdDateTime) {
 		this.cdDateTime = cdDateTime;
 	}
+	public Date getCdFixDate() {
+		return cdFixDate;
+	}
+	public void setCdFixDate(Date cdFixDate) {
+		this.cdFixDate = cdFixDate;
+	}
+	public String getCodegroup_seq() {
+		return codegroup_seq;
+	}
+	public void setCodegroup_seq(String codegroup_seq) {
+		this.codegroup_seq = codegroup_seq;
+	}
 	public String getCgName() {
 		return cgName;
 	}
 	public void setCgName(String cgName) {
 		this.cgName = cgName;
-	}
-	public String getCdSeq() {
-		return cdSeq;
-	}
-	public void setCdSeq(String cdSeq) {
-		this.cdSeq = cdSeq;
 	}
 	public String getCgSeq() {
 		return cgSeq;
@@ -89,8 +85,8 @@ public class CodeDto {
 	public void setCgSeq(String cgSeq) {
 		this.cgSeq = cgSeq;
 	}
-	
-	
+
+
 	
 
 	

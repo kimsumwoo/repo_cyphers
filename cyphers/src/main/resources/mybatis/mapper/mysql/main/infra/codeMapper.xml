@@ -28,14 +28,14 @@
 	</select>
 	<insert id="insert">
 	INSERT INTO code (
-	    cdName,
-	    cdUseNy,
-	    cdTurn,
-	    cdDesc,
-	    cdDelNy,
-	    cdDateTime,
-	    cdFixDate,
-	    codegroup_seq
+	    cdName
+	    ,cdUseNy
+	    ,cdTurn
+	    ,cdDesc
+	    ,cdDelNy
+	    ,cdDateTime
+	    ,cdFixDate
+	    ,codegroup_seq
 		) 
 	VALUES (
 	    #{cdName}

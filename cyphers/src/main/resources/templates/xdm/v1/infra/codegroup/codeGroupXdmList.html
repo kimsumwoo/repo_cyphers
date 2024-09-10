@@ -480,6 +480,7 @@ td, th {
 													<th>순서</th>
 													<th>사용</th>
 													<th>삭제여부</th>
+													<th>개수</th>
 													<th>등록일</th>
 													<th>수정일</th>
 												</tr>
@@ -491,7 +492,7 @@ td, th {
 													</td>
 												</tr>
 												
-												<tr th:if="${!#lists.isEmpty(list)}" th:each="list : ${list}">
+												<tr th:if="${!#lists.isEmpty(list)}" th:each="list,count : ${list}">
 													<td>
 														<input class="form-check-input" type="checkbox"
 														value="" id="flexCheckDefault">
@@ -506,6 +507,7 @@ td, th {
 													<td th:unless = "${list.cgUseNy eq 0}">Y</td>	
 													<td th:if ="${list.cgDelNy eq 0}">N</td>
 													<td th:unless = "${list.cgDelNy eq 0}">Y</td>
+													<td th:text = "${list.count}"></td>
 													<td th:text="${#dates.format(list.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													<td th:text="${#dates.format(list.cgFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 												</tr>

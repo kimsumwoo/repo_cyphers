@@ -481,6 +481,7 @@ td, th {
 													<th>사용</th>
 													<th>삭제여부</th>
 													<th>코드그룹이름</th>
+													<th>코드그룹 코드</th>
 													<th>등록일</th>
 													<th>수정일</th>
 												</tr>
@@ -507,7 +508,8 @@ td, th {
 													<td th:unless = "${list.cdUseNy eq 0}">Y</td>	
 													<td th:if ="${list.cdDelNy eq 0}">N</td>
 													<td th:unless = "${list.cdDelNy eq 0}">Y</td>
-													<td th:text ="${list.cgName}"></td>		
+													<td th:text ="${list.cgName}"></td>
+													<td th:text ="${list.cgSeq}"></td>			
 													<td th:text="${#dates.format(list.cdDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													<td th:text="${#dates.format(list.cdFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 												</tr>

@@ -1,5 +1,8 @@
 package com.loras.infra.codegroup;
 
+import java.awt.print.Pageable;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -7,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.infra.code.CodeDto;
+import com.mysql.cj.log.Log;
 
 
 @Controller
@@ -75,6 +79,8 @@ public class CodeGroupController {
 		CodeGroupService.delete(codeGroupDto);
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
+	
+	
 		
 	
 	

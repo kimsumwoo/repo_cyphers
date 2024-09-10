@@ -21,6 +21,7 @@ public interface CodeDao {
 	public List<CodeDto> selectListMfom();
 	
 	public int uelete(CodeDto codeDto);
+
 	
 	public int delete(CodeDto codeDto);
 

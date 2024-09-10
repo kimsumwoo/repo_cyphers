@@ -1,5 +1,6 @@
 package com.loras.infra.code;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class CodeController {
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmInst")
 	public String codeXdmInst(CodeDto codeDto) {
-		CodeService.insert(codeDto);
 		System.out.println(codeDto.getCodegroup_seq());
+		CodeService.insert(codeDto);
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmMfom")
@@ -40,7 +41,6 @@ public class CodeController {
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUpdt")
 	public String codeXdmUpdt(CodeDto codeDto) {
-		System.out.println(codeDto.getCdSeq());
 		CodeService.update(codeDto);
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
 	}

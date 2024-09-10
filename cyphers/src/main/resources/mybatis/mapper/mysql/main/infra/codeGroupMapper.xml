@@ -16,6 +16,13 @@
 		    ,a.cgDelNy
 		    ,a.cgDateTime
 		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
 		from
 			codegroup a
 		order by
@@ -84,6 +91,21 @@
 		where 1=1
 			and cgSeq = #{cgSeq}
 	</update>
+	
+	<select id="count" resultMap ="resultMapObj">
+	select
+			a.cgSeq
+			,a.cgName
+			,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+			from
+			codegroup a
+	 </select>
 	 
 	  
 </mapper>

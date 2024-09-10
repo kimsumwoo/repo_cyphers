@@ -13,8 +13,7 @@ public class CodeService {
 	public CodeDao CodeDao;
 	
 	public List<CodeDto> codeSelectList(){
-		List<CodeDto> codes = CodeDao.codeSelectList();
-				return codes;
+		return CodeDao.codeSelectList();
 	}
 	public int insert(CodeDto codeDto) {
 		return CodeDao.insert(codeDto);

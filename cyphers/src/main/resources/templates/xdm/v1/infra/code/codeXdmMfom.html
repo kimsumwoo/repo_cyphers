@@ -551,7 +551,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">삭제여부</label>
-													<select class="form-select" id="validationCustom04"  name ="cdDelNy" th:value ="${item?.cdDelNy}"> 
+													<select class="form-select" id="validationCustom04"  name ="cdDelNy" th:value ="${item?.cdDelNy}" disabled> 
 														<option value="1" th:selected = "${item?.cdDelNy == 1}">Y</option>
 														<option value="0" th:selected = "${item?.cdDelNy == 0}">N</option>
 													</select>
@@ -582,10 +582,10 @@
 								</div>
 							<div class="row">
 									<div class="col">
-										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"<button class="btn" >
+										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"><button class="btn">
 										<i class="bi bi-file-text"></i>
 									</button></a>
-									<button class="btn" id="delbtn" type ="button">
+									<button class="btn"  type ="button" data-bs-toggle="modal" data-bs-target="#verticallyCentered">
 											<i class="bi bi-x-circle-fill"></i>
 										</button>
 									</div>
@@ -596,7 +596,24 @@
 								
 										</div>
 									</div>
-									
+									<div class="modal fade" id="verticallyCentered" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+										aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="verticallyCenteredLabel">Delete</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													삭제하시겠습니까?
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-dark" data-bs-dismiss="modal">아니요</button>
+													<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">네</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
