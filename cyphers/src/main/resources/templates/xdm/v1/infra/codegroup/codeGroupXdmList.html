@@ -68,6 +68,7 @@ td, th {
 </head>
 
 <body>
+	<form method = "post" action ="/xdm/v1/infra/codegroup/codeGroupXdmList">
 
 	<!-- Loading wrapper start -->
 	<!-- <div id="loading-wrapper">
@@ -368,25 +369,26 @@ td, th {
 									aria-current="page">Default</li>
 							</ol>
 							<h2 style="height: 80px;">CodeGroup</h2>
-
+							<!-- 검색 -->
 							<div class="card-title">
 
 								<div class="row">
-									<div
-										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">N</option>
-												<option value="Select">Y</option>
+											<select class="form-select" id="inputIndustryType" name ="shcgDelNy">
+												<option value="" >삭제여부</option>
+												<option value="0" name="shcgDelNy">N</option>
+												<option value="1" name="shcgDelNy">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">Y</option>
-												<option value="Select">N</option>
+											<select class="form-select" id="inputIndustryType" name ="shcgUseNy">
+												<option value="" >사용여부</option>
+												<option value="0" name ="shcgUseNy">N</option>
+												<option value="1" name ="shcgUseNy">Y</option>
 											</select>
 										</div>
 									</div>
@@ -395,6 +397,7 @@ td, th {
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType">
 												<option value="Select">수정일</option>
+												<option value="Select">등록일</option>
 											</select>
 										</div>
 									</div>
@@ -418,9 +421,11 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">검색구분</option>
-												<option value="Select">Y</option>
+											<select class="form-select" id="inputIndustryType" name="shOption">
+												<option value="">검색구분</option>
+												<option value="1" name="shOption">코드</option>
+												<option value="2" name="shOption">코드그룹 이름</option>
+												<option value="3" name="shOption">순서</option>
 											</select>
 										</div>
 									</div>
@@ -428,18 +433,18 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
 											<input type="text" class="form-control" id="inputPostalCode"
-												placeholder=>
+												name ="shValue">
 										</div>
 									</div>
-									<div
-										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
+									<!-- 버튼 -->
+									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
-											<button class="btn" type="button">
+											<button class="btn" type="submit">
 												<i class="bi bi-search"></i>
 											</button>
-											<button class="btn" type="button">
+											<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"><button class="btn" type="button">
 												<i class="bi bi-arrow-counterclockwise"></i>
-											</button>
+											</button></a>
 										</div>
 									</div>
 								</div>
@@ -478,8 +483,8 @@ td, th {
 													<th>코드</th>
 													<th>코드그룹 이름</th>
 													<th>순서</th>
-													<th>사용</th>
 													<th>삭제여부</th>
+													<th>사용</th>
 													<th>개수</th>
 													<th>등록일</th>
 													<th>수정일</th>
@@ -503,10 +508,10 @@ td, th {
 														</a>
 													</td>
 													<td th:text="${list.cgTurn}"></td>
-													<td th:if ="${list.cgUseNy eq 0}">N</td>
-													<td th:unless = "${list.cgUseNy eq 0}">Y</td>	
 													<td th:if ="${list.cgDelNy eq 0}">N</td>
-													<td th:unless = "${list.cgDelNy eq 0}">Y</td>
+													<td th:unless = "${list.cgDelNy eq 0}">Y</td>	
+													<td th:if ="${list.cgUseNy eq 0}">N</td>
+													<td th:unless = "${list.cgUseNy eq 0}">Y</td>
 													<td th:text = "${list.count}"></td>
 													<td th:text="${#dates.format(list.cgDateTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													<td th:text="${#dates.format(list.cgFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
@@ -592,7 +597,7 @@ td, th {
 			************* -->
 
 				</div>
-				<!-- Page wrapper end -->
+			</form>
 
 				<!-- *************
 			************ Required JavaScript Files *************

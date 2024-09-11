@@ -15,8 +15,8 @@ public class CodeGroupService {
 //	}
 	
 //	안에 내용이 없을때
-	public List<CodeGroupDto> selectList(){
-		return CodeGroupDao.selectList();
+	public List<CodeGroupDto> selectList(CodeGroupVo vo){
+		return CodeGroupDao.selectList(vo);
 	}
 	
 	public int insert(CodeGroupDto codeGroupDto) {
