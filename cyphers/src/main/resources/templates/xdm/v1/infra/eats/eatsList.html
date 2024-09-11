@@ -558,6 +558,7 @@
 													</div>
 												</div>
 											</div>
+											
 										
 										
 											<div class="col-1" style="float: right;">
@@ -609,12 +610,12 @@
 														<td th:text = "${eats.timeStart}">272</td>
 														<td th:text = "${eats.timeEnd}"></td>
 														<td th:text = "${eats.eatsDesc}" class="memmber">사용자</td>
-														<td th:text = "${#dates.format(eats.fixDate, 'yyyy-MM-dd HH-mm-ss')}"></td>
+														<td th:text = "${#dates.format(eats.date, 'yyyy-MM-dd HH:mm:ss')}"></td>
 														<td th:if ="${eats.pakingNy eq 0}">Y</td>
 														<td th:unless = "${eats.pakingNy eq 0}">N</td>
 														<td th:if = "${eats.freecallNy eq 0}">Y</td>
 														<td th:unless = "${eats.freecallNy eq 0}">N</td>
-														<td th:text = "${#dates.format(eats.date, 'yyyy-MM-dd HH/mm/ss')}"></td>
+														<td th:text = "${#dates.format(eats.fixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 													</tr>
 													
 												</tbody>

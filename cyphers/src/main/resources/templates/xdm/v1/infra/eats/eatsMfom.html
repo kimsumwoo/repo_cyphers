@@ -598,6 +598,33 @@
 												</div>
 											</div>
 										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">등록일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "date" th:value="${#dates.format(item?.date, 'yyyy-MM-dd HH:mm:ss')}" disabled>
+													 
+													
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">수정일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 name= "fixDate" th:value="${#dates.format(item?.date, 'yyyy-MM-dd HH:mm:ss')}" readonly>
+													 
+													
+													<div class="invalid-feedback">순서를 입력해주세요.</div>
+												</div>
+											</div>
+										</div>
+										<button class="btn" id="delbtn" type ="button">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
 										
 											
 											

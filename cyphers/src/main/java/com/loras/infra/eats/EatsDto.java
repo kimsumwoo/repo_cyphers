@@ -2,6 +2,8 @@ package com.loras.infra.eats;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class EatsDto {
 	private String seq;
 	private String type;
@@ -14,7 +16,9 @@ public class EatsDto {
 	private Integer bookingNy;
 	private Integer freecallNy;
 	private String eatsDesc;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fixDate;
 //	------
 	public String getSeq() {

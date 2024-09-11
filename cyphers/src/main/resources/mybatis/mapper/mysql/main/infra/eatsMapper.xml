@@ -78,21 +78,21 @@
 	
 </select>
 <update id="update">
-	update eats
+	update eats eats
 	set
-		name = #{name}
-		,timeStart = #{timeStart}
-		,timeEnd = #{timeEnd}
-		,number = #{number}
-		,site	= #{site}
-		,pakingNy = #{pakingNy}
-		,bookingNy = #{bookingNy}
-		,freecallNy = #{freecallNy}
-		,eatsDesc = #{eatsDesc}
-		,date = #{date}
-		,fixDate = #{fixDate}
+		eats.name = #{name}
+		,eats.timeStart = #{timeStart}
+		,eats.timeEnd = #{timeEnd}
+		,eats.number = #{number}
+		,eats.site	= #{site}
+		,eats.pakingNy = #{pakingNy}
+		,eats.bookingNy = #{bookingNy}
+		,eats.freecallNy = #{freecallNy}
+		,eats.eatsDesc = #{eatsDesc}
+		,eats.fixDate = now()
+		
 	where 1=1
-		and seq = #{seq}
+		and eats.seq = #{seq}
 </update>
 	  
 </mapper>
