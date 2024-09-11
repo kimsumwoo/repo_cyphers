@@ -22,6 +22,16 @@
 			code b
 		left join codegroup a
 		on a.cgSeq = b.codegroup_seq
+		where 1=1
+		<if test ="shcdDelNy != null and !shcdDelNy.equals('')">and cdDelNy = #{shcdDelNy}</if>
+		<if test ="shcdUseNy != null and !shcdUseNy.equals('')">and cdUseNy = #{shcdUseNy}</if>
+		<choose>
+			<when test="shOption == 1">and cdSeq = #{shValue}</when>
+			<when test="shOption == 2">and cgSeq = #{shValue}</when>
+			<when test="shOption == 3">and cdName like concat('%',#{shValue},'%')</when>	
+			<when test="shOption == 4">and cgName like concat('%',#{shValue},'%')</when>
+			<when test="shOption == 5">and cdTurn = #{shValue}</when>
+		</choose>
 		order by
 			b.cdSeq desc 
 			  
@@ -77,7 +87,6 @@
 			,b.cdFixDate = now()
 			,b.codegroup_seq = #{codegroup_seq}
 			,b.cdDelNy = #{cdDelNy}
-	
 		where 1=1
 			and b.cdSeq = #{cdSeq}
 	</update>

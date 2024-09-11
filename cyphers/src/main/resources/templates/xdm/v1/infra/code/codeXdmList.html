@@ -68,7 +68,7 @@ td, th {
 </head>
 
 <body>
-
+<form method="post" action="/xdm/v1/infra/code/codeXdmList">
 	<!-- Loading wrapper start -->
 	<!-- <div id="loading-wrapper">
 			<div class="spinner">
@@ -375,18 +375,20 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">N</option>
-												<option value="Select">Y</option>
+											<select class="form-select" id="inputIndustryType" name="shcdDelNy">
+												<option value="" >DelNy</option>
+												<option value="0" name="shcdDelNy">N</option>
+												<option value="1" name="shcdDelNy">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">Y</option>
-												<option value="Select">N</option>
+											<select class="form-select" id="inputIndustryType" name="shcdUseNy">
+												<option value="">UseNy</option>
+												<option value="0" name="shcdUseNy">N</option>
+												<option value="1" name="shcdUseNy">Y</option>
 											</select>
 										</div>
 									</div>
@@ -418,9 +420,13 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">검색구분</option>
-												<option value="Select">Y</option>
+											<select class="form-select" id="inputIndustryType" name="shOption">
+												<option value="">검색구분</option>
+												<option value="1" name="shOption">cdSeq</option>
+												<option value="2" name="shOption">cgSeq</option>
+												<option value="3" name="shOption">cdName</option>
+												<option value="4" name="shOption">cgName</option>
+												<option value="5" name="shOption">cdTurn</option>
 											</select>
 										</div>
 									</div>
@@ -428,18 +434,18 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
 											<input type="text" class="form-control" id="inputPostalCode"
-												placeholder=>
+												name="shValue">
 										</div>
 									</div>
-									<div
-										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
+									<!--버튼1  -->
+									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
-											<button class="btn" type="button">
+											<button class="btn" type="submit">
 												<i class="bi bi-search"></i>
 											</button>
-											<button class="btn" type="button">
+											<a href="/xdm/v1/infra/code/codeXdmList"><button class="btn" type="button">
 												<i class="bi bi-arrow-counterclockwise"></i>
-											</button>
+											</button></a>
 										</div>
 									</div>
 								</div>
@@ -594,7 +600,7 @@ td, th {
 			************* -->
 
 				</div>
-				<!-- Page wrapper end -->
+			</form>
 
 				<!-- *************
 			************ Required JavaScript Files *************

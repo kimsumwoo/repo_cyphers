@@ -8,7 +8,7 @@ import com.loras.infra.codegroup.CodeGroupDto;
 
 @Repository
 public interface CodeDao {
-	public List<CodeDto> codeSelectList();
+	public List<CodeDto> codeSelectList(CodeVo Vo);
 	
 	public int insert(CodeDto codeDto);
 	
