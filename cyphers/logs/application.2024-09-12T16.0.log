@@ -1,0 +1,1169 @@
+2024-09-12T16:00:07.412 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:00:12.663 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:00:21.165 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:03:15.740 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:03:17.603 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:03:25.938 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+		 and cdDelNy = 0 
+		 and cdUseNy = 1 
+
+		order by
+			b.cdSeq desc
+ {executed in 2 msec} 
+2024-09-12T16:03:36.839 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+167. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 0 msec} 
+2024-09-12T16:05:12.441 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:05:12.442 [Thread-123] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:05:12.526 [Thread-123] INFO c.z.h.HikariDataSource - HikariPool-18 - Shutdown initiated... 
+2024-09-12T16:05:12.529 [Thread-123] INFO c.z.h.HikariDataSource - HikariPool-18 - Shutdown completed. 
+2024-09-12T16:05:12.580 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:05:12.581 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:05:12.717 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:05:12.717 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:05:12.718 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:05:12.718 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:05:12.724 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:05:12.725 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 143 ms 
+2024-09-12T16:05:12.838 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:05:12.844 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:05:12.847 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:05:12.851 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.285 seconds (process running for 5234.127) 
+2024-09-12T16:05:12.852 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:05:13.273 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-12T16:05:13.273 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-12T16:05:13.274 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-12T16:05:13.275 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-19 - Starting... 
+2024-09-12T16:05:13.289 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-19 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@57e058b3 
+2024-09-12T16:05:13.289 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-19 - Start completed. 
+2024-09-12T16:05:13.290 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+177. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:05:17.551 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+177. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:05:55.755 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+177. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:06:06.070 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+177. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:06:55.803 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:06:55.804 [Thread-127] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:06:55.881 [Thread-127] INFO c.z.h.HikariDataSource - HikariPool-19 - Shutdown initiated... 
+2024-09-12T16:06:55.883 [Thread-127] INFO c.z.h.HikariDataSource - HikariPool-19 - Shutdown completed. 
+2024-09-12T16:06:55.937 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:06:55.937 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:06:56.052 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:06:56.052 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:06:56.052 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:06:56.052 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:06:56.059 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:06:56.059 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 121 ms 
+2024-09-12T16:06:56.180 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:06:56.185 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:06:56.192 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:06:56.197 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.272 seconds (process running for 5337.473) 
+2024-09-12T16:06:56.198 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:07:57.762 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:07:57.763 [Thread-131] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:07:57.900 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:07:57.900 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:07:58.021 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:07:58.022 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:07:58.022 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:07:58.022 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:07:58.028 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:07:58.028 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 126 ms 
+2024-09-12T16:07:58.137 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:07:58.142 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:07:58.144 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:07:58.148 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.26 seconds (process running for 5399.424) 
+2024-09-12T16:07:58.149 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:07:58.217 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-12T16:07:58.217 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-12T16:07:58.217 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-12T16:07:58.220 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-20 - Starting... 
+2024-09-12T16:07:58.229 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-20 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@44813b1a 
+2024-09-12T16:07:58.229 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-20 - Start completed. 
+2024-09-12T16:07:58.230 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-11' AND '2024-09-12' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:08:12.998 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-10' AND '2024-09-12' 
+		order by
+			b.cdSeq desc
+ {executed in 2 msec} 
+2024-09-12T16:08:33.758 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-10' AND '2024-09-12' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:08:55.448 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-11' AND '2024-09-12' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:03.525 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-11' AND '2024-09-12' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:04.541 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 2 msec} 
+2024-09-12T16:09:13.638 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05' AND '2024-09-05' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:20.684 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05' AND '2024-09-06' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:39.500 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+			 AND a.cgDateTime BETWEEN '2024-09-06 00:00:00' AND '2024-09-12 23:59:59' 	
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:43.950 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+187. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+			 AND a.cgDateTime BETWEEN '2024-09-11 00:00:00' AND '2024-09-12 23:59:59' 	
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:09:48.975 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:09:48.976 [Thread-135] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:09:49.088 [Thread-135] INFO c.z.h.HikariDataSource - HikariPool-20 - Shutdown initiated... 
+2024-09-12T16:09:49.092 [Thread-135] INFO c.z.h.HikariDataSource - HikariPool-20 - Shutdown completed. 
+2024-09-12T16:09:49.157 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:09:49.158 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:09:49.370 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:09:49.370 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:09:49.371 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:09:49.371 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:09:49.382 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:09:49.382 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 223 ms 
+2024-09-12T16:09:49.546 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:09:49.552 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:09:49.554 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:09:49.561 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.42 seconds (process running for 5510.836) 
+2024-09-12T16:09:49.563 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:10:24.535 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:10:24.536 [Thread-139] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:24.676 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:10:24.676 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:10:24.785 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:10:24.785 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:24.785 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:10:24.785 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:10:24.793 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:10:24.793 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 116 ms 
+2024-09-12T16:10:24.894 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:10:24.898 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:24.900 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:10:24.907 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.241 seconds (process running for 5546.182) 
+2024-09-12T16:10:24.908 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:10:35.817 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-12T16:10:35.818 [Thread-143] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:35.946 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 6472 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T16:10:35.946 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T16:10:36.062 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T16:10:36.063 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:36.063 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T16:10:36.063 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T16:10:36.069 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T16:10:36.070 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 123 ms 
+2024-09-12T16:10:36.173 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T16:10:36.178 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T16:10:36.180 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T16:10:36.184 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.25 seconds (process running for 5557.46) 
+2024-09-12T16:10:36.185 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-12T16:10:38.008 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-12T16:10:38.008 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-12T16:10:38.010 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-12T16:10:38.012 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-21 - Starting... 
+2024-09-12T16:10:38.022 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-21 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2c437b98 
+2024-09-12T16:10:38.023 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-21 - Start completed. 
+2024-09-12T16:10:38.027 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05 00:00:00' AND '2024-09-06 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:10:44.566 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-11 00:00:00' AND '2024-09-12 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:17:33.708 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-11 00:00:00' AND '2024-09-12 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:17:40.384 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-11 00:00:00' AND '2024-09-12 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 2 msec} 
+2024-09-12T16:17:49.093 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-10 00:00:00' AND '2024-09-11 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:18:02.542 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-10 00:00:00' AND '2024-09-10 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:23:36.015 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-11 00:00:00' AND '2024-09-11 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:23:41.973 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:23:55.160 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-10 00:00:00' AND '2024-09-10 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:24:23.653 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-08 00:00:00' AND '2024-09-08 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 0 msec} 
+2024-09-12T16:24:32.752 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-10 00:00:00' AND '2024-09-10 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 0 msec} 
+2024-09-12T16:24:44.133 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05 00:00:00' AND '2024-09-05 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:24:53.886 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-06 00:00:00' AND '2024-09-06 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:25:04.837 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-12 00:00:00' AND '2024-09-12 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:25:07.506 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq 
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		from
+			code b
+		where 1=1
+		and b.cdSeq = '32'
+ {executed in 0 msec} 
+2024-09-12T16:25:07.508 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			a.cgSeq
+			,a.cgName
+
+		from codegroup a
+		where 1=1
+		order by
+			a.cgTurn
+ {executed in 1 msec} 
+2024-09-12T16:25:10.441 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. update code b 
+
+		set
+			b.cdName = 'asdasd'
+			,b.cdUseNy = 1
+			,b.cdTurn = '1234'
+			,b.cdDesc = 'adsdㅁ'
+			,b.cdFixDate = now()
+			,b.codegroup_seq = '1'
+			,b.cdDelNy = NULL
+		where 1=1
+			and b.cdSeq = '32'
+ {executed in 9 msec} 
+2024-09-12T16:25:10.448 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:25:16.199 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+197. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdFixDate BETWEEN '2024-09-12 00:00:00' AND '2024-09-12 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:49:21.332 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 2 msec} 
+2024-09-12T16:49:44.672 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05 00:00:00' AND '2024-09-06 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:49:52.324 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		 AND b.cdDateTime BETWEEN '2024-09-05 00:00:00' AND '2024-09-05 23:59:59' 
+		order by
+			b.cdSeq desc
+ {executed in 0 msec} 
+2024-09-12T16:50:58.136 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			a.cgSeq
+			,a.cgName
+		from codegroup a
+		where 1=1
+ {executed in 0 msec} 
+2024-09-12T16:51:20.251 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. INSERT INTO code (
+	    cdName
+	    ,cdUseNy
+	    ,cdTurn
+	    ,cdDesc
+	    ,cdDelNy
+	    ,cdDateTime
+	    ,cdFixDate
+	    ,codegroup_seq
+		) 
+	VALUES (
+	    '영건씨퇴근기원'
+	    ,1
+	    ,'1111'
+	    ,'1234'
+	    ,0
+	    ,now()
+	    ,now()
+	    ,'16'
+		)
+ {executed in 4 msec} 
+2024-09-12T16:51:20.255 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
+2024-09-12T16:52:10.983 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq 
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		from
+			code b
+		where 1=1
+		and b.cdSeq = '64'
+ {executed in 1 msec} 
+2024-09-12T16:52:10.984 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			a.cgSeq
+			,a.cgName
+
+		from codegroup a
+		where 1=1
+		order by
+			a.cgTurn
+ {executed in 0 msec} 
+2024-09-12T16:52:13.357 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. delete from code
+		where 1=1
+			and cdSeq = '64'
+ {executed in 4 msec} 
+2024-09-12T16:52:13.361 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		    ,a.cgSeq
+		    ,a.cgName
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+
+		order by
+			b.cdSeq desc
+ {executed in 1 msec} 
