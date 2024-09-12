@@ -29,9 +29,14 @@
 			<if test="shcgDelNy != null and !shcgDelNy.equals('')">and cgDelNy = #{shcgDelNy}</if>
 			<if test="shcgUseNy != null and !shcgUseNy.equals('')">and cgUseNy = #{shcgUseNy}</if>
 			<choose>
-			<when test="shOption == 1">and cgSeq = #{shValue}</when>
-			<when test="shOption == 2">and cgName like concat('%',#{shValue},'%')</when>
-			<when test="shOption == 3">and cgTurn like concat('%',#{shValue},'%')</when>
+				<when test="shOption == 1">and cgSeq = #{shValue}</when>
+				<when test="shOption == 2">and cgName like concat('%',#{shValue},'%')</when>
+				<when test="shOption == 3">and cgTurn like concat('%',#{shValue},'%')</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 1">AND a.cgDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.cgFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>	
 		order by
 			a.cgSeq desc   

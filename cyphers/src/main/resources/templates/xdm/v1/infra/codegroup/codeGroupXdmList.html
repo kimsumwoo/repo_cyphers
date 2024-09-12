@@ -54,6 +54,9 @@
 	href="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.bs5.css" />
 <link rel="stylesheet"
 	href="/xdm/v1/template/Arise/assets/vendor/datatables/dataTables.bs5-custom.css" />
+<!--by developer  -->
+<link rel ="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css" />
+			
 <style>
 .member {
 	
@@ -68,7 +71,7 @@ td, th {
 </head>
 
 <body>
-	<form method = "post" action ="/xdm/v1/infra/codegroup/codeGroupXdmList">
+	<form method = "post" action ="/xdm/v1/infra/codegroup/codeGroupXdmList" autocomplete="off">
 
 	<!-- Loading wrapper start -->
 	<!-- <div id="loading-wrapper">
@@ -395,24 +398,25 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType">
-												<option value="Select">수정일</option>
-												<option value="Select">등록일</option>
+											<select class="form-select" id="inputIndustryType" name ="shOptionDate">
+												<option value="">날짜선택</option>
+												<option value="1" name="shOptionDate">등록일</option>
+												<option value="2" name="shOptionDate">수정일</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
 										<div class="mb-2">
-											<input type="text" class="form-control" id="inputCompanyName"
-												placeholder=>
+											<input type="text"  class="form-control" 
+											name="shDateStart" id="shDateStart" placeholder="시작일">
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-2">
 											<input type="text" class="form-control"
-												id="inputBusinessAddress" placeholder=>
+											name="shDateEnd" id="shDateEnd" placeholder="종료일">
 										</div>
 									</div>
 								</div>
@@ -598,16 +602,39 @@ td, th {
 
 				</div>
 			</form>
+			
+			
 
 				<!-- *************
 			************ Required JavaScript Files *************
 		************* -->
+		
+				
 				<!-- Required jQuery first, then Bootstrap Bundle JS -->
 				<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
-				<script
-					src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
+				<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 				<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>
 				<script src="/xdm/v1/template/Arise/assets/js/moment.js"></script>
+				
+				<!--by developer  -->
+				<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+				
+				<script type="text/javascript">
+					
+					window.addEventListener('load', function() {
+						
+						$.datetimepicker.setLocale('ko');
+						
+						$("#shDateStart,#shDateEnd").datetimepicker({
+							timepicker:false,
+							format:'Y-m-d'
+						});	
+					});
+				</script>
+				
+				
+				
+				
 
 				<!-- *************
 			************ Vendor Js Files *************

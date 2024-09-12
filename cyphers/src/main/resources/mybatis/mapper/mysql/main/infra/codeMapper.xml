@@ -32,6 +32,11 @@
 			<when test="shOption == 4">and cgName like concat('%',#{shValue},'%')</when>
 			<when test="shOption == 5">and cdTurn = #{shValue}</when>
 		</choose>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND b.cdDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			<when test="shOptionDate == 2">AND b.cdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+		</choose>
 		order by
 			b.cdSeq desc 
 			  
