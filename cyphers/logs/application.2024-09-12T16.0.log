@@ -1167,3 +1167,61 @@
 		order by
 			b.cdSeq desc
  {executed in 1 msec} 
+2024-09-12T16:53:06.878 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			a.cgSeq
+			,a.cgName
+		from codegroup a
+		where 1=1
+ {executed in 0 msec} 
+2024-09-12T16:53:13.540 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			b.cdSeq 
+		    ,b.cdName
+		    ,b.cdUseNy
+		    ,b.cdTurn
+		    ,b.cdDesc
+		    ,b.cdDelNy
+		    ,b.cdDateTime
+		    ,b.cdFixDate
+		    ,b.codegroup_seq
+		from
+			code b
+		where 1=1
+		and b.cdSeq = '63'
+ {executed in 1 msec} 
+2024-09-12T16:53:13.541 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			a.cgSeq
+			,a.cgName
+
+		from codegroup a
+		where 1=1
+		order by
+			a.cgTurn
+ {executed in 0 msec} 
+2024-09-12T16:55:37.262 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+207. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+			 AND a.cgFixDate BETWEEN '2024-09-12 00:00:00' AND '2024-09-12 23:59:59' 	
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
