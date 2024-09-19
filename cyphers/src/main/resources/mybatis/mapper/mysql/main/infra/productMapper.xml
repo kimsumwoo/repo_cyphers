@@ -49,7 +49,6 @@
 			,now()
 			,now()
 			)
-		
 	</insert>
 	
 	<select id="SelectOne" resultMap="resultMapObj">
