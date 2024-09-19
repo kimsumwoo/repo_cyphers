@@ -49,8 +49,6 @@ public class CodeGroupController {
 	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmInst")
 	public String codeGroupXdmInst(CodeGroupDto codeGroupDto) {
 		
-		System.out.println("codeGroupDto.getcgName():" + codeGroupDto.getCgName());
-		
 		CodeGroupService.insert(codeGroupDto);
 		
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";

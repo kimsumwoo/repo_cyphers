@@ -2,3 +2,74 @@
 2024-09-12T17:02:43.839 [RMI TCP Connection(259)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
 2024-09-12T17:02:43.986 [RMI TCP Connection(259)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-21 - Shutdown initiated... 
 2024-09-12T17:02:43.990 [RMI TCP Connection(259)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-21 - Shutdown completed. 
+2024-09-12T17:10:31.720 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 13240 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-12T17:10:31.725 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-12T17:10:31.755 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-12T17:10:31.755 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-12T17:10:32.532 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-12T17:10:32.539 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-12T17:10:32.541 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-12T17:10:32.542 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-12T17:10:32.578 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-12T17:10:32.578 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 823 ms 
+2024-09-12T17:10:33.190 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-12T17:10:33.206 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-12T17:10:33.221 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-12T17:10:33.230 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.738 seconds (process running for 2.227) 
+2024-09-12T17:10:33.278 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-12T17:10:33.278 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-12T17:10:33.280 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-12T17:10:33.316 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-12T17:10:33.518 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@35cb34ed 
+2024-09-12T17:10:33.519 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-12T17:10:33.551 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		ad.seq
+		,ad.addName
+		,ad.zip
+		,ad.add1
+		,ad.add2
+		,ad.num1
+		,ad.num2
+		,ad.type
+		,ad.date
+		,ad.fixDate
+	from
+		address ad
+	order by
+		ad.seq desc
+ {executed in 19 msec} 
+2024-09-12T17:10:34.320 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		ad.seq
+		,ad.addName
+		,ad.zip
+		,ad.add1
+		,ad.add2
+		,ad.num1
+		,ad.num2
+		,ad.type
+		,ad.date
+		,ad.fixDate
+	from
+		address ad
+	order by
+		ad.seq desc
+ {executed in 1 msec} 
+2024-09-12T17:13:11.605 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		ad.seq
+		,ad.addName
+		,ad.zip
+		,ad.add1
+		,ad.add2
+		,ad.num1
+		,ad.num2
+		,ad.type
+		,ad.date
+		,ad.fixDate
+	from
+		address ad
+	where 1=1
+	and ad.seq = '31'
+ {executed in 1 msec} 

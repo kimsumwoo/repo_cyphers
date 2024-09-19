@@ -1,0 +1,1792 @@
+2024-09-18T13:00:31.711 [http-nio-8080-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'mmDesc' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy10/jdk.proxy10.$Proxy182.insert(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy10/jdk.proxy10.$Proxy183.insert(Unknown Source)
+	at com.loras.infra.member.MemberService.insert(MemberService.java:20)
+	at com.loras.infra.member.MemberController.memberInst(MemberController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:00:38.305 [http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'mmDesc' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy10/jdk.proxy10.$Proxy182.insert(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy10/jdk.proxy10.$Proxy183.insert(Unknown Source)
+	at com.loras.infra.member.MemberService.insert(MemberService.java:20)
+	at com.loras.infra.member.MemberController.memberInst(MemberController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:01:53.406 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'mmDesc' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy10/jdk.proxy10.$Proxy182.insert(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy10/jdk.proxy10.$Proxy183.insert(Unknown Source)
+	at com.loras.infra.member.MemberService.insert(MemberService.java:20)
+	at com.loras.infra.member.MemberController.memberInst(MemberController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:01:55.834 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'mmDesc' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy10/jdk.proxy10.$Proxy182.insert(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy10/jdk.proxy10.$Proxy183.insert(Unknown Source)
+	at com.loras.infra.member.MemberService.insert(MemberService.java:20)
+	at com.loras.infra.member.MemberController.memberInst(MemberController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:01:59.866 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'mmDesc' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy10/jdk.proxy10.$Proxy182.insert(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy10/jdk.proxy10.$Proxy183.insert(Unknown Source)
+	at com.loras.infra.member.MemberService.insert(MemberService.java:20)
+	at com.loras.infra.member.MemberController.memberInst(MemberController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:03:32.331 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:03:32.333 [Thread-31] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:32.416 [Thread-31] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-18T13:03:32.421 [Thread-31] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-18T13:03:32.470 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:03:32.471 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:03:32.598 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:03:32.598 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:32.599 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:03:32.599 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:03:32.606 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:03:32.607 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 135 ms 
+2024-09-18T13:03:32.722 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:03:32.726 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:32.733 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:03:32.738 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.282 seconds (process running for 1327.891) 
+2024-09-18T13:03:32.740 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:03:42.485 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:03:42.485 [Thread-35] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:42.619 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:03:42.620 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:03:42.759 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:03:42.760 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:42.760 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:03:42.760 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:03:42.766 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:03:42.766 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 145 ms 
+2024-09-18T13:03:42.866 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:03:42.870 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:03:42.874 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:03:42.879 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.276 seconds (process running for 1338.032) 
+2024-09-18T13:03:42.880 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:03:43.188 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:03:43.188 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:03:43.188 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-18T13:03:49.346 [http-nio-8080-exec-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-18T13:03:49.360 [http-nio-8080-exec-7] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4c4b92a4 
+2024-09-18T13:03:49.360 [http-nio-8080-exec-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-18T13:03:49.367 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇ'
+		,'ㅁㄴㅇㄴㅁㅇ'
+		,'ㅁㄴㅇㅁㄴ'
+		,'ㄴㅁㅇㄴㅁ'
+		,'ㅇㅁㅇ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㄴㅁㅇㅁㄴㅇ'
+		)
+ {executed in 7 msec} 
+2024-09-18T13:03:49.384 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 6 msec} 
+2024-09-18T13:08:39.011 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:08:39.013 [Thread-39] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:08:39.094 [Thread-39] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-09-18T13:08:39.097 [Thread-39] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-09-18T13:08:39.140 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:08:39.141 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:08:39.260 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:08:39.261 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:08:39.261 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:08:39.261 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:08:39.268 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:08:39.268 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 126 ms 
+2024-09-18T13:08:39.383 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:08:39.392 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:08:39.395 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:08:39.399 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.272 seconds (process running for 1634.552) 
+2024-09-18T13:08:39.400 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:09:58.716 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:09:58.717 [Thread-43] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:09:58.845 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:09:58.845 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:09:58.939 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.Error: Unresolved compilation problem: 
+	CodeGroupDto cannot be resolved to a type
+ 
+2024-09-18T13:09:58.943 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-18T13:09:58.953 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+java.lang.Error: Unresolved compilation problem: 
+	CodeGroupDto cannot be resolved to a type
+
+	at com.loras.infra.member.MemberDao.<clinit>(MemberDao.java:13)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:216)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:265)
+	at org.mybatis.spring.mapper.ClassPathMapperScanner.doScan(ClassPathMapperScanner.java:238)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.scan(ClassPathBeanDefinitionScanner.java:255)
+	at org.mybatis.spring.mapper.MapperScannerConfigurer.postProcessBeanDefinitionRegistry(MapperScannerConfigurer.java:381)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:148)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.loras.CyphersApplication.main(CyphersApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-09-18T13:10:09.988 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:10:09.988 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:10:10.106 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:10:10.106 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:10:10.106 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:10:10.106 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:10:10.114 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:10:10.114 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 125 ms 
+2024-09-18T13:10:10.238 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:10:10.245 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:10:10.247 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:10:10.251 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.276 seconds (process running for 1725.404) 
+2024-09-18T13:10:10.252 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:10:50.015 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:10:50.016 [Thread-47] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:10:50.142 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:10:50.143 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:10:50.252 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:10:50.252 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:10:50.252 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:10:50.252 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:10:50.259 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:10:50.259 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 115 ms 
+2024-09-18T13:10:50.363 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:10:50.369 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:10:50.370 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:10:50.375 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.245 seconds (process running for 1765.528) 
+2024-09-18T13:10:50.377 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:11:36.945 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:11:36.947 [Thread-54] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:37.068 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:11:37.068 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:11:37.196 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:11:37.197 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:37.197 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:11:37.197 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:11:37.204 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:11:37.204 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 135 ms 
+2024-09-18T13:11:37.307 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:11:37.312 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:37.314 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:11:37.317 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.264 seconds (process running for 1812.47) 
+2024-09-18T13:11:37.319 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:11:47.066 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:11:47.067 [Thread-58] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:47.199 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:11:47.199 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:11:47.312 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:11:47.312 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:47.313 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:11:47.313 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:11:47.320 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:11:47.320 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 120 ms 
+2024-09-18T13:11:47.421 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:11:47.426 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:11:47.429 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:11:47.433 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.245 seconds (process running for 1822.586) 
+2024-09-18T13:11:47.434 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:12:05.859 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:12:05.861 [Thread-62] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:12:06.020 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 2500 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:12:06.020 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:12:06.146 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:12:06.146 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:12:06.146 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:12:06.146 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:12:06.154 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:12:06.154 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 133 ms 
+2024-09-18T13:12:06.257 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:12:06.262 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:12:06.264 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:12:06.269 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.261 seconds (process running for 1841.422) 
+2024-09-18T13:12:06.271 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:13:51.439 [RMI TCP Connection(75)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-18T13:13:51.439 [RMI TCP Connection(75)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:13:52.962 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 15756 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:13:52.964 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:13:52.995 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-18T13:13:52.995 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-18T13:13:53.673 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:13:53.679 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:13:53.681 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:13:53.682 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:13:53.716 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:13:53.716 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 720 ms 
+2024-09-18T13:13:54.323 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:13:54.340 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:13:54.357 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:13:54.366 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.64 seconds (process running for 2.136) 
+2024-09-18T13:14:41.902 [RMI TCP Connection(10)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-18T13:14:41.905 [RMI TCP Connection(10)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:14:43.380 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:14:43.382 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:14:43.413 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-18T13:14:43.414 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-18T13:14:44.093 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:14:44.100 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:14:44.103 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:14:44.103 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:14:44.132 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:14:44.132 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 718 ms 
+2024-09-18T13:14:44.691 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:14:44.706 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:14:44.719 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:14:44.727 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.575 seconds (process running for 2.06) 
+2024-09-18T13:15:35.153 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:15:35.153 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:15:35.154 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:15:35.190 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-18T13:15:35.393 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@5ff1ed3b 
+2024-09-18T13:15:35.394 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-18T13:15:35.414 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 5 msec} 
+2024-09-18T13:17:07.351 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-18T13:17:09.585 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:19:30.230 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:19:30.233 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:19:30.322 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-18T13:19:30.327 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-18T13:19:30.379 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:19:30.379 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:19:30.551 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:19:30.552 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:19:30.552 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:19:30.552 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:19:30.563 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:19:30.563 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 182 ms 
+2024-09-18T13:19:30.721 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:19:30.727 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:19:30.729 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:19:30.734 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.374 seconds (process running for 288.067) 
+2024-09-18T13:19:30.736 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:19:31.729 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:19:31.729 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:19:31.730 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:19:31.732 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-18T13:19:31.743 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6ef04f9b 
+2024-09-18T13:19:31.743 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-18T13:19:31.745 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:20:31.168 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:20:31.170 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:20:31.256 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-09-18T13:20:31.259 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-09-18T13:20:31.313 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:20:31.314 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:20:31.462 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:20:31.463 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:20:31.463 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:20:31.463 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:20:31.473 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:20:31.473 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 158 ms 
+2024-09-18T13:20:31.602 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:20:31.608 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:20:31.610 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:20:31.619 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.323 seconds (process running for 348.952) 
+2024-09-18T13:20:31.620 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:21:40.423 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:21:40.425 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:21:40.547 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:21:40.547 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:21:40.672 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:21:40.673 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:21:40.673 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:21:40.673 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:21:40.680 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:21:40.680 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 131 ms 
+2024-09-18T13:21:40.783 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:21:40.788 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:21:40.790 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:21:40.795 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.264 seconds (process running for 418.128) 
+2024-09-18T13:21:40.797 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:22:27.486 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:22:27.487 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:27.615 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:22:27.616 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:22:27.740 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:22:27.741 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:27.741 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:22:27.741 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:22:27.749 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:22:27.749 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 132 ms 
+2024-09-18T13:22:27.865 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:22:27.869 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:27.872 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:22:27.877 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.277 seconds (process running for 465.21) 
+2024-09-18T13:22:27.879 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:22:58.285 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:22:58.287 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:58.410 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:22:58.410 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:22:58.527 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:22:58.528 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:58.528 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:22:58.528 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:22:58.535 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:22:58.536 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 125 ms 
+2024-09-18T13:22:58.641 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:22:58.645 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:22:58.648 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:22:58.653 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.26 seconds (process running for 495.986) 
+2024-09-18T13:22:58.655 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:23:40.553 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:23:40.554 [Thread-23] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:23:40.677 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:23:40.677 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:23:40.793 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:23:40.794 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:23:40.795 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:23:40.795 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:23:40.802 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:23:40.802 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 124 ms 
+2024-09-18T13:23:40.907 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:23:40.912 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:23:40.914 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:23:40.918 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.255 seconds (process running for 538.251) 
+2024-09-18T13:23:40.920 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:23:44.680 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:23:44.680 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:23:44.680 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-18T13:23:44.682 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-3 - Starting... 
+2024-09-18T13:23:44.693 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-3 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@23196318 
+2024-09-18T13:23:44.694 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-3 - Start completed. 
+2024-09-18T13:23:44.695 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:24:17.741 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:24:17.742 [Thread-27] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:24:17.829 [Thread-27] INFO c.z.h.HikariDataSource - HikariPool-3 - Shutdown initiated... 
+2024-09-18T13:24:17.831 [Thread-27] INFO c.z.h.HikariDataSource - HikariPool-3 - Shutdown completed. 
+2024-09-18T13:24:17.883 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:24:17.883 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:24:18.002 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:24:18.003 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:24:18.003 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:24:18.003 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:24:18.010 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:24:18.010 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 126 ms 
+2024-09-18T13:24:18.136 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:24:18.142 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:24:18.144 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:24:18.148 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.28 seconds (process running for 575.481) 
+2024-09-18T13:24:18.149 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:25:14.054 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:25:14.054 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:25:14.054 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-18T13:25:14.056 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-4 - Starting... 
+2024-09-18T13:25:14.066 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-4 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@46a1cffb 
+2024-09-18T13:25:14.067 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-4 - Start completed. 
+2024-09-18T13:25:14.068 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:26:16.409 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:27:27.051 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:27:43.008 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:29:09.825 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:29:09.826 [Thread-31] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:09.911 [Thread-31] INFO c.z.h.HikariDataSource - HikariPool-4 - Shutdown initiated... 
+2024-09-18T13:29:09.914 [Thread-31] INFO c.z.h.HikariDataSource - HikariPool-4 - Shutdown completed. 
+2024-09-18T13:29:09.959 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:29:09.959 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:29:10.081 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:29:10.082 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:10.082 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:29:10.082 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:29:10.090 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:29:10.090 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 130 ms 
+2024-09-18T13:29:10.204 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:29:10.208 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:10.211 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:29:10.215 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.271 seconds (process running for 867.548) 
+2024-09-18T13:29:10.216 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:29:39.558 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:29:39.559 [Thread-35] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:39.694 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:29:39.694 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:29:39.817 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:29:39.817 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:39.817 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:29:39.817 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:29:39.824 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:29:39.824 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 129 ms 
+2024-09-18T13:29:39.923 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:29:39.928 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:29:39.931 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:29:39.937 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.257 seconds (process running for 897.27) 
+2024-09-18T13:29:39.937 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:30:17.553 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:30:17.554 [Thread-39] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:17.694 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:30:17.694 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:30:17.816 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:30:17.817 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:17.817 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:30:17.817 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:30:17.824 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:30:17.824 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 129 ms 
+2024-09-18T13:30:17.927 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:30:17.931 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:17.933 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:30:17.939 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.266 seconds (process running for 935.271) 
+2024-09-18T13:30:17.940 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:30:19.659 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:30:19.660 [Thread-43] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:19.793 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:30:19.793 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:30:19.910 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:30:19.910 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:19.910 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:30:19.910 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:30:19.917 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:30:19.919 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 125 ms 
+2024-09-18T13:30:20.021 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:30:20.026 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:20.028 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:30:20.033 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.254 seconds (process running for 937.366) 
+2024-09-18T13:30:20.035 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:30:42.658 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:30:42.659 [Thread-47] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:42.783 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:30:42.783 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:30:42.898 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:30:42.898 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:42.898 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:30:42.898 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:30:42.908 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:30:42.908 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 123 ms 
+2024-09-18T13:30:43.004 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:30:43.009 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:43.011 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:30:43.015 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.245 seconds (process running for 960.348) 
+2024-09-18T13:30:43.016 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:30:58.504 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:30:58.506 [Thread-51] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:58.638 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:30:58.638 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:30:58.746 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:30:58.746 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:58.746 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:30:58.746 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:30:58.753 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:30:58.753 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 115 ms 
+2024-09-18T13:30:58.844 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:30:58.849 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:30:58.851 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:30:58.855 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.231 seconds (process running for 976.188) 
+2024-09-18T13:30:58.856 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:31:07.525 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:31:07.527 [Thread-55] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:07.647 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:31:07.648 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:31:07.756 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:31:07.757 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:07.757 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:31:07.757 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:31:07.764 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:31:07.764 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 115 ms 
+2024-09-18T13:31:07.855 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:31:07.860 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:07.862 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:31:07.866 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.231 seconds (process running for 985.199) 
+2024-09-18T13:31:07.867 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:31:26.999 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:31:27.000 [Thread-59] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:27.130 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:31:27.130 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:31:27.246 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:31:27.246 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:27.246 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:31:27.246 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:31:27.253 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:31:27.253 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 122 ms 
+2024-09-18T13:31:27.343 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:31:27.348 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:27.350 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:31:27.354 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.236 seconds (process running for 1004.687) 
+2024-09-18T13:31:27.355 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:31:35.914 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:31:35.915 [Thread-63] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:36.039 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:31:36.039 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:31:36.154 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:31:36.154 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:36.154 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:31:36.154 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:31:36.161 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:31:36.161 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 121 ms 
+2024-09-18T13:31:36.250 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:31:36.255 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:36.258 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:31:36.262 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.234 seconds (process running for 1013.595) 
+2024-09-18T13:31:36.262 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:31:42.580 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:31:42.580 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:31:42.581 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:31:42.582 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-5 - Starting... 
+2024-09-18T13:31:42.593 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-5 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@345d85af 
+2024-09-18T13:31:42.593 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-5 - Start completed. 
+2024-09-18T13:31:42.594 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:31:45.762 [http-nio-8080-exec-4] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:31:58.128 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:31:58.129 [Thread-67] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:58.228 [Thread-67] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown initiated... 
+2024-09-18T13:31:58.232 [Thread-67] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown completed. 
+2024-09-18T13:31:58.293 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:31:58.293 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:31:58.424 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:31:58.425 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:58.425 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:31:58.425 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:31:58.433 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:31:58.433 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 137 ms 
+2024-09-18T13:31:58.549 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:31:58.554 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:31:58.556 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:31:58.561 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.281 seconds (process running for 1035.894) 
+2024-09-18T13:31:58.563 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:32:00.263 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:32:00.263 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:32:00.264 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:32:00.266 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:32:43.878 [http-nio-8080-exec-3] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:35:31.787 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:35:31.788 [Thread-71] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:31.923 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:35:31.923 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:35:32.056 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:35:32.057 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:32.057 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:35:32.057 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:35:32.066 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:35:32.066 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 142 ms 
+2024-09-18T13:35:32.178 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:35:32.183 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:32.185 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:35:32.189 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.282 seconds (process running for 1249.522) 
+2024-09-18T13:35:32.190 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:35:34.090 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:35:34.090 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:35:34.091 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:35:34.094 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:35:36.724 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-6 - Starting... 
+2024-09-18T13:35:36.736 [http-nio-8080-exec-4] INFO c.z.h.p.HikariPool - HikariPool-6 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3497b3bd 
+2024-09-18T13:35:36.736 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-6 - Start completed. 
+2024-09-18T13:35:36.738 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:35:39.583 [http-nio-8080-exec-5] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:35:49.086 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:35:49.293 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:35:49.294 [Thread-75] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:49.380 [Thread-75] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown initiated... 
+2024-09-18T13:35:49.383 [Thread-75] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown completed. 
+2024-09-18T13:35:49.436 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:35:49.436 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:35:49.553 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:35:49.553 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:49.554 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:35:49.554 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:35:49.561 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:35:49.561 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 124 ms 
+2024-09-18T13:35:49.656 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:35:49.661 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:35:49.663 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:35:49.668 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.245 seconds (process running for 1267.001) 
+2024-09-18T13:35:49.669 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:35:50.582 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:35:50.582 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:35:50.583 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:35:50.585 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:36:16.923 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:36:16.924 [Thread-79] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:17.058 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:36:17.058 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:36:17.175 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:36:17.175 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:17.175 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:36:17.175 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:36:17.182 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:36:17.182 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 123 ms 
+2024-09-18T13:36:17.281 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:36:17.286 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:17.288 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:36:17.292 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.246 seconds (process running for 1294.625) 
+2024-09-18T13:36:17.294 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:36:18.509 [http-nio-8080-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:36:18.509 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:36:18.509 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-18T13:36:18.511 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-7 - Starting... 
+2024-09-18T13:36:18.519 [http-nio-8080-exec-2] INFO c.z.h.p.HikariPool - HikariPool-7 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2796a477 
+2024-09-18T13:36:18.519 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-7 - Start completed. 
+2024-09-18T13:36:18.520 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:36:20.535 [http-nio-8080-exec-4] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:36:56.366 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:36:56.367 [Thread-83] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:56.453 [Thread-83] INFO c.z.h.HikariDataSource - HikariPool-7 - Shutdown initiated... 
+2024-09-18T13:36:56.457 [Thread-83] INFO c.z.h.HikariDataSource - HikariPool-7 - Shutdown completed. 
+2024-09-18T13:36:56.505 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:36:56.505 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:36:56.619 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:36:56.619 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:56.619 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:36:56.620 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:36:56.628 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:36:56.628 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 122 ms 
+2024-09-18T13:36:56.728 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:36:56.732 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:36:56.734 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:36:56.740 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.249 seconds (process running for 1334.073) 
+2024-09-18T13:36:56.742 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:37:21.344 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:37:21.344 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:37:21.344 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-18T13:37:21.345 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-8 - Starting... 
+2024-09-18T13:37:21.358 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-8 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@574f9d21 
+2024-09-18T13:37:21.358 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-8 - Start completed. 
+2024-09-18T13:37:21.359 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-18T13:37:22.887 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:37:24.320 [http-nio-8080-exec-2] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.loras.infra.member.MemberController.codeGroupXdmUpdt(com.loras.infra.member.MemberDto): [Field error in object 'memberDto' on field 'mmFixDate': rejected value [2024-09-18 13:03:49]; codes [typeMismatch.memberDto.mmFixDate,typeMismatch.mmFixDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberDto.mmFixDate,mmFixDate]; arguments []; default message [mmFixDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'mmFixDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.util.Date] for value [2024-09-18 13:03:49]]] ] 
+2024-09-18T13:38:53.885 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:38:53.886 [Thread-87] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:38:53.973 [Thread-87] INFO c.z.h.HikariDataSource - HikariPool-8 - Shutdown initiated... 
+2024-09-18T13:38:53.975 [Thread-87] INFO c.z.h.HikariDataSource - HikariPool-8 - Shutdown completed. 
+2024-09-18T13:38:54.023 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:38:54.024 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:38:54.152 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:38:54.152 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:38:54.152 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:38:54.152 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:38:54.160 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:38:54.160 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 135 ms 
+2024-09-18T13:38:54.269 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:38:54.274 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:38:54.277 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:38:54.281 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.273 seconds (process running for 1451.614) 
+2024-09-18T13:38:54.282 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:38:54.469 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:38:54.469 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:38:54.470 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:38:54.471 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-9 - Starting... 
+2024-09-18T13:38:54.480 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-9 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@34451277 
+2024-09-18T13:38:54.480 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-9 - Start completed. 
+2024-09-18T13:38:54.481 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:38:56.722 [http-nio-8080-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'NickName' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy26/jdk.proxy26.$Proxy394.update(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy26/jdk.proxy26.$Proxy395.update(Unknown Source)
+	at com.loras.infra.member.MemberService.update(MemberService.java:27)
+	at com.loras.infra.member.MemberController.codeGroupXdmUpdt(MemberController.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:40:15.256 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+81. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:40:18.575 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException] with root cause 
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'NickName' in 'class com.loras.infra.member.MemberDto'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:153)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:116)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:97)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:65)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:91)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy65.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy26/jdk.proxy26.$Proxy394.update(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy26/jdk.proxy26.$Proxy395.update(Unknown Source)
+	at com.loras.infra.member.MemberService.update(MemberService.java:27)
+	at com.loras.infra.member.MemberController.codeGroupXdmUpdt(MemberController.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-18T13:42:16.094 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-18T13:42:16.095 [Thread-91] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:42:16.175 [Thread-91] INFO c.z.h.HikariDataSource - HikariPool-9 - Shutdown initiated... 
+2024-09-18T13:42:16.178 [Thread-91] INFO c.z.h.HikariDataSource - HikariPool-9 - Shutdown completed. 
+2024-09-18T13:42:16.224 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 8356 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-18T13:42:16.224 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-18T13:42:16.362 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-18T13:42:16.362 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:42:16.362 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-18T13:42:16.362 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-18T13:42:16.371 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-18T13:42:16.371 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 146 ms 
+2024-09-18T13:42:16.482 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-18T13:42:16.492 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:42:16.494 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-18T13:42:16.497 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.287 seconds (process running for 1653.831) 
+2024-09-18T13:42:16.499 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-18T13:42:17.475 [http-nio-8080-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-18T13:42:17.475 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-18T13:42:17.476 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-18T13:42:17.477 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-10 - Starting... 
+2024-09-18T13:42:17.486 [http-nio-8080-exec-2] INFO c.z.h.p.HikariPool - HikariPool-10 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@7f7fb503 
+2024-09-18T13:42:17.487 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-10 - Start completed. 
+2024-09-18T13:42:17.487 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-18T13:42:21.324 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. update member
+		set
+			mmRealName = 'ㅁㄴㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㄴㅁㅇ'
+			,mmDesc = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmFixDate = now()
+			,mmEmail = 'ㅁㄴㅇㅁㄴ'
+			,mmTell = 'ㄴㅁㅇㄴㅁ'
+			,mmBirthDay = 'ㅇㅁㅇ'
+		where 1=1
+			and mmSeq = NULL
+ {executed in 5 msec} 
+2024-09-18T13:42:21.328 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-18T13:42:23.270 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:42:25.264 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. update member
+		set
+			mmRealName = 'ㅁㄴㅇㄴㄴㄴㄴ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㄴㅁㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅁㄴㅇㅁㄴ'
+			,mmTell = 'ㄴㅁㅇㄴㅁ'
+			,mmBirthDay = 'ㅇㅁㅇ'
+		where 1=1
+			and mmSeq = NULL
+ {executed in 1 msec} 
+2024-09-18T13:42:25.272 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-18T13:42:29.662 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:42:33.095 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. update member
+		set
+			mmRealName = 'ㅁㄴㅇㄴㄴㄴㄴ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㄴㅁㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅁㄴㅇㅁㄴ'
+			,mmTell = 'ㄴㅁㅇㄴㅁ'
+			,mmBirthDay = 'ㅇㅁㅇ'
+		where 1=1
+			and mmSeq = NULL
+ {executed in 1 msec} 
+2024-09-18T13:42:33.099 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-18T13:42:36.158 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-18T13:42:38.232 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. update member
+		set
+			mmRealName = 'ㅁㄴㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㄴㅁㅇㄴㄴ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅁㄴㅇㅁㄴ'
+			,mmTell = 'ㄴㅁㅇㄴㅁ'
+			,mmBirthDay = 'ㅇㅁㅇ'
+		where 1=1
+			and mmSeq = NULL
+ {executed in 0 msec} 
+2024-09-18T13:42:38.235 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+91. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-18T13:58:09.052 [RMI TCP Connection(104)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-18T13:58:09.053 [RMI TCP Connection(104)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-18T13:58:09.324 [RMI TCP Connection(104)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-10 - Shutdown initiated... 
+2024-09-18T13:58:09.327 [RMI TCP Connection(104)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-10 - Shutdown completed. 

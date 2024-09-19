@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.member.MemberDao">
+					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
+					
+	<resultMap type="com.loras.infra.member.MemberDto" id="resultMapObj"></resultMap>
+			<!-- 	담아줄객체 -->
+	<select id="MemberSelectList" resultMap="resultMapObj">
+	SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM
+	 member mm
+	where 1=1
+	<if test="shmmDelNy != null and !shmmDelNy.equals('')">and mmDelNy = #{shmmDelNy}</if>
+	<if test="shmmUseNy != null and !shmmUseNy.equals('')">and mmUseNy = #{shmmUseNy}</if>
+	<choose>
+		<when test="shOption == 1">and mmSeq = #{shValue}</when>
+		<when test="shOption == 2">and mmRealName like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 3">and mmNickName like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 4">and mmBirthDay like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 5">and mmEmail like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 6">and mmTell like concat('%',#{shValue},'%')</when>
+	</choose>
+	<choose>
+		<when test="shOptionDate == 1">AND mm.mmDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
+		<when test="shOptionDate == 2">AND mm.mmFixDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
+	</choose>
+	ORDER BY 
+		mm.mmSeq DESC
+	</select>
+	
+	<insert id="insert">
+	INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		#{mmRealName}
+		,#{mmNickName}
+		,#{mmEmail}
+		,#{mmTell}
+		,#{mmBirthDay}
+		,0
+		,#{mmUseNy}
+		,now()
+		,now()
+		,#{mmDesc}
+		)
+	</insert>
+	
+	<select id="selectOne" resultMap ="resultMapObj">
+		select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = #{mmSeq}
+	</select>
+	
+	<update id="update">
+		update member
+		set
+			mmRealName = #{mmRealName}
+			,mmUseNy = #{mmUseNy}
+			,mmNickName = #{mmNickName}
+			,mmDesc = #{mmDesc}
+			,mmFixDate = now()
+			,mmEmail = #{mmEmail}
+			,mmTell = #{mmTell}
+			,mmBirthDay = #{mmBirthDay}
+		where 1=1
+			and mmSeq = #{mmSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from member
+		where 1=1
+			and mmSeq = #{mmSeq}
+	</delete>
+	  
+</mapper>
