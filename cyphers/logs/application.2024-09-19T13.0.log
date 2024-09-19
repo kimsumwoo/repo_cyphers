@@ -1,0 +1,923 @@
+2024-09-19T13:42:54.260 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:42:54.263 [Thread-182] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:42:54.349 [Thread-182] INFO c.z.h.HikariDataSource - HikariPool-9 - Shutdown initiated... 
+2024-09-19T13:42:54.352 [Thread-182] INFO c.z.h.HikariDataSource - HikariPool-9 - Shutdown completed. 
+2024-09-19T13:42:54.414 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 1468 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:42:54.417 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:42:54.555 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:42:54.556 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:42:54.556 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:42:54.556 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:42:54.565 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:42:54.565 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 146 ms 
+2024-09-19T13:42:54.675 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:42:54.681 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:42:54.683 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:42:54.687 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.286 seconds (process running for 8753.128) 
+2024-09-19T13:42:54.689 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:43:36.079 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:43:36.080 [Thread-186] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:36.223 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 1468 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:43:36.223 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:43:36.354 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:43:36.354 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:36.354 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:43:36.354 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:43:36.361 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:43:36.361 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 137 ms 
+2024-09-19T13:43:36.493 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:43:36.498 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:36.499 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:43:36.505 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.293 seconds (process running for 8794.945) 
+2024-09-19T13:43:36.506 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:43:46.919 [RMI TCP Connection(268)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-19T13:43:46.920 [RMI TCP Connection(268)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:48.592 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 15308 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:43:48.594 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:43:48.631 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-19T13:43:48.631 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-19T13:43:49.307 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:43:49.315 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:49.317 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:43:49.317 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:43:49.349 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:43:49.350 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 718 ms 
+2024-09-19T13:43:49.952 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:43:49.966 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:43:49.981 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:43:49.989 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.64 seconds (process running for 2.239) 
+2024-09-19T13:43:55.727 [http-nio-8080-exec-4] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T13:43:55.728 [http-nio-8080-exec-4] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T13:43:55.729 [http-nio-8080-exec-4] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-19T13:43:55.772 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-19T13:43:55.974 [http-nio-8080-exec-4] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@5afd118d 
+2024-09-19T13:43:55.976 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-19T13:43:55.995 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 6 msec} 
+2024-09-19T13:44:01.839 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '말고기기,말고기'
+		,pdPrice = NULL
+		,pdUseNy = 1
+		,pdDesc = 'ㄴㄴㄴ'
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 8 msec} 
+2024-09-19T13:44:01.847 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:44:05.151 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T13:44:10.817 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '말고기기,말고기기,말고기'
+		,pdPrice = NULL
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 9 msec} 
+2024-09-19T13:44:10.823 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:44:17.366 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '3'
+ {executed in 1 msec} 
+2024-09-19T13:44:18.580 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '소고기,소고기'
+		,pdPrice = NULL
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '3'
+ {executed in 6 msec} 
+2024-09-19T13:44:18.585 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:44:41.511 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '소고기,5000원'
+		,pdPrice = NULL
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '3'
+ {executed in 9 msec} 
+2024-09-19T13:44:41.515 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:45:27.303 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:45:28.230 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T13:45:32.159 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '말고기기'
+		,pdPrice = ''
+		,pdUseNy = 1
+		,pdDesc = 'ㄴㄴㄴ'
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 8 msec} 
+2024-09-19T13:45:32.163 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:45:34.568 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '3'
+ {executed in 1 msec} 
+2024-09-19T13:45:41.685 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '소고기'
+		,pdPrice = '5000원'
+		,pdUseNy = 1
+		,pdDesc = 'ㄴㄴㄴ'
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '3'
+ {executed in 8 msec} 
+2024-09-19T13:45:41.689 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:45:43.647 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T13:45:52.918 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '말고기기'
+		,pdPrice = '6000원'
+		,pdUseNy = 1
+		,pdDesc = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 8 msec} 
+2024-09-19T13:45:52.923 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:45:56.975 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '3'
+ {executed in 1 msec} 
+2024-09-19T13:47:40.636 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:47:41.784 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T13:47:42.921 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '말고기기'
+		,pdPrice = '6000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 9 msec} 
+2024-09-19T13:47:42.926 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:48:01.503 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO product(
+			pdName
+			,pdPrice
+			,pdUseNy
+			,pdDelNy
+			,pdDate
+			,pdFixDate
+			)values(
+			'ㅁㄴㅇㅁㄴㅇ'
+			,'20000원'
+			,1
+			,0
+			,now()
+			,now()
+			)
+ {executed in 7 msec} 
+2024-09-19T13:48:01.509 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:48:04.118 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '5'
+ {executed in 1 msec} 
+2024-09-19T13:48:05.109 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdPrice = '20000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '5'
+ {executed in 8 msec} 
+2024-09-19T13:48:05.112 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:49:09.236 [RMI TCP Connection(13)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-19T13:49:09.238 [RMI TCP Connection(13)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:49:09.441 [RMI TCP Connection(13)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-19T13:49:09.446 [RMI TCP Connection(13)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-19T13:49:10.910 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:49:10.911 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:49:10.943 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-19T13:49:10.945 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-19T13:49:11.597 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:49:11.605 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:49:11.608 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:49:11.609 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:49:11.640 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:49:11.640 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 695 ms 
+2024-09-19T13:49:12.210 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:49:12.228 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:49:12.241 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:49:12.249 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.571 seconds (process running for 2.118) 
+2024-09-19T13:49:22.723 [http-nio-8080-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T13:49:22.723 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T13:49:22.724 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-19T13:49:22.762 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-19T13:49:22.973 [http-nio-8080-exec-2] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@5def0db5 
+2024-09-19T13:49:22.974 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-19T13:49:23.003 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+2. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 8 msec} 
+2024-09-19T13:49:23.003 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 8 msec} 
+2024-09-19T13:49:23.051 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:49:23.217 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:49:24.573 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '5'
+ {executed in 1 msec} 
+2024-09-19T13:49:25.759 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdPrice = '20000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '5'
+ {executed in 3 msec} 
+2024-09-19T13:49:25.767 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:49:30.074 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '5'
+ {executed in 1 msec} 
+2024-09-19T13:49:34.575 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdPrice = '20000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '5'
+ {executed in 2 msec} 
+2024-09-19T13:49:34.581 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:49:36.086 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '1'
+ {executed in 1 msec} 
+2024-09-19T13:49:37.442 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = '오리고기'
+		,pdPrice = '7000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '1'
+ {executed in 7 msec} 
+2024-09-19T13:49:37.447 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:50:00.578 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:50:00.744 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+2. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:50:01.919 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '5'
+ {executed in 1 msec} 
+2024-09-19T13:50:04.130 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE product
+	SET
+		pdName = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdPrice = '20000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = '09/19/2024 00:00:00.000'
+	WHERE 1=1
+		AND pdSeq = '5'
+ {executed in 2 msec} 
+2024-09-19T13:50:04.136 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:50:29.907 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:50:30.301 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:50:30.303 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:50:30.391 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-19T13:50:30.396 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-19T13:50:30.450 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:50:30.450 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:50:30.616 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:50:30.616 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:50:30.617 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:50:30.617 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:50:30.627 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:50:30.627 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 175 ms 
+2024-09-19T13:50:30.800 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:50:30.807 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:50:30.811 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:50:30.815 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.384 seconds (process running for 80.685) 
+2024-09-19T13:50:30.817 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:50:30.902 [http-nio-8080-exec-2] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T13:50:30.903 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T13:50:30.905 [http-nio-8080-exec-2] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-19T13:50:30.910 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-19T13:50:30.927 [http-nio-8080-exec-2] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@63cd085d 
+2024-09-19T13:50:30.927 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-19T13:50:30.929 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '5'
+ {executed in 2 msec} 
+2024-09-19T13:50:31.838 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. UPDATE product
+	SET
+		pdName = 'ㅁㄴㅇㅁㄴㅇ'
+		,pdPrice = '20000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = now()
+	WHERE 1=1
+		AND pdSeq = '5'
+ {executed in 9 msec} 
+2024-09-19T13:50:31.843 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 1 msec} 
+2024-09-19T13:50:34.630 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T13:50:35.561 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. UPDATE product
+	SET
+		pdName = '말고기기'
+		,pdPrice = '6000원'
+		,pdUseNy = 1
+		,pdDesc = ''
+		,pdFixDate = now()
+	WHERE 1=1
+		AND pdSeq = '4'
+ {executed in 9 msec} 
+2024-09-19T13:50:35.566 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM product pd
+	ORDER BY
+		pd.pdSeq DESC
+ {executed in 0 msec} 
+2024-09-19T13:53:57.425 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:53:57.427 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:53:57.508 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-09-19T13:53:57.512 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-09-19T13:53:57.565 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:53:57.565 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:53:57.718 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:53:57.719 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:53:57.719 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:53:57.719 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:53:57.727 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:53:57.727 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 160 ms 
+2024-09-19T13:53:57.861 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:53:57.866 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:53:57.868 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:53:57.874 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.328 seconds (process running for 287.744) 
+2024-09-19T13:53:57.876 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:56:53.396 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T13:56:53.397 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T13:56:53.397 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-19T13:58:48.945 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:58:48.946 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:58:49.082 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:58:49.082 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:58:49.217 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:58:49.218 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:58:49.218 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:58:49.218 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:58:49.226 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:58:49.227 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 144 ms 
+2024-09-19T13:58:49.346 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:58:49.353 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:58:49.355 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:58:49.360 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.294 seconds (process running for 579.229) 
+2024-09-19T13:58:49.361 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:59:13.068 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:59:13.069 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:13.212 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:59:13.213 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:59:13.342 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:59:13.342 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:13.342 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:59:13.342 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:59:13.349 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:59:13.349 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 136 ms 
+2024-09-19T13:59:13.469 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:59:13.476 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:13.478 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:59:13.484 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.286 seconds (process running for 603.354) 
+2024-09-19T13:59:13.485 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T13:59:41.982 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T13:59:41.983 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:42.117 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 7528 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T13:59:42.118 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T13:59:42.241 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T13:59:42.242 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:42.242 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T13:59:42.242 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T13:59:42.249 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T13:59:42.249 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 130 ms 
+2024-09-19T13:59:42.353 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T13:59:42.360 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T13:59:42.362 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T13:59:42.367 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.265 seconds (process running for 632.236) 
+2024-09-19T13:59:42.368 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
