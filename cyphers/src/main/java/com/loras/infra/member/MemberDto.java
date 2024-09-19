@@ -14,6 +14,7 @@ public class MemberDto {
 	private String mmBirthDay;
 	private Integer mmDelNy;
 	private Integer mmUseNy;
+	private String mmGender;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date mmDate;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -87,6 +88,14 @@ public class MemberDto {
 	public void setMmDesc(String mmDesc) {
 		this.mmDesc = mmDesc;
 	}
+	public String getMmGender() {
+		return mmGender;
+	}
+	public void setMmGender(String mmGender) {
+		this.mmGender = mmGender;
+	}
+	
+	
 	
 	
 	

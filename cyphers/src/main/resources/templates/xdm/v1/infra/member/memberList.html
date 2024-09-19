@@ -488,6 +488,7 @@ td, th {
 														value="" id="flexCheckDefault"></th>
 													<th>#</th>
 													<th>코드</th>
+													<th>성별</th>
 													<th>맴버 이름</th>
 													<th>생년월일</th>
 													<th>닉네임</th>
@@ -513,6 +514,7 @@ td, th {
 													</td>
 													<td></td>
 													<td th:text="${list.mmSeq}"></td>
+													<td th:text="${list.mmGender}"</td>
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
 														</a>
 													</td>

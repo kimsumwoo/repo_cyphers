@@ -15,6 +15,7 @@
 		,pd.pdDate
 		,pd.pdFixDate
 		,pd.pdDesc
+		
 	FROM
 	 product pd
 	WHERE 1=1
@@ -41,6 +42,7 @@
 			,pdDelNy
 			,pdDate
 			,pdFixDate
+			,pdDesc
 			)values(
 			#{pdName}
 			,#{pdPrice}
@@ -48,6 +50,7 @@
 			,0
 			,now()
 			,now()
+			,#{pdDesc}
 			)
 	</insert>
 	
@@ -58,9 +61,10 @@
 		,pd.pdPrice
 		,pd.pdUseNy
 		,pd.pdDelNy
+		,pd.pdDesc
 		,pd.pdDate
 		,pd.pdFixDate
-		,pd.pdDesc
+		
 	FROM 
 		product pd
 	WHERE 1=1

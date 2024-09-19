@@ -494,7 +494,19 @@
 										</div>
 									</div>
 									
+									
 										<div class ="row">
+										<div class="col-4">
+													<div class="mb-3">
+														<div>
+														<label for="validationCustom02" class="form-label">성별</label>
+														<input type="text" class="form-control" id="validationCustom02" 
+															placeholder="한글,영대소문자,숫자" name = "mmGender" th:value="${item?.mmGender}">
+															<div class="valid-feedback"></div>
+															<div class="invalid-feedback"></div>
+													</div>
+												</div>
+											</div>
 											<div class="col-4">
 												<div class="mb-3">
 													<div>
@@ -575,7 +587,7 @@
 											<div class="col-sm-6 col-4">
 												<div class="mb-3">
 													<label for="inputMessage" class="form-label">설명</label>
-													<textarea class="form-control" id="inputMessage" name ="mmDesc" th:value = "${item?.mmDesc}"></textarea>
+													<textarea class="form-control" id="inputMessage" name = "mmDesc" th:text = "${item?.mmDesc}"></textarea>
 												</div>
 											</div>
 										</div>

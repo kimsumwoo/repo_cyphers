@@ -19,6 +19,7 @@
 		,mm.mmDate
 		,mm.mmFixDate
 		,mm.mmDesc
+		,mm.mmGender
 	FROM
 	 member mm
 	where 1=1
@@ -41,7 +42,7 @@
 	</select>
 	
 	<insert id="insert">
-	INSERT INTO MEMBER(
+	INSERT INTO member(
 		mmRealName
 		,mmNickName
 		,mmEmail
@@ -52,6 +53,7 @@
 		,mmDate
 		,mmFixDate
 		,mmDesc
+		,mmGender
 		)values(
 		#{mmRealName}
 		,#{mmNickName}
@@ -63,6 +65,7 @@
 		,now()
 		,now()
 		,#{mmDesc}
+		,#{mmGender}
 		)
 	</insert>
 	
@@ -78,6 +81,8 @@
 		,mm.mmUseNy
 		,mm.mmDate
 		,mm.mmFixDate
+		,mm.mmDesc
+		,mm.mmGender
 		from
 			member mm
 		where 1=1
@@ -95,6 +100,8 @@
 			,mmEmail = #{mmEmail}
 			,mmTell = #{mmTell}
 			,mmBirthDay = #{mmBirthDay}
+			,mmDesc = #{mmDesc}
+			,mmGender = #{mmGender}
 		where 1=1
 			and mmSeq = #{mmSeq}
 	</update>
