@@ -470,23 +470,23 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<h2 style="height: 80px;">member</h2>
+										<h2 style="height: 80px;">product</h2>
 										
 											
 											
-										<form class="needs-validation" method="post" action="/xdm/v1/infra/member/memberInst"autocomplete="off">
+										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/product/productUpdt"autocomplete="off">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
 											
 		
 										<div class="row">
-											<div class="col-4">
+											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">맴버Seq</label>
+													<label for="validationCustom02" class="form-label">상품Seq</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="자동생성" name = "mmSeq" th:value="${item?.mmSeq}" disabled>
+														placeholder="자동생성" name = "pdSeq" th:value="${item?.pdSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
@@ -495,12 +495,12 @@
 									</div>
 									
 										<div class ="row">
-											<div class="col-4">
+											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">맴버 이름</label>
+													<label for="validationCustom02" class="form-label">상품이름</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="한글,영대소문자,숫자" name = "mmRealName" th:value="${item?.mmRealName}">
+														placeholder="한글,영대소문자,숫자" name = "pdName" th:value="${item?.pdName}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
 												</div>
@@ -508,93 +508,102 @@
 										</div>
 										
 										<div class="col-4">
-												<div class="mb-4">
+												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">맴버 닉네임</label>
+													<label for="validationCustom02" class="form-label">상품가격</label>
 													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="한글,영대소문자,숫자" name = "mmNickName" th:value="${item?.mmNickName}">
+														placeholder="한글,영대소문자,숫자" name = "pdPrice" th:value="${item?.pdPrice}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
 												</div>
 											</div>
 										</div>
 										
-											<div class="col-4">
+											<div class="col-3">
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="validationCustom04"  name ="mmUseNy" th:value ="${item?.mmUseNy}"> 
-														<option value="1" th:selected = "${item?.mmUseNy == 1}">사용</option>
-														<option value="0" th:selected = "${item?.mmUseNy == 0}">미사용</option>
+													<select class="form-select" id="validationCustom04"  name ="pdUseNy" th:value ="${item?.pdUseNy}"> 
+														<option value="1" th:selected = "${item?.pdUseNy == 1}">사용</option>
+														<option value="0" th:selected = "${item?.pdUseNy == 0}">미사용</option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">항목을 선택해 주세요.</div>
 												</div>
 											</div>
 										</div>
-										
-											<div class="col-4">
-												<div class="mb-3">
-													<div>
-													<label for="validationCustom02" class="form-label">이메일</label>
-													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 Name= "mmEmail" th:value="${item?.mmEmail}">
-													<div class="valid-feedback"></div>
-													<div class="invalid-feedback"></div>
-												</div>
-											</div>
-										</div>
-										
-											
-											<div class="col-4">
-												<div class="mb-3">
-													<div>
-													<label for="validationCustom02" class="form-label">전화번호</label>
-													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="한글,영대소문자,숫자" name = "mmTell" th:value="${item?.mmTell}">
-														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
-												</div>
-											</div>
-										</div>
-										<div class="col-4">
-												<div class="mb-3">
-													<div>
-													<label for="validationCustom02" class="form-label">출생년도</label>
-													<input type="text" class="form-control" id="validationCustom02" 
-														placeholder="한글,영대소문자,숫자" name = "mmBirthDay" th:value="${item?.mmBirthDay}">
-														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
-												</div>
-											</div>
-										</div>
-										
-										
-										
 											<div class="row">
 											<div class="col-sm-6 col-4">
 												<div class="mb-3">
 													<label for="inputMessage" class="form-label">설명</label>
-													<textarea class="form-control" id="inputMessage" name ="mmDesc" th:value = "${item?.mmDesc}"></textarea>
+													<textarea class="form-control" id="inputMessage" name ="pdDesc" th:value = "${item?.pdDesc}"></textarea>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-4">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">등록일</label>
+													<input type="text" class="form-control" id="validationCustom02" 
+														placeholder="한글,영대소문자,숫자" name = "pdDate" th:value="${#dates.format(item?.pdDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
+														<div class="valid-feedback"></div>
+														<div class="invalid-feedback"></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-4">
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom02" class="form-label">수정일</label>
+													<input type="text" class="form-control" id="validationCustom02" 
+														placeholder="한글,영대소문자,숫자" name = "pdFixDate" th:value="${#dates.format(item?.pdFixDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
+														<div class="valid-feedback"></div>
+														<div class="invalid-feedback"></div>
 												</div>
 											</div>
 										</div>	
 									
 								</div>
 								<div class="row">
-										<div class="col">
-											<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"<button class="btn" >
-											<i class="bi bi-file-text"></i>
-										</button></a>
+									<div class="col">
+										<a href ="/xdm/v1/infra/product/productList"><button class="btn">
+										<i class="bi bi-file-text"></i>
+									</button></a>	
+										<button class="btn"  type ="button" data-bs-toggle="modal" data-bs-target="#verticallyCentered">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
+										
+									</div>
+									
+									<div class ="col">
+										<div class="col d-flex justify-content-end">
+										<button class="btn" type="submit" style="float: right;">
+														<i class="bi bi-clipboard-plus"></i></button>
+								
 										</div>
-										<div class ="col">
-											<div class="col d-flex justify-content-end">
-											<button class="btn" type="submit" style="float: right;">
-															<i class="bi bi-clipboard-plus"></i>
-											</button>
+									</div>
+									<div class="modal fade" id="verticallyCentered" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+										aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="verticallyCenteredLabel">Delete</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													삭제하시겠습니까?
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-dark" data-bs-dismiss="modal">아니요</button>
+													<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">네</button>
+												</div>
 											</div>
 										</div>
 									</div>
+									
+								</div>
 								</div>
 							</div>
 						</div>
@@ -631,6 +640,13 @@
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/moment.js"></script>
+		<script>
+			document.getElementById("delbtn").onclick = function(){
+				let form= document.querySelector("form[name=mfom]");
+				form.action ="/xdm/v1/infra/product/productDete";
+				form.submit();
+			}
+		</script> 
 		
 
 		<!-- *************

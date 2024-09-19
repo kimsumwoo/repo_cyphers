@@ -1,0 +1,1291 @@
+2024-09-19T09:14:21.345 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:14:21.346 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:14:21.388 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-19T09:14:21.391 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-19T09:14:22.174 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:14:22.184 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:14:22.188 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:14:22.189 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:14:22.234 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:14:22.235 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 843 ms 
+2024-09-19T09:14:23.077 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:14:23.093 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:14:23.114 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:14:23.124 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 2.06 seconds (process running for 2.591) 
+2024-09-19T09:19:10.953 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T09:19:10.957 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:19:11.101 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:19:11.102 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:19:11.290 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:19:11.291 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:19:11.291 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:19:11.291 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:19:11.302 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:19:11.302 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 199 ms 
+2024-09-19T09:19:11.465 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:19:11.470 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:19:11.474 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:19:11.479 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.404 seconds (process running for 290.947) 
+2024-09-19T09:19:11.482 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T09:20:02.444 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T09:20:02.445 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:02.568 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:20:02.568 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:20:02.695 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:20:02.695 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:02.696 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:20:02.696 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:20:02.706 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:20:02.706 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 137 ms 
+2024-09-19T09:20:02.814 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:20:02.820 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:02.825 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:20:02.830 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.277 seconds (process running for 342.298) 
+2024-09-19T09:20:02.832 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T09:20:32.059 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T09:20:32.061 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:32.207 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:20:32.207 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:20:32.342 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:20:32.343 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:32.343 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:20:32.343 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:20:32.355 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:20:32.355 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 146 ms 
+2024-09-19T09:20:32.479 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:20:32.485 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:20:32.487 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:20:32.494 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.306 seconds (process running for 371.961) 
+2024-09-19T09:20:32.496 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T09:24:38.700 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T09:24:38.703 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:24:38.828 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:24:38.828 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:24:38.980 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:24:38.981 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:24:38.981 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:24:38.981 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:24:38.987 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:24:38.988 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 158 ms 
+2024-09-19T09:24:39.115 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:24:39.121 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:24:39.123 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:24:39.129 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.319 seconds (process running for 618.597) 
+2024-09-19T09:24:39.131 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T09:25:16.695 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T09:25:16.696 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:25:16.817 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 10456 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:25:16.817 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:25:16.938 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:25:16.939 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:25:16.939 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:25:16.939 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:25:16.948 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:25:16.948 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 130 ms 
+2024-09-19T09:25:17.048 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:25:17.052 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:25:17.054 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:25:17.061 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 0.257 seconds (process running for 656.528) 
+2024-09-19T09:25:17.063 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T09:30:43.362 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T09:30:43.363 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T09:30:43.364 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-19T09:30:43.402 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-19T09:30:43.747 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6e48e67a 
+2024-09-19T09:30:43.749 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-19T09:30:43.774 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 4 msec} 
+2024-09-19T09:30:45.617 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-19T09:31:41.854 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 1 msec} 
+2024-09-19T09:33:13.684 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '2'
+ {executed in 0 msec} 
+2024-09-19T09:33:14.697 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '2'
+ {executed in 7 msec} 
+2024-09-19T09:33:14.703 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:33:40.090 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:34:46.518 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:35:18.805 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'김김'
+		,'kim'
+		,'qlewkqe123@naver.com'
+		,'010-000-1111'
+		,'1990-07-11'
+		,0
+		,1
+		,now()
+		,now()
+		,'설명'
+		)
+ {executed in 6 msec} 
+2024-09-19T09:35:18.810 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:38:31.792 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:38:32.926 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '3'
+ {executed in 1 msec} 
+2024-09-19T09:38:34.072 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '3'
+ {executed in 8 msec} 
+2024-09-19T09:38:34.077 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:39:33.571 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇㅁㄴ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㅇ'
+		,'ㅇㅁㄴㅇㅁ'
+		,'ㅁㄴㅇㅁㄴ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㅁㄴㅇㅁㄴㅇ'
+		)
+ {executed in 4 msec} 
+2024-09-19T09:39:33.577 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:39:34.736 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '4'
+ {executed in 1 msec} 
+2024-09-19T09:39:35.582 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '4'
+ {executed in 8 msec} 
+2024-09-19T09:39:35.587 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:39:42.600 [RMI TCP Connection(48)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-19T09:39:42.601 [RMI TCP Connection(48)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:39:42.692 [RMI TCP Connection(48)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-19T09:39:42.701 [RMI TCP Connection(48)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-19T09:39:44.162 [restartedMain] INFO c.l.CyphersApplication - Starting CyphersApplication using Java 17.0.11 with PID 12068 (C:\factory\ws_sts4_4240\repo_cyphers\cyphers\bin\main started by Lenovo in C:\factory\ws_sts4_4240\repo_cyphers\cyphers) 
+2024-09-19T09:39:44.165 [restartedMain] INFO c.l.CyphersApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T09:39:44.204 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-19T09:39:44.204 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-19T09:39:44.932 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T09:39:44.940 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:39:44.942 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T09:39:44.942 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T09:39:44.973 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T09:39:44.973 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 769 ms 
+2024-09-19T09:39:45.582 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T09:39:45.599 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T09:39:45.615 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T09:39:45.626 [restartedMain] INFO c.l.CyphersApplication - Started CyphersApplication in 1.734 seconds (process running for 2.323) 
+2024-09-19T09:39:48.125 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T09:39:48.127 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T09:39:48.128 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-19T09:39:53.365 [http-nio-8080-exec-10] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-19T09:39:53.702 [http-nio-8080-exec-10] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@fedeccf 
+2024-09-19T09:39:53.704 [http-nio-8080-exec-10] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-19T09:39:53.742 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅇㅁㄴㅇㅁㄴ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㄴㅇㅁㄴㅇㅁㄴㅇ'
+		)
+ {executed in 11 msec} 
+2024-09-19T09:39:53.773 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 13 msec} 
+2024-09-19T09:40:32.517 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:40:33.311 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '5'
+ {executed in 1 msec} 
+2024-09-19T09:40:34.528 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '5'
+ {executed in 7 msec} 
+2024-09-19T09:40:34.532 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:40:42.054 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇㅁㄴㅇ'
+		,'ㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇㅁㄴ'
+		,'ㅁㄴㅇㅁㄴㅇㅁ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ'
+		)
+ {executed in 4 msec} 
+2024-09-19T09:40:42.061 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:41:42.282 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:41:43.513 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '6'
+ {executed in 1 msec} 
+2024-09-19T09:41:45.628 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '6'
+ {executed in 7 msec} 
+2024-09-19T09:41:45.633 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:41:51.972 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅇㄴㅁㅇㅁㄴ'
+		,'ㅁㄴㅇㅁㄴ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㅇㅁㄴㅇㅁㄴㅇ'
+		)
+ {executed in 4 msec} 
+2024-09-19T09:41:51.978 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:41:59.099 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅁㄴㅇㅁㄴㅇ'
+		,'ㅇㅁㄴㅇㅁㄴㅇ'
+		,0
+		,1
+		,now()
+		,now()
+		,'ㄹㅇㅁㄻㅇㅁㄴㅇ'
+		)
+ {executed in 5 msec} 
+2024-09-19T09:41:59.105 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:46:52.418 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO MEMBER(
+		mmRealName
+		,mmNickName
+		,mmEmail
+		,mmTell
+		,mmBirthDay
+		,mmDelNy
+		,mmUseNy
+		,mmDate
+		,mmFixDate
+		,mmDesc
+		)values(
+		'ㅎㅇㅀ'
+		,'ㅇㅀㅇㅀ'
+		,''
+		,'ㄹㅇㅎㅇㅀ'
+		,''
+		,0
+		,1
+		,now()
+		,now()
+		,''
+		)
+ {executed in 4 msec} 
+2024-09-19T09:46:52.422 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:48:54.333 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '8'
+ {executed in 1 msec} 
+2024-09-19T09:49:02.781 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '8'
+ {executed in 1 msec} 
+2024-09-19T09:50:42.785 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '8'
+ {executed in 0 msec} 
+2024-09-19T09:50:43.751 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. update member
+		set
+			mmRealName = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㅁㄴㅇㅁㄴㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmTell = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmBirthDay = 'ㅇㅁㄴㅇㅁㄴㅇ'
+		where 1=1
+			and mmSeq = '8'
+ {executed in 9 msec} 
+2024-09-19T09:50:43.754 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:50:44.845 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '9'
+ {executed in 1 msec} 
+2024-09-19T09:50:46.140 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '9'
+ {executed in 8 msec} 
+2024-09-19T09:50:46.144 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:52:24.521 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:52:25.212 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '8'
+ {executed in 1 msec} 
+2024-09-19T09:53:25.371 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '8'
+ {executed in 1 msec} 
+2024-09-19T09:53:26.419 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. delete from member
+		where 1=1
+			and mmSeq = '8'
+ {executed in 8 msec} 
+2024-09-19T09:53:26.423 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:53:56.033 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:53:56.702 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '7'
+ {executed in 1 msec} 
+2024-09-19T09:54:26.518 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '7'
+ {executed in 1 msec} 
+2024-09-19T09:55:23.364 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. update member
+		set
+			mmRealName = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅇㄴㅁㅇㅁㄴ'
+			,mmTell = 'ㅁㄴㅇㅁㄴ'
+			,mmBirthDay = 'ㅁㄴㅇㅁㄴㅇ'
+		where 1=1
+			and mmSeq = '7'
+ {executed in 5 msec} 
+2024-09-19T09:55:23.368 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:56:09.037 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = '7'
+ {executed in 0 msec} 
+2024-09-19T09:56:10.882 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. update member
+		set
+			mmRealName = 'ㅁㄴㅇㅁㄴㅇㅇㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅇㄴㅁㅇㅁㄴ'
+			,mmTell = 'ㅁㄴㅇㅁㄴ'
+			,mmBirthDay = 'ㅁㄴㅇㅁㄴㅇ'
+		where 1=1
+			and mmSeq = '7'
+ {executed in 5 msec} 
+2024-09-19T09:56:10.887 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:56:25.428 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+			 and cgSeq = '' 
+
+		order by
+			a.cgSeq desc
+ {executed in 8 msec} 
+2024-09-19T09:56:30.065 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+			 and cgDelNy = 0 
+
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
+2024-09-19T09:56:38.922 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. update member
+		set
+			mmRealName = 'ㅁㄴㅇㅁㄴㅇㅇㅇ'
+			,mmUseNy = 1
+			,mmNickName = 'ㅁㄴㅇㅁㄴㅇ'
+			,mmDesc = ''
+			,mmFixDate = now()
+			,mmEmail = 'ㅇㄴㅁㅇㅁㄴ'
+			,mmTell = 'ㅁㄴㅇㅁㄴ'
+			,mmBirthDay = 'ㅁㄴㅇㅁㄴㅇ'
+		where 1=1
+			and mmSeq = '7'
+ {executed in 5 msec} 
+2024-09-19T09:56:38.925 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:56:43.256 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+			 and cgDelNy = 0 
+
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
+2024-09-19T09:58:05.492 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 0 msec} 
+2024-09-19T09:58:06.416 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+		order by
+			a.cgSeq desc
+ {executed in 0 msec} 
+2024-09-19T09:59:12.875 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.cgSeq 
+		    ,a.cgName
+		    ,a.cgUseNy
+		    ,a.cgTurn
+		    ,a.cgDesc
+		    ,a.cgDelNy
+		    ,a.cgDateTime
+		    ,a.cgFixDate
+		    ,(select
+            count(b.cdSeq)
+            from code b
+            where 1=1
+            and a.cgSeq = b.codegroup_seq
+            )
+            as count
+		from
+			codegroup a
+		where 1=1
+
+		order by
+			a.cgSeq desc
+ {executed in 1 msec} 
+2024-09-19T09:59:15.702 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:59:17.793 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 
+2024-09-19T09:59:21.986 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+	FROM member mm
+	ORDER BY 
+		mm.mmSeq DESC
+ {executed in 1 msec} 

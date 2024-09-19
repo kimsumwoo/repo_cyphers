@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.product.ProductDao">
+					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
+					
+<resultMap type="com.loras.infra.product.ProductDto" id="resultMapObj"></resultMap>
+	<select id="productList" resultMap="resultMapObj">
+	SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM
+	 product pd
+	WHERE 1=1
+	<if test="shpdDelNy != null and !shpdDelNy.equals('')">and pdDelNy = #{shpdDelNy}</if>
+	<if test="shpdUseNy != null and !shpdUseNy.equals('')">and pdUseNy = #{shpdUseNy}</if>
+	<choose>
+		<when test="shOption == 1">AND pdSeq = #{shValue}</when>
+		<when test="shOption == 2">AND pdName LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 3">AND pdPrice LIKE CONCAT('%',#{shValue},'%')</when>
+	</choose>
+	<choose>
+		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+		<when test="shOptionDate == 2">AND pd.pdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+	</choose>
+	ORDER BY
+		pd.pdSeq DESC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO product(
+			pdName
+			,pdPrice
+			,pdUseNy
+			,pdDelNy
+			,pdDate
+			,pdFixDate
+			)values(
+			#{pdName}
+			,#{pdPrice}
+			,#{pdUseNy}
+			,0
+			,now()
+			,now()
+			)
+		
+	</insert>
+	
+	<select id="SelectOne" resultMap="resultMapObj">
+	SELECT
+		pd.pdSeq
+		,pd.pdName
+		,pd.pdPrice
+		,pd.pdUseNy
+		,pd.pdDelNy
+		,pd.pdDate
+		,pd.pdFixDate
+		,pd.pdDesc
+	FROM 
+		product pd
+	WHERE 1=1
+	AND pd.pdSeq = #{pdSeq}
+	</select>
+	
+	<update id="update">
+	UPDATE product
+	SET
+		pdName = #{pdName}
+		,pdPrice = #{pdPrice}
+		,pdUseNy = #{pdUseNy}
+		,pdDesc = #{pdDesc}
+		,pdFixDate = now()
+	WHERE 1=1
+		AND pdSeq = #{pdSeq}
+	</update>
+	<delete id="delete">
+		DELETE FROM product
+		WHERE 1=1
+		AND pdSeq = #{pdSeq}
+	</delete>
+	
+	
+	
+</mapper>
