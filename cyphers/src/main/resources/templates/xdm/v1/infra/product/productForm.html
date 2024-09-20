@@ -470,7 +470,7 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<h2 style="height: 80px;">product</h2>
+										<a href="/xdm/v1/infra/product/productList"><h2 style="height: 80px;">product</h2></a>
 										
 											
 											
@@ -502,6 +502,26 @@
 															placeholder="한글,영대소문자,숫자" name = "pdName" th:value="${item?.pdName}">
 															<div class="valid-feedback"></div>
 															<div class="invalid-feedback">코드이름을 생성해 주세요.</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-3">
+													<div class="mb-3">
+														<div>
+														<label for="validationCustom02" class="form-label">식품유형</label>
+														<input type="text" class="form-control" id="validationCustom02" 
+															placeholder="한글,영대소문자,숫자" name = "pdType" th:value="${item?.pdType}">
+															<div class="valid-feedback"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-3">
+													<div class="mb-3">
+														<div>
+														<label for="validationCustom02" class="form-label">고기종류</label>
+														<input type="text" class="form-control" id="validationCustom02" 
+															placeholder="한글,영대소문자,숫자" name = "pdMeat" th:value="${item?.pdMeat}">
+															<div class="valid-feedback"></div>	
 													</div>
 												</div>
 											</div>

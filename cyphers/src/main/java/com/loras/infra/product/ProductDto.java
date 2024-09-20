@@ -15,6 +15,8 @@ public class ProductDto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date pdFixDate;
 	private String pdDesc;
+	private String pdType;
+	private String pdMeat;
 //--------------------------
 	public String getPdSeq() {
 		return pdSeq;
@@ -64,6 +66,20 @@ public class ProductDto {
 	public void setPdDesc(String pdDesc) {
 		this.pdDesc = pdDesc;
 	}
+	public String getPdType() {
+		return pdType;
+	}
+	public void setPdType(String pdType) {
+		this.pdType = pdType;
+	}
+	public String getPdMeat() {
+		return pdMeat;
+	}
+	public void setPdMeat(String pdMeat) {
+		this.pdMeat = pdMeat;
+	}
+	
+	
 	
 	
 	

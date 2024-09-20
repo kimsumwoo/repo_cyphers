@@ -371,7 +371,7 @@ td, th {
 								<li class="breadcrumb-item breadcrumb-active"
 									aria-current="page">Default</li>
 							</ol>
-							<h2 style="height: 80px;">member</h2>
+							<a href="/xdm/v1/infra/member/memberList"><h2 style="height: 80px;">member</h2></a>
 							<!-- 검색 -->
 							<div class="card-title">
 
@@ -514,7 +514,8 @@ td, th {
 													</td>
 													<td></td>
 													<td th:text="${list.mmSeq}"></td>
-													<td th:text="${list.mmGender}"</td>
+													<td th:if ="${list.mmGender eq 0}">여성</td>
+													<td th:unless = "${list.mmGender eq 0}">남성</td>
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
 														</a>
 													</td>

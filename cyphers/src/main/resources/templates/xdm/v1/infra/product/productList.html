@@ -371,7 +371,7 @@ td, th {
 								<li class="breadcrumb-item breadcrumb-active"
 									aria-current="page">Default</li>
 							</ol>
-							<h2 style="height: 80px;">product</h2>
+							<a href="/xdm/v1/infra/product/productList"><h2 style="height: 80px;">product</h2></a>
 							<!-- 검색 -->
 							<div class="card-title">
 
@@ -430,6 +430,8 @@ td, th {
 												<option value="1" name="shOption">코드</option>
 												<option value="2" name="shOption">상품이름</option>
 												<option value="3" name="shOption">상품가격</option>
+												<option value="4" name="shOption">식품유형</option>
+												<option value="5" name="shOption">고기종류</option>
 											</select>
 										</div>
 									</div>
@@ -486,6 +488,8 @@ td, th {
 													<th>#</th>
 													<th>코드</th>
 													<th>상품이름</th>
+													<th>식품유형</th>
+													<th>고기종류</th>
 													<th>상품가격</th>
 													<th>삭제여부</th>
 													<th>사용여부</th>
@@ -510,6 +514,8 @@ td, th {
 													<td><a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}" th:text="${list.pdName}">
 														</a>
 													</td>
+													<td th:text="${list.pdType}"></td>
+													<td th:text="${list.pdMeat}"></td>
 													<td th:text="${list.pdPrice}"></td>
 													<td th:if ="${list.pdDelNy eq 0}">N</td>
 													<td th:unless = "${list.pdDelNy eq 0}">Y</td>	

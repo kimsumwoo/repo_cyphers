@@ -15,6 +15,8 @@
 		,pd.pdDate
 		,pd.pdFixDate
 		,pd.pdDesc
+		,pd.pdType
+		,pd.pdMeat
 		
 	FROM
 	 product pd
@@ -25,6 +27,8 @@
 		<when test="shOption == 1">AND pdSeq = #{shValue}</when>
 		<when test="shOption == 2">AND pdName LIKE CONCAT('%',#{shValue},'%')</when>
 		<when test="shOption == 3">AND pdPrice LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 4">AND pdType LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 5">AND pdMeat LIKE CONCAT('%',#{shValue},'%')</when>
 	</choose>
 	<choose>
 		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
@@ -43,6 +47,8 @@
 			,pdDate
 			,pdFixDate
 			,pdDesc
+			,pdType
+			,pdMeat
 			)values(
 			#{pdName}
 			,#{pdPrice}
@@ -51,6 +57,8 @@
 			,now()
 			,now()
 			,#{pdDesc}
+			,#{pdType}
+			,#{pdMeat}
 			)
 	</insert>
 	
@@ -64,6 +72,8 @@
 		,pd.pdDesc
 		,pd.pdDate
 		,pd.pdFixDate
+		,pd.pdType
+		,pd.pdMeat
 		
 	FROM 
 		product pd
@@ -78,6 +88,8 @@
 		,pdPrice = #{pdPrice}
 		,pdUseNy = #{pdUseNy}
 		,pdDesc = #{pdDesc}
+		,pdType = #{pdType}
+		,pdMeat = #{pdMeat}
 		,pdFixDate = now()
 	WHERE 1=1
 		AND pdSeq = #{pdSeq}

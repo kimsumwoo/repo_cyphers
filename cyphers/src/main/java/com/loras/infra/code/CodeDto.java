@@ -19,6 +19,7 @@ public class CodeDto {
 	private String cgName;
 	private String cgSeq;
 	
+	
 //	------
 	public String getCdSeq() {
 		return cdSeq;

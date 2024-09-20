@@ -91,7 +91,7 @@
 			,b.cdDesc = #{cdDesc}
 			,b.cdFixDate = now()
 			,b.codegroup_seq = #{codegroup_seq}
-			,b.cdDelNy = #{cdDelNy}
+
 		where 1=1
 			and b.cdSeq = #{cdSeq}
 	</update>
