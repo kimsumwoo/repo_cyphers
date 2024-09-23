@@ -29,5 +29,9 @@ public class MemberService {
 	public int delete(MemberDto memberDto) {
 		return memberDao.delete(memberDto);
 	}
+	
+	public int selectOneCount(MemberVo vo) {
+		return memberDao.selectOneCount(vo);
+	}
 
 }

@@ -7,6 +7,7 @@
 	<resultMap type="com.loras.infra.member.MemberDto" id="resultMapObj"></resultMap>
 			<!-- 	담아줄객체 -->
 	<select id="MemberSelectList" resultMap="resultMapObj">
+select mm.* from(	
 	SELECT
 		mm.mmSeq
 		,mm.mmRealName
@@ -20,25 +21,11 @@
 		,mm.mmFixDate
 		,mm.mmDesc
 		,mm.mmGender
-	FROM
-	 member mm
-	where 1=1
-	<if test="shmmDelNy != null and !shmmDelNy.equals('')">and mmDelNy = #{shmmDelNy}</if>
-	<if test="shmmUseNy != null and !shmmUseNy.equals('')">and mmUseNy = #{shmmUseNy}</if>
-	<choose>
-		<when test="shOption == 1">and mmSeq = #{shValue}</when>
-		<when test="shOption == 2">and mmRealName like concat('%',#{shValue},'%')</when>
-		<when test="shOption == 3">and mmNickName like concat('%',#{shValue},'%')</when>
-		<when test="shOption == 4">and mmBirthDay like concat('%',#{shValue},'%')</when>
-		<when test="shOption == 5">and mmEmail like concat('%',#{shValue},'%')</when>
-		<when test="shOption == 6">and mmTell like concat('%',#{shValue},'%')</when>
-	</choose>
-	<choose>
-		<when test="shOptionDate == 1">AND mm.mmDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
-		<when test="shOptionDate == 2">AND mm.mmFixDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
-	</choose>
+	<include refid="selectCommon"></include>
 	ORDER BY 
 		mm.mmSeq DESC
+	) mm
+	limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="insert">
@@ -111,5 +98,28 @@
 		where 1=1
 			and mmSeq = #{mmSeq}
 	</delete>
+	<sql id="selectCommon">
+	FROM
+	 member mm
+	where 1=1
+	<if test="shmmDelNy != null and !shmmDelNy.equals('')">and mmDelNy = #{shmmDelNy}</if>
+	<if test="shmmUseNy != null and !shmmUseNy.equals('')">and mmUseNy = #{shmmUseNy}</if>
+	<choose>
+		<when test="shOption == 1">and mmSeq = #{shValue}</when>
+		<when test="shOption == 2">and mmRealName like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 3">and mmNickName like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 4">and mmBirthDay like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 5">and mmEmail like concat('%',#{shValue},'%')</when>
+		<when test="shOption == 6">and mmTell like concat('%',#{shValue},'%')</when>
+	</choose>
+	<choose>
+		<when test="shOptionDate == 1">AND mm.mmDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
+		<when test="shOptionDate == 2">AND mm.mmFixDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
+	</choose>
+	</sql>
+	<select id="selectOneCount">
+		select count(*)
+		<include refid="selectCommon"></include>
+	</select>
 	  
 </mapper>

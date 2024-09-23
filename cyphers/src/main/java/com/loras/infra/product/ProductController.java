@@ -3,6 +3,7 @@ package com.loras.infra.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +15,8 @@ public class ProductController {
 	public ProductService productService;
 	
 	@RequestMapping(value = "/xdm/v1/infra/product/productList")
-		public String productList(Model model,productVo vo) {
+		public String productList(Model model,@ModelAttribute("vo") productVo vo) {
+		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list",productService.productList(vo));
 		return "/xdm/v1/infra/product/productList";
 	}

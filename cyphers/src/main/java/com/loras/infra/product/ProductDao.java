@@ -11,5 +11,6 @@ public interface ProductDao {
 	public ProductDto SelectOne(ProductDto productDto);
 	public int update(ProductDto productDto);
 	public int delete(ProductDto productDto);
+	public int selectOneCount(productVo vo);
 
 }

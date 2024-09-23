@@ -25,5 +25,8 @@ public class ProductService {
 	public int delete(ProductDto productDto) {
 		return productDao.delete(productDto);
 	}
+	public int selectOneCount(productVo vo) {
+		return productDao.selectOneCount(vo);
+	}
 
 }

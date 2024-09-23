@@ -6,6 +6,7 @@
 					
 <resultMap type="com.loras.infra.product.ProductDto" id="resultMapObj"></resultMap>
 	<select id="productList" resultMap="resultMapObj">
+select pd.* from(
 	SELECT
 		pd.pdSeq
 		,pd.pdName
@@ -17,25 +18,11 @@
 		,pd.pdDesc
 		,pd.pdType
 		,pd.pdMeat
-		
-	FROM
-	 product pd
-	WHERE 1=1
-	<if test="shpdDelNy != null and !shpdDelNy.equals('')">and pdDelNy = #{shpdDelNy}</if>
-	<if test="shpdUseNy != null and !shpdUseNy.equals('')">and pdUseNy = #{shpdUseNy}</if>
-	<choose>
-		<when test="shOption == 1">AND pdSeq = #{shValue}</when>
-		<when test="shOption == 2">AND pdName LIKE CONCAT('%',#{shValue},'%')</when>
-		<when test="shOption == 3">AND pdPrice LIKE CONCAT('%',#{shValue},'%')</when>
-		<when test="shOption == 4">AND pdType LIKE CONCAT('%',#{shValue},'%')</when>
-		<when test="shOption == 5">AND pdMeat LIKE CONCAT('%',#{shValue},'%')</when>
-	</choose>
-	<choose>
-		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-		<when test="shOptionDate == 2">AND pd.pdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-	</choose>
+		<include refid="selectCommon"></include>
 	ORDER BY
 		pd.pdSeq DESC
+	) pd
+	limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="insert">
@@ -101,6 +88,29 @@
 		AND pdSeq = #{pdSeq}
 	</delete>
 	
+	<sql id="selectCommon">
+	FROM
+	 product pd
+	WHERE 1=1
+	<if test="shpdDelNy != null and !shpdDelNy.equals('')">and pdDelNy = #{shpdDelNy}</if>
+	<if test="shpdUseNy != null and !shpdUseNy.equals('')">and pdUseNy = #{shpdUseNy}</if>
+	<choose>
+		<when test="shOption == 1">AND pdSeq = #{shValue}</when>
+		<when test="shOption == 2">AND pdName LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 3">AND pdPrice LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 4">AND pdType LIKE CONCAT('%',#{shValue},'%')</when>
+		<when test="shOption == 5">AND pdMeat LIKE CONCAT('%',#{shValue},'%')</when>
+	</choose>
+	<choose>
+		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+		<when test="shOptionDate == 2">AND pd.pdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+	</choose>
+	</sql>
+	
+	<select id="selectOneCount">
+	select count(*)
+	<include refid="selectCommon"></include>
+	</select>
 	
 	
 </mapper>

@@ -3,6 +3,7 @@ package com.loras.infra.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,8 @@ public class MemberController {
 	@Autowired
 	public MemberService memberService;
 	@RequestMapping(value ="/xdm/v1/infra/member/memberList")
-		public String memberList(Model model, MemberVo vo) {
+		public String memberList(Model model,@ModelAttribute("vo") MemberVo vo) {
+		vo.setParamsPaging(memberService.selectOneCount(vo));
 		model.addAttribute("list", memberService.memberSelectList(vo));
 		return "/xdm/v1/infra/member/memberList";
 	}
