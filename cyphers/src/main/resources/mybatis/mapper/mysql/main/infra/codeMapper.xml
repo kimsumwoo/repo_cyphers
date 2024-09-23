@@ -6,6 +6,7 @@
 	<resultMap type="com.loras.infra.code.CodeDto" id="resultMapObj"></resultMap>
 		
 	<select id="codeSelectList" resultMap="resultMapObj">
+	select bb.* from(
 		select
 			b.cdSeq
 		    ,b.cdName
@@ -18,27 +19,11 @@
 		    ,b.codegroup_seq
 		    ,a.cgSeq
 		    ,a.cgName
-		from
-			code b
-		left join codegroup a
-		on a.cgSeq = b.codegroup_seq
-		where 1=1
-		<if test ="shcdDelNy != null and !shcdDelNy.equals('')">and cdDelNy = #{shcdDelNy}</if>
-		<if test ="shcdUseNy != null and !shcdUseNy.equals('')">and cdUseNy = #{shcdUseNy}</if>
-		<choose>
-			<when test="shOption == 1">and cdSeq = #{shValue}</when>
-			<when test="shOption == 2">and cgSeq = #{shValue}</when>
-			<when test="shOption == 3">and cdName like concat('%',#{shValue},'%')</when>	
-			<when test="shOption == 4">and cgName like concat('%',#{shValue},'%')</when>
-			<when test="shOption == 5">and cdTurn = #{shValue}</when>
-		</choose>
-		
-		<choose>
-			<when test="shOptionDate == 1">AND b.cdDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-			<when test="shOptionDate == 2">AND b.cdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-		</choose>
+		<include refid="selectCommon"></include>
 		order by
 			b.cdSeq desc 
+	) bb
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 			  
 	</select>
 	<insert id="insert">
@@ -127,6 +112,31 @@
 		where 1=1
 			and cdSeq = #{cdSeq}
 	</update>
+	<sql id="selectCommon">
+		from
+			code b
+		left join codegroup a
+		on a.cgSeq = b.codegroup_seq
+		where 1=1
+		<if test ="shcdDelNy != null and !shcdDelNy.equals('')">and cdDelNy = #{shcdDelNy}</if>
+		<if test ="shcdUseNy != null and !shcdUseNy.equals('')">and cdUseNy = #{shcdUseNy}</if>
+		<choose>
+			<when test="shOption == 1">and cdSeq = #{shValue}</when>
+			<when test="shOption == 2">and cgSeq = #{shValue}</when>
+			<when test="shOption == 3">and cdName like concat('%',#{shValue},'%')</when>	
+			<when test="shOption == 4">and cgName like concat('%',#{shValue},'%')</when>
+			<when test="shOption == 5">and cdTurn = #{shValue}</when>
+		</choose>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND b.cdDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			<when test="shOptionDate == 2">AND b.cdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+		</choose>
+	</sql>
+	<select id="selectOneCount" resultType="Integer">
+		select count(*)
+		<include refid="selectCommon"></include>
+	</select>
 	 
 	
 	

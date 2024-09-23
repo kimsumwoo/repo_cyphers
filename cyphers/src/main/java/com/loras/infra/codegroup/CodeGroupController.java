@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.infra.code.CodeDto;
@@ -20,7 +21,8 @@ public class CodeGroupController {
 	CodeGroupService CodeGroupService;
 	
 	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmList")
-	public String codeGroupXdmList(Model model,CodeGroupVo vo) {
+	public String codeGroupXdmList(Model model,@ModelAttribute("vo") CodeGroupVo vo) {
+		vo.setParamsPaging(CodeGroupService.selectOneCount(vo));
 		model.addAttribute("list", CodeGroupService.selectList(vo));
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}

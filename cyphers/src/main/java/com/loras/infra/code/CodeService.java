@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.loras.infra.codegroup.CodeGroupDto;
+import com.loras.infra.codegroup.CodeGroupVo;
 
 @Service
 public class CodeService {
@@ -35,6 +36,9 @@ public class CodeService {
 	}
 	public int delete(CodeDto codeDto) {
 		return CodeDao.delete(codeDto);
+	}
+	public int selectOneCount(CodeVo vo) {
+		return CodeDao.selectOneCount(vo);
 	}
 
 }

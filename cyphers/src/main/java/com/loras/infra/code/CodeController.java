@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.infra.codegroup.CodeGroupDto;
@@ -16,7 +17,8 @@ public class CodeController {
 	CodeService CodeService;
 	
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
-		public String codeXdmList(Model model, CodeVo vo) {
+		public String codeXdmList(Model model,@ModelAttribute("vo") CodeVo vo) {
+			vo.setParamsPaging(CodeService.selectOneCount(vo));
 			model.addAttribute("list", CodeService.codeSelectList(vo));
 			return "/xdm/v1/infra/code/codeXdmList";
 	}

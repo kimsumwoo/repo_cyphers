@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.loras.infra.codegroup.CodeGroupDto;
+import com.loras.infra.codegroup.CodeGroupVo;
 
 @Repository
 public interface CodeDao {
@@ -24,6 +25,8 @@ public interface CodeDao {
 
 	
 	public int delete(CodeDto codeDto);
+	
+	public int selectOneCount(CodeVo vo);
 
 
 }

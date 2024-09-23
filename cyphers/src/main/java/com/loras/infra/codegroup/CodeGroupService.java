@@ -39,6 +39,10 @@ public class CodeGroupService {
 		return CodeGroupDao.delete(codeGroupDto);
 	}
 	
+	 public int selectOneCount(CodeGroupVo vo) { 
+	    	return CodeGroupDao.selectOneCount(vo); 
+	    }
+	
 
 	
 

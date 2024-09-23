@@ -20,6 +20,8 @@ public interface CodeGroupDao {
 	
 	public int delete(CodeGroupDto codeGroupDto);
 	
+	public int selectOneCount(CodeGroupVo vo);
+	
 	
 
 	

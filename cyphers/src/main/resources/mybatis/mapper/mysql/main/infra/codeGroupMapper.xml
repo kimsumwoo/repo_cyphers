@@ -7,6 +7,7 @@
 	<resultMap type="com.loras.infra.codegroup.CodeGroupDto" id="resultMapObj"></resultMap>
 			<!-- 	담아줄객체 -->
 	<select id="selectList" resultMap="resultMapObj">
+	select aa.*from(
 		select
 			a.cgSeq 
 		    ,a.cgName
@@ -23,23 +24,11 @@
             and a.cgSeq = b.codegroup_seq
             )
             as count
-		from
-			codegroup a
-		where 1=1
-			<if test="shcgDelNy != null and !shcgDelNy.equals('')">and cgDelNy = #{shcgDelNy}</if>
-			<if test="shcgUseNy != null and !shcgUseNy.equals('')">and cgUseNy = #{shcgUseNy}</if>
-			<choose>
-				<when test="shOption == 1">and cgSeq = #{shValue}</when>
-				<when test="shOption == 2">and cgName like concat('%',#{shValue},'%')</when>
-				<when test="shOption == 3">and cgTurn like concat('%',#{shValue},'%')</when>
-			</choose>
-			
-			<choose>
-				<when test="shOptionDate == 1">AND a.cgDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<when test="shOptionDate == 2">AND a.cgFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-			</choose>	
+		<include refid="selectCommon"></include>
 		order by
-			a.cgSeq desc   
+			a.cgSeq desc
+		) aa  
+		limit #{rowNumToShow} offset #{startRnumForMysql} 
 	</select>
 	
 	<insert id="insert">
@@ -119,10 +108,28 @@
 			codegroup a
 	 </select>
 	 <sql id="selectCommon">
-	 	from codegroup a
-	 	where 1=1
-	 	<if test="shcgDelNy ! = null and ! shcgDelNy.equals('')">and cgDelNy = #{shcgDelNy}</if>
+	 	from
+			codegroup a
+		where 1=1
+			<if test="shcgDelNy != null and !shcgDelNy.equals('')">and cgDelNy = #{shcgDelNy}</if>
+			<if test="shcgUseNy != null and !shcgUseNy.equals('')">and cgUseNy = #{shcgUseNy}</if>
+			<choose>
+				<when test="shOption == 1">and cgSeq = #{shValue}</when>
+				<when test="shOption == 2">and cgName like concat('%',#{shValue},'%')</when>
+				<when test="shOption == 3">and cgTurn like concat('%',#{shValue},'%')</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 1">AND a.cgDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.cgFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>	
 	 </sql>
+	 
+	 <select id="selectOneCount" resultType="Integer">
+	 	select count(*)
+	 	<include refid="selectCommon"></include>
+	 </select>
+	 
 	 
 	  
 </mapper>
