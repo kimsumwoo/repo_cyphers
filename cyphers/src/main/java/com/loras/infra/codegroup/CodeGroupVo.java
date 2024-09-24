@@ -14,7 +14,7 @@ public class CodeGroupVo {
 	private Integer shOptionDate;
 	
 	//	paging
-	private int thisPage = 1;								// 현재 페이지
+	private int thisPage = 1;									// 현재 페이지
 	private int rowNumToShow = 5;								// 화면에 보여줄 데이터 줄 갯수
 	private int pageNumToShow = 10;								// 화면에 보여줄 페이징 번호 갯수
 
@@ -59,7 +59,7 @@ public class CodeGroupVo {
 	}
 	
 	public String getShDateStart() {
-		return shDateStart + " 00:00:00";
+		return shDateStart;
 	}
 
 	public void setShDateStart(String shDateStart) {
@@ -67,7 +67,7 @@ public class CodeGroupVo {
 	}
 
 	public String getShDateEnd() {
-		return shDateEnd + " 23:59:59";
+		return shDateEnd;
 	}
 
 	public void setShDateEnd(String shDateEnd) {

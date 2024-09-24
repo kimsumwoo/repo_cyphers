@@ -1,18 +1,12 @@
 package com.loras.infra.codegroup;
 
-import java.awt.print.Pageable;
-import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.loras.infra.code.CodeDto;
-import com.mysql.cj.log.Log;
+import com.loras.common.config.util.UtilDateTime;
 
 
 @Controller
@@ -22,6 +16,9 @@ public class CodeGroupController {
 	
 	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model,@ModelAttribute("vo") CodeGroupVo vo) {
+//		/* 초기값 세팅이 없는 경우 사용 */
+		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(CodeGroupService.selectOneCount(vo));
 		model.addAttribute("list", CodeGroupService.selectList(vo));
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
