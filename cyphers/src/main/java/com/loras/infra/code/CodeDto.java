@@ -1,6 +1,8 @@
 package com.loras.infra.code;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 public class CodeDto {
@@ -21,6 +23,10 @@ public class CodeDto {
 	
 	
 //	------
+	
+//	for cache
+	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
+	
 	public String getCdSeq() {
 		return cdSeq;
 	}
@@ -87,6 +93,14 @@ public class CodeDto {
 	public void setCgSeq(String cgSeq) {
 		this.cgSeq = cgSeq;
 	}
+	public static List<CodeDto> getCachedCodeArrayList() {
+		return cachedCodeArrayList;
+	}
+	public static void setCachedCodeArrayList(List<CodeDto> cachedCodeArrayList) {
+		CodeDto.cachedCodeArrayList = cachedCodeArrayList;
+	}
+	
+	
 
 
 	

@@ -500,8 +500,7 @@
 													<div>
 													<label for="validationCustom04" class="form-label">성별</label>
 													<select class="form-select" id="validationCustom04"  name ="mmGender" th:value ="${item?.mmGender}"> 
-														<option value="1" th:selected = "${item?.mmGender == 1}">남성</option>
-														<option value="0" th:selected = "${item?.mmGender == 0}">여성</option>
+														<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.mmGender}"></option>
 													</select>
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">항목을 선택해 주세요.</div>

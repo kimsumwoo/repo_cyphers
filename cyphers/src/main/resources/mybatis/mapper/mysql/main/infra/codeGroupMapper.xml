@@ -130,6 +130,18 @@
 	 	<include refid="selectCommon"></include>
 	 </select>
 	 
+	 <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			ifcgSeq
+			, ifcgName
+			, ifcdSeq
+		FROM
+			codegroup
+		WHERE 1=1
+			AND ifcgDelNy = 0
+		    AND ifcgUseNy = 1
+   </select>
+	 
 	 
 	 
 	 

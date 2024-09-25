@@ -12,7 +12,7 @@ public class CodeVo {
 //	paging
 	private int thisPage = 1;									// 현재 페이지
 	private int rowNumToShow = 5;			// 화면에 보여줄 데이터 줄 갯수
-	private int pageNumToShow = 5;			// 화면에 보여줄 페이징 번호 갯수
+	private int pageNumToShow = 10;			// 화면에 보여줄 페이징 번호 갯수
 
 	private int totalRows;										// 전체 데이터 갯수
 	private int totalPages;										// 전체 페이지 번호
@@ -46,13 +46,13 @@ public class CodeVo {
 		this.shOption = shOption;
 	}
 	public String getShDateStart() {
-		return shDateStart + " 00:00:00";
+		return shDateStart;
 	}
 	public void setShDateStart(String shDateStart) {
 		this.shDateStart = shDateStart;
 	}
 	public String getShDateEnd() {
-		return shDateEnd + " 23:59:59";
+		return shDateEnd;
 	}
 	public void setShDateEnd(String shDateEnd) {
 		this.shDateEnd = shDateEnd;

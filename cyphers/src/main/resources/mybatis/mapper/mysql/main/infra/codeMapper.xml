@@ -137,6 +137,20 @@
 		select count(*)
 		<include refid="selectCommon"></include>
 	</select>
+	
+	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			cdSeq
+			,cdName
+			,codegroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND cdDelNy = 0
+		    AND cdUseNy = 1
+   </select>
+	
+	
 	 
 	
 	

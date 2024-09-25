@@ -515,8 +515,8 @@ td, th {
 													</td>
 													<td></td>
 													<td th:text="${list.mmSeq}"></td>
-													<td th:if ="${list.mmGender eq 0}">여성</td>
-													<td th:unless = "${list.mmGender eq 0}">남성</td>
+													<td th:if="${list.mmGender != null}" th:text="${@codeService.selectOneCachedCode(list.mmGender)}" class="mmGender align-middle"></td>
+													<td th:unless="${list.mmGender != null}" class="mmGender align-middle"></td>
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
 														</a>
 													</td>

@@ -1,6 +1,5 @@
 package com.loras.infra.code;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.loras.infra.codegroup.CodeGroupDto;
+import com.loras.common.config.util.UtilDateTime;
 
 @Controller
 public class CodeController {
@@ -18,6 +17,9 @@ public class CodeController {
 	
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
 		public String codeXdmList(Model model,@ModelAttribute("vo") CodeVo vo) {
+//		/* 초기값 세팅이 없는 경우 사용 */
+		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 			vo.setParamsPaging(CodeService.selectOneCount(vo));
 			model.addAttribute("list", CodeService.codeSelectList(vo));
 			return "/xdm/v1/infra/code/codeXdmList";
