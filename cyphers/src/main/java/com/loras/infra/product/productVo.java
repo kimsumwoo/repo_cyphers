@@ -55,13 +55,13 @@ public class productVo {
 		return shDateStart;
 	}
 	public void setShDateStart(String shDateStart) {
-		this.shDateStart = shDateStart + " 00:00:00";
+		this.shDateStart = shDateStart;
 	}
 	public String getShDateEnd() {
 		return shDateEnd;
 	}
 	public void setShDateEnd(String shDateEnd) {
-		this.shDateEnd = shDateEnd + " 23:59:59";
+		this.shDateEnd = shDateEnd;
 	}
 	public int getThisPage() {
 		return thisPage;

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.loras.common.config.util.UtilDateTime;
 import com.loras.infra.codegroup.CodeGroupDto;
 
 
@@ -17,6 +18,8 @@ public class MemberController {
 	public MemberService memberService;
 	@RequestMapping(value ="/xdm/v1/infra/member/memberList")
 		public String memberList(Model model,@ModelAttribute("vo") MemberVo vo) {
+		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(memberService.selectOneCount(vo));
 		model.addAttribute("list", memberService.memberSelectList(vo));
 		return "/xdm/v1/infra/member/memberList";

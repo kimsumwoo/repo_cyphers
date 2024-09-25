@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.loras.common.config.util.UtilDateTime;
+
 
 @Controller
 public class ProductController {
@@ -16,6 +18,8 @@ public class ProductController {
 	
 	@RequestMapping(value = "/xdm/v1/infra/product/productList")
 		public String productList(Model model,@ModelAttribute("vo") productVo vo) {
+		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list",productService.productList(vo));
 		return "/xdm/v1/infra/product/productList";

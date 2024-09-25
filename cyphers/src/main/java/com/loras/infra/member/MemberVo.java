@@ -48,13 +48,13 @@ public class MemberVo {
 		this.shValue = shValue;
 	}
 	public String getShDateStart() {
-		return shDateStart + " 00:00:00";
+		return shDateStart;
 	}
 	public void setShDateStart(String shDateStart) {
 		this.shDateStart = shDateStart;
 	}
 	public String getShDateEnd() {
-		return shDateEnd + " 23:59:59";
+		return shDateEnd;
 	}
 	public void setShDateEnd(String shDateEnd) {
 		this.shDateEnd = shDateEnd;

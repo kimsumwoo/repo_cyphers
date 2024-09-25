@@ -379,30 +379,30 @@ td, th {
 								<div class="row">
 									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shmmDelNy">
-												<option value="" >삭제여부</option>
-												<option value="0" name="shmmDelNy">N</option>
-												<option value="1" name="shmmDelNy">Y</option>
+											<select class="form-select" id="shmmDelNy" name ="shmmDelNy">
+												<option value="" th:selected ="${vo.shmmDelNy == null}">삭제여부</option>
+												<option value="0" name="shmmDelNy" th:selected ="${vo.shmmDelNy == 0}">N</option>
+												<option value="1" name="shmmDelNy" th:selected ="${vo.shmmDelNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shmmUseNy">
-												<option value="" >사용여부</option>
-												<option value="0" name ="shmmUseNy">N</option>
-												<option value="1" name ="shmmUseNy">Y</option>
+											<select class="form-select" id="shmmUseNy" name ="shmmUseNy">
+												<option value="" th:selected ="${vo.shmmUseNy == null}">사용여부</option>
+												<option value="0" name ="shmmUseNy" th:selected ="${vo.shmmUseNy == 0}">N</option>
+												<option value="1" name ="shmmUseNy" th:selected ="${vo.shmmUseNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shOptionDate">
+											<select class="form-select" id="shOptionDate" name ="shOptionDate">
 												<option value="">날짜선택</option>
-												<option value="1" name="shOptionDate">등록일</option>
-												<option value="2" name="shOptionDate">수정일</option>
+												<option value="1" name="shOptionDate" th:selected ="${vo.shOptionDate == 1}">등록일</option>
+												<option value="2" name="shOptionDate" th:selected ="${vo.shOptionDate == 2}">수정일</option>
 											</select>
 										</div>
 									</div>
@@ -410,14 +410,14 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
 										<div class="mb-2">
 											<input type="text"  class="form-control" 
-											name="shDateStart" id="shDateStart" placeholder="시작일">
+											name="shDateStart" id="shDateStart" th:value ="${#strings.substring(vo.shDateStart, 0, 10)}" placeholder="시작일">
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-2">
 											<input type="text" class="form-control"
-											name="shDateEnd" id="shDateEnd" placeholder="종료일">
+											name="shDateEnd" id="shDateEnd" th:value ="${#strings.substring(vo.shDateEnd, 0, 10)}" placeholder="종료일">
 										</div>
 									</div>
 								</div>
@@ -426,14 +426,14 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name="shOption">
-												<option value="">검색구분</option>
-												<option value="1" name="shOption">코드</option>
-												<option value="2" name="shOption">맴버이름</option>
-												<option value="3" name="shOption">닉네임</option>
-												<option value="4" name="shOption">생일</option>
-												<option value="5" name="shOption">이메일</option>
-												<option value="6" name="shOption">전화번호</option>
+											<select class="form-select" id="shOption" name="shOption">
+												<option value="" th:selected ="${vo.shOption == null}">검색구분</option>
+												<option value="1" name="shOption" th:selected ="${vo.shOption == 1}">코드</option>
+												<option value="2" name="shOption" th:selected ="${vo.shOption == 2}">맴버이름</option>
+												<option value="3" name="shOption" th:selected ="${vo.shOption == 3}">닉네임</option>
+												<option value="4" name="shOption" th:selected ="${vo.shOption == 4}">생일</option>
+												<option value="5" name="shOption" th:selected ="${vo.shOption == 5}">이메일</option>
+												<option value="6" name="shOption" th:selected ="${vo.shOption == 6}">전화번호</option>
 											</select>
 										</div>
 									</div>
@@ -441,7 +441,7 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
 											<input type="text" class="form-control" id="inputPostalCode"
-												name ="shValue">
+												name ="shValue" th:value ="${vo.shValue}">
 										</div>
 									</div>
 									<!-- 버튼 -->
@@ -460,12 +460,12 @@ td, th {
 
 								<div class="col-1" style="float: right;">
 									<div class="mb-3">
-										<select class="form-select" id="inputIndustryType">
-											<option value="Select">5</option>
-											<option value="Select">10</option>
-											<option value="Select">15</option>
-											<option value="Select">20</option>
-											<option value="Select">25</option>
+										<select class="form-select" id="changeRowNum" name ="changeRowNum">
+											<option value="5" th:seleted ="${vo.rowNumToShow eq 5}">5</option>
+											<option value="10" th:seleted ="${vo.rowNumToShow eq 10}">10</option>
+											<option value="15" th:seleted ="${vo.rowNumToShow eq 15}">15</option>
+											<option value="20" th:seleted ="${vo.rowNumToShow eq 20}">20</option>
+											<option value="25" th:seleted ="${vo.rowNumToShow eq 25}">25</option>
 										</select>
 									</div>
 								</div>
@@ -613,14 +613,21 @@ td, th {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
 				    form.action = "/xdm/v1/infra/member/memberList";
 				    form.submit();
-				}
+					}
 				</script>
 				<script type="text/javascript">
 				goList = function (thisPage) {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
 				    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/member/memberList";
 				    document.querySelector("form[name=formList]").submit();
-				}
+					}
+				</script>
+				<script type="text/javascript">
+					document.getElementById("changeRowNum").onchange = function () {
+				    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+				    form.action = goUrlXdmList;
+				    form.submit();
+					}
 				</script>
 				
 				<!--by developer  -->

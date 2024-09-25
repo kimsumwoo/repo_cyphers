@@ -506,25 +506,29 @@
 												</div>
 											</div>
 											<div class="col-3">
-													<div class="mb-3">
-														<div>
-														<label for="validationCustom02" class="form-label">식품유형</label>
-														<input type="text" class="form-control" id="validationCustom02" 
-															placeholder="한글,영대소문자,숫자" name = "pdType" th:value="${item?.pdType}">
-															<div class="valid-feedback"></div>
-													</div>
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom04" class="form-label">식품유형</label>
+													<select class="form-select" id="validationCustom04"  name ="pdType" th:value ="${item?.pdType}"> 
+														<option th:each="list : ${@codeService.selectListCachedCode(20)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.pdType}"></option>
+													</select>
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">항목을 선택해 주세요.</div>
 												</div>
 											</div>
+										</div>
 											<div class="col-3">
-													<div class="mb-3">
-														<div>
-														<label for="validationCustom02" class="form-label">고기종류</label>
-														<input type="text" class="form-control" id="validationCustom02" 
-															placeholder="한글,영대소문자,숫자" name = "pdMeat" th:value="${item?.pdMeat}">
-															<div class="valid-feedback"></div>	
-													</div>
+												<div class="mb-3">
+													<div>
+													<label for="validationCustom04" class="form-label">고기종류</label>
+													<select class="form-select" id="validationCustom04"  name ="pdMeat" th:value ="${item?.pdMeat}"> 
+														<option th:each="list : ${@codeService.selectListCachedCode(21)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.pdMeat}"></option>
+													</select>
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback">항목을 선택해 주세요.</div>
 												</div>
 											</div>
+										</div>
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
