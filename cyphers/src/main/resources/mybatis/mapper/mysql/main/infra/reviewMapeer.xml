@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.review.ReviewDao">
+					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
+					
+	<resultMap type="com.loras.infra.review.ReviewDto" id="resultMapObj"></resultMap>
+			<!-- 	담아줄객체 -->
+	<select id="reviewSelectList" resultMap ="resultMapObj">
+		SELECT 
+			rv.rvSeq
+			,rv.rvRank
+			,rv.rvComment
+			,rv.rvUseNy
+			,rv.rvDelNy
+			,rv.rvDate
+			,rv.rvFixDate
+			,rv.product_pdSeq
+			,rv.member_mmSeq
+			FROM review rv
+			ORDER BY
+			rv.rvSeq DESC
+	</select>
+	<insert id="insert">
+	INSERT INTO review(
+		rvRank
+		,rvComment
+		,rvUseNy
+		,rvDelNy
+		,rvDate
+		,rvFixDate
+		,product_pdSeq
+		,member_mmSeq
+		)VALUES(
+		#{rvRank}
+		,#{rvComment}
+		,#{rvUseNy}
+		,0
+		,now()
+		,now()
+		,#{product_pdSeq}
+		,#{member_mmSeq}
+		)
+	</insert>
+	
+	<select id="selectOne">
+	SELECT 
+		rv.rvSeq
+		,rv.rvRank
+		,rv.rvComment
+		,rv.rvUseNy
+		,rv.rvDelNy
+		,rv.rvDate
+		,rv.rvFixDate
+		,rv.product_pdSeq
+		,rv.member_mmSeq
+		
+		WHERE 1=1
+		AND rv.rvSeq = #{rvSeq}
+	</select>
+	
+	<update id="update">
+		UPDATE review rv
+		
+		SET
+			rv.rvRank =#{rvRank}
+			,rv.rvComment =#{rvComment}
+			,rv.rvUseNy =#{rvUseNy}
+			,rv.rvFixDate = now()
+			,rv.product_pdSeq =#{product_pdSeq}
+			,rv.member_mmSeq =#{member_mmSeq}
+		WHERE 1=1
+		AND rv.rvSeq = #{rvSeq}
+	</update>			
+			
+			
+			
+			
+</mapper>
