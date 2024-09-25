@@ -381,9 +381,9 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType" name="shcdDelNy">
-												<option value="" >삭제여부</option>
-												<option value="0" name="shcdDelNy">N</option>
-												<option value="1" name="shcdDelNy">Y</option>
+												<option value="" th:selected ="${vo.shDelNy == null}" >삭제여부</option>
+												<option value="0" name="shcdDelNy" th:selected ="${vo.shDelNy == 0}">N</option>
+												<option value="1" name="shcdDelNy" th:selected ="${vo.shDelNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
@@ -391,9 +391,9 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType" name="shcdUseNy">
-												<option value="">사용여부</option>
-												<option value="0" name="shcdUseNy">N</option>
-												<option value="1" name="shcdUseNy">Y</option>
+												<option value="" th:selected ="${vo.shUseNy == null}">사용여부</option>
+												<option value="0" name="shcdUseNy" th:selected ="${vo.shUseNy == 0}">N</option>
+												<option value="1" name="shcdUseNy" th:selected ="${vo.shUseNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
@@ -401,9 +401,9 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType" name="shOptionDate">
-												<option value="">날짜선택</option>
-												<option value="1" name="shOptionDate">등록일</option>
-												<option value="2" name="shOptionDate">수정일</option>
+												<option value="" th:selected ="${vo.shOptionDate == null}">날짜선택</option>
+												<option value="1" name="shOptionDate" th:selected ="${vo.shOptionDate == 1}">등록일</option>
+												<option value="2" name="shOptionDate" th:selected ="${vo.shOptionDate == 2}">수정일</option>
 											</select>
 										</div>
 									</div>
