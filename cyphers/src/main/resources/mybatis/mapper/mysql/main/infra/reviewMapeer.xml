@@ -17,10 +17,14 @@
 			,rv.rvFixDate
 			,rv.product_pdSeq
 			,rv.member_mmSeq
-			FROM review rv
-			ORDER BY
-			rv.rvSeq DESC
+			,mm.mmSeq
+			,mm.mmRealName
+            ,pd.pdSeq
+			,pd.pdName
+			<include refid="selectCommon"></include>
+			
 	</select>
+	
 	<insert id="insert">
 	INSERT INTO review(
 		rvRank
@@ -74,11 +78,27 @@
 	</update>
 	
 	<delete id="delete">
-		DELETE review
-		SET
+		DELETE FROM review
+		
 		WHERE 1=1
 		AND rvSeq = #{rvSeq}
-	</delete>			
+	</delete>
+	
+	<sql id="selectCommon">
+		FROM review rv
+		LEFT JOIN member mm
+		ON rv.member_mmSeq = mm.mmSeq
+        LEFT JOIN product pd
+        ON rv.product_pdSeq = pd.pdSeq
+		WHERE 1=1
+			<if test="shrvDelNy != null and !shrvDelNy.equals('')">and rvDelNy = #{shrvDelNy}</if>
+			<if test="shrvUseNy != null and !shrvUseNy.equals('')">and rvUseNy = #{shrvUseNy}</if>
+		<!-- <choose>
+			<when test="shOption == 1">AND rvSeq = #{shValue}</when>
+			<when test="shOption == 2">AND rvRank = #{shValue}</when>
+			<when test="shOption == 3">AND rvComment LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose> -->
+	</sql>			
 			
 			
 			

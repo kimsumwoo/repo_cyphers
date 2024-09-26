@@ -12,8 +12,8 @@ public class ReviewController {
 	public ReviewService reviewService;
 	
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewList")
-	public String reviewList(Model model){
-		model.addAttribute("list", reviewService.reviewSelectList());
+	public String reviewList(Model model,ReviewVo vo){
+		model.addAttribute("list", reviewService.reviewSelectList(vo));
 		return "/xdm/v1/infra/review/reviewList";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewForm")

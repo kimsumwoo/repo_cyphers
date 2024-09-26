@@ -71,7 +71,7 @@ td, th {
 </head>
 
 <body>
-	<form name ="formList" method = "post" action = autocomplete="off">
+	<form name ="formList" method = "post" action ="/xdm/v1/infra/review/reviewList" autocomplete='off'>
 
 	<!-- Loading wrapper start -->
 	<!-- <div id="loading-wrapper">
@@ -378,17 +378,17 @@ td, th {
 								<div class="row">
 									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shcgDelNy">
+											<select class="form-select" id="inputIndustryType" name ="shrvDelNy">
 												<option value="">삭제여부</option>
-												<option value="0">N</option>
-												<option value="1">Y</option>
+												<option value="0" name ="shrvDelNy">N</option>
+												<option value="1" name ="shrvDelNy">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shcgUseNy">
+											<select class="form-select" id="inputIndustryType" name ="shrvUseNy">
 												<option value="" >사용여부</option>
 												<option value="0" >N</option>
 												<option value="1">Y</option>
@@ -409,21 +409,20 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
 										<div class="mb-2">
 											<input type="text"  class="form-control" 
-											name="shDateStart" id="shDateStart" placeholder="시작일" >
+											name="shDateStart" id="shDateStart" placeholder="시작일" autocomplete='off' >
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-2">
 											<input type="text" class="form-control"
-											name="shDateEnd" id="shDateEnd" placeholder="종료일" >
+											name="shDateEnd" id="shDateEnd" placeholder="종료일" autocomplete='off' >
 										</div>
 									</div>
 								</div>
 
 								<div class="row">
-									<div
-										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12" >
 										<div class="mb-3">
 											<select class="form-select" id="shOption" name="shOption">
 												<option value="">검색구분</option>
@@ -437,7 +436,7 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
 											<input type="text" class="form-control" id="shValue"
-												name ="shValue">
+												name ="shValue" autocomplete='off'>
 										</div>
 									</div>
 									<!-- 버튼 -->

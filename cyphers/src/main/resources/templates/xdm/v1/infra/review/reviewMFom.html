@@ -474,7 +474,7 @@
 										
 											
 											
-										<form class="needs-validation" method="post" action="/xdm/v1/infra/review/reviewUete"autocomplete="off">
+										<form class="needs-validation" method="post" name ="mfom" action="/xdm/v1/infra/review/reviewUete"autocomplete="off">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -547,27 +547,65 @@
 													<textarea class="form-control" id="inputMessage" name ="rvComment" th:text = "${item?.rvComment}"></textarea>
 												</div>
 											</div>
+										</div>
+										<div class="col-3">
+												<div class="mb-3">
+													<label for="validationCustom02" class="form-label">등록일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 Name= "rvDateTime" th:value="${#dates.format(item?.rvDate, 'yyyy-MM-dd HH:mm:ss')}"disabled="disabled">
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback"></div>
+											</div>
+										</div>
+											<div class="col-3">
+												<div class="mb-3">
+													<label for="validationCustom02" class="form-label">수정일</label>
+													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													 Name= "rvFixDate" th:value="${#dates.format(item?.rvFixDate, 'yyyy-MM-dd HH:mm:ss')}" readonly="readonly">
+													<div class="valid-feedback"></div>
+													<div class="invalid-feedback"></div>
+											</div>
 										</div>	
 									</div>
 								</div>
-								<div class="row">
-										<div class="col">
-											<a href ="/xdm/v1/infra/review/reviewList"<button class="btn" >
-											<i class="bi bi-file-text"></i>
-										</button></a>
-										<button class="btn" type="button">
+									<!-- 모달 -->
+							<div class="row">
+									<div class="col">
+										<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"><button class="btn">
+										<i class="bi bi-file-text"></i>
+									</button></a>
+									<button class="btn"  type ="button" data-bs-toggle="modal" data-bs-target="#verticallyCentered">
 											<i class="bi bi-x-circle-fill"></i>
 										</button>
+									</div>
+									<div class ="col">
+										<div class="col d-flex justify-content-end">
+										<button class="btn" type="submit" style="float: right;">
+														<i class="bi bi-clipboard-plus"></i></button>
+								
 										</div>
-										<div class ="col">
-											<div class="col d-flex justify-content-end">
-											<button class="btn" type="submit" style="float: right;">
-															<i class="bi bi-clipboard-plus"></i>
-											</button>
+									</div>
+									<div class="modal fade" id="verticallyCentered" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+										aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="verticallyCenteredLabel">Delete</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													삭제하시겠습니까?
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-dark" data-bs-dismiss="modal">아니요</button>
+													<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">네</button>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+								<!-- 모달 끝 -->
+							</div>	
 							</div>
 						</div>
 					</div>
@@ -603,6 +641,13 @@
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/moment.js"></script>
+		<script>
+			document.getElementById("delbtn").onclick=function(){
+			let form = document.querySelector("form[name=mfom]");
+			form.action="/xdm/v1/infra/review/reviewDete";
+			form.submit();
+			}
+		 </script>
 		
 
 		<!-- *************

@@ -85,7 +85,7 @@
                             <a href="./0_shop-cart.html" class="btn btn-purple rounded-pill d-none d-lg-block btn-theme"> <i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기 </a>
                             <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
                                 <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                              <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a>
+                              <!-- <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a> -->
                             </div>
                         </div>
                     </div>
@@ -121,30 +121,29 @@
                 <div class="row g-5">
                     <div class="col-lg-6 col-12 mb-4">
                         <div class="big-img">
-                            <img src="../img/통다리.jpg" alt="type-1" class="img-fluid rounded-4">
-                            <img src="../img/통다리3.jpg" alt="type-2" class="img-fluid rounded-4">
-                            <img src="../img/통다리4.jpg" alt="type-3" class="img-fluid rounded-4">
-                            <img src="../img/통다리5.jpg" alt="type-4" class="img-fluid rounded-4">
+                            <img src="/usr/img/통다리.jpg" alt="type-1" class="img-fluid rounded-4">
+                            <img src="/usr/img/통다리3.jpg" alt="type-2" class="img-fluid rounded-4">
+                            <img src="/usr/img/통다리4.jpg" alt="type-3" class="img-fluid rounded-4">
+                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid rounded-4">
                         </div>
                         <div class="small-img shop-product-detail-slider mt-3 px-2">
-                            <img src="../img/통다리.jpg" alt="type-1" class="img-fluid mx-2 rounded-3 shadow-sm">
-                            <img src="../img/통다리3.jpg"" alt="type-2" class="img-fluid mx-2 rounded-3 shadow-sm">
-                            <img src="../img/통다리4.jpg" alt="type-3" class="img-fluid mx-2 rounded-3 shadow-sm">
-                            <img src="../img/통다리5.jpg" alt="type-4" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            <img src="/usr/img/통다리.jpg" alt="type-1" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            
+                            <img src="/usr/img/통다리4.jpg" alt="type-3" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid mx-2 rounded-3 shadow-sm">
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 ps-lg-5">
                         <p class="text-uppercase text-purple mb-1 fw-bold"></p>
-                        <h1 class="fw-bold pb-2 display-5">오리통다리</h1>
+                        <h1 class="fw-bold pb-2 display-5" name = "pdName" th:text="${item?.pdName}"></h1>
                         <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i>
                                     <i class="ri-star-fill text-body-tertiary"></i>
                         <div class="d-flex align-items-center gap-1 mb-3">
                             <a href="#" class="small ps-2">(1 customer review)</a>
                         </div>
-                        <h5 class="fw-bold">7000원</h5>
+                        <h5 class="fw-bold" name ="pdPrice" th:text ="${item?.pdPrice}"></h5>
                         <div class="border-bottom py-4">
-                            <p class="text-muted">
-                                소형견을 위한 오리고기 작은버전
+                            <p class="text-muted" name ="pdDesc" th:text ="${item?.pdDesc}">
                             </p>
                         </div>
                         <div class="border-bottom py-4 mb-4">
@@ -163,7 +162,7 @@
                             <div class="col-6"><a href="#" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
                         </div>
                         <div class="pt-3">
-                            <p class="small mb-0"><span class="fw-bold">CATEGORY:</span> <a href="#">오리고기</a> , <a href="#">건조식품</a></p>
+                            <p class="small mb-0"><span class="fw-bold">CATEGORY:</span> <a href="#" name ="pdType" <span th:value ="${item?.pdType}"></span></a> , <a href="#" name ="pdMeat" th:value ="${item?.pdMeat}"></a></p>
                       
                           
                         </div>
@@ -213,7 +212,7 @@
                                     <div class="col-lg-6 col-12 pe-lg-5">
                                         <h4 class="fw-bold border-bottom pb-4">1 Review for Aturna condimentum mattis pell</h4>
                                         <div class="d-flex align-items-start gap-3 py-3">
-                                            <img class="img-fluid rounded-circle avtar-sm" src="../img/pages/team/member-1.jpg" alt="Image Description">
+                                            <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
                                             <div class="w-100">
                                                 <div class="d-flex justify-content-between mb-2">
                                                     <div class="d-flex align-items-end gap-2"> <h5 class="fw-bold m-0">Black Smith</h5>  <span class="text-muted fw-normal small">/ MARCH 13, 2024</span></div>
@@ -238,7 +237,7 @@
                                                 <span class="star" value="5"> </span>
                                               </div>
                                         </div>
-                                        <form>
+                                        <form method ="post" action ="/usr/v1/infra/checkout/CheckOutUsrList">
                                             <div class="mb-3"><textarea class="form-control bg-transparent" id="exampleFormControlTextarea1" rows="5" placeholder="Your review"></textarea></div>
                                             <div class="row mb-3">
                                                 <div class="col">
@@ -269,7 +268,7 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="card bg-transparent border-0 h-100">
                             <a href="shop-product-detail.html" class="position-relative">
-                                <span class="badge text-bg-warning rounded-1 p-2 position-absolute m-3">SALE!</span> <img src="../img/pages/products/product-1.jpg" class="card-img-top rounded" alt="popular-bag-1">
+                                <span class="badge text-bg-warning rounded-1 p-2 position-absolute m-3">SALE!</span> <img src="/usr/img/pages/products/product-1.jpg" class="card-img-top rounded" alt="popular-bag-1">
                             </a>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -284,7 +283,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="card bg-transparent border-0 h-100">
-                            <a href="shop-product-detail.html"> <img src="../img/pages/products/product-2.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
+                            <a href="shop-product-detail.html"> <img src="/usr/img/pages/products/product-2.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i>
@@ -298,7 +297,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="card bg-transparent border-0 h-100">
-                            <a href="shop-product-detail.html"> <img src="../img/pages/products/product-3.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
+                            <a href="shop-product-detail.html"> <img src="/usr/img/pages/products/product-3.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i>
@@ -312,7 +311,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="card bg-transparent border-0 h-100">
-                            <a href="shop-product-detail.html"> <img src="../img/pages/products/product-4.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
+                            <a href="shop-product-detail.html"> <img src="/usr/img/pages/products/product-4.jpg" class="card-img-top rounded" alt="popular-bag-1"> </a>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-half-line text-warning"></i>

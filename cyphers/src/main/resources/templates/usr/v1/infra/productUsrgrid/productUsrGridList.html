@@ -80,7 +80,7 @@
                            
                             <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
                                 <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                                <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a>
+                              <!--   <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a> -->
                             </div>
                         </div>
                     </div>
@@ -266,7 +266,7 @@
                     <!-- content -->
                     <div class="col-lg-9 ps-lg-5">
                         <header class="d-sm-flex align-items-center pb-4">
-                            <h4 class="d-block m-0 fw-bold">32 Items found </h4>
+                            <h4 class="d-block m-0 fw-bold" th:text="${vo.totalRows} + ' 개의 상품을 찾았습니다'"></h4>
                             <div class="ms-auto d-flex gap-2">
                                 <select class="form-select d-inline-block w-auto border pt-1">
                                     <option value="0">인기상품</option>
@@ -277,112 +277,21 @@
                             </div>
                         </header>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
+                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each ="list : ${list}">
                                 <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-1.jpg" class="card-img-top">
+                                    <a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}"></a><img src="/usr/img/pages/products/product-1.jpg" class="card-img-top"></a>
                                     <div class="card-body d-flex flex-column p-4">
                                         <div class="d-flex flex-row mb-2">
-                                            <h5 class="mb-0 me-1 fw-bold">오리통다리</h5>
+                                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}"> <h5 class="mb-0 me-1 fw-bold" th:text="${list.pdName}"></h5></a>
                                         </div>
-                                        <p class="card-text">7,000원</p>
-                                        <p>건조식품,오리고기</p>
+                                        <p class="mb-0 me-1 fw-bold" th:text ="${list.pdPrice}"></p>
+                                        <span th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></span>
+                                        <span th:unless="${list.pdType != null}" class="pdType align-middle"></span>
+                                        <span th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></span>
+                                        <span th:unless="${list.pdMeat != null}" class="pdType align-middle"></span>
+                                        
                                         <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-2.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$120.00</h5>
-                                        <p class="card-text text-muted small">Winter Jacket for Men and Women, All sizes</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-3.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$120.00</h5>
-                                        <p class="card-text text-muted small">T-shirts with multiple colors, for men and lady</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-4.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$120.00</h5>
-                                        <p class="card-text text-muted small">Blazer Suit Dress Jacket for Men, Blue color</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-5.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$510.00</h5>
-                                        <p class="card-text text-muted small">Slim sleeve wallet Italian leather - multiple colors</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-6.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$79.99</h5>
-                                        <p class="card-text text-muted small">T-shirts with multiple colors, for men and lady</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-7.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$120.00</h5>
-                                        <p class="card-text text-muted small">Winter Jacket for Men and Women, All sizes</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-8.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$120.00</h5>
-                                        <p class="card-text text-muted small">T-shirts with multiple colors, for men and lady</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                            <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <img src="../img/pages/products/product-1.jpg" class="card-img-top">
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <h5 class="card-title mb-2 fw-bold">$43.50</h5>
-                                        <p class="card-text text-muted small">Summer New Men's Denim Jeans Shorts</p>
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
+                                        
                                             <a href="#!" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-shopping-cart-fill"></i></a>
                                         </div>
                                     </div>
@@ -390,11 +299,7 @@
                             </div>
                         </div>
                         <!-- Pagination -->
-                        <div class="text-center mt-5 mb-5">
-                            <div class="spinner-border" role="status">
-                              <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
+                        
                         <!-- Pagination -->
                     </div>
                 </div>
