@@ -22,6 +22,9 @@ public class ReviewService {
 	public int update(ReviewDto reviewDto) {
 		return reviewDao.update(reviewDto);
 	}
+	public int delete(ReviewDto reviewDto) {
+		return reviewDao.delete(reviewDto);
+	}
 
 
 

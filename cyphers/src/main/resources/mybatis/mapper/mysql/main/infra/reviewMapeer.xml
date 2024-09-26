@@ -44,7 +44,7 @@
 	</insert>
 	
 	<select id="selectOne">
-	SELECT 
+	SELECT
 		rv.rvSeq
 		,rv.rvRank
 		,rv.rvComment
@@ -54,24 +54,31 @@
 		,rv.rvFixDate
 		,rv.product_pdSeq
 		,rv.member_mmSeq
-		
+	FROM 
+		review rv
 		WHERE 1=1
 		AND rv.rvSeq = #{rvSeq}
 	</select>
 	
 	<update id="update">
-		UPDATE review rv
-		
+		UPDATE review	
 		SET
-			rv.rvRank =#{rvRank}
-			,rv.rvComment =#{rvComment}
-			,rv.rvUseNy =#{rvUseNy}
-			,rv.rvFixDate = now()
-			,rv.product_pdSeq =#{product_pdSeq}
-			,rv.member_mmSeq =#{member_mmSeq}
+			rvRank =#{rvRank}
+			,rvComment =#{rvComment}
+			,rvUseNy =#{rvUseNy}
+			,rvFixDate = now()
+			,product_pdSeq =#{product_pdSeq}
+			,member_mmSeq =#{member_mmSeq}
 		WHERE 1=1
-		AND rv.rvSeq = #{rvSeq}
-	</update>			
+		AND rvSeq = #{rvSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE review
+		SET
+		WHERE 1=1
+		AND rvSeq = #{rvSeq}
+	</delete>			
 			
 			
 			

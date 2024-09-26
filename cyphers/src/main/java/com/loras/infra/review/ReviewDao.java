@@ -10,5 +10,6 @@ public interface ReviewDao {
 	public int insert(ReviewDto reviewDto);
 	public ReviewDto selectOne(ReviewDto reviewDto);
 	public int update(ReviewDto reviewDto);
+	public int delete(ReviewDto reviewDto);
 
 }

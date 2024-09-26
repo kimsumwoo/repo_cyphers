@@ -47,6 +47,9 @@
 	    ,now()
 	    ,#{codegroup_seq}
 		)
+		<selectKey resultType="String" keyProperty="cdSeq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
 	</insert>
 	
 	<select id="selectOne" resultMap ="resultMapObj">

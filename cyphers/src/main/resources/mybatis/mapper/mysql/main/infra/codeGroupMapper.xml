@@ -50,6 +50,9 @@
 			,now()
 			,now()
 			)
+		<selectKey resultType="String" keyProperty="cgSeq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
 	</insert>
 	<select id="selectOne" resultMap ="resultMapObj">
 		select

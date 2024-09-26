@@ -48,6 +48,14 @@ public class MemberController {
 		memberService.delete(memberDto);
 		return "redirect:/xdm/v1/infra/member/memberList";
 	}
+	@RequestMapping(value ="/xdm/v1/infra/member/memberSignUp")
+	public String memberSignUp() {
+		return "/xdm/v1/infra/member/memberSignUp";
+	}
+	@RequestMapping(value ="/xdm/v1/infra/member/memberlogIn")
+	public String memberlogIn() {
+		return "/xdm/v1/infra/member/memberlogIn";
+	}
 
 }
 	

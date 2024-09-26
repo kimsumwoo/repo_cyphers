@@ -35,6 +35,10 @@ public class adressController {
 		addressService.update(addressDto);
 	return "redirect:/xdm/v1/infra/address/address2";
 	}
+	@RequestMapping(value ="/usr/v1/infra/address/addressUsrList")
+	public String addressUsrList(){
+		return "/usr/v1/infra/address/addressUsrList";
+	}
 }
 	
 	

@@ -54,6 +54,9 @@ select mm.* from(
 		,#{mmDesc}
 		,#{mmGender}
 		)
+		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
 	</insert>
 	
 	<select id="selectOne" resultMap ="resultMapObj">
