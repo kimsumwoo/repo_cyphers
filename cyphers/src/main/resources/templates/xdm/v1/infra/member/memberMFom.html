@@ -485,7 +485,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버Seq</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmSeq" 
 														placeholder="자동생성" name = "mmSeq" th:value="${item?.mmSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
@@ -500,7 +500,8 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">성별</label>
-													<select class="form-select" id="validationCustom04"  name ="mmGender" th:value ="${item?.mmGender}"> 
+													<select class="form-select" id="mmGender"  name ="mmGender" th:value ="${item?.mmGender}">
+														<option value="">선택하세요</option> 
 														<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.mmGender}"></option>
 													</select>
 													<div class="valid-feedback"></div>
@@ -512,7 +513,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버 이름</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmRealName" 
 														placeholder="한글,영대소문자,숫자" name = "mmRealName" th:value="${item?.mmRealName}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -524,7 +525,7 @@
 												<div class="mb-4">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버 닉네임</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmNickName" 
 														placeholder="한글,영대소문자,숫자" name = "mmNickName" th:value="${item?.mmNickName}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -536,7 +537,8 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="validationCustom04"  name ="mmUseNy" th:value ="${item?.mmUseNy}"> 
+													<select class="form-select" id="mmUseNy"  name ="mmUseNy" th:value ="${item?.mmUseNy}"> 
+														<option value="">선택하세요</option>
 														<option value="1" th:selected = "${item?.mmUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.mmUseNy == 0}">미사용</option>
 													</select>
@@ -550,7 +552,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">이메일</label>
-													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
+													<input type="text" class="form-control" id="mmEmail"  placeholder=""
 													 Name= "mmEmail" th:value="${item?.mmEmail}">
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback"></div>
@@ -563,7 +565,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">전화번호</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmTell" 
 														placeholder="한글,영대소문자,숫자" name = "mmTell" th:value="${item?.mmTell}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -574,7 +576,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">출생년도</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmBirthDay" 
 														placeholder="한글,영대소문자,숫자" name = "mmBirthDay" th:value="${item?.mmBirthDay}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -588,7 +590,7 @@
 											<div class="col-sm-6 col-4">
 												<div class="mb-3">
 													<label for="inputMessage" class="form-label">설명</label>
-													<textarea class="form-control" id="inputMessage" name = "mmDesc" th:text = "${item?.mmDesc}"></textarea>
+													<textarea class="form-control" id="mmDesc" name = "mmDesc" th:text = "${item?.mmDesc}"></textarea>
 												</div>
 											</div>
 										</div>
@@ -597,7 +599,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">등록일</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmDate" 
 														placeholder="한글,영대소문자,숫자" name = "mmDate" th:value="${#dates.format(item?.mmDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -609,7 +611,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">수정일</label>
-													<input type="text" class="form-control" id="validationCustom02" 
+													<input type="text" class="form-control" id="mmFixDate" 
 														placeholder="한글,영대소문자,숫자" name = "mmFixDate" th:value="${#dates.format(item?.mmFixDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
@@ -631,7 +633,7 @@
 									
 									<div class ="col">
 										<div class="col d-flex justify-content-end">
-										<button class="btn" type="submit" style="float: righ56t;">
+										<button class="btn" id="btnSubmit">
 														<i class="bi bi-clipboard-plus"></i></button>
 								
 										</div>
@@ -699,7 +701,84 @@
 				form.submit();
 			}
 		</script> 
-		
+		<script type="text/javascript">
+		 document.getElementById("btnSubmit").onclick = function (){
+//		 		alert(document.getElementById("ifcgName").value);
+
+				var mmGender = document.getElementById("mmGender");
+			    var mmGenderValue = document.getElementById("mmGender").value.trim();
+				
+			    if (mmGenderValue == "" || mmGenderValue == null) {
+					alert("성별을 선택하세요");
+					mmGender.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmRealName = document.getElementById("mmRealName");
+			    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
+				
+			    if (mmRealNameValue == "" || mmRealNameValue == null) {
+					alert("이름을 입력해주세요");
+					mmRealName.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmNickName = document.getElementById("mmNickName");
+			    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
+				
+			    if (mmNickNameValue == "" || mmNickNameValue == null) {
+					alert("닉네임을 입력해주세요");
+					mmNickName.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmUseNy = document.getElementById("mmUseNy");
+			    var mmUseNyValue = document.getElementById("mmUseNy").value.trim();
+				
+			    if (mmUseNyValue == "" || mmUseNyValue == null) {
+					alert("사용여부를 선택해주세요");
+					mmUseNy.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmEmail = document.getElementById("mmEmail");
+			    var mmEmailValue = document.getElementById("mmEmail").value.trim();
+				
+			    if (mmEmailValue == "" || mmEmailValue == null) {
+					alert("이메일을 입력해주세요");
+					mmEmail.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmTell = document.getElementById("mmTell");
+			    var mmTellValue = document.getElementById("mmTell").value.trim();
+				
+			    if (mmTellValue == "" || mmTellValue == null) {
+					alert("전화번호를 입력해주세요");
+					mmTell.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			    var mmBirthDay = document.getElementById("mmBirthDay");
+			    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
+				
+			    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
+					alert("생일을 입력해주세요");
+					mmBirthDay.focus();
+					return false;
+			    } else {
+//		 			by pass
+			    }
+			   form.action ="/xdm/v1/infra/member/memberUpdt"
+			   form.submit();
+		 }
+		</script>
 
 		<!-- *************
 			************ Vendor Js Files *************

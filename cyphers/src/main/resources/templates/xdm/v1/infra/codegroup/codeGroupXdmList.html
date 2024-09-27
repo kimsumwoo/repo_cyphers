@@ -505,7 +505,7 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
-													<td th:text="${list.cgSeq}"></td>
+													<td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(cgSeq=${list.cgSeq})}" th:text="${list.cgSeq}"></a></td>
 													<td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(cgSeq=${list.cgSeq})}" th:text="${list.cgName}">
 														</a>
 													</td>

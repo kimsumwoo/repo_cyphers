@@ -514,7 +514,7 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
-													<td th:text="${list.mmSeq}"></td>
+													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmSeq}"></a></td>
 													<td th:if="${list.mmGender != null}" th:text="${@codeService.selectOneCachedCode(list.mmGender)}" class="mmGender align-middle"></td>
 													<td th:unless="${list.mmGender != null}" class="mmGender align-middle"></td>
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
