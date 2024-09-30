@@ -474,7 +474,7 @@
 										
 											
 											
-										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/product/productUpdt"autocomplete="off">
+										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/product/productUpdt"autocomplete="off" novalidate>
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -499,8 +499,8 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">상품이름</label>
-													<input type="text" class="form-control" id="pdName" 
-														placeholder="한글,영대소문자,숫자" name = "pdName" th:value="${item?.pdName}">
+													<input type="text" class="form-control validate-this" id="pdName" 
+														placeholder="한글,영대소문자,숫자" name = "pdName" th:value="${item?.pdName}" required>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
 												</div>
@@ -510,7 +510,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">식품유형</label>
-													<select class="form-select" id="pdType"  name ="pdType" th:value ="${item?.pdType}"> 
+													<select class="form-select validate-this" id="pdType"  name ="pdType" th:value ="${item?.pdType}" required> 
 														<option th:each="list : ${@codeService.selectListCachedCode(20)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.pdType}"></option>
 													</select>
 													<div class="valid-feedback"></div>
@@ -522,7 +522,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">고기종류</label>
-													<select class="form-select" id="pdMeat"  name ="pdMeat" th:value ="${item?.pdMeat}"> 
+													<select class="form-select validate-this" id="pdMeat"  name ="pdMeat" th:value ="${item?.pdMeat}" required> 
 														<option th:each="list : ${@codeService.selectListCachedCode(21)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.pdMeat}"></option>
 													</select>
 													<div class="valid-feedback"></div>
@@ -535,8 +535,8 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">상품가격</label>
-													<input type="text" class="form-control" id="pdPrice" 
-														placeholder="한글,영대소문자,숫자" name = "pdPrice" th:value="${item?.pdPrice}">
+													<input type="text" class="form-control validate-this" id="pdPrice" 
+														placeholder="한글,영대소문자,숫자" name = "pdPrice" th:value="${item?.pdPrice}" required>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback"></div>
 												</div>
@@ -547,7 +547,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="pdUseNy"  name ="pdUseNy" th:value ="${item?.pdUseNy}"> 
+													<select class="form-select validate-this" id="pdUseNy"  name ="pdUseNy" th:value ="${item?.pdUseNy}" required> 
 														<option value="1" th:selected = "${item?.pdUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.pdUseNy == 0}">미사용</option>
 													</select>
@@ -662,16 +662,18 @@
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
 		<script type="text/javascript">
 		 document.getElementById("btnSubmit").onclick = function (){
-//		 		alert(document.getElementById("ifcgName").value);
-
+//		 	 document.getElementById("btnSubmit").onclick = function (){
 				var pdName = document.getElementById("pdName");
 			    var pdNameValue = document.getElementById("pdName").value.trim();
 				
 			    if (pdNameValue == "" || pdNameValue == null) {
 					alert("상품이름을 입력해주세요");
+					pdName.classList.add("is-invalid");
 					pdName.focus();
 					return false;
 			    } else {
+			    	pdName.classList.remove("is-invalid")
+			    	pdName.classList.add("is-valid");
 //		 			by pass
 			    }
 			    var pdType = document.getElementById("pdType");
@@ -679,9 +681,12 @@
 				
 			    if (pdTypeValue == "" || pdTypeValue == null) {
 					alert("식품유형을 선택해주세요");
+					pdType.classList.add("is-invalid");
 					pdType.focus();
 					return false;
 			    } else {
+			    	pdType.classList.remove("is-invalid")
+			    	pdType.classList.add("is-valid");
 //		 			by pass
 			    }
 			    var pdMeat = document.getElementById("pdMeat");
@@ -689,29 +694,38 @@
 				
 			    if (pdMeatValue == "" || pdMeatValue == null) {
 					alert("고기종류를 선택해주세요");
+					pdMeat.classList.add("is-invalid");
 					pdMeat.focus();
 					return false;
 			    } else {
+			    	pdMeat.classList.remove("is-invalid")
+			    	pdMeat.classList.add("is-valid");
 //		 			by pass
 			    }
 			    var pdPrice = document.getElementById("pdPrice");
 			    var pdPriceValue = document.getElementById("pdPrice").value.trim();
 				
 			    if (pdPriceValue == "" || pdPriceValue == null) {
+			    	pdPrice.classList.add("is-invalid");
 					alert("가격을 입력해주세요");
 					pdPrice.focus();
 					return false;
 			    } else {
+			    	pdPrice.classList.remove("is-invalid")
+			    	pdPrice.classList.add("is-valid");
 //		 			by pass
 			    }
 			    var pdUseNy = document.getElementById("pdUseNy");
 			    var pdUseNyValue = document.getElementById("pdUseNy").value.trim();
 				
 			    if (pdUseNyValue == "" || pdUseNyValue == null) {
-					alert("가격을 입력해주세요");
+			    	pdUseNy.classList.add("is-invalid");
+					alert("사용여부를 선택해주세요");
 					pdUseNy.focus();
 					return false;
 			    } else {
+			    	pdUseNy.classList.remove("is-invalid")
+			    	pdUseNy.classList.add("is-valid");
 //		 			by pass
 			    }
 			    form.action ="/xdm/v1/infra/product/productUpdt";

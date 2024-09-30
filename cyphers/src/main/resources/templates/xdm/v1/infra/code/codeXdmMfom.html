@@ -474,15 +474,15 @@
 										
 											
 											
-										<form class="needs-validation" name="mfom" method="post" action="/xdm/v1/infra/code/codeXdmUpdt">
+										<form class="needs-validation" name="mfom" method="post" action="/xdm/v1/infra/code/codeXdmUpdt" novalidate>
 											<h3 style="height: 60px;">기본정보</h3>
 											
 										<div class="col-3">
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">코드그룹 seq</label>
-													 <select class="form-select" id="codegroup_seq"  name="codegroup_seq"> 
-														
+													 <select class="form-select validate-this" id="codegroup_seq"  name="codegroup_seq"> 
+														<option value="" >선택하세요</option>
 														<option th:each="list:${mfom}" th:value="${list.cgSeq}" th:text="${list.cgName}" th:selected="${list.cgSeq == item.codegroup_seq}"></option>
 													</select> 
 													<div class="valid-feedback"></div>
@@ -495,7 +495,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">코드seq</label>
-													<input type="text" class="form-control" id="cdSeq" 
+													<input type="text" class="form-control validate-this" id="cdSeq" 
 														placeholder="자동생성" name = "cdSeq" th:value="${item?.cdSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
@@ -507,8 +507,8 @@
 											<div class="col-3">
 												<div class="mb-3">
 													<div>
-													<label for="validationCustom02" class="form-label">그룹 이름</label>
-													<input type="text" class="form-control" id="cdName" 
+													<label for="validationCustom02" class="form-label ">그룹 이름</label>
+													<input type="text" class="form-control validate-this" id="cdName" 
 														placeholder="한글,영대소문자,숫자" name = "cdName" th:value="${item?.cdName}">
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드이름을 생성해 주세요.</div>
@@ -519,7 +519,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="cdUseNy"  name ="cdUseNy" th:value ="${item?.cdUseNy}"> 
+													<select class="form-select validate-this" id="cdUseNy"  name ="cdUseNy" th:value ="${item?.cdUseNy}"> 
 														<option value="" >선택하세요</option>
 														<option value="1" th:selected = "${item?.cdUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.cdUseNy == 0}">미사용</option>
@@ -533,10 +533,10 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">순서</label>
-													<input type="text" class="form-control" id="cdTurn"  placeholder=""
+													<input type="text" class="form-control validate-this" id="cdTurn"  placeholder=""
 													 name= "cdTurn" th:value="${item?.cdTurn}">
 													<div class="valid-feedback"></div>
-													<div class="invalid-feedback">순서를 입력해주세요.</div>
+													<div class="invalid-feedback">순서는 숫자만입력 가능합니다.</div>
 												</div>
 											</div>
 										</div>
@@ -672,56 +672,66 @@
 			form.submit();
 			}
 		 </script>
-		 <script type="text/javascript">
-		 document.getElementById("btnSubmit").onclick = function (){
-//		 		alert(document.getElementById("ifcgName").value);	 
+		<script type="text/javascript">
+		
+			document.getElementById("btnSubmit").onclick = function (){
 				
-			    var codegroup_seq = document.getElementById("codegroup_seq");
-			    var codegroup_seqValue = document.getElementById("codegroup_seq").value.trim();
-				
-			    if (codegroup_seqValue == "" || codegroup_seqValue == null) {
-					alert("코드그룹을 선택하세요");
-					codegroup_seq.focus();
-					return false;
-			    } else {
+			var codegroup_seq = document.getElementById("codegroup_seq");
+		    var codegroup_seqValue = document.getElementById("codegroup_seq").value.trim();
+			
+		    if (codegroup_seqValue == "" || codegroup_seqValue == null) {
+				alert("코드그룹seq를 선택해 주세요");
+				codegroup_seq.classList.add("is-invalid");
+				codegroup_seq.focus();
+				return false;
+		    } else {
+		    	codegroup_seq.classList.remove("is-invalid")
+		    	codegroup_seq.classList.add("is-valid");
 //		 			by pass
-			    }
-			    
-			    var cdName = document.getElementById("cdName");
-			    var cdNameValue = document.getElementById("cdName").value.trim();
-				
-			    if (cdNameValue == "" || cdNameValue == null) {
-					alert("이름을 입력해 주세요");
-					cdName.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var cdUseNy = document.getElementById("cdUseNy");
-			    var cdUseNyValue = document.getElementById("cdUseNy").value.trim();
-				
-			    if (cdUseNyValue == "" || cdUseNyValue == null) {
-					alert("사용여부를 선택해주세요");
-					cdUseNy.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    
-			    var cdTurn = document.getElementById("cdTurn");
-			    var cdTurnValue = document.getElementById("cdTurn").value.trim();
-				
-			    if (cdTurnValue == "" || cdTurnValue == null) {
-					alert("순서를 입력해주세요");
-					cdTurn.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    form.action ="/xdm/v1/infra/code/codeXdmUpdt";
-			    form.submit();
-		 }
-		 </script>
+	   		 }	
+		    var cdName = document.getElementById("cdName");
+		    var cdNameValue = document.getElementById("cdName").value.trim();
+		    var cdNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
+		    if (!cdNameRegExp.test(cdNameValue)) {
+		    	alert("이름은 한글, 영대소문자, 숫자만 입력해 주세요");
+				cdName.classList.add("is-invalid");
+				cdName.focus();
+				return false;
+		    } else {
+		    	cdName.classList.remove("is-invalid")
+		    	cdName.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var cdUseNy = document.getElementById("cdUseNy");
+		    var cdUseNyValue = document.getElementById("cdUseNy").value.trim();
+			
+		    if (cdUseNyValue == "" || cdUseNyValue == null) {
+				alert("사용여부를 선택해 주세요");
+				cdUseNy.classList.add("is-invalid");
+				cdUseNy.focus();
+				return false;
+		    } else {
+		    	cdUseNy.classList.remove("is-invalid")
+		    	cdUseNy.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var cdTurn = document.getElementById("cdTurn");
+		    var cdTurnValue = document.getElementById("cdTurn").value.trim();
+			var cdTurnRegExp = /^[0-9]/;
+		    if (!cdTurnRegExp.test(cdTurnValue)) {
+				alert("순서는 숫자만 입력가능합니다");
+				cdTurn.classList.add("is-invalid");
+				cdTurn.focus();
+				return false;
+		    } else {
+		    	cdTurn.classList.remove("is-invalid")
+		    	cdTurn.classList.add("is-valid");
+//	 			by pass
+		    }
+		    form.action ="/xdm/v1/infra/code/codeXdmUpdt";
+			form.submit();
+		}
+		</script>
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

@@ -490,6 +490,8 @@ td, th {
 													<th>#</th>
 													<th>코드</th>
 													<th>성별</th>
+													<th>아이디</th>
+													<th>비밀번호</th>
 													<th>맴버이름</th>
 													<th>생년월일</th>
 													<th>닉네임</th>
@@ -517,6 +519,8 @@ td, th {
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmSeq}"></a></td>
 													<td th:if="${list.mmGender != null}" th:text="${@codeService.selectOneCachedCode(list.mmGender)}" class="mmGender align-middle"></td>
 													<td th:unless="${list.mmGender != null}" class="mmGender align-middle"></td>
+													<td th:text = "${list.mmId}"></td>
+													<td th:text = "${list.mmPasswd}"></td>
 													<td><a th:href="@{/xdm/v1/infra/member/memberMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
 														</a>
 													</td>

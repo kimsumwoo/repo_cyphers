@@ -21,6 +21,8 @@ select mm.* from(
 		,mm.mmFixDate
 		,mm.mmDesc
 		,mm.mmGender
+		,mm.mmId
+		,mm.mmPasswd
 	<include refid="selectCommon"></include>
 	ORDER BY 
 		mm.mmSeq DESC
@@ -41,6 +43,8 @@ select mm.* from(
 		,mmFixDate
 		,mmDesc
 		,mmGender
+		,mmId
+		,mmPasswd
 		)values(
 		#{mmRealName}
 		,#{mmNickName}
@@ -53,6 +57,8 @@ select mm.* from(
 		,now()
 		,#{mmDesc}
 		,#{mmGender}
+		,#{mmId}
+		,#{mmPasswd}
 		)
 		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -73,10 +79,13 @@ select mm.* from(
 		,mm.mmFixDate
 		,mm.mmDesc
 		,mm.mmGender
+		,mm.mmId
+		,mm.mmPasswd
 		from
 			member mm
 		where 1=1
 		and mm.mmSeq = #{mmSeq}
+		
 	</select>
 	
 	<update id="update">
@@ -92,6 +101,8 @@ select mm.* from(
 			,mmBirthDay = #{mmBirthDay}
 			,mmDesc = #{mmDesc}
 			,mmGender = #{mmGender}
+			,mmId = #{mmId}
+			,mmPasswd = #{mmPasswd}
 		where 1=1
 			and mmSeq = #{mmSeq}
 	</update>

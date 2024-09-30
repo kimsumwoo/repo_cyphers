@@ -474,7 +474,7 @@
 										
 											
 											
-										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/member/memberUpdt"autocomplete="off">
+										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/member/memberUpdt"autocomplete="off" novalidate>
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -485,7 +485,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버Seq</label>
-													<input type="text" class="form-control" id="mmSeq" 
+													<input type="text" class="form-control validate-this" id="mmSeq" 
 														placeholder="자동생성" name = "mmSeq" th:value="${item?.mmSeq}" readonly>
 														<div class="valid-feedback"></div>
 														<div class="invalid-feedback">코드를 생성해 주세요.</div>
@@ -500,23 +500,45 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">성별</label>
-													<select class="form-select" id="mmGender"  name ="mmGender" th:value ="${item?.mmGender}">
+													<select class="form-select validate-this" id="mmGender"  name ="mmGender" th:value ="${item?.mmGender}" required>
 														<option value="">선택하세요</option> 
 														<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.mmGender}"></option>
 													</select>
 													<div class="valid-feedback"></div>
-													<div class="invalid-feedback">항목을 선택해 주세요.</div>
+													<div class="invalid-feedback">성별을 선택해 주세요.</div>
 												</div>
 											</div>
 										</div>
 											<div class="col-4">
+													<div class="mb-3">
+														<div>
+														<label for="validationCustom02" class="form-label">맴버 아이디</label>
+														<input type="text" class="form-control validate-this" id="mmId" 
+															placeholder="한글,영대소문자,숫자" name = "mmId" th:value="${item?.mmId}" required>
+															<div class="valid-feedback"></div>
+															<div class="invalid-feedback">아이디 한글, 영대소문자, 숫자만 입력해 주세요</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-4">
+													<div class="mb-3">
+														<div>
+														<label for="validationCustom02" class="form-label">맴버 비밀번호</label>
+														<input type="text" class="form-control validate-this" id="mmPasswd" 
+															placeholder="한글,영대소문자,숫자" name = "mmPasswd" th:value="${item?.mmPasswd}" required>
+															<div class="valid-feedback"></div>
+															<div class="invalid-feedback">비밀번호는 영문 숫자 특수문자 조합으로 이루어진 8~15자로 입력가능합니다.</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-4">
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버 이름</label>
-													<input type="text" class="form-control" id="mmRealName" 
-														placeholder="한글,영대소문자,숫자" name = "mmRealName" th:value="${item?.mmRealName}">
+													<input type="text" class="form-control validate-this" id="mmRealName" 
+														placeholder="한글,영대소문자,숫자" name = "mmRealName" th:value="${item?.mmRealName}" required>
 														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
+														<div class="invalid-feedback">이름을 입력해 주세요</div>
 												</div>
 											</div>
 										</div>
@@ -525,10 +547,10 @@
 												<div class="mb-4">
 													<div>
 													<label for="validationCustom02" class="form-label">맴버 닉네임</label>
-													<input type="text" class="form-control" id="mmNickName" 
-														placeholder="한글,영대소문자,숫자" name = "mmNickName" th:value="${item?.mmNickName}">
+													<input type="text" class="form-control validate-this" id="mmNickName" 
+														placeholder="한글,영대소문자,숫자" name = "mmNickName" th:value="${item?.mmNickName}" required>
 														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
+														<div class="invalid-feedback">닉네임을 입력해 주세요</div>
 												</div>
 											</div>
 										</div>
@@ -537,7 +559,7 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="mmUseNy"  name ="mmUseNy" th:value ="${item?.mmUseNy}"> 
+													<select class="form-select validate-this" id="mmUseNy"  name ="mmUseNy" th:value ="${item?.mmUseNy}" required> 
 														<option value="">선택하세요</option>
 														<option value="1" th:selected = "${item?.mmUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.mmUseNy == 0}">미사용</option>
@@ -552,10 +574,10 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">이메일</label>
-													<input type="text" class="form-control" id="mmEmail"  placeholder=""
-													 Name= "mmEmail" th:value="${item?.mmEmail}">
+													<input type="text" class="form-control validate-this" id="mmEmail"  placeholder=""
+													 Name= "mmEmail" th:value="${item?.mmEmail}" required>
 													<div class="valid-feedback"></div>
-													<div class="invalid-feedback"></div>
+													<div class="invalid-feedback">이메일을 입력해 주세요</div>
 												</div>
 											</div>
 										</div>
@@ -565,10 +587,10 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">전화번호</label>
-													<input type="text" class="form-control" id="mmTell" 
-														placeholder="한글,영대소문자,숫자" name = "mmTell" th:value="${item?.mmTell}">
+													<input type="text" class="form-control validate-this" id="mmTell" 
+														placeholder="한글,영대소문자,숫자" name = "mmTell" th:value="${item?.mmTell}" required>
 														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
+														<div class="invalid-feedback">전화번호를 입력해 주세요</div>
 												</div>
 											</div>
 										</div>
@@ -576,10 +598,10 @@
 												<div class="mb-3">
 													<div>
 													<label for="validationCustom02" class="form-label">출생년도</label>
-													<input type="text" class="form-control" id="mmBirthDay" 
-														placeholder="한글,영대소문자,숫자" name = "mmBirthDay" th:value="${item?.mmBirthDay}">
+													<input type="text" class="form-control validate-this" id="mmBirthDay" 
+														placeholder="한글,영대소문자,숫자" name = "mmBirthDay" th:value="${item?.mmBirthDay}" required>
 														<div class="valid-feedback"></div>
-														<div class="invalid-feedback"></div>
+														<div class="invalid-feedback">출생년도를 입력해 주세요</div>
 												</div>
 											</div>
 										</div>
@@ -701,81 +723,122 @@
 				form.submit();
 			}
 		</script> 
-		<script type="text/javascript">
+		 <script type="text/javascript">
 		 document.getElementById("btnSubmit").onclick = function (){
-//		 		alert(document.getElementById("ifcgName").value);
-
-				var mmGender = document.getElementById("mmGender");
-			    var mmGenderValue = document.getElementById("mmGender").value.trim();
 				
-			    if (mmGenderValue == "" || mmGenderValue == null) {
-					alert("성별을 선택하세요");
-					mmGender.focus();
-					return false;
-			    } else {
+			var mmGender = document.getElementById("mmGender");
+		    var mmGenderValue = document.getElementById("mmGender").value.trim();
+			
+		    if (mmGenderValue == "" || mmGenderValue == null) {
+				alert("성별을 선택해주세요");
+				mmGender.classList.add("is-invalid");
+				mmGender.focus();
+				return false;
+		    } else {
+		    	mmGender.classList.remove("is-invalid")
+		    	mmGender.classList.add("is-valid");
 //		 			by pass
-			    }
-			    var mmRealName = document.getElementById("mmRealName");
-			    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
-				
-			    if (mmRealNameValue == "" || mmRealNameValue == null) {
-					alert("이름을 입력해주세요");
-					mmRealName.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var mmNickName = document.getElementById("mmNickName");
-			    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
-				
-			    if (mmNickNameValue == "" || mmNickNameValue == null) {
-					alert("닉네임을 입력해주세요");
-					mmNickName.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var mmUseNy = document.getElementById("mmUseNy");
-			    var mmUseNyValue = document.getElementById("mmUseNy").value.trim();
-				
-			    if (mmUseNyValue == "" || mmUseNyValue == null) {
-					alert("사용여부를 선택해주세요");
-					mmUseNy.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var mmEmail = document.getElementById("mmEmail");
-			    var mmEmailValue = document.getElementById("mmEmail").value.trim();
-				
-			    if (mmEmailValue == "" || mmEmailValue == null) {
-					alert("이메일을 입력해주세요");
-					mmEmail.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var mmTell = document.getElementById("mmTell");
-			    var mmTellValue = document.getElementById("mmTell").value.trim();
-				
-			    if (mmTellValue == "" || mmTellValue == null) {
-					alert("전화번호를 입력해주세요");
-					mmTell.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			    var mmBirthDay = document.getElementById("mmBirthDay");
-			    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
-				
-			    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
-					alert("생일을 입력해주세요");
-					mmBirthDay.focus();
-					return false;
-			    } else {
-//		 			by pass
-			    }
-			   form.action ="/xdm/v1/infra/member/memberUpdt"
+	   		 }	
+		    var mmId = document.getElementById("mmId");
+		    var mmIdValue = document.getElementById("mmId").value.trim();
+		    var mmIdRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
+		    if (!mmIdRegExp.test(mmIdValue)) {
+		    	alert("아이디 한글, 영대소문자, 숫자만 입력해 주세요");
+		    	mmId.classList.add("is-invalid");
+		    	mmId.focus();
+				return false;
+		    } else {
+		    	mmId.classList.remove("is-invalid")
+		    	mmId.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmPasswd = document.getElementById("mmPasswd");
+		    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+		    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
+		    if (!mmPasswdRegExp.test(mmPasswdValue)) {
+		    	alert("비밀번호는 영문 숫자 특수문자 조합으로 이루어진 8~15자로 입력가능합니다.");
+		    	mmPasswd.classList.add("is-invalid");
+		    	mmPasswd.focus();
+				return false;
+		    } else {
+		    	mmPasswd.classList.remove("is-invalid")
+		    	mmPasswd.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmRealName = document.getElementById("mmRealName");
+		    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
+			
+		    if (mmRealNameValue == "" || mmRealNameValue == null) {
+				alert("이름을 입력해주세요");
+				mmRealName.classList.add("is-invalid");
+				mmRealName.focus();
+				return false;
+		    } else {
+		    	mmRealName.classList.remove("is-invalid")
+		    	mmRealName.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmNickName = document.getElementById("mmNickName");
+		    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
+		    if (mmNickNameValue == "" || mmNickNameValue == null) {
+				alert("닉네임을 입력해주세요");
+				mmNickName.classList.add("is-invalid");
+				mmNickName.focus();
+				return false;
+		    } else {
+		    	mmNickName.classList.remove("is-invalid")
+		    	mmNickName.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmUseNy = document.getElementById("mmUseNy");
+		    var mmUseNyValue = document.getElementById("mmUseNy").value.trim();
+		    if (mmUseNyValue == "" || mmUseNyValue == null) {
+				alert("사용여부를 선택해주세요");
+				mmUseNy.classList.add("is-invalid");
+				mmUseNy.focus();
+				return false;
+		    } else {
+		    	mmUseNy.classList.remove("is-invalid")
+		    	mmUseNy.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmEmail = document.getElementById("mmEmail");
+		    var mmEmailValue = document.getElementById("mmEmail").value.trim();
+		    if (mmEmailValue == "" || mmEmailValue == null) {
+				alert("이메일을 입력해주세요");
+				mmEmail.classList.add("is-invalid");
+				mmEmail.focus();
+				return false;
+		    } else {
+		    	mmEmail.classList.remove("is-invalid")
+		    	mmEmail.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmTell = document.getElementById("mmTell");
+		    var mmTellValue = document.getElementById("mmTell").value.trim();
+		    if (mmTellValue == "" || mmTellValue == null) {
+				alert("전화번호를 입력해주세요");
+				mmTell.classList.add("is-invalid");
+				mmTell.focus();
+				return false;
+		    } else {
+		    	mmTell.classList.remove("is-invalid")
+		    	mmTell.classList.add("is-valid");
+//	 			by pass
+		    }
+		    var mmBirthDay = document.getElementById("mmBirthDay");
+		    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
+		    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
+				alert("출생년도를 입력해주세요");
+				mmBirthDay.classList.add("is-invalid");
+				mmBirthDay.focus();
+				return false;
+		    } else {
+		    	mmBirthDay.classList.remove("is-invalid")
+		    	mmBirthDay.classList.add("is-valid");
+//	 			by pass
+		    }
+			   form.action ="/xdm/v1/infra/member/memberInst"
 			   form.submit();
 		 }
 		</script>

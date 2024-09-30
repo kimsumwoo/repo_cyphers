@@ -487,8 +487,6 @@
 													<label for="validationCustom02" class="form-label">코드그룹seq</label>
 													<input type="text" class="form-control" id="cgSeq" 
 														placeholder="자동생성" name = "cgSeq" th:value="${item?.cgSeq}" disabled>
-														<div class="valid-feedback"></div>
-														<div class="invalid-feedback">코드를 생성해 주세요.</div>
 												</div>
 											</div>
 										</div>
@@ -497,8 +495,8 @@
 											<div class="col-3">
 												<div class="mb-3">
 												
-													<label for="validationCustom02" class="form-label">코드그룹 이름</label>
-													<input type="text" class="form-control" id="cgName" 
+													<label for="validationCustom02" class="form-label">코드그룹 이름 <span style="color: red;">*</span></label>
+													<input type="text" class="form-control validate-this" id="cgName" 
 														placeholder="한글,영대소문자,숫자" name = "cgName" th:value="${item?.cgName}" required>
 														<div class="invalid-feedback">코드이름을 생성해 주세요.</div>
 												
@@ -507,8 +505,8 @@
 											<div class="col-3">
 												<div class="mb-3">
 													
-													<label for="validationCustom04" class="form-label">사용여부</label>
-													<select class="form-select" id="cgUseNy"  name ="cgUseNy" th:value ="${item?.cgUseNy}" required>
+													<label for="validationCustom04" class="form-label" >사용여부 <span style="color: red;">*</span></label>
+													<select class="form-select validate-this" id="cgUseNy"  name ="cgUseNy" th:value ="${item?.cgUseNy}" required>
 														<option value="">선택하세요</option> 
 														<option value="1" th:selected = "${item?.cgUseNy == 1}">사용</option>
 														<option value="0" th:selected = "${item?.cgUseNy == 0}">미사용</option>
@@ -521,11 +519,11 @@
 											<div class="col-3">
 												<div class="mb-3">
 												
-													<label for="validationCustom02" class="form-label">순서</label>
-													<input type="text" class="form-control" id="cgTurn validationCustom02"  placeholder="" required
+													<label for="validationCustom02" class="form-label">순서 <span style="color: red;">*</span></label>
+													<input type="text" class="form-control validate-this" id="cgTurn"  placeholder="숫자만 입력가능" required
 													 Name= "cgTurn" th:value="${item?.cgTurn}">
 													<div class="valid-feedback"></div>
-													<div class="invalid-feedback">순서를 입력해주세요.</div>
+													<div class="invalid-feedback">숫자만 입력해주세요.</div>
 											
 											</div>
 										</div>
@@ -591,12 +589,15 @@
 	 		
 		    var cgName = document.getElementById("cgName");
 		    var cgNameValue = document.getElementById("cgName").value.trim();
-			
-		    if (cgNameValue == "" || cgNameValue == null) {
-				alert("이름을 입력해 주세요");
+		    var cgNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
+		    if (!cgNameRegExp.test(cgNameValue)) {
+		    	alert("이름은 한글, 영대소문자, 숫자만 입력해 주세요");
+				cgName.classList.add("is-invalid");
 				cgName.focus();
 				return false;
 		    } else {
+		    	cgName.classList.remove("is-invalid")
+		    	cgName.classList.add("is-valid");
 //	 			by pass
 		    }
 		    var cgUseNy = document.getElementById("cgUseNy");
@@ -604,47 +605,32 @@
 			
 		    if (cgUseNyValue == "" || cgUseNyValue == null) {
 				alert("사용여부를 선택해 주세요");
+				cgUseNy.classList.add("is-invalid");
 				cgUseNy.focus();
 				return false;
 		    } else {
+		    	cgUseNy.classList.remove("is-invalid")
+		    	cgUseNy.classList.add("is-valid");
 //	 			by pass
 		    }
 		    var cgTurn = document.getElementById("cgTurn");
 		    var cgTurnValue = document.getElementById("cgTurn").value.trim();
-			
-		    if (cgTurnValue == "" || cdTurnValue == null) {
-				alert("순서를 입력해주세요");
+			var cgTurnRegExp = /^[0-9]/;
+		    if (!cgTurnRegExp.test(cgTurnValue)) {
+				alert("순서는 숫자만 입력가능합니다");
+				cgTurn.classList.add("is-invalid");
 				cgTurn.focus();
 				return false;
 		    } else {
+		    	cgTurn.classList.remove("is-invalid")
+		    	cgTurn.classList.add("is-valid");
 //	 			by pass
 		    }
 		    form.action ="/xdm/v1/infra/codegroup/codeGroupXdmInst";
 			form.submit();
 		}
 		</script>
-		<script>
-		// Example starter JavaScript for disabling form submissions if there are invalid fields
-		(function () {
-		  'use strict'
-
-		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-		  var forms = document.querySelectorAll('.needs-validation')
-
-		  // Loop over them and prevent submission
-		  Array.prototype.slice.call(forms)
-		    .forEach(function (form) {
-		      form.addEventListener('submit', function (event) {
-		        if (!form.checkValidity()) {
-		          event.preventDefault()
-		          event.stopPropagation()
-		        }
-
-		        form.classList.add('was-validated')
-		      }, false)
-		    })
-		})()
-			</script>
+		
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

@@ -53,7 +53,7 @@
 		<!-- Loading wrapper end -->
 
 		<!-- Login box start -->
-		<form action="index.html">
+		<form method ="post" action="/xdm/v1/infra/login/helloworld">
 			<div class="login-box">
 				<div class="login-form">
 					<a href="index.html" class="login-logo">
@@ -64,17 +64,18 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Username</label>
-						<input type="text" class="form-control">
+						<input type="text" class="form-control validate-this"  id ="mmId" name ="mmId" placeholder="예)qwer1234" required>
+						<div class="invalid-feedback">아이디형식이 올바르지 않습니다</div>
 					</div>
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
 							<label class="form-label">Password</label>
 							<a href="forgot-password.html" class="btn-link ml-auto">Forgot password?</a>
 						</div>
-						<input type="password" class="form-control">
+						<input type="password" class="form-control validate-this" id ="mmPasswd" name ="mmPasswd" placeholder="영문 숫자 특수문자 조합으로 이루어진 8~15자" required>
 					</div>
 					<div class="login-form-actions">
-						<button type="submit" class="btn"> <span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
+						<button  class="btn" id ="btnLog"> <span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
 							Login</button>
 					</div>
 					<div class="login-form-actions">
@@ -99,6 +100,39 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script type="text/javascript">
+		
+		document.getElementById("btnLog").onclick = function (){
+ 		
+	    var mmId = document.getElementById("mmId");
+	    var mmIdValue = document.getElementById("mmId").value.trim();
+		var mmIdRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
+	    if (!mmIdRegExp.test(mmIdValue)) {
+			alert("아이디가 틀립니다");
+			mmId.classList.add("is-invalid");
+			mmId.focus();
+			return false;
+	    } else {
+	    	mmId.classList.remove("is-invalid")
+	    	mmId.classList.add("is-valid");
+// 			by pass
+	    }
+	    
+	    var mmPasswd = document.getElementById("mmPasswd");
+	    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+	    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
+	    if (!mmPasswdRegExp.test(mmPasswdValue)) {
+			alert("비밀번호가 틀립니다");
+			mmPasswd.classList.add("is-invalid");
+			mmPasswd.focus();
+			return false;
+	    } else {
+	    	mmPasswd.classList.remove("is-invalid")
+	    	mmPasswd.classList.add("is-valid");
+// 			by pass
+	    }
+	}
+		</script>
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

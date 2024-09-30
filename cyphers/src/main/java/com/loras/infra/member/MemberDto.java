@@ -20,6 +20,8 @@ public class MemberDto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date mmFixDate;
 	private String mmDesc;
+	private String mmId;
+	private String mmPasswd;
 //	--------------------
 	
 	public String getMmSeq() {
@@ -94,6 +96,19 @@ public class MemberDto {
 	public void setMmGender(String mmGender) {
 		this.mmGender = mmGender;
 	}
+	public String getMmId() {
+		return mmId;
+	}
+	public void setMmId(String mmId) {
+		this.mmId = mmId;
+	}
+	public String getMmPasswd() {
+		return mmPasswd;
+	}
+	public void setMmPasswd(String mmPasswd) {
+		this.mmPasswd = mmPasswd;
+	}
+	
 	
 	
 	

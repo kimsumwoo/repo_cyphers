@@ -5,7 +5,29 @@
 
 <resultMap type="com.loras.infra.login.LogInDto" id="resultMapObj"></resultMap>
 
-
+<select id="logInSelectOne" resultMap="resultMapObj">	
+	SELECT
+		mm.mmSeq
+		,mm.mmRealName
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmDelNy
+		,mm.mmUseNy
+		,mm.mmDate
+		,mm.mmFixDate
+		,mm.mmDesc
+		,mm.mmGender
+		,mm.mmId
+		,mm.mmPasswd
+		from
+			member mm
+		where 1=1
+		and mm.mmId = #{mmId}
+		and mm.mmPasswd = #{mmPasswd}
+		
+	</select>
 
 
 
