@@ -398,7 +398,7 @@ td, th {
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="inputIndustryType" name ="shOptionDate">
+											<select class="form-select" id="shOptionDate" name ="shOptionDate">
 												<option value="">날짜선택</option>
 												<option value="1">등록일</option>
 												<option value="2">수정일</option>
@@ -427,8 +427,8 @@ td, th {
 											<select class="form-select" id="shOption" name="shOption">
 												<option value="">검색구분</option>
 												<option value="1">코드</option>
-												<option value="2">코드그룹 이름</option>
-												<option value="3">순서</option>
+												<option value="2">리뷰점수</option>
+												<option value="3">리뷰댓글</option>
 											</select>
 										</div>
 									</div>
@@ -445,7 +445,7 @@ td, th {
 											<button class="btn" type="submit">
 												<i class="bi bi-search"></i>
 											</button>
-											<a href ="/xdm/v1/infra/codegroup/codeGroupXdmList"><button class="btn" type="button">
+											<a href ="/xdm/v1/infra/review/reviewList"><button class="btn" type="button">
 												<i class="bi bi-arrow-counterclockwise"></i>
 											</button></a>
 										</div>
@@ -456,19 +456,19 @@ td, th {
 								<div class="col-1" style="float: right;">
 									<div class="mb-3">
 										<select class="form-select" id="changeRowNum" name ="changeRowNum">
-											<option value="5" >5</option>
-											<option value="10">10</option>
-											<option value="30" >30</option>
-											<option value="50">50</option>
-											<option value="80" >80</option>
-											<option value="100">100</option>    
+											<option value="1" th:selected ="${vo.rowNumToShow eq 1}">1</option>
+											<option value="10" th:selected ="${vo.rowNumToShow eq 5}">10</option>
+											<option value="30" th:selected ="${vo.rowNumToShow eq 30}">30</option>
+											<option value="50" th:selected ="${vo.rowNumToShow eq 50}">50</option>
+											<option value="80" th:selected ="${vo.rowNumToShow eq 80}">80</option>
+											<option value="100" th:selected ="${vo.rowNumToShow eq 100}">100</option>    
 										</select>
 									</div>
 								</div>
 
 								<div class="col-1">
 									<div class="mb-3">
-										<p style="font-size: 25px;">Total</p>
+										<p style="font-size: 25px;" th:text="'Total: '+${vo.totalRows}"></p>
 									</div>
 								</div>
 
@@ -524,14 +524,14 @@ td, th {
 											<div class="row">
 												<div class="col">
 													<ul class="pagination justify-content-center mb-0">
-														<li class="page-item" style="cursor: pointer;"><a class="page-link" ><i class="bi bi-caret-left-fill"></i></a></li>
-														<li class="page-item" style="cursor: pointer;"><a class="page-link"><!-- ${i.index} --></a></li>
-														<li class="page-item" style="cursor: pointer;"><a class="page-link"><i class="bi bi-caret-right-fill"></i></a></li>
+														<li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="bi bi-caret-left-fill"></i></a></li>
+														<li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"><!-- ${i.index} --></a></li>
+														<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="bi bi-caret-right-fill"></i></a></li>
 													</ul>
 												</div>
 											</div>
 										</div>
-										<!-- paging e  -->		   
+										<!-- paging e  -->	   
 									</div>
 								</div>
 								<!---버튼--->
@@ -595,14 +595,14 @@ td, th {
 				<script type="text/javascript">
 				goList = function (thisPage) {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
-				    form.action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+				    form.action = "/xdm/v1/infra/review/reviewList";
 				    form.submit();
 				}
 				</script>
 				<script type="text/javascript">
 				goList = function (thisPage) {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
-				    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+				    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/review/reviewList";
 				    document.querySelector("form[name=formList]").submit();
 				}
 				</script>

@@ -53,7 +53,7 @@
 		<!-- Loading wrapper end -->
 
 		<!-- Login box start -->
-		<form method ="post" action="signinXdmProc">
+		<form method ="post">
 			<div class="login-box">
 				<div class="login-form">
 					<a href="index.html" class="login-logo">
@@ -74,8 +74,8 @@
 						</div>
 						<input type="password" class="form-control validate-this" id ="mmPasswd" name ="mmPasswd" placeholder="영문 숫자 특수문자 조합으로 이루어진 8~15자" required>
 					</div>
-					<div class="login-form-actions">
-						<button  class="btn" id ="btnLog"> <span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
+					<div class="login-form-actions" >
+						<button type ="button" class="btn" id ="btnLog"><span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
 							Login</button>
 					</div>
 					<div class="login-form-actions">
@@ -94,20 +94,19 @@
 				</div>
 			</div>
 		</form>
-					<div class="modal fade" id="modalAlert" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
-					aria-hidden="true">
+				<div class="modal fade" id="modalAlert" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+				aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="modalAlertTitle">Delete</h5>
+								<h5 class="modal-title" id="modalAlertTitle"></h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body" id="modalAlertBody">
-								삭제하시겠습니까?
+							
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-dark" data-bs-dismiss="modal">아니요</button>
-								<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">네</button>
+								<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">확인</button>
 							</div>
 						</div>
 					</div>
@@ -118,66 +117,70 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
-		<script type="text/javascript">
 		
-		document.getElementById("btnLog").onclick = function (){
- 		
-	    var mmId = document.getElementById("mmId");
-	    var mmIdValue = document.getElementById("mmId").value.trim();
-		var mmIdRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
-	    if (!mmIdRegExp.test(mmIdValue)) {
-			alert("아이디가 틀립니다");
-			mmId.classList.add("is-invalid");
-			mmId.focus();
-			return false;
-	    } else {
-	    	mmId.classList.remove("is-invalid")
-	    	mmId.classList.add("is-valid");
-// 			by pass
-	    }
-	    
-	    var mmPasswd = document.getElementById("mmPasswd");
-	    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
-	    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
-	    if (!mmPasswdRegExp.test(mmPasswdValue)) {
-			alert("비밀번호가 틀립니다");
-			mmPasswd.classList.add("is-invalid");
-			mmPasswd.focus();
-			return false;
-	    } else {
-	    	mmPasswd.classList.remove("is-invalid")
-	    	mmPasswd.classList.add("is-valid");
-// 			by pass
-	    }
-	}
-		</script>
 		<script type="text/javascript">
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			/* ,dataType:"json" */
-			,url: "/xdm/v1/infra/login/logIn"
-			/* ,data : $("#formLogin").serialize() */
-			,data : { "mmId" : $("#mmId").val(), "mmPasswd" : $("#mmPasswd").val()}
-			,success: function(response) {
-				if(response.rt == "success") {
-					if(response.changePwd == "true") {
-						location.href = "/xdm/v1/infra/login/logIn";
-					} else {
-						location.href = "/xdm/v1/infra/login/helloworld";
+		document.getElementById("btnLog").onclick = function (){
+		    var mmId = document.getElementById("mmId");
+		    var mmIdValue = document.getElementById("mmId").value.trim();
+			var mmIdRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/;
+		    if (!mmIdRegExp.test(mmIdValue)) {
+				mmId.classList.add("is-invalid");
+				mmId.focus();
+				return false;
+	    	} 
+		    else {
+		    	mmId.classList.remove("is-invalid")
+		    	mmId.classList.add("is-valid");
+// 				by pass
+	    	}
+	    
+		    var mmPasswd = document.getElementById("mmPasswd");
+		    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+		    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
+	    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
+				mmPasswd.classList.add("is-invalid");
+				mmPasswd.focus();
+				return false;
+	    	} 
+	    	else {
+		    	mmPasswd.classList.remove("is-invalid")
+		    	mmPasswd.classList.add("is-valid");
+	// 			by pass
+	    	}
+	    
+	   		 $.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/xdm/v1/infra/login/signinXdmProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "mmId" : $("#mmId").val(), "mmPasswd" : $("#mmPasswd").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+					location.href ="/xdm/v1/infra/login/xdmIndex";
+					
+// 						if(response.changePwd == "true") {
+// 							location.href = "/xdm/v1/infra/login/logIn";
+// 						} 
+// 						else {
+// 							location.href = "/xdm/v1/infra/login/helloworld";
+// 						}
+					} 
+					else {
+				 		document.getElementById("modalAlertTitle").innerText = "확 인";
+				 		document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
+				 		$("#modalAlert").modal("show");
 					}
-				} else {
-			 		document.getElementById("modalAlertTitle").innerText = "확 인";
-			 		document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
-			 		$("#modalAlert").modal("show");
 				}
-			}
-			,error : function(jqXHR, textStatus, errorThrown){
+				,error : function(jqXHR, textStatus, errorThrown){
 				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 			}
 		});
+	}
 		</script>
+		
+
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

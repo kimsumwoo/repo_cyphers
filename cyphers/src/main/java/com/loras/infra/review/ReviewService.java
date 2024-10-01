@@ -25,6 +25,9 @@ public class ReviewService {
 	public int delete(ReviewDto reviewDto) {
 		return reviewDao.delete(reviewDto);
 	}
+	public int selectOneCount(ReviewVo reviewVo) {
+		return reviewDao.selectOneCount(reviewVo);
+	}
 
 
 

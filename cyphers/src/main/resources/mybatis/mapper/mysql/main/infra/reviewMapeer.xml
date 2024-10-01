@@ -7,6 +7,7 @@
 	<resultMap type="com.loras.infra.review.ReviewDto" id="resultMapObj"></resultMap>
 			<!-- 	담아줄객체 -->
 	<select id="reviewSelectList" resultMap ="resultMapObj">
+	select rv.* from(
 		SELECT 
 			rv.rvSeq
 			,rv.rvRank
@@ -22,7 +23,8 @@
             ,pd.pdSeq
 			,pd.pdName
 			<include refid="selectCommon"></include>
-			
+		) rv
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="insert">
@@ -98,7 +100,16 @@
 			<when test="shOption == 2">AND rvRank = #{shValue}</when>
 			<when test="shOption == 3">AND rvComment LIKE CONCAT('%',#{shValue},'%')</when>
 		</choose>
-	</sql>			
+		<choose>
+			<when test="shOptionDate == 1">AND rv.rvDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			<when test="shOptionDate == 2">AND rv.rvFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+		</choose>
+	</sql>
+	
+	<select id="selectOneCount">
+		select count(*)
+		<include refid="selectCommon"></include>
+	</select>			
 			
 			
 			
