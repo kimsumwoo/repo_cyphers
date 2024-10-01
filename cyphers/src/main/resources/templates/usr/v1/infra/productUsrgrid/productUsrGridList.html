@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/usr/css/common.css">
     </head>
     <body>
-        
+        <form name ="formList" method = "post" action ="/usr/v1/infra/productUsrgrid/productUsrGridList" autocomplete="off">
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
             <div class="elements-nav">
@@ -147,27 +147,27 @@
                                         <!-- Checked checkbox -->
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked> <label class="form-check-label" for="flexCheckChecked1">소고기</label>
-                                            <span class="text-muted small float-end">120</span>
+                                            <span class="text-muted small float-end"></span>
                                         </div>
                                         <!-- Checked checkbox -->
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked> <label class="form-check-label" for="flexCheckChecked2">닭고기</label>
-                                            <span class="text-muted small float-end">15</span>
+                                            <span class="text-muted small float-end"></span>
                                         </div>
                                         <!-- Checked checkbox -->
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked> <label class="form-check-label" for="flexCheckChecked3">오리고기</label>
-                                            <span class="text-muted small float-end">35</span>
+                                            <span class="text-muted small float-end"></span>
                                         </div>
                                         <!-- Checked checkbox -->
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked> <label class="form-check-label" for="flexCheckChecked4">어류</label>
-                                            <span class="text-muted small float-end">89</span>
+                                            <span class="text-muted small float-end"></span>
                                         </div>
                                         <!-- Default checkbox -->
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">기타</label>
-                                            <span class="text-muted small float-end">30</span>
+                                            <span class="text-muted small float-end"></span>
                                         </div>
                                     </div>
                                   </div>
@@ -175,7 +175,7 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        상품검색하기
+                                        가격검색하기
                                     </button>
                                   </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -184,20 +184,21 @@
                                               <div class="col-6">
                                                   <p class="mb-0">최소</p>
                                                   <div class="form-outline">
-                                                     <input class="form-control mb-3" type="text" placeholder="" aria-label="default input example"> <label class="form-label small text-muted" for="typeNumber">0원</label>
+                                                     <input class="form-control mb-3" type="text" aria-label="default input example" name ="shLowPrice" id ="shLowPrice">
+                                                      <label class="form-label small text-muted" for="typeNumber">0</label>
                                                    </div>
                                               </div>
                                               <div class="col-6">
                                                   <p class="mb-0">최대</p>
                                                   <div class="form-outline">
-                                                     <input class="form-control mb-3" type="text" placeholder="" aria-label="default input example"> <label class="form-label small text-muted" for="typeNumber">50,000원</label>
+                                                     <input class="form-control mb-3" type="text" aria-label="default input example" name ="shTopPrice" id ="shTopPrice">
+                                                      <label class="form-label small text-muted" for="typeNumber">50,000</label>
                                                   </div>
                                               </div>
-                                          </div>
-                                          <button type="button" class="btn btn-outline-secondary w-100">검색하기</button>
-                                      </div>
+                                          	</div>
+                                      	</div>
                                     </div>
-                                  </div>
+                             	</div>
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
                                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreee" aria-expanded="false" aria-controls="collapseThreee">
@@ -205,17 +206,17 @@
                                       </button>
                                     </h2>
                                      <div id="collapseThreee" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                        <div class="col-12">
-                                            <p class="mb-0">상품명</p>
-                                            <div class="form-outline">
-                                               <input class="form-control mb-3" type="text" placeholder="" aria-label="default input example"> <label class="form-label small text-muted" for="typeNumber"></label>
-                                             </div>
-                                        </div>
-                                        <button type="button" class="btn btn-outline-secondary w-100">검색하기</button>
-                                         </div>
-                                      </div>
-                                    </div>
+                                       <div class="accordion-body">
+                                        	<div class="col-12">
+                                            	<p class="mb-0">상품명</p>
+                                            	<div class="form-outline">
+                                               		<input class="form-control mb-3" type="text" aria-label="default input example" name="shName" id="shName">
+                                                	<label class="form-label small text-muted" for="typeNumber"></label>
+                                            	</div>
+                                        	</div>
+                                    	</div>
+                                	</div>
+                              	</div>
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
                                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreew" aria-expanded="false" aria-controls="collapseThreew">
@@ -255,10 +256,11 @@
                                                 <i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-secondary"></i><i class="ri-star-fill text-secondary"></i>
                                                 <i class="ri-star-fill text-secondary"></i>
                                             </label>
-                                        </div>
+                                        </div>	
                                       </div>
                                     </div>
                                   </div>
+                                   <button type="submit" class="btn btn-outline-secondary w-100">검색하기</button>
                               </div>
                           </div>
                     </div>
@@ -338,7 +340,7 @@
                     </div>
                 </div>
             </div>
-       
+       	</form>
         <!-- Nav Sidebar --> 
         <!-- Video Modal -->
         <!-- Bootsrap Bundle Js -->

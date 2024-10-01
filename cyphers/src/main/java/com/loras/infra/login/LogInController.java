@@ -29,16 +29,29 @@ public class LogInController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/xdm/v1/infra/login/signinXdmProc")
-	public Map<String, Object> signinXdmProc(LogInDto logInDto) throws Exception {
+	public Map<String, Object> signinXdmProc(LogInDto logInDto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
-		LogInDto rtMember2 = logInService.logInSelectOne(logInDto); 
+		LogInDto rtMember = logInService.logInSelectOne(logInDto); 
 
-		if (rtMember2 != null) {
+//		httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
+		httpSession.setAttribute("sessSeqXdm", rtMember.getMmSeq());
+		httpSession.setAttribute("sessIdXdm", rtMember.getMmId());
+		httpSession.setAttribute("sessNameXdm", rtMember.getMmRealName());
+
+		if (rtMember != null) {
 			returnMap.put("rt", "success");
 		} else {
 			returnMap.put("rt", "fail"); 
 		}
+		return returnMap;
+	}
+	@ResponseBody
+	@RequestMapping(value = "/xdm/v1/infra/login/signoutXdmProc")
+	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
 		return returnMap;
 	}
 }

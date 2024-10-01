@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.common.config.util.UtilDateTime;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class CodeGroupController {
@@ -15,7 +17,10 @@ public class CodeGroupController {
 	CodeGroupService CodeGroupService;
 	
 	@RequestMapping(value ="/xdm/v1/infra/codegroup/codeGroupXdmList")
-	public String codeGroupXdmList(Model model,@ModelAttribute("vo") CodeGroupVo vo) {
+	public String codeGroupXdmList(Model model,@ModelAttribute("vo") CodeGroupVo vo, HttpSession httpSession ) {
+		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
+		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
+		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
 //		/* 초기값 세팅이 없는 경우 사용 */
 		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));

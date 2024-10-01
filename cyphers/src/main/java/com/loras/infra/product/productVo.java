@@ -8,6 +8,9 @@ public class productVo {
 	private Integer shOptionDate;
 	private String shDateStart;
 	private String shDateEnd;
+	private Integer shLowPrice;
+	private Integer shTopPrice;
+	private String shName;
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지
@@ -111,9 +114,29 @@ public class productVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
-	
-	
-public void setParamsPaging(int totalRows) {
+	public Integer getShLowPrice() {
+		return shLowPrice;
+	}
+	public void setShLowPrice(Integer shLowPrice) {
+		if (shLowPrice == null) {
+            this.shLowPrice = 1;
+		}else{
+		this.shLowPrice = shLowPrice;
+		}
+	}
+	public Integer getShTopPrice() {
+		return shTopPrice;
+	}
+	public void setShTopPrice(Integer shTopPrice) {
+		this.shTopPrice = shTopPrice;
+	}
+	public String getShName() {
+		return shName;
+	}
+	public void setShName(String shName) {
+		this.shName = shName;
+	}
+	public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);
 

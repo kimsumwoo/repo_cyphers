@@ -428,7 +428,7 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-									<span class="user-name d-none d-md-block">Abigale Heaney</span>
+									<span class="user-name d-none d-md-block" th:text ="${session.sessNameXdm}"></span>
 									<span class="avatar">
 										<img src="/xdm/v1/template/Arise/assets/images/user.png" alt="Admin Templates">
 										<span class="status online"></span>
@@ -438,7 +438,7 @@
 									<div class="header-profile-actions">
 										<a href="profile.html">Profile</a>
 										<a href="account-settings.html">Settings</a>
-										<a href="login.html">Logout</a>
+										<button id="btnLogout" type ="button">Logout</button>
 									</div>
 								</div>
 							</li>
@@ -973,6 +973,25 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script type="text/javascript">
+		document.getElementById("btnLogout").onclick = function (){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/xdm/v1/infra/login/signoutXdmProc"
+				,success: function(response) {
+					if(response.rt == "success") {
+					location.href ="/xdm/v1/infra/login/logIn";
+					}else {
+					   	
+				    }
+				}	
+		});
+		}		
+		
+		</script>
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/modernizr.js"></script>

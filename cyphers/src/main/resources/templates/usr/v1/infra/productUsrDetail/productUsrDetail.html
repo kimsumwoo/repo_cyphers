@@ -162,9 +162,10 @@
                             <div class="col-6"><a href="#" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
                         </div>
                         <div class="pt-3">
-                            <p class="small mb-0"><span class="fw-bold">CATEGORY:</span>
-                             <a href="#" <span th:value ="${item?.pdMeat}" name ="pdMeat"></span></a>
-                            <a href="#"<span name ="pdMeat" th:text ="${item?.pdMeat}"></span></a>
+                            <p class="small mb-0"><span class="fw-bold">CATEGORY:</span></p>
+                             <a href="#" th:text="${@codeService.selectOneCachedCode(item.pdType)}"></a>
+                             <b>,</b>
+                            <a href="#"<span th:text="${@codeService.selectOneCachedCode(item.pdMeat)}"></span></a>
                       
                           
                         </div>

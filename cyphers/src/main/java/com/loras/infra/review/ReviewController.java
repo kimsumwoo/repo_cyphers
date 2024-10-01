@@ -15,7 +15,7 @@ public class ReviewController {
 	public ReviewService reviewService;
 	
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewList")
-	public String reviewList(Model model,@ModelAttribute("vo") ReviewVo vo){
+	public String reviewList(Model model, @ModelAttribute("vo") ReviewVo vo){
 		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(reviewService.selectOneCount(vo));

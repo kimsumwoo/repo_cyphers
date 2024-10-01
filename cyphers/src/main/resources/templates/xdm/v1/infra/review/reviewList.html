@@ -71,8 +71,9 @@ td, th {
 </head>
 
 <body>
-	<form name ="formList" method = "post" action ="/xdm/v1/infra/review/reviewList" autocomplete='off'>
-
+	<form name ="formList" method ="post" action ="/xdm/v1/infra/review/reviewList" autocomplete='off'>
+	<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+	<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
 	<!-- Loading wrapper start -->
 	<!-- <div id="loading-wrapper">
 			<div class="spinner">
@@ -379,9 +380,9 @@ td, th {
 									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType" name ="shrvDelNy">
-												<option value="">삭제여부</option>
-												<option value="0" name ="shrvDelNy">N</option>
-												<option value="1" name ="shrvDelNy">Y</option>
+												<option value=""  th:selected="${vo.shrvDelNy == null}">삭제여부</option>
+												<option value="0" th:selected="${vo.shrvDelNy == 0}" name ="shrvDelNy">N</option>
+												<option value="1" th:selected="${vo.shrvDelNy == 1}"name ="shrvDelNy">Y</option>
 											</select>
 										</div>
 									</div>
@@ -389,9 +390,9 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="inputIndustryType" name ="shrvUseNy">
-												<option value="" >사용여부</option>
-												<option value="0" >N</option>
-												<option value="1">Y</option>
+												<option value="" th:selected="${vo.shrvUseNy == null}">사용여부</option>
+												<option value="0" th:selected="${vo.shrvUseNy == 0}">N</option>
+												<option value="1" th:selected="${vo.shrvUseNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
@@ -399,8 +400,8 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="shOptionDate" name ="shOptionDate">
-												<option value="">날짜선택</option>
-												<option value="1">등록일</option>
+												<option value="" th:selected="${vo.shOptionDate == null}">날짜선택</option>
+												<option value="1" th:selected="${vo.shOptionDate == 1}">등록일</option>
 												<option value="2">수정일</option>
 											</select>
 										</div>
@@ -456,12 +457,12 @@ td, th {
 								<div class="col-1" style="float: right;">
 									<div class="mb-3">
 										<select class="form-select" id="changeRowNum" name ="changeRowNum">
-											<option value="1" th:selected ="${vo.rowNumToShow eq 1}">1</option>
-											<option value="10" th:selected ="${vo.rowNumToShow eq 5}">10</option>
-											<option value="30" th:selected ="${vo.rowNumToShow eq 30}">30</option>
-											<option value="50" th:selected ="${vo.rowNumToShow eq 50}">50</option>
-											<option value="80" th:selected ="${vo.rowNumToShow eq 80}">80</option>
-											<option value="100" th:selected ="${vo.rowNumToShow eq 100}">100</option>    
+											<option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
+											<option value="10" th:selecte ="${vo.rowNumToShow eq 2}">10</option>
+											<option value="30" th:selected="${vo.rowNumToShow eq 30}">30</option>
+											<option value="50" th:selected="${vo.rowNumToShow eq 50}">50</option>
+											<option value="80" th:selected="${vo.rowNumToShow eq 80}">80</option>
+											<option value="100" th:selected="${vo.rowNumToShow eq 100}">100</option>    
 										</select>
 									</div>
 								</div>
