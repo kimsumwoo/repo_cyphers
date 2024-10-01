@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LogInDao {
 
-	public LogInDto logInSelectOne();
+	public LogInDto logInSelectOne(LogInDto logInDto);
 }

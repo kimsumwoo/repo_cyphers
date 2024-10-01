@@ -8,7 +8,7 @@ public class LogInService {
 	@Autowired
 	public LogInDao logInDao;
 	
-	public LogInDto logInSelectOne() {
-		return logInDao.logInSelectOne();
+	public LogInDto logInSelectOne(LogInDto logInDto) {
+		return logInDao.logInSelectOne(logInDto);
 	}
 }

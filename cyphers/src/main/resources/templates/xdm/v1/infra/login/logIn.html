@@ -138,7 +138,7 @@
 	    
 	    var mmPasswd = document.getElementById("mmPasswd");
 	    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
-	    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
+	    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
 	    if (!mmPasswdRegExp.test(mmPasswdValue)) {
 			alert("비밀번호가 틀립니다");
 			mmPasswd.classList.add("is-invalid");

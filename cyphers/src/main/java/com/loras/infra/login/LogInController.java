@@ -23,16 +23,17 @@ public class LogInController {
 	}
 	@RequestMapping(value ="/xdm/v1/infra/login/helloworld")
 	public String helloworld(LogInDto logInDto) {
-		logInService.logInSelectOne();
+		logInService.logInSelectOne(logInDto);
 		return "/xdm/v1/infra/login/helloworld";
 	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/xdm/v1/infra/login/signinXdmProc")
 	public Map<String, Object> signinXdmProc(LogInDto logInDto) throws Exception {
 		System.out.println("sadsadsad");
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
-		LogInDto rtMember2 = logInService.logInSelectOne(); 
+		LogInDto rtMember2 = logInService.logInSelectOne(logInDto); 
 
 		if (rtMember2 != null) {
 			returnMap.put("rt", "success");
