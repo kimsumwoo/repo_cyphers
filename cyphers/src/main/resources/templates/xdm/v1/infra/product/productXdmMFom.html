@@ -470,11 +470,11 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<a href="/xdm/v1/infra/product/productList"><h2 style="height: 80px;">product</h2></a>
+										<a href="/xdm/v1/infra/product/productXdmList"><h2 style="height: 80px;">product</h2></a>
 										
 											
 											
-										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/product/productUpdt"autocomplete="off" novalidate>
+										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/product/productXdmUpdt"autocomplete="off" novalidate>
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -592,7 +592,7 @@
 								</div>
 								<div class="row">
 									<div class="col">
-										<a href ="/xdm/v1/infra/product/productList"><button class="btn">
+										<a href ="/xdm/v1/infra/product/productXdmList"><button class="btn">
 										<i class="bi bi-file-text"></i>
 									</button></a>	
 										<button class="btn"  type ="button" data-bs-toggle="modal" data-bs-target="#verticallyCentered">
@@ -728,7 +728,7 @@
 			    	pdUseNy.classList.add("is-valid");
 //		 			by pass
 			    }
-			    form.action ="/xdm/v1/infra/product/productUpdt";
+			    form.action ="/xdm/v1/infra/product/productXdmUpdt";
 			    form.submit();
 		 }
 	    </script>
@@ -739,7 +739,7 @@
 		<script>
 			document.getElementById("delbtn").onclick = function(){
 				let form= document.querySelector("form[name=mfom]");
-				form.action ="/xdm/v1/infra/product/productDete";
+				form.action ="/xdm/v1/infra/product/productXdmDete";
 				form.submit();
 			}
 		</script> 

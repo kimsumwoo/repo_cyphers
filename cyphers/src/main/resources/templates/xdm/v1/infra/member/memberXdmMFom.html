@@ -470,11 +470,11 @@
 											<li class="breadcrumb-item">page2</li>
 											<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 										</ol>
-										<a href="/xdm/v1/infra/member/memberList"><h2 style="height: 80px;">member</h2></a>
+										<a href="/xdm/v1/infra/member/memberXdmList"><h2 style="height: 80px;">member</h2></a>
 										
 											
 											
-										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/member/memberUpdt"autocomplete="off" novalidate>
+										<form class="needs-validation" method="post"name="mfom" action="/xdm/v1/infra/member/memberXdmUpdt"autocomplete="off" novalidate>
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -719,7 +719,7 @@
 		<script>
 			document.getElementById("delbtn").onclick = function(){
 				let form= document.querySelector("form[name=mfom]");
-				form.action ="/xdm/v1/infra/member/memberDete";
+				form.action ="/xdm/v1/infra/member/memberXdmDete";
 				form.submit();
 			}
 		</script> 
@@ -838,7 +838,7 @@
 		    	mmBirthDay.classList.add("is-valid");
 //	 			by pass
 		    }
-			   form.action ="/xdm/v1/infra/member/memberInst"
+			   form.action ="/xdm/v1/infra/member/memberXdmInst"
 			   form.submit();
 		 }
 		</script>

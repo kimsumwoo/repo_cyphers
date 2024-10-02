@@ -11,11 +11,12 @@ import com.loras.infra.codegroup.CodeGroupDto;
 public class adressController {
 	@Autowired
 	addressService addressService;
-	@RequestMapping(value = "/xdm/v1/infra/address/address2")
-		public String address(Model model) {
-			model.addAttribute("address", addressService.addressList());
-		return "/xdm/v1/infra/address/address2";
+	@RequestMapping(value = "/xdm/v1/infra/address/addressList")
+	public String addressList(Model model) {
+		model.addAttribute("list",(addressService.addressList()));
+		return "/xdm/v1/infra/address/addressList";
 	}
+	
 	@RequestMapping(value = "/xdm/v1/infra/address/address2Inst")
 	public String addressInst(addressDto addressDto) {
 		addressService.Insert(addressDto);

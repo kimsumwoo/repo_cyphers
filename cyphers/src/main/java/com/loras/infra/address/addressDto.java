@@ -2,79 +2,92 @@ package com.loras.infra.address;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class addressDto {
-	private String seq;
-	private String addName;
-	private String zip;
-	private String add1;
-	private String add2;
-	private String num1;
-	private String num2;
-	private String type;
-	private Date date;
-	private Date fixDate;
-	//-----------
+	private String adSeq;
+	private Integer adDefaultNy;
+	private String adZipCode;
+	private String ad1;
+	private String ad2;
+	private Integer adUseNy;
+	private Integer adDelNy;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date adDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date adFixDate;
+	private String member_mmSeq;
 	
-	public String getSeq() {
-		return seq;
+	//---------------
+	
+	public String getAdSeq() {
+		return adSeq;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setAdSeq(String adSeq) {
+		this.adSeq = adSeq;
 	}
-	public String getZip() {
-		return zip;
+	public Integer getAdDefaultNy() {
+		return adDefaultNy;
 	}
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setAdDefaultNy(Integer adDefaultNy) {
+		this.adDefaultNy = adDefaultNy;
 	}
-	public String getAdd1() {
-		return add1;
+	public String getAdZipCode() {
+		return adZipCode;
 	}
-	public void setAdd1(String add1) {
-		this.add1 = add1;
+	public void setAdZipCode(String adZipCode) {
+		this.adZipCode = adZipCode;
 	}
-	public String getAdd2() {
-		return add2;
+	public String getAd1() {
+		return ad1;
 	}
-	public void setAdd2(String add2) {
-		this.add2 = add2;
+	public void setAd1(String ad1) {
+		this.ad1 = ad1;
 	}
-	public String getNum1() {
-		return num1;
+	public String getAd2() {
+		return ad2;
 	}
-	public void setNum1(String num1) {
-		this.num1 = num1;
+	public void setAd2(String ad2) {
+		this.ad2 = ad2;
 	}
-	public String getNum2() {
-		return num2;
+	public Integer getAdUseNy() {
+		return adUseNy;
 	}
-	public void setNum2(String num2) {
-		this.num2 = num2;
+	public void setAdUseNy(Integer adUseNy) {
+		this.adUseNy = adUseNy;
 	}
-	public String getType() {
-		return type;
+	public Integer getAdDelNy() {
+		return adDelNy;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setAdDelNy(Integer adDelNy) {
+		this.adDelNy = adDelNy;
 	}
-	public Date getDate() {
-		return date;
+	public Date getAdDate() {
+		return adDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setAdDate(Date adDate) {
+		this.adDate = adDate;
 	}
-	public Date getFixDate() {
-		return fixDate;
+	public Date getAdFixDate() {
+		return adFixDate;
 	}
-	public void setFixDate(Date fixDate) {
-		this.fixDate = fixDate;
+	public void setAdFixDate(Date adFixDate) {
+		this.adFixDate = adFixDate;
 	}
-	public String getAddName() {
-		return addName;
+	public String getMember_mmSeq() {
+		return member_mmSeq;
 	}
-	public void setAddName(String addName) {
-		this.addName = addName;
+	public void setMember_mmSeq(String member_mmSeq) {
+		this.member_mmSeq = member_mmSeq;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

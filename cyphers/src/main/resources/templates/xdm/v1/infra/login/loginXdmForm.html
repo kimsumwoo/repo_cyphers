@@ -153,12 +153,12 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: "/xdm/v1/infra/login/signinXdmProc"
+				,url: "/xdm/v1/infra/login/loginXdmProc"
 				/* ,data : $("#formLogin").serialize() */
 				,data : { "mmId" : $("#mmId").val(), "mmPasswd" : $("#mmPasswd").val()}
 				,success: function(response) {
 					if(response.rt == "success") {
-					location.href ="/xdm/v1/infra/login/xdmIndex";
+					location.href ="/xdm/v1/infra/login/indexXdmList";
 					
 // 						if(response.changePwd == "true") {
 // 							location.href = "/xdm/v1/infra/login/logIn";

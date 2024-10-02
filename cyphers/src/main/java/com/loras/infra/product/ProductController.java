@@ -15,37 +15,37 @@ public class ProductController {
 	public ProductService productService;
 	
 //	사용자
-	@RequestMapping(value = "/xdm/v1/infra/product/productList")
-		public String productList(Model model,@ModelAttribute("vo") productVo vo) {
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmList")
+		public String productXdmList(Model model,@ModelAttribute("vo") productVo vo) {
 		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list",productService.productList(vo));
-		return "/xdm/v1/infra/product/productList";
+		return "/xdm/v1/infra/product/productXdmList";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/product/productForm")
-	public String productForm() {
-		return "/xdm/v1/infra/product/productForm";
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmForm")
+	public String productXdmForm() {
+		return "/xdm/v1/infra/product/productXdmForm";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/product/productInst")
-	public String productInst(ProductDto productDto) {
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmInst")
+	public String productXdmInst(ProductDto productDto) {
 		productService.insert(productDto);
-		return "redirect:/xdm/v1/infra/product/productList";
+		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/product/productMFom")
-	public String productMFom(ProductDto productDto,Model model) {
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmMFom")
+	public String productXdmMFom(ProductDto productDto,Model model) {
 		model.addAttribute("item",productService.SelectOne(productDto));
-		return "/xdm/v1/infra/product/productMFom";
+		return "/xdm/v1/infra/product/productXdmMFom";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/product/productUpdt")
-	public String productUpdt(ProductDto productDto) {
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmUpdt")
+	public String productXdmUpdt(ProductDto productDto) {
 		productService.update(productDto);
-		return "redirect:/xdm/v1/infra/product/productList";
+		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/product/productDete")
-	public String productDete(ProductDto productDto) {
+	@RequestMapping(value = "/xdm/v1/infra/product/productXdmDete")
+	public String productXdmDete(ProductDto productDto) {
 		productService.delete(productDto);
-		return "redirect:/xdm/v1/infra/product/productList";
+		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
 	
 //	유저

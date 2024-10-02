@@ -71,7 +71,7 @@ td, th {
 </head>
 
 <body>
-	<form name ="formList" method = "post" action ="/xdm/v1/infra/product/productList" autocomplete="off">
+	<form name ="formList" method = "post" action ="/xdm/v1/infra/member/memberXdmList" autocomplete="off">
 	<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
 	<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
 	<!-- Loading wrapper start -->
@@ -372,27 +372,27 @@ td, th {
 								<li class="breadcrumb-item breadcrumb-active"
 									aria-current="page">Default</li>
 							</ol>
-							<a href="/xdm/v1/infra/product/productList"><h2 style="height: 80px;">product</h2></a>
+							<a href="/xdm/v1/infra/member/memberXdmList"><h2 style="height: 80px;">member</h2></a>
 							<!-- 검색 -->
 							<div class="card-title">
 
 								<div class="row">
 									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="shpdDelNy" name ="shpdDelNy">
-												<option value="" th:selected ="${vo.shpdDelNy == null}">삭제여부</option>
-												<option value="0" name="shpdDelNy" th:selected ="${vo.shpdDelNy == 0}">N</option>
-												<option value="1" name="shpdDelNy" th:selected ="${vo.shpdDelNy == 1}">Y</option>
+											<select class="form-select" id="shmmDelNy" name ="shmmDelNy">
+												<option value="" th:selected ="${vo.shmmDelNy == null}">삭제여부</option>
+												<option value="0" name="shmmDelNy" th:selected ="${vo.shmmDelNy == 0}">N</option>
+												<option value="1" name="shmmDelNy" th:selected ="${vo.shmmDelNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
-											<select class="form-select" id="shpdUseNy" name ="shpdUseNy">
-												<option value="" th:selected ="${vo.shpdUseNy == null}">사용여부</option>
-												<option value="0" name ="shpdUseNy" th:selected ="${vo.shpdUseNy == 0}">N</option>
-												<option value="1" name ="shpdUseNy" th:selected ="${vo.shpdUseNy == 1}">Y</option>
+											<select class="form-select" id="shmmUseNy" name ="shmmUseNy">
+												<option value="" th:selected ="${vo.shmmUseNy == null}">사용여부</option>
+												<option value="0" name ="shmmUseNy" th:selected ="${vo.shmmUseNy == 0}">N</option>
+												<option value="1" name ="shmmUseNy" th:selected ="${vo.shmmUseNy == 1}">Y</option>
 											</select>
 										</div>
 									</div>
@@ -400,7 +400,7 @@ td, th {
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
 										<div class="mb-3">
 											<select class="form-select" id="shOptionDate" name ="shOptionDate">
-												<option value="" th:selected ="${vo.shOptionDate == null}">날짜선택</option>
+												<option value="">날짜선택</option>
 												<option value="1" name="shOptionDate" th:selected ="${vo.shOptionDate == 1}">등록일</option>
 												<option value="2" name="shOptionDate" th:selected ="${vo.shOptionDate == 2}">수정일</option>
 											</select>
@@ -429,17 +429,18 @@ td, th {
 											<select class="form-select" id="shOption" name="shOption">
 												<option value="" th:selected ="${vo.shOption == null}">검색구분</option>
 												<option value="1" name="shOption" th:selected ="${vo.shOption == 1}">코드</option>
-												<option value="2" name="shOption" th:selected ="${vo.shOption == 2}">상품이름</option>
-												<option value="3" name="shOption" th:selected ="${vo.shOption == 3}">상품가격</option>
-												<option value="4" name="shOption" th:selected ="${vo.shOption == 4}">식품유형</option>
-												<option value="5" name="shOption" th:selected ="${vo.shOption == 5}">고기종류</option>
+												<option value="2" name="shOption" th:selected ="${vo.shOption == 2}">맴버이름</option>
+												<option value="3" name="shOption" th:selected ="${vo.shOption == 3}">닉네임</option>
+												<option value="4" name="shOption" th:selected ="${vo.shOption == 4}">생일</option>
+												<option value="5" name="shOption" th:selected ="${vo.shOption == 5}">이메일</option>
+												<option value="6" name="shOption" th:selected ="${vo.shOption == 6}">전화번호</option>
 											</select>
 										</div>
 									</div>
 									<div
 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
 										<div class="mb-3">
-											<input type="text" class="form-control" id="shValue"
+											<input type="text" class="form-control" id="inputPostalCode"
 												name ="shValue" th:value ="${vo.shValue}">
 										</div>
 									</div>
@@ -449,7 +450,7 @@ td, th {
 											<button class="btn" type="submit">
 												<i class="bi bi-search"></i>
 											</button>
-											<a href ="/xdm/v1/infra/product/productList"><button class="btn" type="button">
+											<a href ="/xdm/v1/infra/member/memberXdmList"><button class="btn" type="button">
 												<i class="bi bi-arrow-counterclockwise"></i>
 											</button></a>
 										</div>
@@ -460,11 +461,11 @@ td, th {
 								<div class="col-1" style="float: right;">
 									<div class="mb-3">
 										<select class="form-select" id="changeRowNum" name ="changeRowNum">
-											<option value="5" th:selected ="${vo.rowNumToShow eq 5}">5</option>
-											<option value="10" th:selected ="${vo.rowNumToShow eq 10}">10</option>
-											<option value="15" th:selected ="${vo.rowNumToShow eq 15}">15</option>
-											<option value="20" th:selected ="${vo.rowNumToShow eq 20}">20</option>
-											<option value="25" th:selected ="${vo.rowNumToShow eq 25}">25</option>
+											<option value="5" th:seleted ="${vo.rowNumToShow eq 5}">5</option>
+											<option value="10" th:seleted ="${vo.rowNumToShow eq 10}">10</option>
+											<option value="15" th:seleted ="${vo.rowNumToShow eq 15}">15</option>
+											<option value="20" th:seleted ="${vo.rowNumToShow eq 20}">20</option>
+											<option value="25" th:seleted ="${vo.rowNumToShow eq 25}">25</option>
 										</select>
 									</div>
 								</div>
@@ -488,12 +489,16 @@ td, th {
 														value="" id="flexCheckDefault"></th>
 													<th>#</th>
 													<th>코드</th>
-													<th>상품이름</th>
-													<th>식품유형</th>
-													<th>고기종류</th>
-													<th>상품가격</th>
+													<th>성별</th>
+													<th>아이디</th>
+													<th>비밀번호</th>
+													<th>맴버이름</th>
+													<th>생년월일</th>
+													<th>닉네임</th>
 													<th>삭제여부</th>
-													<th>사용여부</th>
+													<th>사용</th>
+													<th>이메일</th>
+													<th>전화번호</th>
 													<th>등록일</th>
 													<th>수정일</th>
 												</tr>
@@ -511,21 +516,24 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
-													<td th:text="${list.pdSeq}"></td>
-													<td><a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}" th:text="${list.pdName}">
+													<td><a th:href="@{/xdm/v1/infra/member/memberXdmMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmSeq}"></a></td>
+													<td th:if="${list.mmGender != null}" th:text="${@codeService.selectOneCachedCode(list.mmGender)}" class="mmGender align-middle"></td>
+													<td th:unless="${list.mmGender != null}" class="mmGender align-middle"></td>
+													<td th:text = "${list.mmId}"></td>
+													<td th:text = "${list.mmPasswd}"></td>
+													<td><a th:href="@{/xdm/v1/infra/member/memberXdmMFom(mmSeq=${list.mmSeq})}" th:text="${list.mmRealName}">
 														</a>
 													</td>
-													<td th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></td>
-													<td th:unless="${list.pdType != null}" class="pdType align-middle"></td>
-													<td th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></td>
-													<td th:unless="${list.pdMeat != null}" class="pdType align-middle"></td>
-													<td th:text="${list.pdPrice}"></td>
-													<td th:if ="${list.pdDelNy eq 0}">N</td>
-													<td th:unless = "${list.pdDelNy eq 0}">Y</td>	
-													<td th:if ="${list.pdUseNy eq 0}">N</td>
-													<td th:unless = "${list.pdUseNy eq 0}">Y</td>
-													<td th:text="${#dates.format(list.pdDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-													<td th:text="${#dates.format(list.pdFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+													<td th:text="${list.mmBirthDay}"></td>
+													<td th:text="${list.mmNickName}"></td>
+													<td th:if ="${list.mmDelNy eq 0}">N</td>
+													<td th:unless = "${list.mmDelNy eq 0}">Y</td>	
+													<td th:if ="${list.mmUseNy eq 0}">N</td>
+													<td th:unless = "${list.mmUseNy eq 0}">Y</td>
+													<td th:text = "${list.mmEmail}"></td>
+													<td th:text = "${list.mmTell}"></td>
+													<td th:text="${#dates.format(list.mmDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+													<td th:text="${#dates.format(list.mmFixDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 												</tr>
 											</tbody>
 										</table>
@@ -542,7 +550,7 @@ td, th {
 												</div>
 											</div>
 										</div>
-										<!-- paging e  -->
+										<!-- paging e  -->		   
 									</div>
 								</div>
 								<!---버튼--->
@@ -557,7 +565,7 @@ td, th {
 									</div>
 									<div class="col">
 										<div class="col d-flex justify-content-end">
-											<a href="/xdm/v1/infra/product/productForm"<button
+											<a href="/xdm/v1/infra/member/memberXdmForm"<button
 													class="btn" type="button">
 													<i class="bi bi-plus-circle-fill"></i>
 												</button></a>
@@ -607,25 +615,25 @@ td, th {
 				<script type="text/javascript">
 				goList = function (thisPage) {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
-				    form.action = "/xdm/v1/infra/product/productList";
+				    form.action = "/xdm/v1/infra/member/memberXdmList";
 				    form.submit();
-				}
+					}
 				</script>
 				<script type="text/javascript">
 				goList = function (thisPage) {
 				    document.querySelector("input[name=thisPage]").value = thisPage;
-				    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/product/productList";
+				    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/member/memberXdmList";
 				    document.querySelector("form[name=formList]").submit();
-				}
+					}
 				</script>
-				
 				<script type="text/javascript">
 					document.getElementById("changeRowNum").onchange = function () {
 				    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
 				    form.action = goUrlXdmList;
 				    form.submit();
-				}
+					}
 				</script>
+				
 				<!--by developer  -->
 				<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 				
