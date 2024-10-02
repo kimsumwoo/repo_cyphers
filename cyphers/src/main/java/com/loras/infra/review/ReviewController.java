@@ -14,37 +14,37 @@ public class ReviewController {
 	@Autowired
 	public ReviewService reviewService;
 	
-	@RequestMapping(value ="/xdm/v1/infra/review/reviewList")
-	public String reviewList(Model model, @ModelAttribute("vo") ReviewVo vo){
+	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmList")
+	public String reviewXdmList(Model model, @ModelAttribute("vo") ReviewVo vo){
 		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(reviewService.selectOneCount(vo));
 		model.addAttribute("list", reviewService.reviewSelectList(vo));
-		return "/xdm/v1/infra/review/reviewList";
+		return "/xdm/v1/infra/review/reviewXdmList";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/review/reviewForm")
-	public String reviewForm() {
-		return "/xdm/v1/infra/review/reviewForm";
+	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmForm")
+	public String reviewXdmForm() {
+		return "/xdm/v1/infra/review/reviewXdmForm";
 	}
-	@RequestMapping(value ="xdm/v1/infra/review/reviewInst")
-	public String reviewInst(ReviewDto reviewDto) {
+	@RequestMapping(value ="xdm/v1/infra/review/reviewXdmInst")
+	public String reviewXdmInst(ReviewDto reviewDto) {
 		reviewService.insert(reviewDto);
-		return "redirect:/xdm/v1/infra/review/reviewList";
+		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/review/reviewMFom")
-	public String reviewMFom(Model model, ReviewDto reviewDto) {
+	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmMFom")
+	public String reviewXdmMFom(Model model, ReviewDto reviewDto) {
 		model.addAttribute("item", reviewService.selectOne(reviewDto));
-		return "/xdm/v1/infra/review/reviewMFom";
+		return "/xdm/v1/infra/review/reviewXdmMFom";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/review/reviewUete")
-	public String reviewUete(ReviewDto reviewDto) {
+	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmUpdt")
+	public String reviewXdmUpdt(ReviewDto reviewDto) {
 		reviewService.update(reviewDto);
-		return "redirect:/xdm/v1/infra/review/reviewList";
+		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/review/reviewDete")
-	public String reviewDete(ReviewDto reviewDto) {
+	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmDete")
+	public String reviewXdmDete(ReviewDto reviewDto) {
 		reviewService.delete(reviewDto);
-		return "redirect:/xdm/v1/infra/review/reviewList";
+		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
 	
 

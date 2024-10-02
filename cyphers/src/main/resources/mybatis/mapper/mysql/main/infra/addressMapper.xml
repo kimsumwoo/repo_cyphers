@@ -18,8 +18,63 @@
 		,ad.adDate
 		,ad.adFixDate
 		,ad.member_mmSeq
-	 
+	 FROM address ad
 	</select>
+	
+	<insert id="insert">
+	INSERT INTO address(
+		adDefaultNy
+		,adZipCode
+		,ad1
+		,ad2
+		,adUseNy
+		,adDelNy
+		,adDate
+		,adFixDate
+		,member_mmSeq
+	)values(
+		#{adDefaultNy}
+		,#{adZipCode}
+		,#{ad1}
+		,#{ad2}
+		,#{adUseNy}
+		,0
+		,now()
+		,now()
+		,#{member_mmSeq}
+	)
+	</insert>
+	<select id="selectOne">
+	select
+		ad.adSeq
+		,ad.adDefaultNy
+		,ad.adZipCode
+		,ad.ad1
+		,ad.ad2
+		,ad.adUseNy
+		,ad.adDelNy
+		,ad.adDate
+		,ad.adFixDate
+		,ad.member_mmSeq
+	 FROM
+	  address ad
+	 WHERE 1=1
+	 AND ad.adSeq = #{adSeq}
+	</select>
+	
+	<update id="update">
+		UPDATE address
+		SET
+			adDefaultNy = #{adDefaultNy}
+			,adZipCode = #{adZipCode}
+			,ad1 = #{ad1}
+			,ad2 = #{ad2}
+			,adUseNy = #{adUseNy}
+			,adFixDate = now()
+			,member_mmSeq = #{member_mmSeq}
+		WHERE 1=1
+		AND adSeq = #{adSeq}
+	</update>
 	
 	  
 </mapper>
