@@ -46,7 +46,12 @@ public class ReviewController {
 		reviewService.delete(reviewDto);
 		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
-	
+	@RequestMapping(value ="xdm/v1/infra/review/reviewUsrInst")
+	public String reviewUsrInst(ReviewDto reviewDto) {
+		reviewService.insert(reviewDto);
+		return "redirect:/xdm/v1/infra/review/reviewUsrList";
+	}
+
 
 
 

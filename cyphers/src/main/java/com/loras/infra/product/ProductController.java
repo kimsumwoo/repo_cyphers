@@ -58,7 +58,13 @@ public class ProductController {
 	@RequestMapping(value ="/usr/v1/infra/productUsrDetail/productUsrDetail")
 	public String productUsrDetail(Model model,ProductDto productDto) {
 		model.addAttribute("item", productService.SelectOne(productDto));
+		model.addAttribute("list", productService.rvSelectList());
 		return "/usr/v1/infra/productUsrDetail/productUsrDetail";
+	}
+	@RequestMapping(value = "/usr/v1/infra/product/productUsrInst")
+	public String productUsrInst(ProductDto productDto) {
+		productService.rvInsert(productDto);
+		return "redirect:/usr/v1/infra/product/productUsrList";
 	}
 	
 	

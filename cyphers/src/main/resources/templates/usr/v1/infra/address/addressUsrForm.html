@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../img/pages/icon.png" type="image/png">
+        <link rel="icon" href="/usr/img/pages/icon.png" type="image/png">
         <title>Pages</title>
         <!-- Bootstrap Css -->
         <link rel="stylesheet" href="/usr/vender/bootstrap/css/bootstrap.min.css">
@@ -78,7 +78,7 @@
                             <a href="./0_shop-cart.html" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기 </a>
                             <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
                                 <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                              
+                               
                             </div>
                         </div>
                     </div>
@@ -109,101 +109,73 @@
                     <div class="col-lg-8 ps-lg-0 pb-5">
                         <div class="ps-lg-5 pt-lg-5">
                             <div class="d-flex align-items-center justify-content-between w-100 mb-5">
-                                <h1 class="m-0 fw-bold">배송 주소</h1>
+                                <h1 class="m-0 fw-bold">배송 주소 생성</h1>
                             </div>
-                            <div>
-                                <div>
-                                    <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4"
-                                    	th:each="list : ${list}">
-                                        <div>
-                                        	<p class="fw-bold mb-0" th:text="${list.adName}"></p>
-                                            <h6 class="fw-bold mb-1 mt-2" th:if ="${list.adDefaultNy eq 0}"></h6>
-                                            <h6 class="fw-bold mb-1 mt-2" th:unless ="${list.adDefaultNy eq 0}">기본</h6>
-                                            <p class="text-secondary-emphasis mb-2" th:text ="${list.adZipCode}">01178</p>
-                                            <p class="text-secondary-emphasis mb-2" th:text ="${list.ad1}">서울시 노원구 동일로207길17</p>
-                                            <p class="text-secondary-emphasis mb-2" th:text ="${list.ad2}">ㅇㅇ아파트 201동 302호</p>
-                                            <p class="fw-bold mb-0" th:text="${list.adTell}"></p>
+                            <div class="svg-border-rounded text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="#ffffff"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                            </div>
+                        </div>
+                        <div class="py-5">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-9 col-12">
+                                        <form post="method" action="/usr/v1/infra/address/addressUsrInst" class="row g-3"> 
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
+                                                <input type="text" name="adName" th:text="${adName}" class="form-control" aria-label="inputFirstName">
+                                            </div>
                                         </div>
-                                        <div class="d-flex align-items-cneter gap-2">
-                                            <a th:href="@{/usr/v1/infra/address/addressUsrMFom(adSeq=${list.adSeq})}" class="btn btn-outline-secondary rounded-3"> <i class="ri-edit-box-fill"></i> </a>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </a>
+                                    
+                                      
+                                          <div class="row">
+                                            <div class="col-5">
+                                                <label for="inputCompnay" class="form-label small text-muted">우편번호</label>
+                                                <input type="text" name="adZipCode" th:text="${adZipCode}" class="form-control" id="inputCompnay">
+                                            </div>
                                         </div>
+                                            <div class="col align-self-end">
+                                                <button type="button " class="btn btn-dark">주소검색</button>
+                                            </div>
+                                    
+                                            <div class="col-12">
+                                                <label for="inputCompnay" class="form-label small text-muted">주소입력</label>
+                                                <input type="text" name="ad1" th:text="${ad1}" class="form-control mb-3" id="inputAddress" placeholder="기본주소">
+                                                <input type="text" name="ad2" th:text="${ad2}" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
+                                            </div>
+                                           
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label small text-muted">휴대전화</label>
+                                                <input type="inputphone" name="adTell" th:text="${adTell}" class="form-control mb-3" id="inputAddress" placeholder="">
+                                            </div>
+                                            
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label small text-muted">임시맴버Seq</label>
+                                                <input type="inputphone" name="member_mmSeq" th:text="${member_mmSeq}" class="form-control mb-3" id="inputAddress" placeholder="">
+                                            </div>
+                                      
+                                            <div class="col-4">
+                                                <input name="ma_main_flag" fw-filter="" fw-label="기본 배송지로 저장" fw-msg="" value="T" type="checkbox">
+                                                <span>기본 배송지로 저장</span>
+                                            </div>
+                                   
+                                        
+                                            
+                                                <button type="submit" class="btn btn-purple btn-theme w-100 rounded-3"> <i class="ri-add-fill me-2"></i> 배송주소 생성 </button>
+                                                <a href="#" class="btn btn-outline-secondary rounded-0 m-0 border-0 border-top rounded-0 py-3 w-100"> <i class="ri-close-fill me-2"></i>취소 </a>
+                                               
+                                        
+                                        </form>
                                     </div>
-                                    <a href="/usr/v1/infra/address/addressUsrForm" class="btn btn-purple btn-theme w-100 rounded-3"> <i class="ri-add-fill me-2"></i>새 배송주소 생성 </a>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- add address modal -->
-        <div class="modal fade" id="addaddress" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content bg-white border-0 rounded-4 overflow-hidden">
-                    <div class="modal-body p-5">
-                        <h4 class="fw-bold pb-3">새 배송주소 생성</h4>
-                        <form class="row g-3" name="mfom">
-                            <div class="col-md-12 col-12">
-                                <label for="inputName1" class="form-label">이름</label>
-                                <input type="text" class="form-control bg-transparent" id="inputName1" value="">
-                            </div>
-                            <label for="inputAddress" class="form-label">주소</label>
-                            <div class="col-4">
-                                <input type="text" class="form-control bg-transparent" id="inputAddress" placeholder="우편번호">
-                            </div>
-                            <div class="col-4">
-                                <button type="button " class="btn btn-dark">주소검색</button>
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control bg-transparent" id="inputAddress" placeholder="기본주소">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control bg-transparent" id="inputAddress" placeholder="상세주소">
-                            </div>
-                            <label for="inputCity" class="form-label">휴대전화</label>
-                            <div class="col-md-3 col-12">
-                                <select class="form-select mb-3" aria-label="selectcountry">
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="016">016</option>
-                                    <option value="017">017</option>
-                                    <option value="018">018</option>
-                                    <option value="019">019</option>
-                                </select>
-                            </div><br>-
-                            <div class="col-md-3 col-12">
-                                <input type="text" class="form-control bg-transparent" id="inputCity" value="">
-                            </div><br>-
-                            <div class="col-md-3 col-12">
-                                <input type="text" class="form-control bg-transparent" id="inputCity" value="">
-                            </div>
-                            
-                        
-                    </div>
-                    <div class="modal-footer border-0 p-0">
-                        <a href="#" class="btn btn-outline-secondary rounded-0 m-0 border-0 border-top rounded-0 py-3 w-50" data-bs-dismiss="modal"> <i class="ri-close-fill me-2"></i>취소 </a>
-                        <a href="#" class="btn btn-purple m-0 rounded-0 py-3 border-0 border-top w-50" data-bs-dismiss="modal"> <i class="ri-add-line me-2"></i>만들기 </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </form>
-        <!-- delete modal -->
-        <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm">
-                <div class="modal-content bg-white border-0 rounded-4 overflow-hidden">
-                    <div class="modal-body text-center p-4">
-                        <i class="ri-delete-bin-5-fill ri-3x text-danger"></i>
-                        <h4 class="fw-bold">정말로 삭제하시겠습니까?</h4>
-                    </div>
-                    <div class="modal-footer border-0 p-0">
-                        <a href="#" class="btn btn-outline-dark rounded-0 m-0 py-2 w-50 border-0 border-top" data-bs-dismiss="modal"> <i class="ri-close-fill me-2"></i>Cancel </a>
-                        <button type="button" id="delbtn" class="btn btn-danger rounded-0 m-0 py-2 w-50 border-0 border-top" data-bs-dismiss="modal"> <i class="ri-delete-bin-5-fill me-2"></i>Delete </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- Build Something Together -->
         <!-- footer -->
         <footer class="bg-footer text-white">
@@ -238,15 +210,7 @@
                     </div>
                 </div>
             </div>
-    
-        <script>
-		document.getElementById("delbtn").onclick = function(){
-			let form= document.querySelector("form[name=mfom]");
-			form.action ="/xdm/v1/infra/address/addressUsrDete";
-			form.submit();
-		}
-		</script>
-      
+            
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Jquery Js -->

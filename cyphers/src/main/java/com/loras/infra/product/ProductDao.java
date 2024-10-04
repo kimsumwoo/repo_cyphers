@@ -12,5 +12,6 @@ public interface ProductDao {
 	public int update(ProductDto productDto);
 	public int delete(ProductDto productDto);
 	public int selectOneCount(productVo vo);
-
+	public List<ProductDto> rvSelectList();
+	public int rvInsert(ProductDto productDto);
 }

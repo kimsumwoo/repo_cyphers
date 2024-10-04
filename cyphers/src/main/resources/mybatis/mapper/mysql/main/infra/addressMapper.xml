@@ -18,7 +18,12 @@
 		,ad.adDate
 		,ad.adFixDate
 		,ad.member_mmSeq
+		,ad.adName
+		,ad.adTell
+		,mm.mmSeq
 	 FROM address ad
+	 LEFT JOIN member mm
+	 ON mm.mmseq = ad.member_mmSeq
 	</select>
 	
 	<insert id="insert">
@@ -32,6 +37,8 @@
 		,adDate
 		,adFixDate
 		,member_mmSeq
+		,adName
+		,adTell
 	)values(
 		#{adDefaultNy}
 		,#{adZipCode}
@@ -42,6 +49,8 @@
 		,now()
 		,now()
 		,#{member_mmSeq}
+		,#{adName}
+		,#{adTell}
 	)
 	</insert>
 	<select id="selectOne">
@@ -56,6 +65,8 @@
 		,ad.adDate
 		,ad.adFixDate
 		,ad.member_mmSeq
+		,ad.adName
+		,ad.adTell
 	 FROM
 	  address ad
 	 WHERE 1=1
@@ -72,9 +83,39 @@
 			,adUseNy = #{adUseNy}
 			,adFixDate = now()
 			,member_mmSeq = #{member_mmSeq}
+			,adName = #{adName}
+			,adTell = #{adTell}
 		WHERE 1=1
 		AND adSeq = #{adSeq}
 	</update>
+	<delete id="delete">
+	DELETE FROM address
+		WHERE 1=1
+		AND adSeq = #{adSeq}
+	</delete>
+	<insert id="usrInsert">
+	INSERT INTO address(
+		adZipCode
+		,ad1
+		,ad2
+		,adDelNy
+		,adDate
+		,adFixDate
+		,member_mmSeq
+		,adName
+		,adTell
+	)values(
+		#{adZipCode}
+		,#{ad1}
+		,#{ad2}
+		,0
+		,now()
+		,now()
+		,#{member_mmSeq}
+		,#{adName}
+		,#{adTell}
+	)
+	</insert>
 	
 	  
 </mapper>

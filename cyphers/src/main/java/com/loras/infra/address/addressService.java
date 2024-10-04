@@ -23,4 +23,10 @@ public class addressService {
 	public int update(addressDto addressDto) {
 		return addressDao.update(addressDto);
 	}
+	public int delete(addressDto addressDto) {
+		return addressDao.delete(addressDto);
+	}
+	public int usrInsert(addressDto addressDto) {
+		return addressDao.usrInsert(addressDto);
+	}
 }

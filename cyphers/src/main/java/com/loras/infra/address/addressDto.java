@@ -17,6 +17,9 @@ public class addressDto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date adFixDate;
 	private String member_mmSeq;
+	private String adTell;
+	private String mmSeq;
+	private String adName;
 	
 	//---------------
 	
@@ -80,7 +83,24 @@ public class addressDto {
 	public void setMember_mmSeq(String member_mmSeq) {
 		this.member_mmSeq = member_mmSeq;
 	}
-	
+	public String getAdTell() {
+		return adTell;
+	}
+	public void setAdTell(String adTell) {
+		this.adTell = adTell;
+	}
+	public String getMmSeq() {
+		return mmSeq;
+	}
+	public void setMmSeq(String mmSeq) {
+		this.mmSeq = mmSeq;
+	}
+	public String getAdName() {
+		return adName;
+	}
+	public void setAdName(String adName) {
+		this.adName = adName;
+	}
 	
 	
 	

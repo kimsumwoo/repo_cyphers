@@ -16,6 +16,7 @@ public class ReviewDto {
 	private Date rvFixDate;
 	private String product_pdSeq;
 	private String member_mmSeq;
+	private String pdNickName;
 //	---------------------------
 	public String getRvSeq() {
 		return rvSeq;
@@ -71,6 +72,14 @@ public class ReviewDto {
 	public void setMember_mmSeq(String member_mmSeq) {
 		this.member_mmSeq = member_mmSeq;
 	}
+	public String getPdNickName() {
+		return pdNickName;
+	}
+	public void setPdNickName(String pdNickName) {
+		this.pdNickName = pdNickName;
+	}
+	
+	
 
 	
 	

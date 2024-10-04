@@ -28,5 +28,11 @@ public class ProductService {
 	public int selectOneCount(productVo vo) {
 		return productDao.selectOneCount(vo);
 	}
+	public List<ProductDto> rvSelectList(){
+		return productDao.rvSelectList();
+	}
+	public int rvInsert(ProductDto productDto) {
+		return productDao.rvInsert(productDto);
+	}
 
 }

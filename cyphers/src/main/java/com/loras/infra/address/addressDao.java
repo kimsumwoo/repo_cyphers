@@ -15,5 +15,9 @@ public interface addressDao {
 	
 	public int update(addressDto addressDto);
 	
+	public int delete(addressDto addressDto);
+	
+	public int usrInsert(addressDto addressDto);
+	
 
 }

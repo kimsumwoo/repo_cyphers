@@ -17,6 +17,19 @@ public class ProductDto {
 	private String pdDesc;
 	private String pdType;
 	private String pdMeat;
+	private String revSeq;
+	private Integer rvRank;
+	private String rvComment;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date rvDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date rvFixDate;
+	private String product_pdSeq;
+	private String member_mmSeq;
+	private String mmSeq;
+	private String mmRealName;
+	private String mmNickName;
+	
 //--------------------------
 	public String getPdSeq() {
 		return pdSeq;
@@ -78,6 +91,68 @@ public class ProductDto {
 	public void setPdMeat(String pdMeat) {
 		this.pdMeat = pdMeat;
 	}
+	public String getRevSeq() {
+		return revSeq;
+	}
+	public void setRevSeq(String revSeq) {
+		this.revSeq = revSeq;
+	}
+	public Integer getRvRank() {
+		return rvRank;
+	}
+	public void setRvRank(Integer rvRank) {
+		this.rvRank = rvRank;
+	}
+	public String getRvComment() {
+		return rvComment;
+	}
+	public void setRvComment(String rvComment) {
+		this.rvComment = rvComment;
+	}
+	public Date getRvDate() {
+		return rvDate;
+	}
+	public void setRvDate(Date rvDate) {
+		this.rvDate = rvDate;
+	}
+	public Date getRvFixDate() {
+		return rvFixDate;
+	}
+	public void setRvFixDate(Date rvFixDate) {
+		this.rvFixDate = rvFixDate;
+	}
+	public String getProduct_pdSeq() {
+		return product_pdSeq;
+	}
+	public void setProduct_pdSeq(String product_pdSeq) {
+		this.product_pdSeq = product_pdSeq;
+	}
+	public String getMember_mmSeq() {
+		return member_mmSeq;
+	}
+	public void setMember_mmSeq(String member_mmSeq) {
+		this.member_mmSeq = member_mmSeq;
+	}
+	public String getMmSeq() {
+		return mmSeq;
+	}
+	public void setMmSeq(String mmSeq) {
+		this.mmSeq = mmSeq;
+	}
+	public String getMmRealName() {
+		return mmRealName;
+	}
+	public void setMmRealName(String mmRealName) {
+		this.mmRealName = mmRealName;
+	}
+	public String getMmNickName() {
+		return mmNickName;
+	}
+	public void setMmNickName(String mmNickName) {
+		this.mmNickName = mmNickName;
+	}
+	
+	
 	
 	
 	

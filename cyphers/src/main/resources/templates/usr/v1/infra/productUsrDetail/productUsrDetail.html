@@ -213,35 +213,46 @@
                             <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-6 col-12 pe-lg-5">
-                                        <h4 class="fw-bold border-bottom pb-4">1 Review for Aturna condimentum mattis pell</h4>
-                                        <div class="d-flex align-items-start gap-3 py-3">
+                                        <div class="d-flex align-items-start gap-3 py-3"  th:each = "list : ${list}">
                                             <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
                                             <div class="w-100">
                                                 <div class="d-flex justify-content-between mb-2">
-                                                    <div class="d-flex align-items-end gap-2"> <h5 class="fw-bold m-0">Black Smith</h5>  <span class="text-muted fw-normal small">/ MARCH 13, 2024</span></div>
+                                                    <div class="d-flex align-items-end gap-2"> <h5 class="fw-bold m-0" th:text="${list.mmNickName}">Black Smith</h5>  <span class="text-muted fw-normal small" th:text="${#dates.format(list.rvDate, 'yyyy-MM-dd HH:mm:ss')}">/ MARCH 13, 2024</span></div>
                                                     <div class="d-flex align-items-center gap-2">
-                                                        <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i>
-                                                        <i class="ri-star-fill text-warning"></i>
+                                                    
+                                                        <i class="ri-star-fill text-warning" th:if ="${list.rvRank eq 1}"></i>
+                                                       	<i class="ri-star-fill text-warning" th:if ="${list.rvRank eq 2}"><i class="ri-star-fill text-warning"></i></i>
+                                                        <i class="ri-star-fill text-warning" th:if ="${list.rvRank eq 3}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
+                                                        <i class="ri-star-fill text-warning" th:if ="${list.rvRank eq 4}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
+                                                        <i class="ri-star-fill text-warning" th:if ="${list.rvRank eq 5}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
                                                     </div>
                                                 </div>
-                                                <p class="text-muted">At auctor urna nunc id cursus metus aliquam eleifend. Ipsum nunc aliquet bibendum enim. Et malesuada fames ac turpis egestas sed tempus.</p>
+                                                <p class="text-muted" th:text= "${list.rvComment}">At auctor urna nunc id cursus metus aliquam eleifend. Ipsum nunc aliquet bibendum enim. Et malesuada fames ac turpis egestas sed tempus.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-lg-6 col-12">
+                                   	<form method ="post" action ="/usr/v1/infra/product/productUsrInst">
                                         <div class="mb-3">
                                             <h4 class="fw-bold">Add a review</h4>
                                             <p>Your email address will not be published. Required fields are marked </p>
                                             <div class ="star_rating">
-                                                <span class="star on" value="1"></span>
-                                                <span class="star" value="2"> </span>
-                                                <span class="star" value="3"> </span>
-                                                <span class="star" value="4"> </span>
-                                                <span class="star" value="5"> </span>
+                                                <span class="star on" value="1" th:selected = "${item?.rvRank == 1}"></span>
+                                                <span class="star" value="2" th:selected = "${item?.rvRank == 2}"></span>
+                                                <span class="star" value="3" th:selected = "${item?.rvRank == 3}"></span>
+                                                <span class="star" value="4" th:selected = "${item?.rvRank == 4}"> </span>
+                                                <span class="star" value="5" th:selected = "${item?.rvRank == 5}"> </span>
                                               </div>
                                         </div>
-                                        <form method ="post" action ="/xdm/v1/infra/review/reviewXdmInst">
+                                        
                                             <div class="mb-3"><textarea class="form-control bg-transparent" id="rvComment" name="rvComment" rows="5" placeholder="리뷰를 작성해주세요"></textarea></div>
+                                                <label for="inputAddress" class="form-label small text-muted">임시상품Seq</label>
+                                                <input type="inputphone" name="member_mmSeq" th:value="${item?.member_mmSeq}" class="form-control" id="inputAddress" placeholder="">
+                                                <label for="inputAddress" class="form-label small text-muted">임시맴버Seq</label>
+                                                <input type="inputphone" name="product_pdSeq" th:value="${item?.member_mmSeq}" class="form-control" id="inputAddress" placeholder="">
+                                            </div>
+                                          </div>
                                             <button type="submit" class="btn btn-dark px-3">등록하기</button>
                                         </form>
                                     </div>
