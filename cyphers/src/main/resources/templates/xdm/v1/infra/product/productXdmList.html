@@ -511,7 +511,7 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
-													<td th:text="${list.pdSeq}"></td>
+													<td><a th:href="@{/xdm/v1/infra/product/productXdmMFom(pdSeq=${list.pdSeq})}" th:text="${list.pdSeq}"></a></td>
 													<td><a th:href="@{/xdm/v1/infra/product/productXdmMFom(pdSeq=${list.pdSeq})}" th:text="${list.pdName}">
 														</a>
 													</td>
