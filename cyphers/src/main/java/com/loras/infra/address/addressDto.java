@@ -20,6 +20,7 @@ public class addressDto {
 	private String adTell;
 	private String mmSeq;
 	private String adName;
+	private String ad3;
 	
 	//---------------
 	
@@ -101,6 +102,13 @@ public class addressDto {
 	public void setAdName(String adName) {
 		this.adName = adName;
 	}
+	public String getAd3() {
+		return ad3;
+	}
+	public void setAd3(String ad3) {
+		this.ad3 = ad3;
+	}
+	
 	
 	
 	

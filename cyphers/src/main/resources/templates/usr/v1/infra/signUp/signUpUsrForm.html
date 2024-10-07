@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/usr/img/pages/icon.png" type="image/png">
+        <title>Pages</title>
+        <!-- Bootstrap Css -->
+        <link rel="stylesheet" href="/usr/vender/bootstrap/css/bootstrap.min.css">
+        <!-- Icofont Css -->
+        <link rel="stylesheet" href="/usr/vender/icofont/icofont.min.css">
+        <!-- AOS Css -->
+        <link rel="stylesheet" href="/usr/vender/aos/dist/aos.css">
+        <!-- Remix Icons -->
+        <link rel="stylesheet" href="/usr/vender/remixicon/remixicon.css">
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="/usr/vender/css/style.css">
+        <!-- Common Css -->
+        <link rel="stylesheet" href="/usr/css/common.css">
+    </head>
+    <body>
+        
+        <div class="vh-100 d-flex align-items-center flex-column">
+            <div class="container-fluid bg-white first-form">
+                <div class="row align-items-center bg-light">
+                    <div class="col-lg-8 bg-light py-4 d-none d-lg-block">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-12 overflow-hidden">
+                            </div>
+                        </div>
+                        <div class="px-5 text-center">
+                            <div class="px-5 mx-5">
+                                <img src="/usr/img/메인화면.jpg" alt="" class="img-fluid rounded-5 shadow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 p-5 vh-100 d-flex align-items-center flex-column bg-white">
+                        <div class="d-flex align-items-center justify-content-between w-100 mb-5">
+                            <div class="position-relative d-flex align-items-center gap-2 site-brand">
+                                                            <i class="ri-baidu-line fs-2 lh-1 text-black"></i>
+                                                            <div class="lh-1">
+                                                                <h5 class="fw-bold m-0 text-black">Pet</h5>
+                                                                <small class="text-dark">Template</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="../index.html"></a>
+                                                        </div>
+                            <a href="page-signup.html" class="text-decoration-none">로그인</a>
+                        </div>
+                        <div class="m-auto w-100">
+                            <h2 class="fw-bold">회원가입</h2>
+                            <p class="text-muted mb-4">환영합니다</p>
+                            <div class="d-flex align-items-center justify-content-between my-3 opacity-50">
+                                <hr class="w-100">
+                                <span class="text-muted small px-4"></span>
+                                <hr class="w-100">
+                            </div>
+                            <form method="post" action="/usr/v1/infra/signUp/signUpUsrInst" id="signUpForm" class="d-grid gap-2 input-group-lg">
+                            <div class="col-4">
+								<div class="mb-3">
+									<div>
+									<label for="validationCustom04" class="form-label">성별</label>
+									<select class="form-select validate-this" id="mmGender"  name ="mmGender" th:value ="${item?.mmGender}" required> 
+										<option value="">선택하세요</option>
+										<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.cdSeq}" th:text="${list.cdName}" th:selected="${list.cdSeq} == ${item?.mmGender}"></option>
+									</select>
+									<div class="valid-feedback"></div>
+									<div class="invalid-feedback">성별을 선택해 주세요.</div>
+								</div>
+							</div>	
+						</div>
+						
+							<div class="mb-3">
+                                    <label class="form-label small">생년월일</label>
+                                    <input type="text"  id="mmBirthDay" name="mmBirthDay" class="form-control bg-light border-0 px-3 py-2" placeholder="생년월일을 입력해주세요.">
+                                    <div class="invalid-feedback">생년월일을 입력해주세요</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small">이름</label>
+                                    <input type="text"  id="mmRealName" name="mmRealName" class="form-control bg-light border-0 px-3 py-2" placeholder="이름을 입력해주세요.">
+                                    <div class="invalid-feedback">이름을 입력해주세요</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small">전화번호</label>
+                                    <input type="text"  id="mmTell" name="mmTell" class="form-control bg-light border-0 px-3 py-2"  placeholder="전화번호를 입력해주세요.">
+                                     <div class="invalid-feedback">전화번호를 입력해주세요</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1"class="form-label small">아이디</label>
+                                    <input type="text"  id="mmId" name="mmId"  class="form-control bg-light border-0 px-3 py-2" placeholder="아이디를 입력해주세요." aria-describedby="emailHelp">
+                                     <div class="invalid-feedback">아이디가 올바르지 않습니다</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1"  class="form-label small">비밀번호</label>
+                                    <input type="password" id="mmPasswd" name="mmPasswd" class="form-control bg-light border-0 px-3 py-2" placeholder="비밀번호를 입력해주세요.">
+                                     <div class="invalid-feedback">패스워드가 올바르지않습니다</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1"  class="form-label small">비밀번호 확인</label>
+                                    <input type="password" id="mmPasswd2" class="form-control bg-light border-0 px-3 py-2" placeholder="" >
+                                     <div class="invalid-feedback">비밀번호가 일치하지 않습니다</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small">닉네임</label>
+                                    <input type="text"  id="mmNickName" name="mmNickName" class="form-control bg-light border-0 px-3 py-2" placeholder="닉네임을 입력해주세요.">
+                                     <div class="invalid-feedback">닉네임을 입력해주세요</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small">이메일</label>
+                                    <input type="text"  id="mmEmail" name="mmEmail" class="form-control bg-light border-0 px-3 py-2" placeholder="이름을 입력해주세요.">
+                                     <div class="invalid-feedback">이메일을 입력해주세요</div>
+                                </div>
+                                
+                                <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label small" for="exampleCheck1">사이트 이용약관 및 개인정보 보호정책에 동의합니다.</label>
+                                    </div>
+                                <button id="btnSignUp" class="btn btn-purple btn-theme">회원가입</button>
+                            </form>
+                              <p class="text-center text-muted m-0">Copyright 2024 <a href="#" class="text-black"> Tony Chang all rights reserved.</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+		document.getElementById("btnSignUp").onclick = function (){
+			var mmGender = document.getElementById("mmGender");
+		    var mmGenderValue = document.getElementById("mmGender").value.trim();
+			
+		    if (mmGenderValue == "" || mmGenderValue == null) {
+				mmGender.classList.add("is-invalid");
+				mmGender.focus();
+				return false;
+		    } else {
+		    	mmGender.classList.remove("is-invalid")
+		    	mmGender.classList.add("is-valid");
+//			 	by pass
+   		 	}
+		    
+		    var mmBirthDay = document.getElementById("mmBirthDay");
+		    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
+		    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
+				mmBirthDay.classList.add("is-invalid");
+				mmBirthDay.focus();
+				return false;
+		    } else {
+		    	mmBirthDay.classList.remove("is-invalid")
+		    	mmBirthDay.classList.add("is-valid");
+//	 			by pass
+		    }
+		    
+		    var mmRealName = document.getElementById("mmRealName");
+		    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
+			
+		    if (mmRealNameValue == "" || mmRealNameValue == null) {
+				mmRealName.classList.add("is-invalid");
+				mmRealName.focus();
+				return false;
+		    } else {
+		    	mmRealName.classList.remove("is-invalid")
+		    	mmRealName.classList.add("is-valid");
+//	 			by pass
+		    }
+		    
+		    var mmTell = document.getElementById("mmTell");
+		    var mmTellValue = document.getElementById("mmTell").value.trim();
+			var mmTellRegExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+		    if (!mmIdRegExp.test(mmTellValue)) {
+		    	mmTell.classList.add("is-invalid");
+		    	mmTell.focus();
+				return false;
+	    	} else {
+	    		mmTell.classList.remove("is-invalid")
+		    	mmTell.classList.add("is-valid");
+// 				by pass
+	    	}
+			
+		    var mmId = document.getElementById("mmId");
+		    var mmIdValue = document.getElementById("mmId").value.trim();
+			var mmIdRegExp = /^[a-z]+[a-z0-9]{5,19}$/g;
+		    if (!mmIdRegExp.test(mmIdValue)) {
+				mmId.classList.add("is-invalid");
+				mmId.focus();
+				return false;
+	    	} else {
+		    	mmId.classList.remove("is-invalid")
+		    	mmId.classList.add("is-valid");
+// 				by pass
+	    	}
+	    
+		    var mmPasswd = document.getElementById("mmPasswd");
+		    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+		    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
+	    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
+				mmPasswd.classList.add("is-invalid");
+				mmPasswd.focus();
+				return false;
+	    	} else {
+		    	mmPasswd.classList.remove("is-invalid")
+		    	mmPasswd.classList.add("is-valid");
+	// 			by pass
+	    	}
+		    
+		    var p1 = document.getElementById('mmPasswd').value;
+		    var p2 = document.getElementById('mmPasswd2').value;
+
+	          if( p1 != p2 ) {
+	        	  mmPasswd2.classList.add("is-invalid");
+	        	  mmPasswd2.focus();
+	            return false;
+	          } else{
+	       		 mmPasswd2.classList.remove("is-invalid")
+	    	  	 mmPasswd2.classList.add("is-valid");
+	            return true;
+	          }
+
+		    var mmNickName = document.getElementById("mmNickName");
+		    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
+		    if (mmNickNameValue == "" || mmNickNameValue == null) {
+				mmNickName.classList.add("is-invalid");
+				mmNickName.focus();
+				return false;
+		    } else {
+		    	mmNickName.classList.remove("is-invalid")
+		    	mmNickName.classList.add("is-valid");
+//	 			by pass
+		    }
+		    
+		    var mmEmail = document.getElementById("mmEmail");
+		    var mmEmailValue = document.getElementById("mmEmail").value.trim();
+		    var mmEmailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+	    	if (!mmPasswdRegExp.test(mmEmailValue)) {
+	    		mmEmail.classList.add("is-invalid");
+	    		mmEmail.focus();
+				return false;
+	    	} else {
+	    		mmEmail.classList.remove("is-invalid")
+		    	mmEmail.classList.add("is-valid");
+	// 			by pass
+	    	}
+		    form.action ="/usr/v1/infra/signUp/signUpUsrInst"
+			form.submit();
+		}
+		</script>
+
+        <!-- Bootsrap Bundle Js -->
+        <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Jquery Js -->
+        <script src="/usr/vender/jquery/jquery-3.6.4.min.js"></script>
+        <!-- AOS Js -->
+        <script src="/usr/vender/aos/dist/aos.js"></script>
+        <!-- Custom Js -->
+        <script src="/usr/js/script.js"></script>
+    </body>
+</html>

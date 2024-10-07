@@ -17,11 +17,7 @@ public class CheckLoginSessionInterceptor implements HandlerInterceptor {
 			// by pass
 			System.out.println("if");
 		} else {
-			try {
-			    response.sendRedirect(Constants.URL_LOGINFORM);
-			} catch (Exception e) {
-			    e.printStackTrace(); // 로그로 예외 확인
-			}
+			    response.sendRedirect(Constants.URL_LOGINXdmFORM);
 //			response.sendRedirect(Constants.URL_LOGINFORM);
 			System.out.println("else");
 	        return false;

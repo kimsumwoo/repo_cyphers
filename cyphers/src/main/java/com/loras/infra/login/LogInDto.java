@@ -106,6 +106,8 @@ public class LogInDto {
 	public void setMmPasswd(String mmPasswd) {
 		this.mmPasswd = mmPasswd;
 	}
+
+	
 	
 
 	

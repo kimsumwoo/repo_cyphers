@@ -5,4 +5,34 @@
 
 <resultMap type="com.loras.infra.signup.SignUpDto" id="resultMapObj"></resultMap>
 
+	<insert id="insert">
+		INSERT INTO member(
+			mmRealName
+			,mmNickName
+			,mmEmail
+			,mmTell
+			,mmBirthDay
+			,mmDelNy
+			,mmUseNy
+			,mmDate
+			,mmFixDate
+			,mmGender
+			,mmId
+			,mmPasswd
+			)values(
+			#{mmRealName}
+			,#{mmNickName}
+			,#{mmEmail}
+			,#{mmTell}
+			,#{mmBirthDay}
+			,0
+			,1
+			,now()
+			,now()
+			,#{mmGender}
+			,#{mmId}
+			,#{mmPasswd}
+			)
+	</insert>
+
 </mapper>

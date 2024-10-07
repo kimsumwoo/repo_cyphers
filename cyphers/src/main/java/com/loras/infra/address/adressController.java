@@ -43,36 +43,42 @@ public class adressController {
 	return "redirect:/xdm/v1/infra/address/addressXdmList";
 	}
 	
-//	유저
+//	유저주소리스트
 	@RequestMapping(value ="/usr/v1/infra/address/addressUsrList")
 	public String addressUsrList(Model model){
 		model.addAttribute("list", addressService.addressList());
 		return "/usr/v1/infra/address/addressUsrList";
 	}
+//	유저주소등록
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrInst")
 	public String addressUsrInst(addressDto addressDto) {
 		addressService.usrInsert(addressDto);
 	return "redirect:/usr/v1/infra/address/addressUsrList";
 	}
-	@RequestMapping(value = "/xdm/v1/infra/address/addressUsrDete")
+//	유저주소삭제
+	@RequestMapping(value = "/usr/v1/infra/address/addressUsrDete")
 	public String addressUsrDete(addressDto addressDto) {
 		addressService.delete(addressDto);
 	return "redirect:/usr/v1/infra/address/addressUsrList";
 	}
+//	유저주소등록폼
 	@RequestMapping(value ="/usr/v1/infra/address/addressUsrForm")
 	public String addressUsrForm(){
 		return "/usr/v1/infra/address/addressUsrForm";
 	}
+//	유저주소수정폼
 	@RequestMapping(value ="/usr/v1/infra/address/addressUsrMFom")
 	public String addressUsrMFom(addressDto addressDto,Model model){
 		model.addAttribute("item", addressService.selectOne(addressDto));
 		return "/usr/v1/infra/address/addressUsrMFom";
 	}
+//	유저주소업데이트
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrUpdt")
 	public String addressUsrUpdt(addressDto addressDto) {
 		addressService.update(addressDto);
 	return "redirect:/usr/v1/infra/address/addressUsrList";
 	}
+	
 
 }
 	

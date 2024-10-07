@@ -13,6 +13,7 @@
 		,ad.adZipCode
 		,ad.ad1
 		,ad.ad2
+		,ad.ad3
 		,ad.adUseNy
 		,ad.adDelNy
 		,ad.adDate
@@ -32,6 +33,7 @@
 		,adZipCode
 		,ad1
 		,ad2
+		,ad3
 		,adUseNy
 		,adDelNy
 		,adDate
@@ -44,6 +46,7 @@
 		,#{adZipCode}
 		,#{ad1}
 		,#{ad2}
+		,#{ad3}
 		,#{adUseNy}
 		,0
 		,now()
@@ -60,6 +63,7 @@
 		,ad.adZipCode
 		,ad.ad1
 		,ad.ad2
+		,ad.ad3
 		,ad.adUseNy
 		,ad.adDelNy
 		,ad.adDate
@@ -80,6 +84,7 @@
 			,adZipCode = #{adZipCode}
 			,ad1 = #{ad1}
 			,ad2 = #{ad2}
+			,ad3 = #{ad3}
 			,adUseNy = #{adUseNy}
 			,adFixDate = now()
 			,member_mmSeq = #{member_mmSeq}
@@ -98,6 +103,7 @@
 		adZipCode
 		,ad1
 		,ad2
+		,ad3
 		,adDelNy
 		,adDate
 		,adFixDate
@@ -108,6 +114,7 @@
 		#{adZipCode}
 		,#{ad1}
 		,#{ad2}
+		,#{ad3}
 		,0
 		,now()
 		,now()

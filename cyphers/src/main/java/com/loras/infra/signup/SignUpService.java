@@ -7,4 +7,8 @@ import org.springframework.stereotype.Service;
 public class SignUpService {
 	@Autowired
 	public SignUpDao signUpDao;
+	
+	public int insert(SignUpDto signUpDto) {
+		return signUpDao.insert(signUpDto);
+	}
 }
