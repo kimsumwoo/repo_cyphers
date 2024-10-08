@@ -486,8 +486,8 @@ td, th {
 													<th>리뷰댓글</th>
 													<th>사용</th>
 													<th>삭제여부</th>
-													<th>맴버Seq</th>
 													<th>상품Seq</th>
+													<th>맴버Seq</th>
 													<th>등록일</th>
 													<th>수정일</th>
 												</tr>
@@ -505,7 +505,7 @@ td, th {
 														value="" id="flexCheckDefault">
 													</td>
 													<td></td>
-													<td th:text ="${list.rvSeq}"></td>
+													<td><a th:href="@{/xdm/v1/infra/review/reviewXdmMFom(rvSeq=${list.rvSeq})}" th:text="${list.rvSeq}"></a></td>
 													<td th:text ="${list.rvRank}"></td>
 													<td><a th:href="@{/xdm/v1/infra/address/addressXdmMFom1(rvSeq=${list.rvSeq})}" th:text="${list.rvComment}"></td></a>
 													<td th:if ="${list.rvUseNy eq 0}">N</td>

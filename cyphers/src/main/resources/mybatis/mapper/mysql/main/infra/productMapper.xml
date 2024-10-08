@@ -117,7 +117,7 @@ select pd.* from(
 	<include refid="selectCommon"></include>
 	</select>
 	
-	<select id="rvSelectList">
+  <select id="rvSelectList">
 		SELECT 
 			rv.rvSeq
 			,rv.rvRank
@@ -134,28 +134,13 @@ select pd.* from(
 		ON rv.member_mmSeq = mm.mmSeq
         LEFT JOIN product pd
         ON rv.product_pdSeq = pd.pdSeq
+        where 1=1
+        and rv.product_pdSeq = #{pdSeq}
 	</select>
-	<insert id="rvInsert">
-	INSERT INTO review(
-		rvRank
-		,rvComment
-		,rvUseNy
-		,rvDelNy
-		,rvDate
-		,rvFixDate
-		,product_pdSeq
-		,member_mmSeq
-		)VALUES(
-		#{rvRank}
-		,#{rvComment}
-		,1
-		,0
-		,now()
-		,now()
-		,#{product_pdSeq}
-		,#{member_mmSeq}
-		)
-	</insert>
+	
+	
+
+	
 	
 	
 </mapper>

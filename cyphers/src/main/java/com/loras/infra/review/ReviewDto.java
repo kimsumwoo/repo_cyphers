@@ -17,6 +17,8 @@ public class ReviewDto {
 	private String product_pdSeq;
 	private String member_mmSeq;
 	private String pdNickName;
+	private String pdSeq;
+	private String mmSeq;
 //	---------------------------
 	public String getRvSeq() {
 		return rvSeq;
@@ -78,6 +80,20 @@ public class ReviewDto {
 	public void setPdNickName(String pdNickName) {
 		this.pdNickName = pdNickName;
 	}
+	public String getPdSeq() {
+		return pdSeq;
+	}
+	public void setPdSeq(String pdSeq) {
+		this.pdSeq = pdSeq;
+	}
+	public String getMmSeq() {
+		return mmSeq;
+	}
+	public void setMmSeq(String mmSeq) {
+		this.mmSeq = mmSeq;
+	}
+	
+	
 	
 	
 

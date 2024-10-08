@@ -78,6 +78,8 @@
                             <a href="./0_shop-cart.html" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기 </a>
                             <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
                                 <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
+                                <span class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
+                          		<a class="nav-link" id="logout" href="/usr/v1/infra/login/loginUsrForm">로그아웃</a>
                                
                             </div>
                         </div>
@@ -122,6 +124,8 @@
                                         <form post="method" action="/usr/v1/infra/address/addressUsrInst" class="row g-3"> 
                                         <div class="row">
                                             <div class="col-md-5">
+                                            	<input type="hidden" name="adSeq" th:text="${adName}" class="form-control" aria-label="inputFirstName">
+                                            	<input type="hidden" name="mmSeq" class="form-control mb-3" id="inputAddress" >
                                                 <label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
                                                 <input type="text" name="adName" th:text="${adName}" class="form-control" aria-label="inputFirstName">
                                             </div>
@@ -149,13 +153,8 @@
                                             	<br>
                                                 <label for="inputAddress" class="form-label small text-muted">휴대전화</label>
                                                 <input type="text" name="adTell" th:value="${item?.adTell}" class="form-control mb-3" id="inputAddress" placeholder="">
-                                            </div>
-                                            
-                                            <div class="col-12">
-                                                <label for="inputAddress" class="form-label small text-muted">임시맴버Seq</label>
-                                                <input type="inputphone" name="member_mmSeq" th:value="${item?.member_mmSeq}" class="form-control mb-3" id="inputAddress" placeholder="">
-                                            </div>
-                                      
+                                            </div>       
+                                                <input type="hidden" name="member_mmSeq" th:value="${item?.member_mmSeq}" class="form-control mb-3" id="inputAddress" placeholder="">
                                             <div class="col-4">
                                                 <input name="ma_main_flag" fw-filter="" fw-label="기본 배송지로 저장" fw-msg="" value="T" type="checkbox">
                                                 <span>기본 배송지로 저장</span>

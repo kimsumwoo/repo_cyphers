@@ -474,7 +474,7 @@
 										
 											
 											
-										<form class="needs-validation" method="post" action="/xdm/v1/infra/review/reviewXdmInst"autocomplete="off">
+										<form class="needs-validation" method="post" action="/xdm/v1/infra/review/reviewXdmInst" name="mfom" autocomplete="off">
 											<h3 style="height: 60px;">기본정보</h3>
 											
 											
@@ -534,7 +534,7 @@
 													<div>
 													<label for="validationCustom02" class="form-label">맴버이름Seq</label>
 													<input type="text" class="form-control" id="validationCustom02"  placeholder=""
-													 Name= "member_mmSeq" th:value="${item?.member_mmSeq}">
+													 Name="member_mmSeq" th:value="${item?.member_mmSeq}">
 													<div class="valid-feedback"></div>
 													<div class="invalid-feedback">순서를 입력해주세요.</div>
 												</div>
@@ -550,20 +550,41 @@
 										</div>	
 									</div>
 								</div>
-								<div class="row">
-										<div class="col">
+									<!-- 버튼 -->
+							<div class="row">
+								<div class="col d-flex justify-content-between">
+									<div>
 											<a href ="/xdm/v1/infra/review/reviewXdmList"<button class="btn" >
 											<i class="bi bi-file-text"></i>
 										</button></a>
-										</div>
-										<div class ="col">
-											<div class="col d-flex justify-content-end">
-											<button class="btn" type="submit" style="float: right;">
-															<i class="bi bi-clipboard-plus"></i>
-											</button>
+										<button class="btn"  type ="button" data-bs-toggle="modal" data-bs-target="#verticallyCentered">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
+									</div>
+									<button class="btn" id="btnSubmit">
+										<i class="bi bi-clipboard-plus"></i>
+									</button>
+								</div>
+								<!-- 삭제모달 -->
+									<div class="modal fade" id="verticallyCentered" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+										aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="verticallyCenteredLabel">Delete</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													삭제하시겠습니까?
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-dark" data-bs-dismiss="modal">아니요</button>
+													<button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delbtn">네</button>
+												</div>
 											</div>
 										</div>
 									</div>
+								</div>
 								</div>
 							</div>
 						</div>
@@ -596,6 +617,13 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script>
+			document.getElementById("delbtn").onclick = function(){
+				let form= document.querySelector("form[name=mfom]");
+				form.action ="/xdm/v1/infra/review/reviewXdmDete";
+				form.submit();
+			}
+		</script> 
 		<script type="text/javascript"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/jquery.min.js"></script>
 		<script src="/xdm/v1/template/Arise/assets/js/bootstrap.bundle.min.js"></script>

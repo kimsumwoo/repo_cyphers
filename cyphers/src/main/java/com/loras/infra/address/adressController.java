@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.infra.codegroup.CodeGroupDto;
+import com.loras.infra.product.ProductDto;
 
 @Controller
 public class adressController {
@@ -52,8 +53,9 @@ public class adressController {
 //	유저주소등록
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrInst")
 	public String addressUsrInst(addressDto addressDto) {
+		System.out.println(addressDto.getMember_mmSeq());
 		addressService.usrInsert(addressDto);
-	return "redirect:/usr/v1/infra/address/addressUsrList";
+	return "/usr/v1/infra/productUsrDetail/productUsrDetail";
 	}
 //	유저주소삭제
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrDete")

@@ -70,7 +70,6 @@ public class LogInController {
 		httpSession.setAttribute("sessSeqUsr", rtMember.getMmSeq());
 		httpSession.setAttribute("sessIdUsr", rtMember.getMmId());
 		httpSession.setAttribute("sessNameUsr", rtMember.getMmRealName());
-
 		if (rtMember != null) {
 			returnMap.put("rt", "success");
 		} else {

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.loras.common.config.util.UtilDateTime;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class ReviewController {
@@ -28,7 +30,7 @@ public class ReviewController {
 	}
 	@RequestMapping(value ="xdm/v1/infra/review/reviewXdmInst")
 	public String reviewXdmInst(ReviewDto reviewDto) {
-		reviewService.insert(reviewDto);
+		reviewService.insertXdm(reviewDto);
 		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmMFom")
@@ -46,11 +48,14 @@ public class ReviewController {
 		reviewService.delete(reviewDto);
 		return "redirect:/xdm/v1/infra/review/reviewXdmList";
 	}
-	@RequestMapping(value ="xdm/v1/infra/review/reviewUsrInst")
+	@RequestMapping(value ="/usr/v1/infra/review/reviewUsrInst")
 	public String reviewUsrInst(ReviewDto reviewDto) {
 		reviewService.insert(reviewDto);
-		return "redirect:/xdm/v1/infra/review/reviewUsrList";
+		System.out.println(reviewDto.getPdSeq());
+		System.out.println(reviewDto.getMmSeq());
+		return "redirect:/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq="+reviewDto.getPdSeq();
 	}
+	
 
 
 

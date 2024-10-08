@@ -27,27 +27,48 @@
 		) rv
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
+	<insert id="insertXdm">
+		INSERT INTO review(
+			rvRank
+			,rvComment
+			,rvUseNy
+			,rvDelNy
+			,rvDate
+			,rvFixDate
+			,product_pdSeq
+			,member_mmSeq
+			)VALUES(
+			#{rvRank}
+			,#{rvComment}
+			,1
+			,0
+			,now()
+			,now()
+			,#{product_pdSeq}
+			,#{member_mmSeq}
+			)
+	</insert>
 	
 	<insert id="insert">
-	INSERT INTO review(
-		rvRank
-		,rvComment
-		,rvUseNy
-		,rvDelNy
-		,rvDate
-		,rvFixDate
-		,product_pdSeq
-		,member_mmSeq
-		)VALUES(
-		#{rvRank}
-		,#{rvComment}
-		,#{rvUseNy}
-		,0
-		,now()
-		,now()
-		,#{product_pdSeq}
-		,#{member_mmSeq}
-		)
+		INSERT INTO review(
+			rvRank
+			,rvComment
+			,rvUseNy
+			,rvDelNy
+			,rvDate
+			,rvFixDate
+			,product_pdSeq
+			,member_mmSeq
+			)VALUES(
+			#{rvRank}
+			,#{rvComment}
+			,1
+			,0
+			,now()
+			,now()
+			,#{pdSeq}
+			,#{mmSeq}
+			)
 	</insert>
 	
 	<select id="selectOne">
@@ -110,7 +131,9 @@
 	<select id="selectOneCount" resultType="Integer">
 		select count(*)
 		<include refid="selectCommon"></include>
-	</select>			
+	</select>
+	
+	
 			
 			
 			

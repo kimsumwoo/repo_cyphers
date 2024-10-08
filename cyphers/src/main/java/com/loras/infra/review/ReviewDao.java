@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReviewDao {
 	public List<ReviewDto> reviewSelectList(ReviewVo vo);
+	public int insertXdm(ReviewDto reviewDto);
 	public int insert(ReviewDto reviewDto);
 	public ReviewDto selectOne(ReviewDto reviewDto);
 	public int update(ReviewDto reviewDto);

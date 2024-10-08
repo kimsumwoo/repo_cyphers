@@ -5,8 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.HttpServerErrorException;
 
 import com.loras.common.config.util.UtilDateTime;
+import com.loras.infra.review.ReviewDto;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequestWrapper;
 
 
 @Controller
@@ -57,16 +62,20 @@ public class ProductController {
 	}
 	@RequestMapping(value ="/usr/v1/infra/productUsrDetail/productUsrDetail")
 	public String productUsrDetail(Model model,ProductDto productDto) {
+		System.out.println(productDto.getPdSeq());
 		model.addAttribute("item", productService.SelectOne(productDto));
-		model.addAttribute("list", productService.rvSelectList());
+		model.addAttribute("list", productService.rvSelectList(productDto));
 		return "/usr/v1/infra/productUsrDetail/productUsrDetail";
 	}
-	@RequestMapping(value = "/usr/v1/infra/product/productUsrInst")
-	public String productUsrInst(ProductDto productDto) {
-		productService.rvInsert(productDto);
-		return "redirect:/usr/v1/infra/product/productUsrList";
-	}
-	
+	/*
+	  @RequestMapping(value = "/usr/v1/infra/productUsrDetail/productUsrInst")
+	  public String productUsrInst(ProductDto productDto) {
+	  productService.rvInsert(productDto); return
+	  "redirect:/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=" +
+	  productDto.getProduct_pdSeq(); }
+	 */
+
+
 	
 
 }

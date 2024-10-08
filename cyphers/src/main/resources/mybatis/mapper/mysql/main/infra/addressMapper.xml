@@ -47,11 +47,11 @@
 		,#{ad1}
 		,#{ad2}
 		,#{ad3}
-		,#{adUseNy}
+		,1
 		,0
 		,now()
 		,now()
-		,#{member_mmSeq}
+		,#{mmSeq}
 		,#{adName}
 		,#{adTell}
 	)

@@ -13,9 +13,12 @@ public class ReviewService {
 	public List<ReviewDto> reviewSelectList(ReviewVo vo){
 		return reviewDao.reviewSelectList(vo);
 		}
+	public int insertXdm(ReviewDto reviewDto) {
+		return reviewDao.insertXdm(reviewDto);
+		}
 	public int insert(ReviewDto reviewDto) {
 		return reviewDao.insert(reviewDto);
-		}
+	}
 	public ReviewDto selectOne(ReviewDto reviewDto) {
 		return reviewDao.selectOne(reviewDto);
 	}
