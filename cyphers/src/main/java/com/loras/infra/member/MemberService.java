@@ -33,5 +33,17 @@ public class MemberService {
 	public int selectOneCount(MemberVo vo) {
 		return memberDao.selectOneCount(vo);
 	}
+	
+	public MemberDto selectOneFixUsr(MemberDto memberDto) {
+		return memberDao.selectOneFixUsr(memberDto);
+	}
+	
+	public int updateFixUsr(MemberDto memberDto) {
+		return memberDao.updateFixUsr(memberDto);
+	}
+	
+	public int updateFixPasswd(MemberDto memberDto) {
+		return memberDao.updateFixPasswd(memberDto);
+	}
 
 }

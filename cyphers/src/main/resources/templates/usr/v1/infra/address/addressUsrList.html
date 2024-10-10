@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/usr/css/common.css">
     </head>
     <body>
-        
+         <form class="row g-3" name="mfom">
         <div class="bg-white white-top-header position-relative">
             <!-- navbar -->
             <div class="elements-nav">
@@ -108,6 +108,7 @@
                             </div>
                         </div>
                     </div>
+                   
                     <div class="col-lg-8 ps-lg-0 pb-5">
                         <div class="ps-lg-5 pt-lg-5">
                             <div class="d-flex align-items-center justify-content-between w-100 mb-5">
@@ -118,17 +119,17 @@
                                     <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4"
                                     	th:each="list : ${list}">
                                         <div>
-                                        	<p class="fw-bold mb-0" th:text="${list.adName}"></p>
+                                        	<p class="fw-bold mb-0" th:text="${list.adName}"></p> <input type="text" name="adSeq"
                                             <h6 class="fw-bold mb-1 mt-2" th:if ="${list.adDefaultNy eq 0}"></h6>
                                             <h6 class="fw-bold mb-1 mt-2" th:unless ="${list.adDefaultNy eq 0}">기본</h6>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.adZipCode}">01178</p>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.ad1}">서울시 노원구 동일로207길17</p>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.ad2}">ㅇㅇ아파트 201동 302호</p>
-                                            <p class="fw-bold mb-0" th:text="${list.adTell}"></p>
+                                            <p class="fw-bold mb-0" th:text="${list.adTell}"></p>                     
                                         </div>
                                         <div class="d-flex align-items-cneter gap-2">
                                             <a th:href="@{/usr/v1/infra/address/addressUsrMFom(adSeq=${list.adSeq})}" class="btn btn-outline-secondary rounded-3"> <i class="ri-edit-box-fill"></i> </a>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </a>
+                                            <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#delete" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </a> -->
                                         </div>
                                     </div>
                                     <a href="/usr/v1/infra/address/addressUsrForm" class="btn btn-purple btn-theme w-100 rounded-3"> <i class="ri-add-fill me-2"></i>새 배송주소 생성 </a>
@@ -145,7 +146,7 @@
                 <div class="modal-content bg-white border-0 rounded-4 overflow-hidden">
                     <div class="modal-body p-5">
                         <h4 class="fw-bold pb-3">새 배송주소 생성</h4>
-                        <form class="row g-3" name="mfom">
+                        
                             <div class="col-md-12 col-12">
                                 <label for="inputName1" class="form-label">이름</label>
                                 <input type="text" class="form-control bg-transparent" id="inputName1" value="">
@@ -244,7 +245,7 @@
         <script>
 		document.getElementById("delbtn").onclick = function(){
 			let form= document.querySelector("form[name=mfom]");
-			form.action ="/xdm/v1/infra/address/addressUsrDete";
+			form.action ="/usr/v1/infra/address/address/addressUsrListDete";
 			form.submit();
 		}
 		</script>

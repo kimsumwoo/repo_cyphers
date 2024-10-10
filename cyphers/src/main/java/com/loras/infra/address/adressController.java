@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.loras.infra.codegroup.CodeGroupDto;
 import com.loras.infra.product.ProductDto;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class adressController {
 	@Autowired
 	addressService addressService;
 	@RequestMapping(value = "/xdm/v1/infra/address/addressXdmList")
-	public String addressXdmList(Model model) {
-		model.addAttribute("list",(addressService.addressList()));
+	public String addressXdmList(Model model,addressDto addressDto) {
+		model.addAttribute("list",(addressService.addressList(addressDto)));
+		
 		return "/xdm/v1/infra/address/addressXdmList";
 	}
 	
@@ -43,19 +46,20 @@ public class adressController {
 		addressService.delete(addressDto);
 	return "redirect:/xdm/v1/infra/address/addressXdmList";
 	}
-	
 //	유저주소리스트
-	@RequestMapping(value ="/usr/v1/infra/address/addressUsrList")
-	public String addressUsrList(Model model){
-		model.addAttribute("list", addressService.addressList());
-		return "/usr/v1/infra/address/addressUsrList";
+	@RequestMapping(value = "/usr/v1/infra/address/addressUsrList")
+	public String addressUsrList(Model model, addressDto addressDto, HttpServletRequest request) {
+	    addressDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
+	    model.addAttribute("list", addressService.addressUsrList(addressDto));
+	    return "/usr/v1/infra/address/addressUsrList";
 	}
+
 //	유저주소등록
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrInst")
 	public String addressUsrInst(addressDto addressDto) {
 		System.out.println(addressDto.getMember_mmSeq());
 		addressService.usrInsert(addressDto);
-	return "/usr/v1/infra/productUsrDetail/productUsrDetail";
+	return "redirect:/usr/v1/infra/address/addressUsrList";
 	}
 //	유저주소삭제
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrDete")
@@ -79,6 +83,13 @@ public class adressController {
 	public String addressUsrUpdt(addressDto addressDto) {
 		addressService.update(addressDto);
 	return "redirect:/usr/v1/infra/address/addressUsrList";
+	}
+//	유저주소삭제
+	@RequestMapping(value = "/usr/v1/infra/address/address/addressUsrListDete")
+	public String addressUsrListDete(addressDto addressDto,Model model) {
+		addressService.deleteUsr(addressDto);
+		System.out.println(addressDto.getAdSeq());
+		return "redirect:/usr/v1/infra/address/addressUsrList";
 	}
 	
 

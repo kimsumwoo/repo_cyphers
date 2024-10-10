@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface addressDao {
 	
-	public List<addressDto> addressList();
+	public List<addressDto> addressList(addressDto addressDto);
 	
 	public int insert(addressDto addressDto);
 	
@@ -18,6 +18,10 @@ public interface addressDao {
 	public int delete(addressDto addressDto);
 	
 	public int usrInsert(addressDto addressDto);
+	
+	public List<addressDto> addressUsrList(addressDto addressDto);
+	
+	public int deleteUsr(addressDto addressDto);
 	
 
 }

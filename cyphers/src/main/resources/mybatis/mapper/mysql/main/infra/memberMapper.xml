@@ -131,9 +131,48 @@ select mm.* from(
 		<when test="shOptionDate == 2">AND mm.mmFixDate BETWEEN #{shDateStart} AND #{shDateEnd} </when>
 	</choose>
 	</sql>
+	
 	<select id="selectOneCount">
 		select count(*)
 		<include refid="selectCommon"></include>
+	</select>
+	<!-- 유저정보수정  -->
+	<update id="updateFixUsr">
+		update member
+		set
+			mmId = #{mmId}
+			,mmNickName = #{mmNickName}
+			,mmEmail = #{mmEmail}
+			,mmTell = #{mmTell}
+			,mmBirthDay = #{mmBirthDay}
+			,mmFixDate = now()
+		where 1=1
+			and mmSeq = #{mmSeq}
+	</update>
+	<!-- 유저 비밀번호 변경 -->
+	<update id="updateFixPasswd">
+		update member
+		set
+			mmPasswd = #{mmPasswd}
+			,mmFixDate = now()
+		where 1=1
+			and mmSeq = #{mmSeq}
+	</update>
+	
+	<!-- 유저정보수정불러오기  -->
+	<select id="selectOneFixUsr" resultMap ="resultMapObj">
+		select
+		mm.mmSeq
+		,mm.mmNickName
+		,mm.mmEmail
+		,mm.mmTell
+		,mm.mmBirthDay
+		,mm.mmFixDate
+		,mm.mmId
+		from
+			member mm
+		where 1=1
+		and mm.mmSeq = #{mmSeq}
 	</select>
 	  
 </mapper>

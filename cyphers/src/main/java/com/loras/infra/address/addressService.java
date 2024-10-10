@@ -11,8 +11,8 @@ import com.mysql.cj.x.protobuf.MysqlxCrud.Insert;
 public class addressService {
 	@Autowired
 	addressDao addressDao;
-	public List<addressDto> addressList(){
-		return addressDao.addressList();
+	public List<addressDto> addressList(addressDto addressDto){
+		return addressDao.addressList(addressDto);
 	}
 	public int Insert(addressDto addressDto){
 		return addressDao.insert(addressDto);
@@ -28,5 +28,11 @@ public class addressService {
 	}
 	public int usrInsert(addressDto addressDto) {
 		return addressDao.usrInsert(addressDto);
+	}
+	public List<addressDto> addressUsrList(addressDto addressDto){
+		return addressDao.addressUsrList(addressDto);
+	}
+	public int deleteUsr(addressDto addressDto) {
+		return addressDao.deleteUsr(addressDto);
 	}
 }

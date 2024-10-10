@@ -29,29 +29,23 @@ public class LogInController {
 	@ResponseBody
 	@RequestMapping(value = "/xdm/v1/infra/login/loginXdmProc")
 	public Map<String, Object> LoginXdmProc(LogInDto logInDto, HttpSession httpSession) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		
-		LogInDto rtMember = logInService.logInSelectOne(logInDto); 
+	    Map<String, Object> returnMap = new HashMap<>();
 
-//		httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
-		httpSession.setAttribute("sessSeqXdm", rtMember.getMmSeq());
-		httpSession.setAttribute("sessIdXdm", rtMember.getMmId());
-		httpSession.setAttribute("sessNameXdm", rtMember.getMmRealName());
+	    LogInDto rtMember = logInService.logInSelectOne(logInDto); 
 
-		if (rtMember != null) {
-			returnMap.put("rt", "success");
-		} else {
-			returnMap.put("rt", "fail"); 
-		}
-		return returnMap;
-	}
-	@ResponseBody
-	@RequestMapping(value = "/xdm/v1/infra/login/logoutXdmProc")
-	public Map<String, Object> logoutXdmProc(HttpSession httpSession) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		httpSession.invalidate();
-		returnMap.put("rt", "success");
-		return returnMap;
+	    if (rtMember != null) {
+	        // 로그인 성공 시 세션에 사용자 정보 저장
+	        httpSession.setAttribute("sessSeqXdm", rtMember.getMmSeq());
+	        httpSession.setAttribute("sessIdXdm", rtMember.getMmId());
+	        httpSession.setAttribute("sessNameXdm", rtMember.getMmRealName());
+	        
+	        returnMap.put("rt", "success");
+	    } else {
+	        // 로그인 실패 시
+	        returnMap.put("rt", "fail"); 
+	        returnMap.put("message", "일치하는 회원이 존재하지 않습니다."); // 추가적인 메시지
+	    }
+	    return returnMap;
 	}
 //	사용자 로그인화면
 	@RequestMapping(value = "/usr/v1/infra/login/loginUsrForm")
@@ -73,7 +67,8 @@ public class LogInController {
 		if (rtMember != null) {
 			returnMap.put("rt", "success");
 		} else {
-			returnMap.put("rt", "fail"); 
+			returnMap.put("rt", "fail");
+			returnMap.put("message", "일치하는 회원이 존재하지 않습니다.");
 		}
 		return returnMap;
 	}

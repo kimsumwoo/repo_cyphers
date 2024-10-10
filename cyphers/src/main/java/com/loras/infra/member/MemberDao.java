@@ -17,4 +17,10 @@ public interface MemberDao {
 	public int delete(MemberDto memberDto);
 	
 	public int selectOneCount(MemberVo vo);
+	
+	public MemberDto selectOneFixUsr(MemberDto memberDto);
+	
+	public int updateFixUsr(MemberDto memberDto);
+	
+	public int updateFixPasswd(MemberDto memberDto);
 }

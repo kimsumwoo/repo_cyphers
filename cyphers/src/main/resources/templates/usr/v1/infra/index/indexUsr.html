@@ -41,48 +41,16 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ms-auto gap-4 m-none">
                             <li class="nav-item">
-                                <a class="nav-link active" href="./0_index.html"><i class="ri-apps-2-line"></i> Home</a>
+                                <a class="nav-link active" href="/usr/v1/infra/index/indexUsr"><i class="ri-apps-2-line"></i> Home</a>
                             </li>
                             
-                            <li class="nav-item dropdown osahan-mega-menu position-static">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Extra Pages </a>
-                                <ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
-                                    <li>
-                                        <div class="dropdown-mega-content container">
-                                            <div class="row g-0">
-                                                <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                    <h6 class="dropdown-mega-sub-title mb-3 fw-bold">Shop</h6>
-                                                    <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_shop-product-grid.html">0_Product Grid</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_shop-product-detail.html">0_Product Detail</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_shop-cart.html">0_Shop Cart</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_shop-checkout.html">0_Shop Checkout</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                    <h6 class="dropdown-mega-sub-title mb-3 fw-bold">My Account</h6>
-                                                    <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                        
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_page-login.html">0_Log In</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_page-signup.html">0_Sign Up</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_page-reset-password.html">0_Forgot Password</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_account-orders.html">0_Orders</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_account-settings.html">0_Settings</a></li>
-                                                        <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./pages/0_account-address.html">0_Address</a></li>
-                                                    </ul>
-                                                   
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
+                            
+                                <a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"> 상품목록 </a>
+                                
                         </ul>
                         <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
-                            <a href="./pages/0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
+                            <a href="/usr/v1/infra/order/OrderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
                             <a href="./pages/0_shop-cart.html" class="link-light"><i class="ri-shopping-basket-2-fill ri-lg"></i></a>
-                            <a href="#" class="link-light d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar"><i class="ri-menu-3-line ri-lg"></i></a>
                             <span class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
                           <a class="nav-link" id="logout" href="/usr/v1/infra/login/loginUsrForm">로그아웃</a>
                         </div>

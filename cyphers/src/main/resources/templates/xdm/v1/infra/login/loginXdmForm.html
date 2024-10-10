@@ -148,35 +148,31 @@
 	// 			by pass
 	    	}
 	    
-	   		 $.ajax({
-				async: true 
-				,cache: false
-				,type: "post"
-				/* ,dataType:"json" */
-				,url: "/xdm/v1/infra/login/loginXdmProc"
-				/* ,data : $("#formLogin").serialize() */
-				,data : { "mmId" : $("#mmId").val(), "mmPasswd" : $("#mmPasswd").val()}
-				,success: function(response) {
-					if(response.rt == "success") {
-					location.href ="/xdm/v1/infra/login/indexXdmList";
-					
-// 						if(response.changePwd == "true") {
-// 							location.href = "/xdm/v1/infra/login/logIn";
-// 						} 
-// 						else {
-// 							location.href = "/xdm/v1/infra/login/helloworld";
-// 						}
-					} 
-					else {
-				 		document.getElementById("modalAlertTitle").innerText = "확 인";
-				 		document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
-				 		$("#modalAlert").modal("show");
-					}
-				}
-				,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
+		    $.ajax({
+		        async: true,
+		        cache: false,
+		        type: "post",
+		        dataType: "json",
+		        url: "/xdm/v1/infra/login/loginXdmProc",
+		        data: {
+		            "mmId": $("#mmId").val(),
+		            "mmPasswd": $("#mmPasswd").val()
+		        },
+		        success: function(response) {
+		            if (response.rt === "success") {
+		                location.href = "/xdm/v1/infra/login/indexXdmList";
+		            } else {
+		                // 로그인 실패 시
+		                $("#modalAlert").modal("show");
+		                document.getElementById("modalAlertTitle").textContent = "확인";
+		                document.getElementById("modalAlertBody").textContent = response.message; // 서버에서 전달된 메시지
+		            }
+		        },
+		        error: function(jqXHR, textStatus, errorThrown) {
+		            alert("Error: " + textStatus + " - " + errorThrown);
+		        }
+		    });
+
 	   		 
 	}
 		</script>

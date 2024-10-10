@@ -51,7 +51,7 @@
 		,0
 		,now()
 		,now()
-		,#{mmSeq}
+		,#{member_mmSeq}
 		,#{adName}
 		,#{adTell}
 	)
@@ -104,6 +104,7 @@
 		,ad1
 		,ad2
 		,ad3
+		,adUseNy
 		,adDelNy
 		,adDate
 		,adFixDate
@@ -115,6 +116,7 @@
 		,#{ad1}
 		,#{ad2}
 		,#{ad3}
+		,1
 		,0
 		,now()
 		,now()
@@ -123,6 +125,34 @@
 		,#{adTell}
 	)
 	</insert>
+	<select id="addressUsrList" resultMap="resultMapObj">
+	select
+		ad.adSeq
+		,ad.adDefaultNy
+		,ad.adZipCode
+		,ad.ad1
+		,ad.ad2
+		,ad.ad3
+		,ad.adUseNy
+		,ad.adDelNy
+		,ad.adDate
+		,ad.adFixDate
+		,ad.member_mmSeq
+		,ad.adName
+		,ad.adTell
+		,mm.mmSeq
+	 FROM address ad
+	 LEFT JOIN member mm
+	 ON mm.mmseq = ad.member_mmSeq
+	 WHERE 1=1
+	 AND ad.member_mmSeq = #{mmSeq}
+	</select>
+	
+	<delete id="deleteUsr">
+	DELETE FROM address
+		WHERE 1=1
+		AND adSeq = #{adSeq}
+	</delete>
 	
 	  
 </mapper>

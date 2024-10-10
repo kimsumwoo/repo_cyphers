@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.loras.common.config.util.UtilDateTime;
 import com.loras.infra.codegroup.CodeGroupDto;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 
 @Controller
 public class MemberController {
@@ -48,14 +50,29 @@ public class MemberController {
 		memberService.delete(memberDto);
 		return "redirect:/xdm/v1/infra/member/memberXdmList";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/member/memberSignUp")
-	public String memberSignUp() {
-		return "/xdm/v1/infra/member/memberSignUp";
+//	유저정보폼
+	@RequestMapping(value = "/usr/v1/infra/editmember/editMemberForm")
+	public String editMemberForm(Model model, MemberDto memberDto, HttpServletRequest request) {
+		memberDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
+		model.addAttribute("item", memberService.selectOneFixUsr(memberDto));
+		return "/usr/v1/infra/editmember/editMemberForm";
 	}
-	@RequestMapping(value ="/xdm/v1/infra/member/memberlogIn")
-	public String memberlogIn() {
-		return "/xdm/v1/infra/member/memberlogIn";
+//	유저정보수정
+	@RequestMapping(value ="/usr/v1/infra/editMember/updateFixUsr")
+	public String updateFixUsr(MemberDto memberDto, HttpServletRequest request) {
+		memberDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
+		memberService.updateFixUsr(memberDto);
+		return "redirect:/usr/v1/infra/editmember/editMemberForm";
 	}
+//	유저비밀번호수정
+	@RequestMapping(value = "/usr/v1/infra/editMember/updateFixPasswd")
+	public String updateFixPasswd(MemberDto memberDto, HttpServletRequest request) {
+		memberDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
+		memberService.updateFixPasswd(memberDto);
+		return "redirect:/usr/v1/infra/editmember/editMemberForm";
+	}
+
+	
 
 }
 	
