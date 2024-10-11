@@ -20,97 +20,14 @@
         <link rel="stylesheet" href="/usr/css/common.css">
     </head>
     <body>
+       <div th:replace="~{usr/v1/infra/include/profileHead :: profileHead}"></div>
         
-        <div class="bg-white white-top-header position-relative">
-            <!-- navbar -->
-            <div class="elements-nav">
-                <!-- bootom nav -->
-                <nav class="navbar white-main-nav my-account-nav navbar-expand bottom-nav bg-black border-bottom border-opacity-10 border-white py-lg-0 py-3 bg-opacity-25">
-                    <div class="container">
-                        <div class="position-relative d-flex align-items-center gap-2 site-brand">
-                                                            <i class="ri-baidu-line fs-2 lh-1 text-black"></i>
-                                                            <div class="lh-1">
-                                                                <h5 class="fw-bold m-0 text-black">Pet</h5>
-                                                                <small class="text-dark">Template</small>
-                                                            </div>
-                                                            <a class="stretched-link" href="../0_index.html"></a>
-                                                        </div>
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav m-auto gap-4 m-none">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="../0_index.html"><i class="ri-apps-2-line"></i> Home</a>
-                                </li>
-                                
-
-                                <li class="nav-item dropdown osahan-mega-menu position-static">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Extra Pages </a>
-                                    <ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
-                                        <li>
-                                            <div class="dropdown-mega-content container">
-                                                <div class="row g-0">
-                                                    <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                        <h6 class="dropdown-mega-sub-title mb-3 fw-bold">Shop</h6>
-                                                        <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-product-grid.html">0_Product Grid</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-product-detail.html">0_Product Detail</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-cart.html">0_Shop Cart</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-checkout.html">0_Shop Checkout</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                        <h6 class="dropdown-mega-sub-title mb-3 fw-bold">My Account</h6>
-                                                        <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                            
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-login.html">0_Log In v.2</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-signup.html">0_Sign Up v.2</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-reset-password.html">0_Forgot Password</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-orders.html">0_Orders</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-settings.html">0_Settings</a></li>
-                                                            <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-address.html">0_Address</a></li>
-                                                            
-                                                        </ul>
-                                                        
-                                                        
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <a href="./0_shop-cart.html" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기</a>
-                            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
-                                <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                                <span class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
-                               <!--  <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class="osahan-user-header">
-            
+        <div class="osahan-user-header">  
         </div>
         <div class="pb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="rounded-4 border osahan-sidebar bg-white mb-4">
-                            <div class="text-center p-5 border-bottom">
-                                <img src="/usr/img/pages/team/member-1.jpg" alt="customer" class="img-fluid rounded-circle profile-img cw-80 ch-80 mb-4">
-                                <h3 class="fw-bold mb-1">김선우</h3>
-                                <p class="m-0 text-muted">tjsdn2587@gmail.com</p>
-                            </div>
-                            <div class="p-4 osahan-sidebar-links">
-                                <a class="dropdown-item active" href="./0_account-orders.html"><i class="ri-file-list-line me-2"></i> 주문 </a>
-                                <a class="dropdown-item" href="./0_account-settings.html"><i class="ri-settings-line me-2"></i> 내정보 수정 </a>
-                                <a class="dropdown-item" href="./0_account-address.html"><i class="ri-map-pin-line me-2"></i> 배송 주소 </a>
-                                <a class="dropdown-item" href="../index.html"><i class="ri-logout-circle-line me-2"></i> 로그아웃</a>
-                            </div>
-                        </div>
-                    </div>
+                    <div th:replace="~{usr/v1/infra/include/profile :: profile}"></div>
                     <div class="col-lg-8 ps-lg-0">
                         <div class="ps-lg-5 pt-lg-5">
                             <div class="d-flex align-items-center justify-content-between w-100 mb-5">
@@ -347,7 +264,25 @@
                     </div>
                 </div>
             </div>
-
+            
+		<script type="text/javascript">
+		document.getElementById("logout").onclick = function (){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/usr/v1/infra/login/logoutUsrFormProc"
+				,success: function(response) {
+					if(response.rt == "success") {
+					location.href ="/usr/v1/infra/login/loginUsrForm";
+					}else {
+					   	
+				    }
+				}	
+			});
+		}		
+		</script>
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Jquery Js -->

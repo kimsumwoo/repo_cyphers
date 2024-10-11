@@ -23,68 +23,7 @@
         
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
-            <div class="elements-nav">
-                <!-- bootom nav -->
-                <nav class="navbar osahan-main-nav navbar-expand bottom-nav bg-black borer-bottom border-opacity-10 border-white py-lg-0 py-3 bg-opacity-25">
-                    <div class="container">
-                        <div class="position-relative d-flex align-items-center gap-2 site-brand">
-                                <i class="ri-baidu-line fs-2 lh-1 text-white"></i>
-                                <div class="lh-1">
-                                    <h5 class="fw-bold m-0 text-white">Pet</h5>
-                                    <small class="text-white-50">Template</small>
-                                </div>
-                                <a class="stretched-link" href="../0_index.html"></a>
-                            </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav m-auto gap-4 m-none">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../0_index.html"><i class="ri-apps-2-line"></i> Home</a>
-                        </li>
-                        
-                        
-                        <li class="nav-item dropdown osahan-mega-menu position-static">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Extra Pages </a>
-                            <ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
-                                <li>
-                                    <div class="dropdown-mega-content container">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                <h6 class="dropdown-mega-sub-title mb-3 fw-bold">Shop</h6>
-                                                <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-product-grid.html">0_Product Grid</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-product-detail.html">0_Product Detail</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-cart.html">0_Shop Cart</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-checkout.html">0_Shop Checkout</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                <h6 class="dropdown-mega-sub-title mb-3 fw-bold">My Account</h6>
-                                                <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                    
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-login.html">0_Log In v.2</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-signup.html">0_Sign Up v.2</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-reset-password.html">0_Forgot Password</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-orders.html">0_Orders</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-settings.html">0_Settings</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-address.html">0_Address</a></li>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                            <a href="./0_shop-cart.html" class="btn btn-purple rounded-pill d-none d-lg-block btn-theme"> <i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기 </a>
-                            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
-                                <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                                <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+           <div th:replace="~{usr/v1/infra/include/productHead :: productHead}"></div>
             <!-- header -->
             <div class="py-5">
                 <div class="container py-5">
@@ -107,67 +46,32 @@
                     <div class="col-lg-6 col-12">
                         <form class="row g-3">
                     
-                            <label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
+                           
                             <div class="col-md-12">
+                            	<label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
                                 <input type="text" class="form-control" aria-label="inputFirstName">
                             </div>
                     
                       
-                            <label for="inputCompnay" class="form-label small text-muted">우편번호</label>
+                            
                             <div class="col-4">
-                                <input type="text" class="form-control" id="inputCompnay">
+                             	<label for="inputCompnay" class="form-label small text-muted">우편번호</label>
+                                <input type="text" class="form-control" id="inputCompnay">                                
                             </div>
-                            <div class="col-3">
-                                <button type="button " class="btn btn-dark">주소검색</button>
+                            <div class="col align-self-end">
+                                <button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="btn btn-dark">우편번호 찾기</button><br>
                             </div>
                     
                             <div class="col-12">
-                                <input type="text" class="form-control mb-3" id="inputAddress" placeholder="기본주소">
-                                <input type="text" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
-                            </div><br><br><br><br><br>
-                      
-                        
-                            <label for="inputAddress" class="form-label small text-muted">휴대전화</label>
-                            <div class="col-3"> 
-                                <select class="form-select mb-3" aria-label="selectcountry">
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="016">016</option>
-                                    <option value="017">017</option>
-                                    <option value="018">018</option>
-                                    <option value="019">019</option>
-                                </select>
+                            	<input type="text" name="ad3" th:value="${item?.ad3}" class="form-control mb-3" id="sample4_jibunAddress" placeholder="지번주소" readonly>
+                                <input type="text" name="ad1" th:value="${item?.ad1}" class="form-control mb-3" id="sample4_roadAddress" placeholder="도로명주소" readonly>
+                                <input type="text" name="ad2" th:value="${item?.ad2}" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
                             </div>
-                            <br>-
-                            <div class="col-3">
-                                <input type="inputphone" class="form-control mb-3" id="inputAddress" placeholder="">
-                            </div>
-                            <br>-
-                            <div class="col-3">
+                            <div class="col-12">
+                            	<label for="inputAddress" class="form-label small text-muted">휴대전화</label>
                                 <input type="" class="form-control mb-3" id="inputAddress" placeholder="">
                             </div>
-                       
-                            
-         
-                                <label for="inputTown" class="form-label small text-muted">이메일</label>
-                            <div id ="email1" class="col-4">
-                                <input type="email" class="form-control" id="inputTown">
-                            </div>
-                           <br> @
-                            <div id ="email2" class="col-4">
-                                <input type="text" class="form-control" id="inputCompnay">
-                            </div>
-                            <div class="col-3">
-                                <select id ="emailSelection" class="form-select mb-3" aria-label="selectcountry" name ="emailSelection">
-                                    <option value="email">-이메일 선택-</option>
-                                    <option value="nave.com">naver.com</option>
-                                    <option value="nate.com">nate.com</option>
-                                    <option value="gmail.com">gmail.com</option>
-                                    <option value="hanmail.com">hanmail.com</option>
-                                    <option value="daum.com">daum.com</option>
-                                    <option value="1">직접입력</option>
-                                </select>
-                            </div>
+                             
                             <h5 class="fw-bold pt-3 mb-0">배송 메세지</h5>
                             <div class="col-12">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="메세지를 입력해 주세요(선택사항)" rows="5"></textarea>
@@ -230,7 +134,64 @@
                     </div>
                 </div>
             </div>
-
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script>
+	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	    function sample4_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+	
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('sample4_postcode').value = data.zonecode;
+	                document.getElementById("sample4_roadAddress").value = roadAddr;
+	                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+	                
+	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+	                if(roadAddr !== ''){
+	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+	                } else {
+	                    document.getElementById("sample4_extraAddress").value = '';
+	                }
+	
+	                var guideTextBox = document.getElementById("guide");
+	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+	                if(data.autoRoadAddress) {
+	                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+	                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	
+	                } else if(data.autoJibunAddress) {
+	                    var expJibunAddr = data.autoJibunAddress;
+	                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	                } else {
+	                    guideTextBox.innerHTML = '';
+	                    guideTextBox.style.display = 'none';
+	                }
+	            }
+	        }).open();
+	    }
+		</script>
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Jquery Js -->

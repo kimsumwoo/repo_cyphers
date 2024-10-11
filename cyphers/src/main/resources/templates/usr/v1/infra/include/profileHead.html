@@ -1,0 +1,35 @@
+<th:block th:fragment="profileHead">
+
+<div class="bg-white white-top-header position-relative">
+	<!-- navbar -->
+	<div class="elements-nav">
+	    <!-- bootom nav -->
+		<nav class="navbar white-main-nav my-account-nav navbar-expand bottom-nav bg-black border-bottom border-opacity-10 border-white py-lg-0 py-3 bg-opacity-25">
+		    <div class="container">
+		        <div class="position-relative d-flex align-items-center gap-2 site-brand">
+	                 <i class="ri-baidu-line fs-2 lh-1 text-black"></i>
+	                 <div class="lh-1">
+	                     <h5 class="fw-bold m-0 text-black">Pet</h5>
+	                     <small class="text-dark">Template</small>
+	                 </div>
+	                 <a class="stretched-link" href="/usr/v1/infra/index/indexUsr"></a>
+	            </div>
+		 		<div class="collapse navbar-collapse">
+     		<ul class="navbar-nav m-auto gap-4 m-none">
+	         	<li class="nav-item">
+	             <a class="nav-link active" href="/usr/v1/infra/index/indexUsr"><i class="ri-apps-2-line"></i> Home</a>
+	         	</li>
+             	<a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"> 상품목록 </a> 	
+            </ul>
+		            <a href="./0_shop-cart.html" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기</a>
+		            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
+		                <a href="/usr/v1/infra/order/OrderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
+		                <span class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
+		               <!--  <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a> -->
+	                </div>
+	            </div>
+	        </div>
+	    </nav>
+	</div>
+</div>
+</th:block>

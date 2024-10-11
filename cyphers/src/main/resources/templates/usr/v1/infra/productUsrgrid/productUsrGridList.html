@@ -23,69 +23,7 @@
         <form name ="formList" method = "post" action ="/usr/v1/infra/productUsrgrid/productUsrGridList" autocomplete="off">
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
-            <div class="elements-nav">
-                <!-- bootom nav -->
-                <nav class="navbar osahan-main-nav navbar-expand bottom-nav bg-black borer-bottom border-opacity-10 border-white py-lg-0 py-3 bg-opacity-25">
-                    <div class="container">
-                        <div class="position-relative d-flex align-items-center gap-2 site-brand">
-                                <i class="ri-baidu-line fs-2 lh-1 text-white"></i>
-                                <div class="lh-1">
-                                    <h5 class="fw-bold m-0 text-white">Pet</h5>
-                                    <small class="text-white-50">Template</small>
-                                </div>
-                                <a class="stretched-link" href="../0_index.html"></a>
-                            </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav m-auto gap-4 m-none">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../0_index.html"><i class="ri-apps-2-line"></i> Home</a>
-                        </li>
-                        
-                    
-                        <li class="nav-item dropdown osahan-mega-menu position-static">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Extra Pages </a>
-                            <ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
-                                <li>
-                                    <div class="dropdown-mega-content container">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                <h6 class="dropdown-mega-sub-title mb-3 fw-bold">Shop</h6>
-                                                <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_blog-grid-classic.html">0_Product Grid</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-product-detail.html">0_Product Detail</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-cart.html">0_Shop Cart</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_shop-checkout.html">0_Shop Checkout</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
-                                                <h6 class="dropdown-mega-sub-title mb-3 fw-bold">My Account</h6>
-                                                <ul class="dropdown-mega-sub-nav list-unstyled">
-                                                    
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-login.html">0_Log In v.2</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-signup.html">0_Sign Up v.2</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_page-reset-password.html">0_Forgot Password</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-orders.html">0_Orders</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-settings.html">0_Settings</a></li>
-                                                    <li><a class="dropdown-item px-0 py-1 bg-transparent" href="./0_account-address.html">0_Address</a></li>
-                                                    
-                                                </ul>  
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                            <a href="./0_shop-cart.html" class="btn btn-purple rounded-pill d-none d-lg-block btn-theme"> <i class="ri-shopping-cart-line me-2"></i> 장바구니로 가기 </a>
-                           
-                            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
-                                <a href="./0_account-orders.html" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
-                              <!--   <a href= "../0_index.html" class="nav-link" href="contact.html">로그아웃</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            <div th:replace="~{usr/v1/infra/include/productHead :: productHead}"></div>
             <!-- header -->
             <div class="py-5">
                 <div class="container py-5">
@@ -96,7 +34,7 @@
                                 <nav class="text-white small" aria-label="breadcrumb">
                                     <ol class="breadcrumb d-inline-flex bg-dark bg-opacity-50 rounded-pill px-3 py-2 justify-content-center">
                                         <li class="breadcrumb-item">
-                                            <a href="../index.html"><i class="ri-home-line"></i> Home</a>
+                                            <a href="/usr/v1/infra/index/indexUsr"><i class="ri-home-line"></i> Home</a>
                                         </li>
                                         <li class="breadcrumb-item active text-white-50" aria-current="page">상품목록</li>
                                     </ol>

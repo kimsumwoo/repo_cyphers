@@ -377,85 +377,85 @@ td, th {
 							<div class="card-title">
 
 								<div class="row">
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<select class="form-select" id="shcdDelNy" name="shcdDelNy"> -->
-<!-- 												<option value="" th:selected ="${vo.shcdDelNy == null}" >삭제여부</option> -->
-<!-- 												<option value="0" name="shcdDelNy" th:selected ="${vo.shcdDelNy == 0}">N</option> -->
-<!-- 												<option value="1" name="shcdDelNy" th:selected ="${vo.shcdDelNy == 1}">Y</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<select class="form-select" id="shcdUseNy" name="shcdUseNy"> -->
-<!-- 												<option value="" th:selected ="${vo.shcdUseNy == null}">사용여부</option> -->
-<!-- 												<option value="0" name="shcdUseNy" th:selected ="${vo.shcdUseNy == 0}">N</option> -->
-<!-- 												<option value="1" name="shcdUseNy" th:selected ="${vo.shcdUseNy == 1}">Y</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<select class="form-select" id="shOptionDate" name="shOptionDate"> -->
-<!-- 												<option value="" th:selected ="${vo.shOptionDate == null}">날짜선택</option> -->
-<!-- 												<option value="1" name="shOptionDate" th:selected ="${vo.shOptionDate == 1}">등록일</option> -->
-<!-- 												<option value="2" name="shOptionDate" th:selected ="${vo.shOptionDate == 2}">수정일</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3"> -->
-<!-- 										<div class="mb-2"> -->
-<!-- 											<input type="text" class="form-control" id="shDateStart" th:value ="${#strings.substring(vo.shDateStart, 0, 10)}" -->
-<!-- 												name="shDateStart" placeholder="시작일"> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"> -->
-<!-- 										<div class="mb-2"> -->
-<!-- 											<input type="text" class="form-control" id="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" -->
-<!-- 												name="shDateEnd" placeholder="종료일"> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
+<!-- 									<!-- div> -->
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+										<div class="mb-3">
+											<select class="form-select" id="shcdDelNy" name="shcdDelNy">
+												<option value="" th:selected ="${vo.shcdDelNy == null}" >삭제여부</option>
+												<option value="0" name="shcdDelNy" th:selected ="${vo.shcdDelNy == 0}">N</option>
+												<option value="1" name="shcdDelNy" th:selected ="${vo.shcdDelNy == 1}">Y</option>
+											</select>
+										</div>
+									</div>
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+										<div class="mb-3">
+											<select class="form-select" id="shcdUseNy" name="shcdUseNy">
+												<option value="" th:selected ="${vo.shcdUseNy == null}">사용여부</option>
+												<option value="0" name="shcdUseNy" th:selected ="${vo.shcdUseNy == 0}">N</option>
+												<option value="1" name="shcdUseNy" th:selected ="${vo.shcdUseNy == 1}">Y</option>
+											</select>
+										</div>
+									</div>
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+										<div class="mb-3">
+											<select class="form-select" id="shOptionDate" name="shOptionDate">
+												<option value="" th:selected ="${vo.shOptionDate == null}">날짜선택</option>
+												<option value="1" name="shOptionDate" th:selected ="${vo.shOptionDate == 1}">등록일</option>
+												<option value="2" name="shOptionDate" th:selected ="${vo.shOptionDate == 2}">수정일</option>
+											</select>
+										</div>
+									</div>
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
+										<div class="mb-2">
+											<input type="text" class="form-control" id="shDateStart" th:value ="${#strings.substring(vo.shDateStart, 0, 10)}"
+												name="shDateStart" placeholder="시작일">
+										</div>
+									</div>
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+										<div class="mb-2">
+											<input type="text" class="form-control" id="shDateEnd" th:value="${#strings.substring(vo.shDateEnd, 0, 10)}"
+												name="shDateEnd" placeholder="종료일">
+										</div>
+									</div>
+								</div>
 
-<!-- 								<div class="row"> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<select class="form-select" id="shOption" name="shOption"> -->
-<!-- 												<option value="">검색구분</option> -->
-<!-- 												<option value="1" name="shOption" th:selected ="${vo.shOption == 1}">코드</option> -->
-<!-- 												<option value="2" name="shOption" th:selected ="${vo.shOption == 2}">코드그룹코드</option> -->
-<!-- 												<option value="3" name="shOption" th:selected ="${vo.shOption == 3}">코드이름</option> -->
-<!-- 												<option value="4" name="shOption" th:selected ="${vo.shOption == 4}">코드그룹이름</option> -->
-<!-- 												<option value="5" name="shOption" th:selected ="${vo.shOption == 5}">순서</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div -->
-<!-- 										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<input type="text" class="form-control" id="shValue" -->
-<!-- 												name="shValue" th:value ="${vo.shValue}"> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									버튼1  -->
-<!-- 									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12"> -->
-<!-- 										<div class="mb-3"> -->
-<!-- 											<button class="btn" type="submit"> -->
-<!-- 												<i class="bi bi-search"></i> -->
-<!-- 											</button> -->
-<!-- 											<a href="/xdm/v1/infra/code/codeXdmList"><button class="btn" type="button"> -->
-<!-- 												<i class="bi bi-arrow-counterclockwise"></i> -->
-<!-- 											</button></a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
+								<div class="row">
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12">
+										<div class="mb-3">
+											<select class="form-select" id="shOption" name="shOption">
+												<option value="">검색구분</option>
+												<option value="1" name="shOption" th:selected ="${vo.shOption == 1}">코드</option>
+												<option value="2" name="shOption" th:selected ="${vo.shOption == 2}">코드그룹코드</option>
+												<option value="3" name="shOption" th:selected ="${vo.shOption == 3}">코드이름</option>
+												<option value="4" name="shOption" th:selected ="${vo.shOption == 4}">코드그룹이름</option>
+												<option value="5" name="shOption" th:selected ="${vo.shOption == 5}">순서</option>
+											</select>
+										</div>
+									</div>
+									<div
+										class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
+										<div class="mb-3">
+											<input type="text" class="form-control" id="shValue"
+												name="shValue" th:value ="${vo.shValue}">
+										</div>
+									</div>
+									버튼1 
+									<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm- col-12">
+										<div class="mb-3">
+											<button class="btn" type="submit">
+												<i class="bi bi-search"></i>
+											</button>
+											<a href="/xdm/v1/infra/code/codeXdmList"><button class="btn" type="button">
+												<i class="bi bi-arrow-counterclockwise"></i>
+											</button></a>
+										</div>
+									</div>
+								</div> -->
 
 
 <!-- 								<div class="col-1" style="float: right;"> -->
@@ -469,7 +469,7 @@ td, th {
 <!-- 												<option value="100" th:selected="${vo.rowNumToShow eq 100}">100</option>        -->
 <!-- 										</select> -->
 <!-- 									</div> -->
-<!-- 								</div> -->
+<!-- 								</div> --
 								
 
 

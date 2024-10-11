@@ -5,6 +5,17 @@
 					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
 					
 	<resultMap type="com.loras.infra.order.OrderDto" id="resultMapObj"></resultMap>
+	<select id="orderSelectOne">
+		SELECT
+			pd.pdSeq
+			,pd.pdName
+			,pd.pdPrice
+		FROM 
+			product pd
+		WHERE 1=1
+		AND pd.pdSeq = #{pdSeq}
+	</select>
+	
 	
 	
 </mapper>

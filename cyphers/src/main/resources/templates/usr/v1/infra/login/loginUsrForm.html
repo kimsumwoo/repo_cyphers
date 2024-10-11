@@ -65,7 +65,7 @@
                                     <input type="password" class="form-control bg-light border-0 px-3 py-2" placeholder="영문 숫자 특수문자 조합으로 이루어진 8~15자" id="mmPasswd" name="mmPasswd" required>
                                      <div class="invalid-feedback">비밀번호형식이 올바르지 않습니다</div>
                                 </div>
-                                <button type="button" id="btnLog" class="btn btn-purple btn-theme">로그인</button>
+                                <button type="button" id="btnLog" class="btn btn-purple btn-theme" onkeyup="enterkey()">로그인</button>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="form-check"><input type="checkbox" class="form-check-input" id="exampleCheck1"> <label class="form-check-label small" for="exampleCheck1">아이디 저장</label></div>
                                 </div>
@@ -152,17 +152,29 @@
 		            if (response.rt === "success") {
 		                location.href = "/usr/v1/infra/index/indexUsr";
 		            } else {
-		                // 로그인 실패 시
+		                // 로그인 실패 시 모달 띄우기
 		                $("#modalAlert").modal("show");
-		                document.getElementById("modalAlertTitle").textContent = "확인";
+		                document.getElementById("modalAlertTitle").textContent = "로그인 실패";
 		                document.getElementById("modalAlertBody").textContent = response.message; // 서버에서 전달된 메시지
 		            }
 		        },
 		        error: function(jqXHR, textStatus, errorThrown) {
-		            alert("Error: " + textStatus + " - " + errorThrown);
+		            // AJAX 요청 실패 시 모달 띄우기
+		            $("#modalAlert").modal("show");
+		            document.getElementById("modalAlertTitle").textContent = "로그인 실패";
+		            document.getElementById("modalAlertBody").textContent = "일치하는 회원이 존재하지 않습니다."; // 일반 오류 메시지
 		        }
 		    });
-	}
+
+		}
+		document.getElementById("mmPasswd").addEventListener("keydown", function(event) {
+	        if (event.key === 'Enter') {
+	            event.preventDefault(); // 기본 동작 방지
+	            document.getElementById("btnLog").click(); // 로그인 버튼 클릭
+	        }
+	    });
+		  </script>
+
 		  </script>
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
