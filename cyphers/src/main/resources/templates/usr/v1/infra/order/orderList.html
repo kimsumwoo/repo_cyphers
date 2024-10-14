@@ -89,38 +89,22 @@
                                                     <a href="#" class="btn btn-outline-dark rounded-3"> <i class="ri-printer-line"></i> </a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <div class="pb-4 border-bottom mb-4">
-                                                        <div class="row">
+                                                    <div class="pb-4 border-bottom mb-4"  th:each="list : ${list}">
+                                                        <div class="row" >
                                                             <div class="col-xl-2 col-lg-3 col-md-3 col-4">
                                                                 <img src="../img/pages/products/product-1.jpg" class="img-fluid rounded-3" alt="deliverd-order">
                                                             </div>
                                                             <div class="col-xl-10 col-lg-9 col-md-9 col-8">
                                                                 <div class="card-body d-flex align-items-start justify-content-between">
                                                                     <div>
-                                                                        <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge"> <span class="fw-bold">배송완료</span> 7월20일 </span>
-                                                                        <h6 class="card-title fw-bold mb-1">The Organic Taper Jean</h6>
-                                                                        <p class="card-text"><small class="text-body-secondary">Size: XL, Colour: Blue</small></p>
-                                                                        <h5 class="card-text fw-bold mb-0"><del class="text-dark-emphasis fw-normal small">$2,299.00</del> $1,269.00</h5>
+                                                                        <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge"> <span class="fw-bold"
+                                                                        th:text="${@codeService.selectOneCachedCode(list.odSituation)}"></span></span>
+                                                                        <h6 class="card-title fw-bold mb-1" th:text="${list.pdName}">상품</h6>
+                                                                        <p class="card-text"><small class="text-body-secondary"
+                                                                        th:text="'주문일자 ' + ${#dates.format(list.odDate, 'yyyy년 MM월 dd일 HH시 mm분')}"></small></p>
+                                                                        <h5 class="card-text fw-bold mb-0" th:text="${list.pdPrice}"></h5>
                                                                     </div>
-                                                                    <a href="#" class="btn btn-outline-purple btn-theme rounded-pill">다시 구매하기</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pb-4 border-bottom mb-4">
-                                                        <div class="row">
-                                                            <div class="col-xl-2 col-lg-3 col-md-3 col-4">
-                                                                <img src="../img/pages/products/product-2.jpg" class="img-fluid rounded-3" alt="deliverd-order">
-                                                            </div>
-                                                            <div class="col-xl-10 col-lg-9 col-md-9 col-8">
-                                                                <div class="card-body d-flex align-items-start justify-content-between">
-                                                                    <div>
-                                                                        <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge"> <span class="fw-bold">배송완료</span> 7월 20일 </span>
-                                                                        <h6 class="card-title fw-bold mb-1">Bomber jacket</h6>
-                                                                        <p class="card-text"><small class="text-body-secondary">Size: XL, Colour: Blue</small></p>
-                                                                        <h5 class="card-text fw-bold mb-0">$2,539.00</h5>
-                                                                    </div>
-                                                                    <a href="#" class="btn btn-outline-purple btn-theme rounded-pill">다시 구매하기</a>
+                                                                    <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-outline-purple btn-theme rounded-pill">다시 구매하기</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -161,7 +145,7 @@
                                                         <div class="col-xl-10 col-lg-9 col-md-9 col-8">
                                                             <div class="card-body d-flex align-items-start justify-content-between">
                                                                 <div>
-                                                                    <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge">배송완료</span>
+                                                                    <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge"></span>
                                                                     <h6 class="card-title fw-bold mb-1">Vintage Grateful Dead Lithu</h6>
                                                                     <p class="card-text mb-1"><small class="text-body-secondary">Size: XL, Colour: Blue</small></p>
                                                                     <h5 class="card-text fw-bold mb-0 pb-4">$2,269.00</h5>

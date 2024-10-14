@@ -5,6 +5,79 @@
 					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
 					
 	<resultMap type="com.loras.infra.checkout.CheckOutDto" id="resultMapObj"></resultMap>
+	<select id="selectListAd">
+		select
+			ad.adSeq
+			,ad.adDefaultNy
+			,ad.adZipCode
+			,ad.ad1
+			,ad.ad2
+			,ad.ad3
+			,ad.adUseNy
+			,ad.adDelNy
+			,ad.adDate
+			,ad.adFixDate
+			,ad.member_mmSeq
+			,ad.adName
+			,ad.adTell
+			,mm.mmSeq
+		 FROM address ad
+		 LEFT JOIN member mm
+		 ON mm.mmseq = ad.member_mmSeq
+	</select>
+	<select id="selectOneAd">
+	select
+		ad.adSeq
+		,ad.adDefaultNy
+		,ad.adZipCode
+		,ad.ad1
+		,ad.ad2
+		,ad.ad3
+		,ad.adUseNy
+		,ad.adDelNy
+		,ad.adDate
+		,ad.adFixDate
+		,ad.member_mmSeq
+		,ad.adName
+		,ad.adTell
+	 FROM
+	  address ad
+	 WHERE 1=1
+	 AND ad.adSeq = #{adSeq}
+	</select>
+
+	
+	<select id="selectCheckout" resultMap ="resultMapObj">
+		select
+			pd.pdSeq
+			,pd.pdName
+			,pd.pdPrice
+		FROM product pd
+		WHERE 1=1
+		AND pd.pdSeq = #{pdSeq}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO orders(
+			odSituation
+			,odUseNy
+			,odDelNy
+			,odDate
+			,odFixDate
+			,product_pdSeq
+			,address_adSeq
+			,member_mmSeq
+		)VALUES(
+			#{odSituation}
+			,1
+			,0
+			,now()
+			,now()
+			,#{pdSeq}
+			,#{adSeq}
+			,#{mmSeq}
+		)
+	</insert>
 	
 	
 </mapper>

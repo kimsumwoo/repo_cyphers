@@ -5,16 +5,30 @@
 					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
 					
 	<resultMap type="com.loras.infra.order.OrderDto" id="resultMapObj"></resultMap>
-	<select id="orderSelectOne">
-		SELECT
-			pd.pdSeq
+	
+	<select id="orderList">
+		SELECT 
+			od.odSituation
+			,od.odDate
+			,od.product_pdSeq
+			,od.address_adSeq
 			,pd.pdName
 			,pd.pdPrice
-		FROM 
-			product pd
+			,ad.adName
+			,ad.ad1
+			,ad.ad2
+			,ad.ad3
+			,pd.pdSeq
+		FROM orders od
+		LEFT JOIN product pd
+		ON od.product_pdSeq = pd.pdSeq
+		LEFT JOIN address ad
+		ON od.address_adSeq = ad.adSeq
 		WHERE 1=1
-		AND pd.pdSeq = #{pdSeq}
+		AND ad.member_mmSeq = #{mmSeq}	
 	</select>
+	 
+	
 	
 	
 	

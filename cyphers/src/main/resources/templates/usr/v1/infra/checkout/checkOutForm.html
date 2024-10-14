@@ -40,44 +40,33 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144.54 17.34" preserveaspectratio="none" fill="#ffffff"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
             </div>
         </div>
+        <form method="post" action="/usr/v1/infra/checkout/checkOutInst">
         <div class="py-5">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-6 col-12">
-                        <form class="row g-3">
-                    
-                           
-                            <div class="col-md-12">
-                            	<label for="inputFirstName" class="form-label small text-muted">받는 사람</label>
-                                <input type="text" class="form-control" aria-label="inputFirstName">
-                            </div>
-                    
-                      
-                            
-                            <div class="col-4">
-                             	<label for="inputCompnay" class="form-label small text-muted">우편번호</label>
-                                <input type="text" class="form-control" id="inputCompnay">                                
-                            </div>
-                            <div class="col align-self-end">
-                                <button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="btn btn-dark">우편번호 찾기</button><br>
-                            </div>
-                    
-                            <div class="col-12">
-                            	<input type="text" name="ad3" th:value="${item?.ad3}" class="form-control mb-3" id="sample4_jibunAddress" placeholder="지번주소" readonly>
-                                <input type="text" name="ad1" th:value="${item?.ad1}" class="form-control mb-3" id="sample4_roadAddress" placeholder="도로명주소" readonly>
-                                <input type="text" name="ad2" th:value="${item?.ad2}" class="form-control" id="inputAddress" placeholder="상세주소 입력">                               
-                            </div>
-                            <div class="col-12">
-                            	<label for="inputAddress" class="form-label small text-muted">휴대전화</label>
-                                <input type="" class="form-control mb-3" id="inputAddress" placeholder="">
-                            </div>
-                             
-                            <h5 class="fw-bold pt-3 mb-0">배송 메세지</h5>
+                         <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4"
+		                 	th:each="list : ${list}">
+	                           <div>
+	                           	   <p class="fw-bold mb-0" th:text="${list.adName}"></p>
+	                               <h6 class="fw-bold mb-1 mt-2" th:if ="${list.adDefaultNy eq 0}"></h6>
+	                               <h6 class="fw-bold mb-1 mt-2" th:unless ="${list.adDefaultNy eq 0}">기본</h6>
+	                               <p class="text-secondary-emphasis mb-2" th:text ="${list.adZipCode}">01178</p>
+	                               <p class="text-secondary-emphasis mb-2" th:text ="${list.ad1}">서울시 노원구 동일로207길17</p>
+	                               <p class="text-secondary-emphasis mb-2" th:text ="${list.ad2}">ㅇㅇ아파트 201동 302호</p>
+	                               <p class="fw-bold mb-0" th:text="${list.adTell}"></p>                     
+	                           </div>
+	                           <div class="form-check">
+	                           <input class="form-check-input" type="radio" name="adSeq" th:value="${list.adSeq}">
+	                           </div>
+	                       </div>
+		                
+                            <!-- <h5 class="fw-bold pt-3 mb-0">배송 메세지</h5>
                             <div class="col-12">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="메세지를 입력해 주세요(선택사항)" rows="5"></textarea>
-                            </div>
-                        </form>
+                            </div> -->
                     </div>
+                    
                     <div class="col-lg-6 col-12 ps-lg-5">
                         <div class="sticky-sidebar">
                             <div class="border p-5 rounded-4">
@@ -87,20 +76,23 @@
                                     <h6 class="fw-bold mb-0">금액</h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between border-bottom py-3">
-                                    <h6 class="mb-0">오리통다리 × 2</h6>
-                                    <p class="mb-0">16,000원</p>
+                                    <h6 class="mb-0" th:text="${item?.pdName}"></h6>
+                                    <p class="mb-0" th:text="${item?.pdPrice}"></p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between py-3">
-                                    <h5 class="fw-bold mb-0 text-purple">총금액</h5>
-                                    <p class="fw-bold mb-0 h5 text-purple">16,000원</p>
+                                    <h5 class="fw-bold mb-0 text-purple">금액</h5>
+                                    <p class="fw-bold mb-0 h5 text-purple" th:text="${item?.pdPrice}"></p>
                                 </div>
-                                <a href="account-orders.html" class="btn btn-purple px-3 py-3 w-100">주문하기</a>
+                                <button type="submit" class="btn btn-purple px-3 py-3 w-100">주문하기</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        						<input type="text" name="pdSeq" th:value="${item.pdSeq}">
+								<input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}" class="form-control mb-3" id="mmSeq" >
+     </form>
         <!-- footer -->
         <footer class="bg-footer text-white">
             <div class="bg-black py-4">

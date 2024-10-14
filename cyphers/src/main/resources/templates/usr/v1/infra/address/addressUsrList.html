@@ -40,7 +40,7 @@
                                     <div class="d-flex align-items-start justify-content-between border rounded-4 border-secondary-emphasis p-4 mb-4"
                                     	th:each="list : ${list}">
                                         <div>
-                                        	<p class="fw-bold mb-0" th:text="${list.adName}"></p> <input type="text" name="adSeq"
+                                        	<p class="fw-bold mb-0" th:text="${list.adName}"></p>
                                             <h6 class="fw-bold mb-1 mt-2" th:if ="${list.adDefaultNy eq 0}"></h6>
                                             <h6 class="fw-bold mb-1 mt-2" th:unless ="${list.adDefaultNy eq 0}">기본</h6>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.adZipCode}">01178</p>

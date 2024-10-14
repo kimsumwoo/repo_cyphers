@@ -49,7 +49,7 @@
                                         <li class="breadcrumb-item">
                                             <a href="/usr/v1/infra/index/indexUsr"><i class="ri-home-line"></i> Home</a>
                                         </li>
-                                       <li class="breadcrumb-item active text-white-50" aria-current="page"> <a href="/usr/v1/infra/productUsrgrid/productUsrGridList">상품목록</a></li>
+                                       <li class="breadcrumb-item active text-white-50" aria-current="page"> <a href="/usr/v1/infra/productUsrgrid/productUsrGridList">상품</a></li>
                                         <li class="breadcrumb-item active text-white-50" aria-current="page">상품 상세정보</li>
                                         
                                     </ol>
@@ -97,15 +97,13 @@
                             <div class="col-6">
                             <a href="#" class="btn btn-dark btn-lg py-3 px-3 rounded w-100">카트에 담기</a>
                             </div>
-                            <div class="col-6"><a href="#" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
+                            <div class="col-6"><a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${item?.pdSeq})}" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
                         </div>
                         <div class="pt-3">
                             <p class="small mb-0"><span class="fw-bold">CATEGORY:</span></p>
                              <a href="#" th:text="${@codeService.selectOneCachedCode(item.pdType)}"></a>
                              <b>,</b>
                             <a href="#"<span th:text="${@codeService.selectOneCachedCode(item.pdMeat)}"></span></a>
-                      
-                          
                         </div>
                    	</div>
                 </div>

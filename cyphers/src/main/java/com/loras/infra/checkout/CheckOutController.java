@@ -15,8 +15,16 @@ public class CheckOutController {
 	CheckOutService checkOutService;
 	
 	@RequestMapping(value = "/usr/v1/infra/checkout/checkOutForm")
-	public String CheckOutForm() {
+	public String CheckOutForm(CheckOutDto checkOutDto,Model model) {
+		model.addAttribute("list", checkOutService.selectListAd(checkOutDto));
+		model.addAttribute("item", checkOutService.selectCheckout(checkOutDto));
 		return "/usr/v1/infra/checkout/checkOutForm";
+	}
+	@RequestMapping(value = "/usr/v1/infra/checkout/checkOutInst")
+	public String checkOutInst(CheckOutDto checkOutDto) {
+		System.out.println(checkOutDto.getPdSeq());
+		checkOutService.insert(checkOutDto);
+		return "redirect:/usr/v1/infra/order/OrderList";
 	}
 
 		
