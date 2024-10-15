@@ -50,7 +50,7 @@
                                                 In Progress(주문)
                                             </button>
                                         </li>
-                                        <li class="nav-item" role="presentation">
+                                        <!-- <li class="nav-item" role="presentation">
                                             <button
                                                 class="nav-link py-2 px-4"
                                                 id="pills-order-history-tab"
@@ -64,7 +64,7 @@
                                             >
                                                 Order History(주문처리)
                                             </button>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item" role="presentation">
                                             <button
                                                 class="nav-link py-2 px-4"
@@ -85,14 +85,17 @@
                                         <div class="tab-pane fade active show" id="pills-in-progress" role="tabpanel" aria-labelledby="pills-in-progress-tab" tabindex="0">
                                             <div class="mb-4">
                                                 <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-4">
-                                                    <h4 class="fw-bold m-0">2 배송상품</h4>
+                                                    <h4 class="fw-bold m-0">order(주문목록)</h4>
                                                     <a href="#" class="btn btn-outline-dark rounded-3"> <i class="ri-printer-line"></i> </a>
                                                 </div>
+                                                <form method="post" action="/usr/v1/infra/order/OrderReturnUpte">
                                                 <div class="bg-white">
                                                     <div class="pb-4 border-bottom mb-4"  th:each="list : ${list}">
-                                                        <div class="row" >
+                                                    	
+                                                        <div class="row">
                                                             <div class="col-xl-2 col-lg-3 col-md-3 col-4">
-                                                                <img src="../img/pages/products/product-1.jpg" class="img-fluid rounded-3" alt="deliverd-order">
+                                                        	<input type="radio" name="odSeq" th:value="${list.odSeq}">
+                                                                <img src="/usr/img/pages/products/product-1.jpg" class="img-fluid rounded-3" alt="deliverd-order">
                                                             </div>
                                                             <div class="col-xl-10 col-lg-9 col-md-9 col-8">
                                                                 <div class="card-body d-flex align-items-start justify-content-between">
@@ -104,15 +107,21 @@
                                                                         th:text="'주문일자 ' + ${#dates.format(list.odDate, 'yyyy년 MM월 dd일 HH시 mm분')}"></small></p>
                                                                         <h5 class="card-text fw-bold mb-0" th:text="${list.pdPrice}"></h5>
                                                                     </div>
-                                                                    <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-outline-purple btn-theme rounded-pill">다시 구매하기</a>
+                                                                    <div>
+                                                                    	<a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}"  class="btn btn-outline-purple btn-theme rounded-pill" style="display: block; margin-bottom: 10px;">다시구매하기</a>
+                                                                    	<button type="submit" class="btn btn-outline-purple btn-theme rounded-pill" style="display: block; margin-bottom: 10px;"> 상품환불하기</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                         <input type="hidden" th:value="${list.odSituation}">
                                                     </div>
                                                 </div>
+                                               
+                                        		</form>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="pills-order-history" role="tabpanel" aria-labelledby="pills-order-history-tab" tabindex="0">
+                                        <!-- <div class="tab-pane fade" id="pills-order-history" role="tabpanel" aria-labelledby="pills-order-history-tab" tabindex="0">
                                             <h4 class="fw-bold mb-4 border-bottom pb-4">Order History(주문처리)</h4>
                                             <div>
                                                 <div class="pb-4 border-bottom mb-4">
@@ -182,29 +191,34 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- return request -->
+                                        <form method="post" action="/usr/v1/infra/order/OrderReturnUpte">
                                         <div class="tab-pane fade" id="pills-return-requests" role="tabpanel" aria-labelledby="pills-return-requests-tab" tabindex="0">
                                             <h4 class="fw-bold mb-4 border-bottom pb-4">Return Request(환불)</h4>
                                             <div>
-                                                <div class="pb-4 mb-4">
-                                                    <div class="row">
-                                                        <div class="col-xl-2 col-lg-3 col-md-3 col-4">
-                                                            <img src="../img/pages/products/product-6.jpg" class="img-fluid rounded-3" alt="return">
-                                                        </div>
-                                                        <div class="col-xl-10 col-lg-9 col-md-9 col-8">
-                                                            <div class="card-body d-flex align-items-start justify-content-between">
-                                                                <div>
-                                                                    <span class="px-3 py-2 rounded-pill bg-opacity-10 text-danger bg-danger mb-3 badge">반품</span>
-                                                                    <h6 class="card-title fw-bold mb-1">The Navy Blue Shirt</h6>
-                                                                    <p class="card-text"><small class="text-body-secondary">Size: XL, Colour: Blue</small></p>
-                                                                    <h5 class="card-text fw-bold mb-0"><del class="text-dark-emphasis fw-normal small">$2,299.00</del> $1,269.00</h5>
+                                                <div class="pb-4 border-bottom mb-4"  th:each="returnList : ${returnList}">
+                                                        <div class="row" >
+                                                            <div class="col-xl-2 col-lg-3 col-md-3 col-4">
+                                                                <img src="/usr/img/pages/products/product-1.jpg" class="img-fluid rounded-3" alt="deliverd-order">
+                                                            </div>
+                                                            <div class="col-xl-10 col-lg-9 col-md-9 col-8">
+                                                                <div class="card-body d-flex align-items-start justify-content-between">
+                                                                    <div>
+                                                                        <span class="px-3 py-2 rounded-pill bg-opacity-purple text-purple mb-3 badge"> <span class="fw-bold"
+                                                                        th:text="${@codeService.selectOneCachedCode(returnList.odSituation)}"></span></span>
+                                                                        <h6 class="card-title fw-bold mb-1" th:text="${returnList.pdName}">상품</h6>
+                                                                        <p class="card-text"><small class="text-body-secondary"
+                                                                        th:text="'주문일자 ' + ${#dates.format(returnList.odDate, 'yyyy년 MM월 dd일 HH시 mm분')}"></small></p>
+                                                                        <h5 class="card-text fw-bold mb-0" th:text="${returnList.pdPrice}"></h5>
+                                                                    </div>
+                                                                    <div>
+                                                                    	<a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${returnList.pdSeq})}"  class="btn btn-outline-purple btn-theme rounded-pill" style="display: block; margin-bottom: 10px;">다시구매하기</a>
+                                                                    </div>
                                                                 </div>
-                                                                <a href="#" class="btn btn-outline-danger rounded-3"> <i class="ri-arrow-go-back-fill"></i> </a>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                   	</div>
                                             </div>
                                         </div>
                                     </div>

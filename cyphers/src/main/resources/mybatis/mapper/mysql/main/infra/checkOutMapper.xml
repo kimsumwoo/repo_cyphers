@@ -68,7 +68,7 @@
 			,address_adSeq
 			,member_mmSeq
 		)VALUES(
-			#{odSituation}
+			89
 			,1
 			,0
 			,now()

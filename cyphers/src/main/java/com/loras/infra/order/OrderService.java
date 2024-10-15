@@ -13,4 +13,10 @@ public class OrderService {
 	public List<OrderDto> orderList(OrderDto orderDto){
 		return orderDao.orderList(orderDto);
 	}
+	public List<OrderDto> orderListReturn(OrderDto orderDto){
+		return orderDao.orderListReturn(orderDto);
+	}
+	public int updateReturn(OrderDto orderDto) {
+		return orderDao.updateReturn(orderDto);
+	}
 }

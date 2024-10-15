@@ -8,5 +8,9 @@ import org.springframework.stereotype.Repository;
 public interface OrderDao {
 	
 	public List<OrderDto> orderList(OrderDto orderDto);
+	
+	public List<OrderDto> orderListReturn(OrderDto orderDto);
+	
+	public int updateReturn(OrderDto orderDto);
 
 }

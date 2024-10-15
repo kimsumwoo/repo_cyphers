@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.loras.infra.wishlist.WishListDao">
+					<!-- mapper와 연결될 Dao |ctrl + shift + c-->
+					
+	<resultMap type="com.loras.infra.wishlist.WishListDto" id="resultMapObj"></resultMap>
+	<select id="selectWishList">
+		SELECT
+			wh.whSeq
+			,wh.whWishNy
+			,wh.whUseNy
+			,wh.whDelNy
+			,wh.whDate
+			,wh.whFixDate
+			,wh.member_mmSeq
+			,wh.product_pdSeq
+			,mm.mmSeq
+			,pd.pdSeq
+			,pd.pdName
+			,pd.pdPrice
+		FROM wishlist wh
+		LEFT JOIN member mm
+		ON wh.member_mmSeq = mm.mmSeq
+		LEFT JOIN product pd
+		ON wh.product_pdSeq = pd.pdSeq
+		WHERE 1=1
+		AND wh.whwishNy = '1'
+	</select>
+	
+</mapper>

@@ -16,6 +16,12 @@ public class OrderController {
 	public String OrderList(Model model,OrderDto orderDto, HttpServletRequest request) {
 		orderDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		model.addAttribute("list", orderService.orderList(orderDto));
+		model.addAttribute("returnList", orderService.orderListReturn(orderDto));
 		return "/usr/v1/infra/order/OrderList";
+	}
+	@RequestMapping(value = "/usr/v1/infra/order/OrderReturnUpte")
+	public String OrderReturnUpte(OrderDto orderDto) {
+		orderService.updateReturn(orderDto);
+		return "redirect:/usr/v1/infra/order/OrderList";
 	}
 }
