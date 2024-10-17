@@ -8,11 +8,6 @@
 	<select id="selectWishList">
 		SELECT
 			wh.whSeq
-			,wh.whWishNy
-			,wh.whUseNy
-			,wh.whDelNy
-			,wh.whDate
-			,wh.whFixDate
 			,wh.member_mmSeq
 			,wh.product_pdSeq
 			,mm.mmSeq
@@ -24,8 +19,12 @@
 		ON wh.member_mmSeq = mm.mmSeq
 		LEFT JOIN product pd
 		ON wh.product_pdSeq = pd.pdSeq
-		WHERE 1=1
-		AND wh.whwishNy = '1'
 	</select>
+	<delete id="deleteWish">
+		DELETE FROM wishlist
+		WHERE 1=1
+		AND whSeq = #{whSeq}
+	</delete>
+	
 	
 </mapper>

@@ -29,6 +29,13 @@ public class ProductDto {
 	private String mmSeq;
 	private String mmRealName;
 	private String mmNickName;
+	private String whSeq;
+	private Integer whWishNy;
+	private Integer whUseNy;
+	private Integer whDelNy;
+	private Integer whDate;
+	private Integer whFixDate;
+
 	
 //--------------------------
 	public String getPdSeq() {
@@ -151,6 +158,44 @@ public class ProductDto {
 	public void setMmNickName(String mmNickName) {
 		this.mmNickName = mmNickName;
 	}
+	public String getWhSeq() {
+		return whSeq;
+	}
+	public void setWhSeq(String whSeq) {
+		this.whSeq = whSeq;
+	}
+	public Integer getWhWishNy() {
+		return whWishNy;
+	}
+	public void setWhWishNy(Integer whWishNy) {
+		this.whWishNy = whWishNy;
+	}
+	public Integer getWhUseNy() {
+		return whUseNy;
+	}
+	public void setWhUseNy(Integer whUseNy) {
+		this.whUseNy = whUseNy;
+	}
+	public Integer getWhDelNy() {
+		return whDelNy;
+	}
+	public void setWhDelNy(Integer whDelNy) {
+		this.whDelNy = whDelNy;
+	}
+	public Integer getWhDate() {
+		return whDate;
+	}
+	public void setWhDate(Integer whDate) {
+		this.whDate = whDate;
+	}
+	public Integer getWhFixDate() {
+		return whFixDate;
+	}
+	public void setWhFixDate(Integer whFixDate) {
+		this.whFixDate = whFixDate;
+	}
+	
+	
 	
 	
 	

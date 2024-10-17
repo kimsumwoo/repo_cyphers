@@ -13,5 +13,9 @@ public class WishListService {
 	public List<WishListDto> selectWishList(WishListDto wishListDto){
 		return wishListDao.selectWishList(wishListDto);
 	}
+	public int deleteWish(WishListDto wishListDto) {
+		return wishListDao.deleteWish(wishListDto);
+	}
+	
 
 }

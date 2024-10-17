@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.loras.infra.wishlist.WishListDto;
+
 @Service
 public class ProductService {
 	@Autowired
@@ -31,8 +33,11 @@ public class ProductService {
 	public List<ProductDto> rvSelectList(ProductDto productDto){
 		return productDao.rvSelectList(productDto);
 	}
-//	public int rvInsert(ProductDto productDto) {
-//		return productDao.rvInsert(productDto);
-//	}
+	public int insertWish(ProductDto productDto) {
+		return productDao.insertWish(productDto);
+	}
+	public int deleteWish(ProductDto productDto) {
+		return productDao.deleteWish(productDto);
+	}
 
 }

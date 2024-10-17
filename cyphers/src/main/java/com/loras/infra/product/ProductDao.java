@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.loras.infra.wishlist.WishListDto;
+
 @Repository
 public interface ProductDao {
 	public List<ProductDto> productList(productVo vo);
@@ -14,4 +16,7 @@ public interface ProductDao {
 	public int selectOneCount(productVo vo);
 	public List<ProductDto> rvSelectList(ProductDto productDto);
 	public int rvInsert(ProductDto productDto);
+	public int insertWish(ProductDto productDto);
+	public int deleteWish(ProductDto productDto);
+	public ProductDto selectWishList(ProductDto productDto);
 }

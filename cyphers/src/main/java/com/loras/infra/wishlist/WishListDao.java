@@ -7,5 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WishListDao {
 	public List<WishListDto> selectWishList(WishListDto wishListDto);
+	public int deleteWish(WishListDto wishListDto);
+	
+
 
 }

@@ -1,17 +1,20 @@
 package com.loras.infra.product;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.loras.common.config.util.UtilDateTime;
-import com.loras.infra.review.ReviewDto;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletRequestWrapper;
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
@@ -55,11 +58,66 @@ public class ProductController {
 	
 //	유저
 	@RequestMapping(value ="/usr/v1/infra/productUsrgrid/productUsrGridList")
-	public String productUsrGridList(Model model,@ModelAttribute("vo") productVo vo) {
+	public String productUsrGridList(Model model,@ModelAttribute("vo") productVo vo,ProductDto productDto) {
 		model.addAttribute("list", productService.productList(vo));
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		return "/usr/v1/infra/productUsrgrid/productUsrGridList";
 	}
+//	@RequestMapping(value = "/usr/v1/infra/productUsrgrid/productUsrWishInst")
+//	public String productUsrWishInst(ProductDto productDto) {
+//		productService.insertWish(productDto);
+//		return "redirect:/usr/v1/infra/wish/wishList";
+//	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/usr/v1/infra/productUsrgrid/productUsrWishInst", method = RequestMethod.POST)
+	public Map<String, Object> productUsrWishInst(@RequestBody ProductDto productDto, HttpSession httpSession) throws Exception {
+	    Map<String, Object> returnMap = new HashMap<>();
+
+	    try {
+	        int rtMember = productService.insertWish(productDto);
+
+	        // 성공적인 삽입인 경우
+	        if (rtMember > 0) {
+	            httpSession.setAttribute("sesswish", rtMember);
+	            returnMap.put("status", "success");
+	            returnMap.put("message", "찜목록에 상품이 추가되었습니다.");
+	        } else {
+	            returnMap.put("status", "error");
+	            returnMap.put("message", "찜목록을 상품 추가에 실패했습니다.");
+	        }
+	    } catch (Exception e) {
+	        returnMap.put("status", "error");
+	        returnMap.put("message", "오류가 발생했습니다: " + e.getMessage());
+	    }
+
+	    return returnMap;
+	}
+	@ResponseBody
+	@RequestMapping(value = "/usr/v1/infra/productUsrgrid/productUsrGridDete")
+	public Map<String, Object> productUsrGridDete(@RequestBody ProductDto productDto, HttpSession httpSession) throws Exception {
+	    Map<String, Object> returnMap = new HashMap<>();
+
+	    try {
+	        int rtMember = productService.deleteWish(productDto);
+
+	        // 성공적인 삽입인 경우
+	        if (rtMember > 0) {
+	            httpSession.setAttribute("sesswish", rtMember);
+	            returnMap.put("status", "success");
+	            returnMap.put("message", "찜목록이 해제 되었습니다.");
+	        } else {
+	            returnMap.put("status", "error");
+	            returnMap.put("message", "찜목록을 해제하지 못했습니다.");
+	        }
+	    } catch (Exception e) {
+	        returnMap.put("status", "error");
+	        returnMap.put("message", "오류가 발생했습니다: " + e.getMessage());
+	    }
+
+	    return returnMap;
+	}
+	
 	@RequestMapping(value ="/usr/v1/infra/productUsrDetail/productUsrDetail")
 	public String productUsrDetail(Model model,ProductDto productDto) {
 		System.out.println(productDto.getPdSeq());

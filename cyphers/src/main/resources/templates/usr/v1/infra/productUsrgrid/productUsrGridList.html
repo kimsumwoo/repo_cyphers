@@ -18,9 +18,12 @@
         <link rel="stylesheet" href="/usr/vender/css/style.css">
         <!-- Common Css -->
         <link rel="stylesheet" href="/usr/css/common.css">
+        <!-- Jquery Js -->
+        <script src="/usr/vender/jquery/jquery-3.6.4.min.js"></script>
     </head>
     <body>
         <form name ="formList" method = "post" action ="/usr/v1/infra/productUsrgrid/productUsrGridList" autocomplete="off">
+     
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
             <div th:replace="~{usr/v1/infra/include/productHead :: productHead}"></div>
@@ -202,6 +205,7 @@
                               </div>
                           </div>
                     </div>
+       	</form>
                     <!-- sidebar -->
                     <!-- content -->
                     <div class="col-lg-9 ps-lg-5">
@@ -216,28 +220,40 @@
                                 </select>
                             </div>
                         </header>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each ="list : ${list}">
-                                <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                                    <a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}"></a><img src="/usr/img/pages/products/product-1.jpg" class="card-img-top"></a>
-                                    <div class="card-body d-flex flex-column p-4">
-                                        <div class="d-flex flex-row mb-2">
-                                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}"> <h5 class="mb-0 me-1 fw-bold" th:text="${list.pdName}"></h5></a>
-                                        </div>
-                                        <p class="mb-0 me-1 fw-bold" th:text ="${list.pdPrice}"></p>
-                                        <span th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></span>
-                                        <span th:unless="${list.pdType != null}" class="pdType align-middle"></span>
-                                        <span th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></span>
-                                        <span th:unless="${list.pdMeat != null}" class="pdType align-middle"></span>
-                                        
-                                        <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                                        
-                                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a> <a href="#!" class="btn btn-light border icon-hover"><i class="ri-heart-line"></i><i class="ri-heart-3-fill"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
+   <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each="list : ${list}">
+        <form method="post" action="/usr/v1/infra/productUsrgrid/productUsrWishInst">
+            <input type="hidden" th:value="${list.pdSeq}" name="product_pdSeq">
+            <input type="hidden" th:value="${session.sessSeqUsr}" name="member_mmSeq">
+            <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
+                <a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}">
+                    <img src="/usr/img/pages/products/product-1.jpg" class="card-img-top">
+                </a>
+                <div class="card-body d-flex flex-column p-4">
+                    <div class="d-flex flex-row mb-2">
+                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}">
+                            <h5 class="mb-0 me-1 fw-bold" th:text="${list.pdName}"></h5>
+                        </a>
+                    </div>
+                    <p class="mb-0 me-1 fw-bold" th:text="${list.pdPrice}"></p>
+                    <span th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></span>
+                    <span th:unless="${list.pdType != null}" class="pdType align-middle"></span>
+                    <span th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></span>
+                    <span th:unless="${list.pdMeat != null}" class="pdType align-middle"></span>
+
+                    <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
+                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a>
+                        <button type="button" class="wishbtn btn btn-light border icon-hover">
+                            <i class="ri-heart-line"></i> <!-- 초기 비어있는 하트 아이콘 -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
                         <!-- Pagination -->
                         
                         <!-- Pagination -->
@@ -278,13 +294,82 @@
                     </div>
                 </div>
             </div>
-       	</form>
+
         <!-- Nav Sidebar --> 
         <!-- Video Modal -->
+        <script type="text/javascript">
+     // 찜 버튼 클릭 이벤트 처리
+        $('.wishbtn').on('click', function(event) {
+            event.preventDefault(); // 폼 제출 방지
+
+            const productForm = $(this).closest('form'); // 현재 버튼의 부모 form 찾기
+            const productData = {
+                product_pdSeq: productForm.find('input[name="product_pdSeq"]').val(),
+                member_mmSeq: productForm.find('input[name="member_mmSeq"]').val()
+            };
+
+            // AJAX 요청
+            $.ajax({
+                url: '/usr/v1/infra/productUsrgrid/productUsrWishInst', // 위시리스트 추가 API
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(productData),
+                success: function(response) {
+                    alert(response.message); // 서버에서 받은 메시지 표시
+                    const button = $(event.currentTarget);
+
+                    if (response.status === 'success') {
+                        button.addClass('text-danger'); // 색상 변경 (빨간색 하트로 변경)
+                        button.html('<i class="ri-heart-fill"></i>'); // 채워진 하트 아이콘
+                    } else if (response.status === 'duplicate') {
+                        button.html('<i class="ri-heart-fill"></i>'); // 이미 찜목록에 있는 경우 채워진 하트 아이콘
+                        alert('이미 위시리스트에 있습니다.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('오류가 발생했습니다: ' + error);
+                }
+            });
+        });
+
+        // 페이지 로드 시 찜 목록 상태 초기화
+        $(document).ready(function() {
+            $('.wishbtn').each(function() {
+                const productForm = $(this).closest('form');
+                const productData = {
+                    product_pdSeq: productForm.find('input[name="product_pdSeq"]').val(),
+                    member_mmSeq: productForm.find('input[name="member_mmSeq"]').val()
+                };
+
+                // 찜 목록에서 해당 제품의 존재 여부 확인 (예시로 서버에 요청)
+                $.ajax({
+                    url: '/checkWishlist', // 존재 여부 확인 API
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(productData),
+                    success: function(response) {
+                        const button = $(this);
+                        if (response.exists) {
+                            button.addClass('text-danger'); // 색상 변경 (빨간색 하트로 변경)
+                            button.html('<i class="ri-heart-fill"></i>'); // 채워진 하트 아이콘
+                        } else {
+                            button.removeClass('text-danger'); // 색상 변경 (비어있는 하트로 변경)
+                            button.html('<i class="ri-heart-line"></i>'); // 비어있는 하트 아이콘
+                        }
+                    }.bind(this), // bind(this)로 현재 버튼 컨텍스트 유지
+                    error: function(xhr, status, error) {
+                        console.log('오류가 발생했습니다: ' + error);
+                    }
+                });
+            });
+        });
+
+		</script>
+
+
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Jquery Js -->
-        <script src="/usr/vender/jquery/jquery-3.6.4.min.js"></script>
+        
         <!-- AOS Js -->
         <script src="/usr/vender/aos/dist/aos.js"></script>
         <!-- Custom Js -->

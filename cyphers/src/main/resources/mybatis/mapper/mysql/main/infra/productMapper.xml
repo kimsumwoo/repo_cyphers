@@ -138,6 +138,40 @@ select pd.* from(
         and rv.product_pdSeq = #{pdSeq}
 	</select>
 	
+	<insert id="insertWish">
+		INSERT INTO wishlist(
+			member_mmSeq
+			,product_pdSeq
+		)VALUES(
+			#{member_mmSeq}
+			,#{product_pdSeq}	
+		)
+	</insert>
+	<delete id="deleteWish">
+		DELETE FROM wishlist
+		WHERE 1=1
+		AND whSeq = #{whSeq}
+	</delete>
+	
+	<select id="selectWishList">
+		SELECT
+			wh.whSeq
+			,wh.member_mmSeq
+			,wh.product_pdSeq
+			,mm.mmSeq
+			,pd.pdSeq
+			,pd.pdName
+			,pd.pdPrice
+		FROM wishlist wh
+		LEFT JOIN member mm
+		ON wh.member_mmSeq = mm.mmSeq
+		LEFT JOIN product pd
+		ON wh.product_pdSeq = pd.pdSeq
+		WHERE 1=1
+		AND wh.member_mmSeq = #{mmSeq}
+	</select>
+	
+	
 	
 
 	

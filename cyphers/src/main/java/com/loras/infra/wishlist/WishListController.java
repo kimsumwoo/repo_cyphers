@@ -14,8 +14,14 @@ public class WishListController {
 	
 	@RequestMapping(value = "/usr/v1/infra/wish/wishList")
 	public String wishList(Model model, WishListDto wishListDto, HttpServletRequest request) {
+		wishListDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		model.addAttribute("list", wishListService.selectWishList(wishListDto));
 		return "/usr/v1/infra/wish/wishList";
+	}
+	@RequestMapping(value ="/usr/v1/infra/wish/wishDete")
+	public String wishDete(WishListDto wishListDto) {
+		wishListService.deleteWish(wishListDto);
+		return "redirect:/usr/v1/infra/wish/wishList";
 	}
 
 }
