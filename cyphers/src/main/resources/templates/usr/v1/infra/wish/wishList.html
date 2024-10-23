@@ -58,7 +58,7 @@
 		                    <tbody>
 		                        <tr th:each="list : ${list}">
 		                        	<td class="py-3 px-0 align-middle">
-		                                 <input  type="radio" name="whSeq" th:value="${list.whSeq}">
+		                                 <input type="hidden" name="whSeq" th:value="${list.whSeq}">
 		                            </td>
 		                            <td class="py-3 px-0 align-middle">
 		                                <img src="/usr/img/pages/products/product-1.jpg" alt="" class="img-fluid cart-img rounded-2">
@@ -68,9 +68,11 @@
 		                                <h6 class="m-0" th:text="${list.pdName}">오리통다리</h6>
 		                            </td>
 		                            <td class="py-3 px-4 align-middle" th:text="${list.pdPrice}">8,000원</td>
-		                            <td class="py-3 px-0 align-middle">
-		                                <button type="button" id="delbtn" class="btn btn-outline-danger rounded-3"> <i class="ri-delete-bin-5-fill"></i> </button>
-		                            </td>
+		                           <td class="py-3 px-0 align-middle">
+									    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" data-whseq="${list.whSeq}">
+									        <i class="ri-delete-bin-5-fill"></i>
+									    </button>
+									</td>
 		                            <td class="align-middle">
 		                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple px-3 py-3 w-100">구매하기</a>
 		                            </td>
@@ -132,12 +134,24 @@
         </div> -->
         
 		<script>
-		document.getElementById("delbtn").onclick = function(){
-			let form= document.querySelector("form[name=mfom]");
-			form.action ="/usr/v1/infra/wish/wishDete";
-			form.submit();
-		}
-		</script>
+	    document.querySelectorAll(".delbtn").forEach(button => {
+	        button.onclick = function() {
+	            const form = document.querySelector("form[name=mfom]");
+	            const whSeq = this.getAttribute("data-whseq");
+	            
+	            // 선택한 whSeq 값을 숨겨진 입력값으로 설정
+	            const hiddenInput = document.createElement("input");
+	            hiddenInput.type = "hidden";
+	            hiddenInput.name = "whSeq";
+	            hiddenInput.value = whSeq;
+	            form.appendChild(hiddenInput);
+	            
+	            form.action = "/usr/v1/infra/wish/wishDete";
+	            form.submit();
+	        };
+	    });
+	</script>
+
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Jquery Js -->

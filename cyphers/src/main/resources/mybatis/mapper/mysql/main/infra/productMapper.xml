@@ -18,6 +18,7 @@ select pd.* from(
 		,pd.pdDesc
 		,pd.pdType
 		,pd.pdMeat
+		,wh.whSeq
 		<include refid="selectCommon"></include>
 	ORDER BY
 		pd.pdSeq DESC
@@ -94,7 +95,10 @@ select pd.* from(
 	<sql id="selectCommon">
 	FROM
 	 product pd
+ 	LEFT JOIN wishlist wh
+ 	ON pd.pdSeq = wh.product_pdSeq
 	WHERE 1=1
+	
 	<if test="shpdDelNy != null and !shpdDelNy.equals('')">and pdDelNy = #{shpdDelNy}</if>
 	<if test="shpdUseNy != null and !shpdUseNy.equals('')">and pdUseNy = #{shpdUseNy}</if>
 	<choose>

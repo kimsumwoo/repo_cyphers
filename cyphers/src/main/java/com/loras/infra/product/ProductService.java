@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.loras.infra.review.ReviewDao;
+import com.loras.infra.review.ReviewDto;
 import com.loras.infra.wishlist.WishListDto;
 
 @Service
@@ -39,5 +41,8 @@ public class ProductService {
 	public int deleteWish(ProductDto productDto) {
 		return productDao.deleteWish(productDto);
 	}
+
+	
+	
 
 }

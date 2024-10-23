@@ -67,8 +67,12 @@
                                   <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul class="list-unstyled m-0">
-                                            <li class="mb-2"><a href="#" class="text-dark">동결건조 </a></li>
-                                            <li class="mb-2"><a href="#" class="text-dark">건조식품 </a></li>
+                                            <li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shOption"  value="1" class="me-2">
+											        동결건조
+											    </label>
+											</li>                                            <li class="mb-2"><a href="#" class="text-dark">건조식품 </a></li>
                                             <li class="mb-2"><a href="#" class="text-dark">돌돌말이 </a></li>
                                             <li class="mb-2"><a href="#" class="text-dark">파우더 </a></li>
                                             <li class="mb-2"><a href="#" class="text-dark">보양식 </a></li>
@@ -221,11 +225,12 @@
                             </div>
                         </header>
                        
-   <div class="row">
+  <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each="list : ${list}">
         <form method="post" action="/usr/v1/infra/productUsrgrid/productUsrWishInst">
             <input type="hidden" th:value="${list.pdSeq}" name="product_pdSeq">
             <input type="hidden" th:value="${session.sessSeqUsr}" name="member_mmSeq">
+            <input type="hidden" th:value="${list.whSeq}" name="whSeq">
             <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
                 <a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}">
                     <img src="/usr/img/pages/products/product-1.jpg" class="card-img-top">
@@ -245,7 +250,8 @@
                     <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
                         <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a>
                         <button type="button" class="wishbtn btn btn-light border icon-hover">
-                            <i class="ri-heart-line"></i> <!-- 초기 비어있는 하트 아이콘 -->
+                            <i th:if="${list.whSeq != null}" class="ri-heart-fill"></i>
+                            <i th:if="${list.whSeq == null}" class="ri-heart-line"></i> 
                         </button>
                     </div>
                 </div>
@@ -253,120 +259,72 @@
         </form>
     </div>
 </div>
+		<div class="modal fade" id="modalAlert" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+			aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalAlertTitle"></h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body" id="modalAlertBody">
+						
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" data-bs-dismiss="modal">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                        <!-- Pagination -->
-                        
-                        <!-- Pagination -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer -->
-        <footer class="bg-footer text-white">
-            <div class="bg-black py-4">
-                <div class="container">
-                    <div class="row g-4 py-4">
-                        <div class="col-lg-3 col-6">
-                            <h5 class="fw-bold pb-3">고객센터</h5>
-                            <ul class="list-unstyled d-grid gap-2 text-white-50">
-                                <li>number: 02-0000-0000</li>
-                                <li>Fax: +1800-964-152</li>
-                                <li>Email: tjsdn2587@gmail.com</li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-12">
-                            <h5 class="fw-bold pb-3">영업 시간</h5>
-                            <ul class="list-unstyled d-grid gap-2 text-white-50">
-                                <li>월 - 금: 10am - 8pm</li>
-                                <li>토: 10am - 4pm</li>
-                                <li>일: 휴무</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <div class="bg-light py-4 footer-copyright">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <p class="text-center text-muted m-0">Copyright 2024 <a href="#" class="text-black"> Tony Chang all rights reserved.</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $('.wishbtn').on('click', function(event) {
+			        event.preventDefault(); // 폼 제출 방지
+	
+			        const productForm = $(this).closest('form');
+			        const productData = {
+			            product_pdSeq: productForm.find('input[name="product_pdSeq"]').val(),
+			            member_mmSeq: productForm.find('input[name="member_mmSeq"]').val(),
+			            whSeq: productForm.find('input[name="whSeq"]').val() // 현재 whSeq 값
+			        };
+	
+			        const button = $(this);
+			        const isWished = button.find('i').hasClass('ri-heart-fill'); // 하트가 채워져 있는지 확인
+	
+			        // 이미 찜 목록에 추가된 경우
+			        if (isWished) {
+			            showModal('알림', '이미 찜 목록에 있습니다.'); // 모달로 메시지 표시
+			        } else {
+			            // 찜 목록에 추가하는 AJAX 요청
+			            $.ajax({
+			                url: '/usr/v1/infra/productUsrgrid/productUsrWishInst', // 추가 API
+			                type: 'POST',
+			                contentType: 'application/json',
+			                data: JSON.stringify(productData),
+			                success: function(response) {
+			                    if (response.status === 'success') {
+			                        button.html('<i class="ri-heart-fill"></i>'); // 채워진 하트 아이콘으로 변경
+			                        showModal('성공', '찜 목록에 추가되었습니다.'); // 모달로 메시지 표시
+			                    } else if (response.status === 'duplicate') {
+			                        showModal('알림', '이미 찜 목록에 있습니다.'); // 모달로 메시지 표시
+			                    }
+			                },
+			                error: function(xhr) {
+			                    showModal('오류', xhr.responseJSON?.message || '오류가 발생했습니다'); // 모달로 오류 메시지 표시
+			                }
+			            });
+			        }
+			    });
 
-        <!-- Nav Sidebar --> 
-        <!-- Video Modal -->
-        <script type="text/javascript">
-     // 찜 버튼 클릭 이벤트 처리
-        $('.wishbtn').on('click', function(event) {
-            event.preventDefault(); // 폼 제출 방지
-
-            const productForm = $(this).closest('form'); // 현재 버튼의 부모 form 찾기
-            const productData = {
-                product_pdSeq: productForm.find('input[name="product_pdSeq"]').val(),
-                member_mmSeq: productForm.find('input[name="member_mmSeq"]').val()
-            };
-
-            // AJAX 요청
-            $.ajax({
-                url: '/usr/v1/infra/productUsrgrid/productUsrWishInst', // 위시리스트 추가 API
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(productData),
-                success: function(response) {
-                    alert(response.message); // 서버에서 받은 메시지 표시
-                    const button = $(event.currentTarget);
-
-                    if (response.status === 'success') {
-                        button.addClass('text-danger'); // 색상 변경 (빨간색 하트로 변경)
-                        button.html('<i class="ri-heart-fill"></i>'); // 채워진 하트 아이콘
-                    } else if (response.status === 'duplicate') {
-                        button.html('<i class="ri-heart-fill"></i>'); // 이미 찜목록에 있는 경우 채워진 하트 아이콘
-                        alert('이미 위시리스트에 있습니다.');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    alert('오류가 발생했습니다: ' + error);
-                }
-            });
-        });
-
-        // 페이지 로드 시 찜 목록 상태 초기화
-        $(document).ready(function() {
-            $('.wishbtn').each(function() {
-                const productForm = $(this).closest('form');
-                const productData = {
-                    product_pdSeq: productForm.find('input[name="product_pdSeq"]').val(),
-                    member_mmSeq: productForm.find('input[name="member_mmSeq"]').val()
-                };
-
-                // 찜 목록에서 해당 제품의 존재 여부 확인 (예시로 서버에 요청)
-                $.ajax({
-                    url: '/checkWishlist', // 존재 여부 확인 API
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(productData),
-                    success: function(response) {
-                        const button = $(this);
-                        if (response.exists) {
-                            button.addClass('text-danger'); // 색상 변경 (빨간색 하트로 변경)
-                            button.html('<i class="ri-heart-fill"></i>'); // 채워진 하트 아이콘
-                        } else {
-                            button.removeClass('text-danger'); // 색상 변경 (비어있는 하트로 변경)
-                            button.html('<i class="ri-heart-line"></i>'); // 비어있는 하트 아이콘
-                        }
-                    }.bind(this), // bind(this)로 현재 버튼 컨텍스트 유지
-                    error: function(xhr, status, error) {
-                        console.log('오류가 발생했습니다: ' + error);
-                    }
-                });
-            });
-        });
+			    function showModal(title, message) {
+			        $('#modalAlertTitle').text(title); // 모달 제목 설정
+			        $('#modalAlertBody').text(message); // 모달 본문 메시지 설정
+			        $('#modalAlert').modal('show'); // 모달 표시
+		    }
+		});
 
 		</script>
-
-
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
         

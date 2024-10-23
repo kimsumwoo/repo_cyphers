@@ -128,9 +128,10 @@
 		</choose>
 	</sql>
 	
-	<select id="selectOneCount" resultType="Integer">
-		select count(*)
-		<include refid="selectCommon"></include>
+	<select id="selectOneCountRv" resultType="Integer">
+    select count(*)
+    	<include refid="selectCommon"></include>
+   	AND pdSeq = #{pdSeq}
 	</select>
 	
 	

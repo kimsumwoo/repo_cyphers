@@ -12,6 +12,6 @@ public interface ReviewDao {
 	public ReviewDto selectOne(ReviewDto reviewDto);
 	public int update(ReviewDto reviewDto);
 	public int delete(ReviewDto reviewDto);
-	public int selectOneCount(ReviewVo reviewVo);
+	public int selectOneCountRv(ReviewVo reviewVo);
 
 }

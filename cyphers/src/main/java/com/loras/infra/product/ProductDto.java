@@ -17,7 +17,7 @@ public class ProductDto {
 	private String pdDesc;
 	private String pdType;
 	private String pdMeat;
-	private String revSeq;
+	private String rvSeq;
 	private Integer rvRank;
 	private String rvComment;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -98,11 +98,12 @@ public class ProductDto {
 	public void setPdMeat(String pdMeat) {
 		this.pdMeat = pdMeat;
 	}
-	public String getRevSeq() {
-		return revSeq;
+	
+	public String getRvSeq() {
+		return rvSeq;
 	}
-	public void setRevSeq(String revSeq) {
-		this.revSeq = revSeq;
+	public void setRvSeq(String rvSeq) {
+		this.rvSeq = rvSeq;
 	}
 	public Integer getRvRank() {
 		return rvRank;

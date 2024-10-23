@@ -21,9 +21,8 @@
 		ON wh.product_pdSeq = pd.pdSeq
 	</select>
 	<delete id="deleteWish">
-		DELETE FROM wishlist
-		WHERE 1=1
-		AND whSeq = #{whSeq}
+    DELETE FROM wishlist
+    WHERE whSeq = #{whSeq}
 	</delete>
 	
 	

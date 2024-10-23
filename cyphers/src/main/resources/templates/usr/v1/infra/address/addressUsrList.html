@@ -41,8 +41,6 @@
                                     	th:each="list : ${list}">
                                         <div>
                                         	<p class="fw-bold mb-0" th:text="${list.adName}"></p>
-                                            <h6 class="fw-bold mb-1 mt-2" th:if ="${list.adDefaultNy eq 0}"></h6>
-                                            <h6 class="fw-bold mb-1 mt-2" th:unless ="${list.adDefaultNy eq 0}">기본</h6>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.adZipCode}">01178</p>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.ad1}">서울시 노원구 동일로207길17</p>
                                             <p class="text-secondary-emphasis mb-2" th:text ="${list.ad2}">ㅇㅇ아파트 201동 302호</p>

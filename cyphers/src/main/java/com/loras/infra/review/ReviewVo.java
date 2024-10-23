@@ -8,6 +8,7 @@ public class ReviewVo {
 	private Integer shOptionDate;
 	private String shDateStart;
 	private String shDateEnd;
+	private String pdSeq;
 	//-----페이징----------
 	private int thisPage = 1;									// 현재 페이지
 	private int rowNumToShow = 5;								// 화면에 보여줄 데이터 줄 갯수
@@ -113,7 +114,13 @@ public class ReviewVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
-	
+
+	public String getPdSeq() {
+			return pdSeq;
+		}
+		public void setPdSeq(String pdSeq) {
+			this.pdSeq = pdSeq;
+		}
 public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);

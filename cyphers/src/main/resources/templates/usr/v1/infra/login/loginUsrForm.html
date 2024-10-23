@@ -109,70 +109,70 @@
 		</div>
       
         <script type="text/javascript">
-		document.getElementById("btnLog").onclick = function (){
-		    var mmId = document.getElementById("mmId");
-		    var mmIdValue = document.getElementById("mmId").value.trim();
-			var mmIdRegExp = /^[a-z]+[a-z0-9]{5,19}$/g;
-		    if (!mmIdRegExp.test(mmIdValue)) {
-				mmId.classList.add("is-invalid");
-				mmId.focus();
-				return false;
-	    	} 
-		    else {
-		    	mmId.classList.remove("is-invalid")
-		    	mmId.classList.add("is-valid");
-// 				by pass
-	    	}
-	    
-		    var mmPasswd = document.getElementById("mmPasswd");
-		    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
-		    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
-	    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
-				mmPasswd.classList.add("is-invalid");
-				mmPasswd.focus();
-				return false;
-	    	} 
-	    	else {
-		    	mmPasswd.classList.remove("is-invalid")
-		    	mmPasswd.classList.add("is-valid");
-	// 			by pass
-	    	}
+			document.getElementById("btnLog").onclick = function (){
+			    var mmId = document.getElementById("mmId");
+			    var mmIdValue = document.getElementById("mmId").value.trim();
+				var mmIdRegExp = /^[a-z]+[a-z0-9]{5,19}$/g;
+			    if (!mmIdRegExp.test(mmIdValue)) {
+					mmId.classList.add("is-invalid");
+					mmId.focus();
+					return false;
+		    	} 
+			    else {
+			    	mmId.classList.remove("is-invalid")
+			    	mmId.classList.add("is-valid");
+	// 				by pass
+		    	}
 		    
-		    $.ajax({
-		        async: true,
-		        cache: false,
-		        type: "post",
-		        dataType: "json",
-		        url: "/usr/v1/infra/login/loginusrFormProc",
-		        data: {
-		            "mmId": $("#mmId").val(),
-		            "mmPasswd": $("#mmPasswd").val()
-		        },
-		        success: function(response) {
-		            if (response.rt === "success") {
-		                location.href = "/usr/v1/infra/index/indexUsr";
-		            } else {
-		                // 로그인 실패 시 모달 띄우기
-		                $("#modalAlert").modal("show");
-		                document.getElementById("modalAlertTitle").textContent = "로그인 실패";
-		                document.getElementById("modalAlertBody").textContent = response.message; // 서버에서 전달된 메시지
-		            }
-		        },
-		        error: function(jqXHR, textStatus, errorThrown) {
-		            // AJAX 요청 실패 시 모달 띄우기
-		            $("#modalAlert").modal("show");
-		            document.getElementById("modalAlertTitle").textContent = "로그인 실패";
-		            document.getElementById("modalAlertBody").textContent = "일치하는 회원이 존재하지 않습니다."; // 일반 오류 메시지
+			    var mmPasswd = document.getElementById("mmPasswd");
+			    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+			    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
+		    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
+					mmPasswd.classList.add("is-invalid");
+					mmPasswd.focus();
+					return false;
+		    	} 
+		    	else {
+			    	mmPasswd.classList.remove("is-invalid")
+			    	mmPasswd.classList.add("is-valid");
+		// 			by pass
+		    	}
+			    
+			    $.ajax({
+			        async: true,
+			        cache: false,
+			        type: "post",
+			        dataType: "json",
+			        url: "/usr/v1/infra/login/loginusrFormProc",
+			        data: {
+			            "mmId": $("#mmId").val(),
+			            "mmPasswd": $("#mmPasswd").val()
+			        },
+			        success: function(response) {
+			            if (response.rt === "success") {
+			                location.href = "/usr/v1/infra/index/indexUsr";
+			            } else {
+			                // 로그인 실패 시 모달 띄우기
+			                $("#modalAlert").modal("show");
+			                document.getElementById("modalAlertTitle").textContent = "로그인 실패";
+			                document.getElementById("modalAlertBody").textContent = response.message; // 서버에서 전달된 메시지
+			            }
+			        },
+			        error: function(jqXHR, textStatus, errorThrown) {
+			            // AJAX 요청 실패 시 모달 띄우기
+			            $("#modalAlert").modal("show");
+			            document.getElementById("modalAlertTitle").textContent = "로그인 실패";
+			            document.getElementById("modalAlertBody").textContent = "일치하는 회원이 존재하지 않습니다."; // 일반 오류 메시지
+			        }
+			    });
+	
+			}
+			document.getElementById("mmPasswd").addEventListener("keydown", function(event) {
+		        if (event.key === 'Enter') {
+		            event.preventDefault(); // 기본 동작 방지
+		            document.getElementById("btnLog").click(); // 로그인 버튼 클릭
 		        }
 		    });
-
-		}
-		document.getElementById("mmPasswd").addEventListener("keydown", function(event) {
-	        if (event.key === 'Enter') {
-	            event.preventDefault(); // 기본 동작 방지
-	            document.getElementById("btnLog").click(); // 로그인 버튼 클릭
-	        }
-	    });
 		  </script>
 
 		  </script>

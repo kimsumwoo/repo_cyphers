@@ -18,5 +18,5 @@ public interface ProductDao {
 	public int rvInsert(ProductDto productDto);
 	public int insertWish(ProductDto productDto);
 	public int deleteWish(ProductDto productDto);
-	public ProductDto selectWishList(ProductDto productDto);
+	
 }

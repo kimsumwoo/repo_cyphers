@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class ReviewDto {
-	private String rvSeq;
+	private Integer rvSeq;
 	private Integer rvRank;
 	private String rvComment;
 	private Integer rvUseNy;
@@ -20,10 +20,12 @@ public class ReviewDto {
 	private String pdSeq;
 	private String mmSeq;
 //	---------------------------
-	public String getRvSeq() {
+	
+	
+	public Integer getRvSeq() {
 		return rvSeq;
 	}
-	public void setRvSeq(String rvSeq) {
+	public void setRvSeq(Integer rvSeq) {
 		this.rvSeq = rvSeq;
 	}
 	public Integer getRvRank() {

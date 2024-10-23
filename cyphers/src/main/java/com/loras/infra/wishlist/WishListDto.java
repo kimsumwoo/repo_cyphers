@@ -1,7 +1,7 @@
 package com.loras.infra.wishlist;
 
 public class WishListDto {
-	private String whSeq;
+	private Integer whSeq;
 	private Integer whWishNy;
 	private Integer whUseNy;
 	private Integer whDelNy;
@@ -16,14 +16,15 @@ public class WishListDto {
 	
 //	--------------------
 	
-	public String getWhSeq() {
-		return whSeq;
-	}
-	public void setWhSeq(String whSeq) {
-		this.whSeq = whSeq;
-	}
+	
 	public Integer getWhWishNy() {
 		return whWishNy;
+	}
+	public Integer getWhSeq() {
+		return whSeq;
+	}
+	public void setWhSeq(Integer whSeq) {
+		this.whSeq = whSeq;
 	}
 	public void setWhWishNy(Integer whWishNy) {
 		this.whWishNy = whWishNy;
