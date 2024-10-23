@@ -55,6 +55,7 @@ public class ReviewController {
 		System.out.println(reviewDto.getMmSeq());
 		return "redirect:/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq="+reviewDto.getPdSeq();
 	}
+	
 	@RequestMapping(value = "/usr/v1/infra/review/reviewUsrDete")
 	public String reviewUsrDete(ReviewDto reviewDto) {
 		reviewService.delete(reviewDto);

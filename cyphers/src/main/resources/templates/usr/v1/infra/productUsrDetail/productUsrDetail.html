@@ -99,7 +99,7 @@
                            <form name="wish" action="/usr/v1/infra/productUsrDetail/productUsrDetailWishInst" onsubmit="return handleAddToWishList(event);">
 							    <button type="submit" class="btn btn-dark btn-lg py-3 px-3 rounded w-100">찜목록 추가</button>
 							    <input type="hidden" name="member_mmSeq" th:value="${session.sessSeqUsr}">
-                   	 			<input type="hidden" name="product_pdSeq" th:value="${item?.pdSeq}">
+                   	 			<input type="hidden" name="product_pdSeq" th:value="${item.pdSeq}">
 							</form>
                             </div>
                             <div class="col-6"><a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${item?.pdSeq})}" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
@@ -217,68 +217,66 @@
 								</p>
                             </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
-                                <div class="row">
-                                    <div class="col-lg-12 col-12 pe-lg-5">
-     <form class="row g-3" name="mfom">                            
-	    <div class="d-flex align-items-start gap-3 py-3" th:each="list : ${list}">
-    <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
-    <div class="w-100">
-        <div class="d-flex justify-content-between mb-2">
-            <div class="d-flex align-items-end gap-2">
-                <h5 class="fw-bold m-0" th:text="${list.mmNickName}">Black Smith</h5>
-                <span class="text-muted fw-normal small" th:text="${#dates.format(list.rvDate, 'yyyy-MM-dd HH:mm:ss')}">/ MARCH 13, 2024</span>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 1}"></i>
-                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 2}"><i class="ri-star-fill text-warning"></i></i>
-                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 3}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
-                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 4}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
-                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 5}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
-            </div>
-        </div>
-        <p class="text-muted" th:text="${list.rvComment}">리뷰 내용입니다.</p>
-    </div>
-    <input type="hidden" name="rvSeq" th:value="${list.rvSeq}">
-     <input type="hidden" name="pdSeq" th:value="${item?.pdSeq}">
-    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" data-rvSeq="${list.rvSeq}" aria-label="리뷰 삭제" data-bs-toggle="modal" data-bs-target="#delete">
-    	<i class="ri-delete-bin-5-fill"></i>
-	</button>
-
-</div>
-
-    </form>
-</div>
-
-                                    
-                                    <div class="col-lg-6 col-12">
-                                   	<form method ="post" action ="/usr/v1/infra/review/reviewUsrInst">
-                                        <div class="mb-3">
-                                            <h4 class="fw-bold">리뷰 작성하기</h4>
-                                            <p>리뷰를 작성해 주세요</p>
-                                           	<select class="form-select validate-this" id="rvRank"  name ="rvRank" th:value ="${item?.rvRank}">
-												<option value="5" id="star" name ="rvRank">&#9733 &#9733 &#9733 &#9733 &#9733</option> 
-												<option value="4" id="star" name ="rvRank">&#9733 &#9733 &#9733 &#9733</option>
-												<option value="3" id="star" name ="rvRank">&#9733 &#9733 &#9733</option>
-												<option value="2" id="star" name ="rvRank">&#9733 &#9733</option>
-												<option value="1" id="star" name ="rvRank">&#9733</option> 
-											</select>
-                                       	</div>
-                                    	 <input type="hidden" name="pdSeq" th:value="${item?.pdSeq}">
-                                      	 <input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}">
-                                         <div class="mb-3"><textarea class="form-control bg-transparent" id="rvComment" name="rvComment" rows="5" placeholder="리뷰를 작성해주세요"></textarea></div>
-                                    </div>
-                                </div>
-                                            <button type="submit" class="btn btn-dark px-3">등록하기</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+			<div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
+			    <div class="row">
+				<div class="col-lg-12 col-12 pe-lg-5">
+			     	<form class="row g-3" name="mfom">                            
+				    <div class="d-flex align-items-start gap-3 py-3" th:each="list : ${list}">
+			    <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
+			    <div class="w-100">
+			        <div class="d-flex justify-content-between mb-2">
+			            <div class="d-flex align-items-end gap-2">
+			                <h5 class="fw-bold m-0" th:text="${list.mmNickName}">Black Smith</h5>
+			                <span class="text-muted fw-normal small" th:text="${#dates.format(list.rvDate, 'yyyy-MM-dd HH:mm:ss')}">/ MARCH 13, 2024</span>
+			            </div>
+			            <div class="d-flex align-items-center gap-2">
+			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 1}"></i>
+			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 2}"><i class="ri-star-fill text-warning"></i></i>
+			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 3}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
+			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 4}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
+			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 5}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
+			            </div>
+			        </div>
+			        <p class="text-muted" th:text="${list.rvComment}">리뷰 내용입니다.</p>
+			    </div>
+			    <input type="hidden" name="rvSeq" th:value="${list.rvSeq}">
+			     <input type="hidden" name="pdSeq" th:value="${item?.pdSeq}">
+			    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" data-rvSeq="${list.rvSeq}" aria-label="리뷰 삭제" data-bs-toggle="modal" data-bs-target="#delete">
+			    	<i class="ri-delete-bin-5-fill"></i>
+				</button>
+					</div>
+			    	</form>
+				</div>
+			
+			                                    
+			      <div class="col-lg-6 col-12">
+			     	<form method ="post" action ="/usr/v1/infra/review/reviewUsrInst">
+			          <div class="mb-3">
+			              <h4 class="fw-bold">리뷰 작성하기</h4>
+			              <p>리뷰를 작성해 주세요</p>
+				           	<select class="form-select validate-this" id="rvRank"  name ="rvRank" th:value ="${item?.rvRank}">
+								<option value="5" id="star" name ="rvRank">&#9733 &#9733 &#9733 &#9733 &#9733</option> 
+								<option value="4" id="star" name ="rvRank">&#9733 &#9733 &#9733 &#9733</option>
+								<option value="3" id="star" name ="rvRank">&#9733 &#9733 &#9733</option>
+								<option value="2" id="star" name ="rvRank">&#9733 &#9733</option>
+								<option value="1" id="star" name ="rvRank">&#9733</option> 
+								</select>
+			            </div>
+			             	 <input type="hidden" name="pdSeq" th:value="${item.pdSeq}">
+			               	 <input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}">
+			                  <div class="mb-3"><textarea class="form-control bg-transparent" id="rvComment" name="rvComment" rows="5" placeholder="리뷰를 작성해주세요"></textarea></div>
+			             </div>
+			         </div>
+				           <button type="submit" class="btn btn-dark px-3">등록하기</button>
+				       </form>
+                      	  </div>
+                       </div>
+                   </div>
                 </div>
-            </div>
-        </div>
+             </div>
+          </div>
+       </div>
+   </div>
         <div class="py-5">
             <div class="container py-4">
                 <div class="row mb-3">
