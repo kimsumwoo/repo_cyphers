@@ -22,7 +22,8 @@
 	</select>
 	<delete id="deleteWish">
     DELETE FROM wishlist
-    WHERE whSeq = #{whSeq}
+    WHERE 1=1
+    AND whSeq = #{whSeq}
 	</delete>
 	
 	

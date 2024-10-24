@@ -8,9 +8,11 @@ public class productVo {
 	private Integer shOptionDate;
 	private String shDateStart;
 	private String shDateEnd;
-	private Integer shLowPrice;
-	private Integer shTopPrice;
+	private String shLowPrice;
+	private String shTopPrice;
 	private String shName;
+	private Integer shPdMeat;
+	private Integer shPdType;
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지
@@ -114,20 +116,17 @@ public class productVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
-	public Integer getShLowPrice() {
+	
+	public String getShLowPrice() {
 		return shLowPrice;
 	}
-	public void setShLowPrice(Integer shLowPrice) {
-		if (shLowPrice == null) {
-            this.shLowPrice = 1;
-		}else{
+	public void setShLowPrice(String shLowPrice) {
 		this.shLowPrice = shLowPrice;
-		}
 	}
-	public Integer getShTopPrice() {
+	public String getShTopPrice() {
 		return shTopPrice;
 	}
-	public void setShTopPrice(Integer shTopPrice) {
+	public void setShTopPrice(String shTopPrice) {
 		this.shTopPrice = shTopPrice;
 	}
 	public String getShName() {
@@ -135,6 +134,19 @@ public class productVo {
 	}
 	public void setShName(String shName) {
 		this.shName = shName;
+	}
+	
+	public Integer getShPdMeat() {
+		return shPdMeat;
+	}
+	public void setShPdMeat(Integer shPdMeat) {
+		this.shPdMeat = shPdMeat;
+	}
+	public Integer getShPdType() {
+		return shPdType;
+	}
+	public void setShPdType(Integer shPdType) {
+		this.shPdType = shPdType;
 	}
 	public void setParamsPaging(int totalRows) {
 		

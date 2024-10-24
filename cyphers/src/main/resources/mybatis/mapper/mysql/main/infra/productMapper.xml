@@ -112,8 +112,12 @@ select pd.* from(
 		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 		<when test="shOptionDate == 2">AND pd.pdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 	</choose>
-	<if test="shLowPrice and shTopPrice">AND pd.pdPrice BETWEEN #{shLowPrice} AND #{shTopPrice}</if>
-	<if test="shName">AND pdName LIKE CONCAT('%',#{shName},'%')</if>
+	<if test="shLowPrice != null and shLowPrice.trim() != '' or shTopPrice != null and shTopPrice.trim() != ''">
+    	AND pd.pdPrice BETWEEN #{shLowPrice} AND #{shTopPrice}
+	</if>
+	<if test="shPdMeat != null and !shPdMeat.equals('')">and pdMeat = #{shPdMeat}</if>
+	<if test="shPdType != null and !shPdType.equals('')">and pdType = #{shPdType}</if>
+	<if test="shName != null and !shName.equals('')">AND pdName LIKE CONCAT('%', #{shName}, '%')</if>
 	</sql>
 	
 	<select id="selectOneCount">

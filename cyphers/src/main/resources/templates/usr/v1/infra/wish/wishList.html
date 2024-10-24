@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/usr/css/common.css">
     </head>
     <body>
-      <form class="row g-3" name="mfom">
+      <form class="row g-3" method="post" name="mfom">
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
             <div th:replace="~{usr/v1/infra/include/productHead :: productHead}"></div>
@@ -30,7 +30,7 @@
                     <div class="row align-items-center justify-content-center">
                         <div class="col-xl-6 col-lg-5 col-md-10 col-12 text-center">
                             <div class="text-white">
-                                <h1 class="fw-bolder display-5 mb-3">찜목록</h1>
+                                <h1 class="fw-bolder display-5 mb-3">찜</h1>
                             </div>
                         </div>
                     </div>
@@ -57,9 +57,7 @@
 		                    </thead>
 		                    <tbody>
 		                        <tr th:each="list : ${list}">
-		                        	<td class="py-3 px-0 align-middle">
-		                                 <input type="hidden" name="whSeq" th:value="${list.whSeq}">
-		                            </td>
+		                        	
 		                            <td class="py-3 px-0 align-middle">
 		                                <img src="/usr/img/pages/products/product-1.jpg" alt="" class="img-fluid cart-img rounded-2">
 		                            </td>
@@ -69,9 +67,9 @@
 		                            </td>
 		                            <td class="py-3 px-4 align-middle" th:text="${list.pdPrice}">8,000원</td>
 		                           <td class="py-3 px-0 align-middle">
-									    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" data-whseq="${list.whSeq}">
-									        <i class="ri-delete-bin-5-fill"></i>
-									    </button>
+									    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" th:value="${list.whSeq}">
+										    <i class="ri-delete-bin-5-fill"></i>
+										</button>
 									</td>
 		                            <td class="align-middle">
 		                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple px-3 py-3 w-100">구매하기</a>
@@ -132,25 +130,26 @@
                 </div>
             </div>
         </div> -->
-        
+		
 		<script>
-	    document.querySelectorAll(".delbtn").forEach(button => {
-	        button.onclick = function() {
-	            const form = document.querySelector("form[name=mfom]");
-	            const whSeq = this.getAttribute("data-whseq");
-	            
-	            // 선택한 whSeq 값을 숨겨진 입력값으로 설정
-	            const hiddenInput = document.createElement("input");
-	            hiddenInput.type = "hidden";
-	            hiddenInput.name = "whSeq";
-	            hiddenInput.value = whSeq;
-	            form.appendChild(hiddenInput);
-	            
-	            form.action = "/usr/v1/infra/wish/wishDete";
-	            form.submit();
-	        };
-	    });
-	</script>
+		    // 모든 삭제 버튼에 클릭 이벤트 추가
+		    document.querySelectorAll(".delbtn").forEach(function(button) {
+		        button.onclick = function() {
+		            let form = document.querySelector("form[name=mfom]");
+		            form.action = "/usr/v1/infra/wish/wishDete";
+		            // 해당 버튼의 value를 hidden input에 설정
+		            let hiddenInput = document.createElement("input");
+		            hiddenInput.type = "hidden";
+		            hiddenInput.name = "whSeq"; // 서버에 전송할 이름
+		            hiddenInput.value = this.value; // 버튼의 value 사용
+		            form.appendChild(hiddenInput);
+		            form.submit();
+		        }
+		    });
+		</script>
+
+
+
 
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>

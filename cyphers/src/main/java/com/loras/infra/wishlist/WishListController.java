@@ -21,6 +21,7 @@ public class WishListController {
 	@RequestMapping(value ="/usr/v1/infra/wish/wishDete")
 	public String wishDete(WishListDto wishListDto) {
 		wishListService.deleteWish(wishListDto);
+		System.out.println(wishListDto.getWhSeq());
 		return "redirect:/usr/v1/infra/wish/wishList";
 	}
 

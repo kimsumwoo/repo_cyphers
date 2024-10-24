@@ -69,13 +69,34 @@
                                         <ul class="list-unstyled m-0">
                                             <li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shOption"  value="1" class="me-2">
+											        <input type="radio" name="shPdType"  value="75"  class="me-2">
 											        동결건조
 											    </label>
-											</li>                                            <li class="mb-2"><a href="#" class="text-dark">건조식품 </a></li>
-                                            <li class="mb-2"><a href="#" class="text-dark">돌돌말이 </a></li>
-                                            <li class="mb-2"><a href="#" class="text-dark">파우더 </a></li>
-                                            <li class="mb-2"><a href="#" class="text-dark">보양식 </a></li>
+											</li>                                            
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdType"  value="74"  class="me-2">
+											        보양식
+											    </label>
+											</li> 
+                                            <li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdType"  value="73"  class="me-2">
+											        파우더
+											    </label>
+											</li> 
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdType"  value="72"  class="me-2">
+											        돌돌말이
+											    </label>
+											</li> 
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdType"  value="71"  class="me-2">
+											        건조식품
+											    </label>
+											</li> 
                                         </ul>
                                     </div>
                                   </div>
@@ -124,25 +145,25 @@
                                     </button>
                                   </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                      <div class="accordion-body">
-                                          <div class="row mb-3">
-                                              <div class="col-6">
-                                                  <p class="mb-0">최소</p>
-                                                  <div class="form-outline">
-                                                     <input class="form-control mb-3" type="text" aria-label="default input example" name ="shLowPrice" id ="shLowPrice">
-                                                      <label class="form-label small text-muted" for="typeNumber">0</label>
-                                                   </div>
-                                              </div>
-                                              <div class="col-6">
-                                                  <p class="mb-0">최대</p>
-                                                  <div class="form-outline">
-                                                     <input class="form-control mb-3" type="text" aria-label="default input example" name ="shTopPrice" id ="shTopPrice">
-                                                      <label class="form-label small text-muted" for="typeNumber">50,000</label>
-                                                  </div>
-                                              </div>
-                                          	</div>
-                                      	</div>
-                                    </div>
+								        <div class="accordion-body">
+								            <div class="row mb-3">
+								                <div class="col-6">
+								                    <p class="mb-0">최소</p>
+								                    <div class="form-outline">
+								                        <input class="form-control mb-3" type="text" aria-label="default input example" name="shLowPrice" id="shLowPrice" oninput="formatNumber(this)">
+								                        <label class="form-label small text-muted" for="shLowPrice">0</label>
+								                    </div>
+								                </div>
+								                <div class="col-6">
+								                    <p class="mb-0">최대</p>
+								                    <div class="form-outline">
+								                        <input class="form-control mb-3" type="text" aria-label="default input example" name="shTopPrice" id="shTopPrice" oninput="formatNumber(this)">
+								                        <label class="form-label small text-muted" for="shTopPrice">50,000</label>
+								                    </div>
+								                </div>
+								            </div>
+								        </div>
+								    </div>
                              	</div>
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -276,6 +297,17 @@
 					</div>
 				</div>
 			</div>
+			
+		<script>
+	        function formatNumber(input) {
+	            // 숫자만 남기고 제거
+	            let value = input.value.replace(/[^0-9]/g, '');
+	            // 3자리마다 쉼표 추가
+	            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	            // 포맷된 값을 다시 입력
+	            input.value = value;
+	        }
+	    </script>
 
 		<script type="text/javascript">
 			$(document).ready(function() {
