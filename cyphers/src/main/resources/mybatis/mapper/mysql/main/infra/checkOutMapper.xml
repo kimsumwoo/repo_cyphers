@@ -24,6 +24,8 @@
 		 FROM address ad
 		 LEFT JOIN member mm
 		 ON mm.mmseq = ad.member_mmSeq
+		 where 1=1
+		 and #{mmSeq} = ad.member_mmSeq
 	</select>
 	<select id="selectOneAd">
 	select

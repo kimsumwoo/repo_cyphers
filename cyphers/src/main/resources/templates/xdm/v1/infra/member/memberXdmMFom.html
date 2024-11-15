@@ -391,48 +391,7 @@
 						<!-- Leads end -->
 
 						<!-- Header actions start -->
-						<ul class="header-actions">
-							<li class="dropdown d-none d-md-block">
-								<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
-									<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/br.svg" class="flag-img" alt="Admin Panels" />
-								</a>
-								<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
-									<div class="country-container">
-										<a href="index.html">
-											<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/us.svg" alt="Clean Admin Dashboards" />
-										</a>
-										<a href="index.html">
-											<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/in.svg" alt="Google Dashboards" />
-										</a>
-										<a href="index.html">
-											<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/gb.svg" alt="AI Admin Dashboards" />
-										</a>
-										<a href="index.html">
-											<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/tr.svg" alt="Modern Dashboards" />
-										</a>
-										<a href="index.html">
-											<img src="/xdm/v1/template/Arise/assets/images/flags/1x1/ca.svg" alt="Best Admin Dashboards" />
-										</a>
-									</div>
-								</div>
-							</li>
-							<li class="dropdown">
-								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-									<span class="user-name d-none d-md-block">Abigale Heaney</span>
-									<span class="avatar">
-										<img src="/xdm/v1/template/Arise/assets/images/user.png" alt="Admin Templates">
-										<span class="status online"></span>
-									</span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
-									<div class="header-profile-actions">
-										<a href="profile.html">Profile</a>
-										<a href="account-settings.html">Settings</a>
-										<a href="login.html">Logout</a>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<div th:replace="~{xdm/v1/infra/include/loginHead :: loginHead}"></div>
 						<!-- Header actions end -->
 
 					</div>
@@ -842,6 +801,24 @@
 			   form.submit();
 		 }
 		</script>
+		<script type="text/javascript">
+					document.getElementById("btnLogout").onclick = function (){
+						$.ajax({
+							async: true 
+							,cache: false
+							,type: "post"
+							/* ,dataType:"json" */
+							,url: "/xdm/v1/infra/login/logoutXdmProc"
+							,success: function(response) {
+								if(response.rt == "success") {
+								location.href ="/xdm/v1/infra/login/logInXdmForm";
+								}else {
+								   	
+							    }
+							}	
+						});
+					}		
+				</script>
 
 		<!-- *************
 			************ Vendor Js Files *************

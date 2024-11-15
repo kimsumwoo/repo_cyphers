@@ -18,5 +18,8 @@ public interface ProductDao {
 	public int rvInsert(ProductDto productDto);
 	public int insertWish(ProductDto productDto);
 	public int deleteWish(ProductDto productDto);
+	public int insertUploaded(ProductDto productDto);
+	public List<ProductDto> selectImgList(ProductDto productDto);
+	public List<ProductDto> selectImgList2(ProductDto productDto);
 	
 }

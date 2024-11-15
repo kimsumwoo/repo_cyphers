@@ -10,18 +10,17 @@
 	                 <i class="ri-baidu-line fs-2 lh-1 text-black"></i>
 	                 <div class="lh-1">
 	                     <h5 class="fw-bold m-0 text-black">Pet</h5>
-	                     <small class="text-dark">Template</small>
 	                 </div>
 	                 <a class="stretched-link" href="/usr/v1/infra/index/indexUsr"></a>
 	            </div>
 		 		<div class="collapse navbar-collapse">
      		<ul class="navbar-nav m-auto gap-4 m-none">
 	         	<li class="nav-item">
-	             <a class="nav-link active" href="/usr/v1/infra/index/indexUsr"><i class="ri-apps-2-line"></i> Home</a>
+	             <a class="nav-link" href="/usr/v1/infra/index/indexUsr"><i class="ri-apps-2-line"></i> Home</a>
 	         	</li>
-             	<a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"> 상품 </a> 	
+             	<a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"><i class="ri-shopping-cart-2-line"></i> product </a> 	
             </ul>
-		            <a href="/usr/v1/infra/wish/wishList" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-heart-3-fill"></i> 찜목록 가기</a>
+		            <!-- <a href="/usr/v1/infra/wish/wishList" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-heart-3-fill"></i> 찜목록 가기</a> -->
 		            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
 		                <span th:if="${session.sessSeqUsr}" class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
 		                 <a href="/usr/v1/infra/order/OrderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>

@@ -1,15 +1,13 @@
 package com.loras.infra.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.loras.common.config.util.UtilDateTime;
-import com.loras.infra.codegroup.CodeGroupDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -18,6 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
 public class MemberController {
 	@Autowired
 	public MemberService memberService;
+
+	
 	@RequestMapping(value ="/xdm/v1/infra/member/memberXdmList")
 		public String memberXdmList(Model model,@ModelAttribute("vo") MemberVo vo) {
 		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
@@ -67,10 +67,21 @@ public class MemberController {
 //	유저비밀번호수정
 	@RequestMapping(value = "/usr/v1/infra/editMember/updateFixPasswd")
 	public String updateFixPasswd(MemberDto memberDto, HttpServletRequest request) {
+		memberDto.setMmPasswd(encodeBcrypt(memberDto.getMmPasswd(), 10));
 		memberDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		memberService.updateFixPasswd(memberDto);
 		return "redirect:/usr/v1/infra/editmember/editMemberForm";
 	}
+	
+	public String encodeBcrypt(String planeText, int strength) {
+		  return new BCryptPasswordEncoder(strength).encode(planeText);
+	}
+
+			
+	public boolean matchesBcrypt(String planeText, String hashValue, int strength) {
+	  BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(strength);
+	  return passwordEncoder.matches(planeText, hashValue);
+	}	
 
 	
 

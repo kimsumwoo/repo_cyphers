@@ -13,7 +13,8 @@ public class CheckLoginSessionInterceptorUsr implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 			System.out.println(request.getSession().getAttribute("sessSeqUsr"));
-		if (request.getSession().getAttribute("sessSeqUsr") != null) {
+			System.out.println(request.getSession().getAttribute("nickname"));
+		if (request.getSession().getAttribute("sessSeqUsr") != null || request.getSession().getAttribute("userId") !=null) {
 			// by pass
 			System.out.println("if");
 		} else {

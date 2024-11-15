@@ -48,7 +48,6 @@
 		                    <thead>
 		                        <tr>
 		                        	<th></th>
-		                        	<th></th>
 		                            <th class="pb-3 px-0" scope="col">상품</th>
 		                            <th class="pb-3 px-3" scope="col">가격</th>
 		                            <th class="pb-3 px-4" scope="col">삭제</th>
@@ -65,14 +64,14 @@
 		                            <td class="py-3 px-3 align-middle">
 		                                <h6 class="m-0" th:text="${list.pdName}">오리통다리</h6>
 		                            </td>
-		                            <td class="py-3 px-4 align-middle" th:text="${list.pdPrice}">8,000원</td>
+		                            <td class="py-3 px-4 align-middle" th:text="${#numbers.formatInteger(list.pdPrice, 3, 'COMMA') + '원'}"></td>
 		                           <td class="py-3 px-0 align-middle">
 									    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" th:value="${list.whSeq}">
 										    <i class="ri-delete-bin-5-fill"></i>
 										</button>
 									</td>
 		                            <td class="align-middle">
-		                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple px-3 py-3 w-100">구매하기</a>
+		                                <a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${list?.pdSeq})}" class="btn btn-purple px-3 py-3 w-100">구매하기</a>
 		                            </td>
 		                            <input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}">
 		                        </tr>

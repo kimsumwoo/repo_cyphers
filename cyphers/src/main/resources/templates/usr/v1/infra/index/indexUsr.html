@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="img/pages/icon.png" type="image/png">
+        <link rel="icon" href="/usr/img/pages/icon.png" type="image/png">
         <title>Petx | Pet Care & Pet Shop Website Template</title>
         <!-- Bootstrap Css -->
         <link rel="stylesheet" href="/usr/vender/bootstrap/css/bootstrap.min.css">
@@ -45,16 +45,19 @@
                             </li>
                             
                             
-                                <a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"> 상품 </a>
+                                <a class="nav-link" href="/usr/v1/infra/productUsrgrid/productUsrGridList" role="button"><i class="ri-shopping-cart-2-line"></i> product </a>
                                 
                         </ul>
                         <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
                             <a href="/usr/v1/infra/order/OrderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
                             <a href="/usr/v1/infra/wish/wishList" class="link-light"><i class="ri-heart-3-fill"></i></a>
                             <span th:if="${session.sessSeqUsr}" class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
-                            <span th:unless="${session.sessSeqUsr}" class="user-name d-none d-md-block"></span> 
-				                <a th:unless="${session.sessSeqUsr}" href="/usr/v1/infra/login/loginUsrForm">로그인</a>
-         				        <a th:if="${session.sessSeqUsr}" id="logout" href="/usr/v1/infra/login/loginUsrForm">로그아웃</a>
+                            <span th:unless="${session.sessSeqUsr}" class="user-name d-none d-md-block"></span>
+                             <span th:if="${session.userId}" class="user-name d-none d-md-block" th:text ="${session.nickname} + '님 환영합니다'"></span>
+                            <span th:unless="${session.userId}" class="user-name d-none d-md-block"></span> 
+				                <a th:unless="${session.sessSeqUsr}" href="/usr/v1/infra/login/loginUsrForm">계정로그인</a>
+         				        <a th:if="${session.sessSeqUsr}" id="logout" href="/usr/v1/infra/login/loginUsrForm">계정로그아웃</a> 
+         				        <a th:if="${session.userId}" id="logout" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=affc9146db787d0bf3ae465a41142466&redirect_uri=http://localhost:8080/usr/v1/infra/login/logoutUsrKakao">카카오로그아웃</a>
 				            </li>
                         </div>
                     </div>
@@ -82,30 +85,60 @@
             </div>
         </div>
         <!-- OFF -->
-        <div class="mt-n6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="bg-danger text-white p-5 rounded-5">
-                            <div class="row align-items-center justify-content-center g-4">
-                                <div class="col-lg-1 col-12">
-                                    <div class="text-center text-md-start"><i class="ri-baidu-line display-3"></i></div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="text-center text-md-start">
-                                        <h4 class="fw-bold">신상 간식제품 입고완료!</h4>
-                                        <p class="mb-0 text-white-50">우리 반려견에게 맛있고 건강한 간식</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="text-center text-md-end"><a href="/usr/v1/infra/productUsrgrid/productUsrGridList" class="btn btn-light btn-lg rounded-pill">상품보기</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div class="mt-6">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <div class="bg-danger text-white p-3 rounded-5">
+		                    <div class="row align-items-center justify-content-center g-4">
+		                        <!-- 메인 콘텐츠 영역 -->
+		                        <div id="weather-result" class="col-lg-7 d-flex justify-content-center align-items-center flex-column text-center">
+		                            <h3 class="text-2xl font-bold mb-4">산책날씨예보</h3>
+		                            <select class="form-select border p-2 w-100 mb-3" id="city-input">
+		                                <option value="공백">선택하세요</option>
+		                                <option value="Seoul">서울</option>
+		                                <option value="Busan">부산</option>
+		                                <option value="Suwon">수원</option>
+		                                <option value="Seongnam">성남</option>
+		                                <option value="Goyang">고양</option>
+		                                <option value="Incheon">인천</option>
+		                                <option value="Daegu">대구</option>
+		                                <option value="Daejeon">대전</option>
+		                                <option value="Gwangju">광주</option>
+		                                <option value="Ulsan">울산</option>
+		                                <option value="Jeju">제주</option>
+		                                <option value="Changwon">창원</option>
+		                                <option value="Cheongju">청주</option>
+		                                <option value="Jeonju">전주</option>
+		                                <option value="Pyeongtaek">평택</option>
+		                                <option value="Pohang">포항</option>
+		                                <option value="Wonju">원주</option>
+		                                <option value="Chuncheon">춘천</option>
+		                                <option value="Namyangju">남양주</option>
+		                                <option value="Ansan">안산</option>
+		                                <option value="Gimhae">김해</option>
+		                                <option value="Bucheon">부천</option>
+		                                <option value="Yangsan">양산</option>
+		                                <option value="Gangneung">강릉</option>
+		                                <option value="Namwon">남원</option>
+		                                <option value="Iksan">익산</option>
+		                                <option value="Mokpo">목포</option>
+		                                <option value="Suwon">수원</option>
+		                                <option value="Paju">파주</option>
+		                            </select>
+		                            <button onclick="fetchForecast()" class="btn btn-light btn-lg rounded-pill mb-4">
+		                                예보 조회
+		                            </button>
+		                            <div id="forecast-result" class="mt-6">
+		                                <!-- 날씨 예보 결과가 여기에 표시됩니다 -->
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
         <!-- Best sellers -->
         <div class="py-5">
             <div class="container py-4">
@@ -119,42 +152,20 @@
                     </div>
                 </div>
                 <div class="row g-4 g-md-5">
-                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12" th:each="mostlist : ${mostlist}">
                         <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
                             <div class="overflow-hidden rounded-5">
-                                <a href="/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=5"><img src="/usr/img/통다리.jpg" class="card-img-top rounded-5" alt="product"></a>
+                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${mostlist.pdSeq})}"><img th:src="${mostlist.path}" class="card-img-top rounded-5" alt="product"></a>
                             </div>
                             <div class="card-body">
-                                <a href="/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=5"> <h5 class="card-title fw-bold pb-2">소형견을 위한 특식 오리통다리</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">7,000원</p>
+                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${mostlist.pdSeq})}"> <h5 class="card-title fw-bold pb-2" th:text="${mostlist.pdName}">소형견을 위한 특식 오리통다리</h5> </a>
+                                <p class="card-text fw-semibold text-danger mb-1" th:text="${#numbers.formatInteger(mostlist.pdPrice, 3, 'COMMA') + '원'}">7,000원</p>
                             </div>
-                            <div class="card-footer bg-transparent border-0"><a href="./pages/0_shop-product-detail.html" class="btn btn-danger rounded-pill py-2 px-4">구입하기</a></div>
+                            <div class="card-footer bg-transparent border-0"><a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${mostlist.pdSeq})}" class="btn btn-danger rounded-pill py-2 px-4">구입하기</a></div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="overflow-hidden rounded-5">
-                                <img src="/usr/img/일반통다리2.png" class="card-img-top rounded-5" alt="product">
-                            </div>
-                            <div class="card-body">
-                                <a href="http://localhost:8080/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=6"> <h5 class="card-title fw-bold pb-2">특식 오리통다리</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">8,000원</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0"><a href="http://localhost:8080/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=6" class="btn btn-danger rounded-pill py-2 px-4">구입하기</a></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="overflow-hidden rounded-5">
-                                <img src="/usr/img/best-seller/product-6.jpg" class="card-img-top rounded-5" alt="product">
-                            </div>
-                            <div class="card-body">
-                                <a href="http://localhost:8080/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=11"> <h5 class="card-title fw-bold pb-2">소고기큐브</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">4500원</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0"><a href="http://localhost:8080/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq=11" class="btn btn-danger rounded-pill py-2 px-4">구입하기</a></div>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -171,39 +182,21 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-4 col-12" th:each="rvlist : ${rvlist}">
                         <div class="card bg-transparent border-0 rounded-0 text-center p-4 h-100" data-aos="fade-up" data-aos-duration="1300">
-                            <img src="/usr/img/리리2.jpg" alt="testimonial" class="img-fluid rounded-circle d-block mx-auto testimonial-img">
+                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${rvlist.pdSeq})}"><img th:src="${rvlist.path}" alt="testimonial" class="img-fluid rounded-circle d-block mx-auto testimonial-img"></a>                           
+                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${rvlist.pdSeq})}"><p class="text-white mb-0" th:text="${rvlist.pdName}"></p></a>
                             <div class="card-body mt-3">
-                                <p class="card-title lead">강아지가 너무 잘 먹습니다. 가끔 특식이 필요할 때 주문해야겠습니다. ^^</p>
+                            	<p class="text-white mb-0" th:text="${rvlist.mmRealName} + ' 님의 리뷰'"></p>
+                                <i class="ri-star-fill text-warning" th:if="${rvlist.rvRank eq 5}"><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></i>
                             </div>
                             <div class="card-footer bg-transparent border-0">
-                                <p class="text-white mb-0">hoho 님</p>
+                                 <p class="card-title lead" th:text="${rvlist.rvComment}"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center p-4 h-100" data-aos="fade-up" data-aos-duration="1300">
-                            <img src="img/team/member-2.jpg" alt="testimonial" class="img-fluid rounded-circle d-block mx-auto testimonial-img">
-                            <div class="card-body mt-3">
-                                <p class="card-title lead">Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla id neque.</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <p class="text-danger mb-0">Glenda Richards, CALIFORNIA</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center p-4 h-100" data-aos="fade-up" data-aos-duration="1300">
-                            <img src="img/team/member-3.jpg" alt="testimonial" class="img-fluid rounded-circle d-block mx-auto testimonial-img">
-                            <div class="card-body mt-3">
-                                <p class="card-title lead">Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla porta risus.</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <p class="text-danger mb-0">Sue Sparkle, NY</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -220,43 +213,19 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12" th:each="newlist : ${newlist}">
                         <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
-                            <a href="./pages/0_shop-product-detail copy.html" class="position-relative">
+                            <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${newlist.pdSeq})}">
                                 <div class="overflow-hidden rounded-5">
-                                    <img src="/usr/img/메추리.jpg" class="card-img-top rounded-5" alt="new-product"> <span class="badge text-bg-danger rounded-pill p-2 m-3 position-absolute start-0">50% SALE</span>
+                                    <img th:src="${newlist.path}" class="card-img-top rounded-5" alt="new-product">
                                 </div>
                             </a>
                             <div class="card-body">
-                                <a href="./pages/0_shop-product-detail copy.html"> <h5 class="card-title fw-bold pb-2">알 품은 통메추리</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">17,800원 <del class="small fw-normal text-secondary-emphasis">35,600원</del></p>
+                                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${newlist.pdSeq})}"> <h5 class="card-title fw-bold pb-2" th:text="${newlist.pdName}">알 품은 통메추리</h5> </a>
+                                <p class="card-text fw-semibold text-danger mb-1" th:text="${#numbers.formatInteger(newlist.pdPrice, 3, 'COMMA') + '원'}">17,800원</p>
                                 <small class="card-text"></small>
                             </div>
-                            <div class="card-footer bg-transparent border-0"><a href="./pages/0_shop-product-detail copy.html" class="btn btn-danger rounded-pill py-2 px-4">구매하기</a></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="overflow-hidden rounded-5">
-                                <img src="/usr/img/new-products/product-2.jpg" class="card-img-top rounded-5" alt="new-product">
-                            </div>
-                            <div class="card-body">
-                                <a href="#"> <h5 class="card-title fw-bold pb-2">Integer Malesuada</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">$15.00</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0"><a href="#" class="btn btn-danger rounded-pill py-2 px-4">Add to cart</a></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card bg-transparent border-0 rounded-0 text-center zoom-img" data-aos="zoom-in" data-aos-duration="1000">
-                            <div class="overflow-hidden rounded-5">
-                                <img src="/usr/img/new-products/product-3.jpg" class="card-img-top rounded-5" alt="new-product">
-                            </div>
-                            <div class="card-body">
-                                <a href="#"> <h5 class="card-title fw-bold pb-2">Posuere Semper</h5> </a>
-                                <p class="card-text fw-semibold text-danger mb-1">$15.00</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0"><a href="#" class="btn btn-danger rounded-pill py-2 px-4">Add to cart</a></div>
+                            <div class="card-footer bg-transparent border-0"><a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${newlist.pdSeq})}" class="btn btn-danger rounded-pill py-2 px-4">구매하기</a></div>
                         </div>
                     </div>
                 </div>
@@ -300,22 +269,78 @@
                 </div>
             </div>
       	<script type="text/javascript">
-		document.getElementById("logout").onclick = function (){
-			$.ajax({
-				async: true 
-				,cache: false
-				,type: "post"
-				/* ,dataType:"json" */
-				,url: "/usr/v1/infra/login/logoutUsrFormProc"
-				,success: function(response) {
-					if(response.rt == "success") {
-					location.href ="/usr/v1/infra/login/loginUsrForm";
-					}else {
-					   	
-				    }
-				}	
-			});
-		}		
+			document.getElementById("logout").onclick = function (){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					/* ,dataType:"json" */
+					,url: "/usr/v1/infra/login/logoutUsrFormProc"
+					,success: function(response) {
+						if(response.rt == "success") {
+						location.href ="/usr/v1/infra/login/loginUsrForm";
+						}else {
+						   	
+					    }
+					}	
+				});
+			}		
+		</script>
+		 <script type="text/javascript">
+		    async function fetchForecast() {
+		        let city = document.getElementById('city-input').value.trim();
+		
+		        // 도시가 선택되지 않았으면 알림을 띄움
+		        if (city === "공백") {
+		            alert("도시를 선택해주세요.");
+		            return;
+		        }
+		
+		        let apiKey = '1a9bdfcf12d44b4a88e2a1fb643ac881'; // OpenWeatherMap API 키
+		        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kr`; // 현재 날씨만 가져오는 API 사용
+		        
+		        try {
+		            let response = await fetch(url);
+		            let data = await response.json();
+		            
+		            if (data.cod !== 200) {
+		                alert("날씨 정보를 가져오는데 실패했습니다.");
+		                return;
+		            }
+		
+		            displayCurrentWeather(data); // 현재 날씨만 출력하는 함수 호출
+		        } catch (error) {
+		            console.error('날씨 정보를 가져오는데 실패했습니다.', error);
+		            alert("날씨 정보를 가져오는 중 오류가 발생했습니다.");
+		        }
+		    }
+		
+		    function displayCurrentWeather(data) {
+		        let weatherDiv = document.getElementById('forecast-result');
+		
+		        // 기존 내용 초기화
+		        weatherDiv.innerHTML = '';
+		
+		        // 날씨 정보 추출
+		        let cityName = data.name;
+		        let temperature = data.main.temp;
+		        let description = data.weather[0].description;
+		        let humidity = data.main.humidity;
+		        let windSpeed = data.wind.speed;
+		        let icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+		
+		        // 날씨 정보 출력
+		        weatherDiv.innerHTML = `
+		            <h2 class="text-xl mb-4">${cityName}의 현재 날씨</h2>
+		            <div>
+		                <img src="${icon}" class="mb-3">
+		                <p><strong>온도:</strong> ${temperature}°C</p>
+		                <p><strong>상태:</strong> ${description}</p>
+		                <p><strong>습도:</strong> ${humidity}%</p>
+		                <p><strong>풍속:</strong> ${windSpeed} m/s</p>
+		            </div>
+		        `;
+		    }
 		</script>
         <!-- Bootsrap Bundle Js -->
         <script src="/usr/vender/bootstrap/js/bootstrap.bundle.min.js"></script>

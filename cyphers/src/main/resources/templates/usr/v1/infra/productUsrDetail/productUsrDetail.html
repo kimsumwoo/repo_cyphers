@@ -64,21 +64,20 @@
             </div>
         </div>
         <!-- product -->
-        <div class="py-5">
-            <div class="container py-4">
+        <div class="py-5"  >
+            <div class="container py-4" th:each="imgList : ${imgList}">
                 <div class="row g-5">
                     <div class="col-lg-6 col-12 mb-4">
                         <div class="big-img">
-                            <img src="/usr/img/통다리.jpg" alt="type-1" class="img-fluid rounded-4">
-                            <img src="/usr/img/통다리3.jpg" alt="type-2" class="img-fluid rounded-4">
+                            <img th:src="${imgList.path}" alt="type-2" class="img-fluid rounded-4">
+                            <!-- <img src="/usr/img/통다리3.jpg" alt="type-2" class="img-fluid rounded-4">
                             <img src="/usr/img/통다리4.jpg" alt="type-3" class="img-fluid rounded-4">
-                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid rounded-4">
+                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid rounded-4"> -->
                         </div>
                         <div class="small-img shop-product-detail-slider mt-3 px-2">
-                            <img src="/usr/img/통다리.jpg" alt="type-1" class="img-fluid mx-2 rounded-3 shadow-sm">
-                            
-                            <img src="/usr/img/통다리4.jpg" alt="type-3" class="img-fluid mx-2 rounded-3 shadow-sm">
-                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            <img th:src="${imgList.path}" alt="type-3" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            <!-- <img src="/usr/img/통다리4.jpg" alt="type-3" class="img-fluid mx-2 rounded-3 shadow-sm">
+                            <img src="/usr/img/통다리5.jpg" alt="type-4" class="img-fluid mx-2 rounded-3 shadow-sm"> -->
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 ps-lg-5">
@@ -87,7 +86,7 @@
                         <div class="d-flex align-items-center gap-1 mb-3">
                             <span th:text="${vo.totalRows} + ' 개의 리뷰 '"></span>
                         </div>
-                        <h5 class="fw-bold" name ="pdPrice" th:text ="${item?.pdPrice}"></h5>
+                        <h5 class="fw-bold" name ="pdPrice" th:text ="${#numbers.formatInteger(item?.pdPrice, 3, 'COMMA') + '원'}"></h5>
                         <div class="border-bottom py-4">
                             <p class="text-muted" name ="pdDesc" th:text ="${item?.pdDesc}">
                             </p>
@@ -130,68 +129,12 @@
                             </div>
                         </nav>
                         <div class="tab-content bg-white p-lg-5 p-4 border-end border-bottom border-start" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
-                            <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글.jpg" alt="">
-                            </div>
-                            <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글3.jpg" alt="">
-                            </div>
-                            <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글4.jpg" alt="">
-                            </div>
-                            <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글5.gif" alt="">
-                            </div>
-                             <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글6.jpg" alt="">
-                             </div>
-                             <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글7.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글8.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글9.gif" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글2.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글10.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글11.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글12.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글13.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글14.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글15.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글16.gif" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글17.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글18.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글19.jpg" alt="">
-                             </div>
-                              <div class="duckLeg">
-                             <img src="/usr/img/소형오리통다리소개글20.png" alt="">
-                             </div> 
-                            </div>
+                      		<div class="tab-pane fade show active"  id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
+	                            <div class="duckLeg" th:each="imgList2 : ${imgList2}">
+	                             <img th:src="${imgList2.path}" alt="">
+	                            </div>
+	                            
+                       		</div>
                             <div class="tab-pane fade" id="nav-additional-information" role="tabpanel" aria-labelledby="nav-additional-information-tab" tabindex="0">
                                <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
                                 <h5 class="fw-bold pb-2">상품결제정보</h5>
@@ -239,10 +182,9 @@
 			        </div>
 			        <p class="text-muted" th:text="${list.rvComment}">리뷰 내용입니다.</p>
 			    </div>
-			    <input type="hidden" name="rvSeq" th:value="${list.rvSeq}">
 			     <input type="hidden" name="pdSeq" th:value="${item?.pdSeq}">
-			    <button type="button" class="btn btn-outline-danger rounded-3 delbtn" data-rvSeq="${list.rvSeq}" aria-label="리뷰 삭제" data-bs-toggle="modal" data-bs-target="#delete">
-			    	<i class="ri-delete-bin-5-fill"></i>
+				<button type="button" class="btn btn-outline-danger rounded-3 delbtn" th:value="${list.rvSeq}" aria-label="리뷰 삭제">
+				    <i class="ri-delete-bin-5-fill"></i>
 				</button>
 					</div>
 			    	</form>
@@ -277,7 +219,7 @@
           </div>
        </div>
    </div>
-        <div class="py-5">
+        <!-- <div class="py-5">
             <div class="container py-4">
                 <div class="row mb-3">
                     <div class="col-12">
@@ -345,7 +287,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- footer -->
         <footer class="bg-footer text-white">
             <div class="bg-black py-4">
@@ -425,33 +367,22 @@
 			
             
 			<script>
-			    let selectedRvSeq = null; // 삭제할 rvSeq를 저장할 변수
-			
-			    document.querySelectorAll(".delbtn").forEach(button => {
-			        button.onclick = function() {
-			            selectedRvSeq = this.getAttribute("data-rvSeq"); // 삭제할 rvSeq 값을 저장
-			        };
-			    });
-			
-			    document.getElementById("confirmDelete").onclick = function() {
-			        if (selectedRvSeq) {
-			            const form = document.querySelector("form[name=mfom]"); // 특정 폼을 선택
-			
-			            // 숨겨진 입력값 생성
-			            const hiddenInput = document.createElement("input");
-			            hiddenInput.type = "hidden";
-			            hiddenInput.name = "rvSeq";
-			            hiddenInput.value = selectedRvSeq; // 저장된 rvSeq 값 설정
-			            form.appendChild(hiddenInput);
-			
-			            // 폼의 action 설정
-			            form.action = "/usr/v1/infra/review/reviewUsrDete"; // 삭제 요청 URL
-			            form.method = "POST"; // POST 요청으로 설정
-			            form.submit(); // 폼 제출
-			        }
-			    };
-			    
+		    // 모든 삭제 버튼에 클릭 이벤트 추가
+		    document.querySelectorAll(".delbtn").forEach(function(button) {
+		        button.onclick = function() {
+		            let form = document.querySelector("form[name=mfom]");
+		            form.action = "/usr/v1/infra/review/reviewUsrDete";
+		            // 해당 버튼의 value를 hidden input에 설정
+		            let hiddenInput = document.createElement("input");
+		            hiddenInput.type = "hidden";
+		            hiddenInput.name = "rvSeq"; // 서버에 전송할 이름
+		            hiddenInput.value = this.value; // 버튼의 value 사용
+		            form.appendChild(hiddenInput);
+		            form.submit();
+		        }
+		    });
 		</script>
+		
 		<script>
 		    let isAddedToWishList = false; // 찜목록에 추가 여부를 추적하는 플래그
 		

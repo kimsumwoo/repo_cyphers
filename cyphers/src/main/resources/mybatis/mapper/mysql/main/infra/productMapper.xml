@@ -19,6 +19,7 @@ select pd.* from(
 		,pd.pdType
 		,pd.pdMeat
 		,wh.whSeq
+		,path
 		<include refid="selectCommon"></include>
 	ORDER BY
 		pd.pdSeq DESC
@@ -65,7 +66,6 @@ select pd.* from(
 		,pd.pdFixDate
 		,pd.pdType
 		,pd.pdMeat
-		
 	FROM 
 		product pd
 	WHERE 1=1
@@ -97,7 +97,10 @@ select pd.* from(
 	 product pd
  	LEFT JOIN wishlist wh
  	ON pd.pdSeq = wh.product_pdSeq
+ 	LEFT JOIN insertuploaded
+ 	ON pSeq = pd.pdSeq
 	WHERE 1=1
+	and defaultNy = 1
 	
 	<if test="shpdDelNy != null and !shpdDelNy.equals('')">and pdDelNy = #{shpdDelNy}</if>
 	<if test="shpdUseNy != null and !shpdUseNy.equals('')">and pdUseNy = #{shpdUseNy}</if>
@@ -112,9 +115,10 @@ select pd.* from(
 		<when test="shOptionDate == 1">AND pd.pdDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 		<when test="shOptionDate == 2">AND pd.pdFixDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 	</choose>
-	<if test="shLowPrice != null and shLowPrice.trim() != '' or shTopPrice != null and shTopPrice.trim() != ''">
+	<if test="(shLowPrice != null and shLowPrice != 0) or (shTopPrice != null and shTopPrice != 0)">
     	AND pd.pdPrice BETWEEN #{shLowPrice} AND #{shTopPrice}
 	</if>
+
 	<if test="shPdMeat != null and !shPdMeat.equals('')">and pdMeat = #{shPdMeat}</if>
 	<if test="shPdType != null and !shPdType.equals('')">and pdType = #{shPdType}</if>
 	<if test="shName != null and !shName.equals('')">AND pdName LIKE CONCAT('%', #{shName}, '%')</if>
@@ -178,6 +182,64 @@ select pd.* from(
 		WHERE 1=1
 		AND wh.member_mmSeq = #{mmSeq}
 	</select>
+	
+	<insert id="insertUploaded">
+		insert into insertUploaded(
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuId
+			,ext
+			,size
+			,delNy
+			,pSeq
+			,regDate
+			,modDate
+		)values(
+			#{type}
+			,0
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuId}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pSeq}
+			,now()
+			,now()
+		)
+	</insert>
+	
+	<select id="selectImgList" resultMap="resultMapObj">
+		SELECT
+				pd.pdSeq
+				,path
+				,pSeq
+		FROM product pd
+		LEFT JOIN insertUploaded
+		ON pd.pdSeq = pSeq
+		where 1=1
+		AND pdSeq = #{pdSeq}
+		and defaultNy = 1
+		
+	</select>
+	
+	<select id="selectImgList2" resultMap="resultMapObj">
+	    SELECT
+	        pd.pdSeq
+	        ,path
+	        ,pSeq
+	    FROM product pd
+	    LEFT JOIN insertUploaded
+	    ON pd.pdSeq = pSeq
+	    WHERE 1=1
+	    AND pdSeq = #{pdSeq}
+	    AND sort >= 17  
+	</select>
+	
 	
 	
 	

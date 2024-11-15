@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.loras.common.config.util.UtilDateTime;
+import com.loras.infra.mail.MailService;
 import com.loras.infra.review.ReviewService;
 import com.loras.infra.review.ReviewVo;
 
@@ -26,7 +27,8 @@ public class ProductController {
 	public ProductService productService;
 	@Autowired
 	public ReviewService reviewService;
-	
+	@Autowired
+	public MailService mailService;
 //	사용자
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmList")
 		public String productXdmList(Model model,@ModelAttribute("vo") productVo vo) {
@@ -43,6 +45,7 @@ public class ProductController {
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmInst")
 	public String productXdmInst(ProductDto productDto) {
 		productService.insert(productDto);
+
 		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmMFom")
@@ -51,13 +54,14 @@ public class ProductController {
 		return "/xdm/v1/infra/product/productXdmMFom";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmUpdt")
-	public String productXdmUpdt(ProductDto productDto) {
+	public String productXdmUpdt(ProductDto productDto) throws Exception {
 		productService.update(productDto);
 		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmDete")
 	public String productXdmDete(ProductDto productDto) {
 		productService.delete(productDto);
+		
 		return "redirect:/xdm/v1/infra/product/productXdmList";
 	}
 //	@RequestMapping(value = "/usr/v1/infra/productUsrgrid/productUsrWishInst")
@@ -69,8 +73,8 @@ public class ProductController {
 //	유저
 	@RequestMapping(value ="/usr/v1/infra/productUsrgrid/productUsrGridList")
 	public String productUsrGridList(Model model,@ModelAttribute("vo") productVo vo,ProductDto productDto) {
-		model.addAttribute("list", productService.productList(vo));
 		vo.setParamsPaging(productService.selectOneCount(vo));
+		model.addAttribute("list", productService.productList(vo));		
 		return "/usr/v1/infra/productUsrgrid/productUsrGridList";
 	}
 
@@ -150,6 +154,8 @@ public class ProductController {
 	@RequestMapping(value ="/usr/v1/infra/productUsrDetail/productUsrDetail")
 	public String productUsrDetail(Model model,ProductDto productDto,@ModelAttribute("vo") ReviewVo vo) {
 		System.out.println(productDto.getPdSeq());
+		model.addAttribute("imgList", productService.selectImgList(productDto));
+		model.addAttribute("imgList2", productService.selectImgList2(productDto));
 		model.addAttribute("item", productService.SelectOne(productDto));
 		model.addAttribute("list", productService.rvSelectList(productDto));
 		vo.setParamsPaging(reviewService.selectOneCountRv(vo));

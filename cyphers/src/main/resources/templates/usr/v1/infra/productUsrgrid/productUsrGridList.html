@@ -23,7 +23,8 @@
     </head>
     <body>
         <form name ="formList" method = "post" action ="/usr/v1/infra/productUsrgrid/productUsrGridList" autocomplete="off">
-     
+     	<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+		<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
         <div class="bg-elements elements-top-header position-relative">
             <!-- navbar -->
             <div th:replace="~{usr/v1/infra/include/productHead :: productHead}"></div>
@@ -69,31 +70,31 @@
                                         <ul class="list-unstyled m-0">
                                             <li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shPdType"  value="75"  class="me-2">
+											        <input type="radio" name="shPdType"  value="75" th:checked="${vo.shPdType == 75}"  class="me-2">
 											        동결건조
 											    </label>
 											</li>                                            
 											<li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shPdType"  value="74"  class="me-2">
+											        <input type="radio" name="shPdType"  value="74" th:checked="${vo.shPdType == 74}"  class="me-2">
 											        보양식
 											    </label>
 											</li> 
                                             <li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shPdType"  value="73"  class="me-2">
+											        <input type="radio" name="shPdType"  value="73" th:checked="${vo.shPdType == 73}"  class="me-2">
 											        파우더
 											    </label>
 											</li> 
 											<li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shPdType"  value="72"  class="me-2">
-											        돌돌말이
+											        <input type="radio" name="shPdType"  value="72" th:checked="${vo.shPdType == 72}"  class="me-2">
+											        껌
 											    </label>
 											</li> 
 											<li class="mb-2">
 											    <label class="text-dark">
-											        <input type="radio" name="shPdType"  value="71"  class="me-2">
+											        <input type="radio" name="shPdType"  value="71" th:checked="${vo.shPdType == 71}"  class="me-2">
 											        건조식품
 											    </label>
 											</li> 
@@ -110,55 +111,65 @@
                                   </h2>
                                   <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <!-- Checked checkbox -->
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked> <label class="form-check-label" for="flexCheckChecked1">소고기</label>
-                                            <span class="text-muted small float-end"></span>
-                                        </div>
-                                        <!-- Checked checkbox -->
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked> <label class="form-check-label" for="flexCheckChecked2">닭고기</label>
-                                            <span class="text-muted small float-end"></span>
-                                        </div>
-                                        <!-- Checked checkbox -->
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked> <label class="form-check-label" for="flexCheckChecked3">오리고기</label>
-                                            <span class="text-muted small float-end"></span>
-                                        </div>
-                                        <!-- Checked checkbox -->
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked> <label class="form-check-label" for="flexCheckChecked4">어류</label>
-                                            <span class="text-muted small float-end"></span>
-                                        </div>
-                                        <!-- Default checkbox -->
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">기타</label>
-                                            <span class="text-muted small float-end"></span>
-                                        </div>
+                                         <ul class="list-unstyled m-0">
+                                            <li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdMeat"  value="65" th:checked="${vo.shPdMeat == 65}"  class="me-2" >
+											        소고기
+											    </label>
+											</li>                                            
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdMeat"  value="66" th:checked="${vo.shPdMeat == 66}"  class="me-2">
+											        닭고기
+											    </label>
+											</li> 
+                                            <li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdMeat"  value="67" th:checked="${vo.shPdMeat == 67}"  class="me-2">
+											        오리고기
+											    </label>
+											</li> 
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdMeat"  value="68" th:checked="${vo.shPdMeat == 68}"  class="me-2">
+											        어류
+											    </label>
+											</li> 
+											<li class="mb-2">
+											    <label class="text-dark">
+											        <input type="radio" name="shPdMeat"  value="69" th:checked="${vo.shPdMeat == 69}"  class="me-2">
+											        기타
+											    </label>
+											</li> 
+                                        </ul>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="accordion-item">
                                   <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        가격검색하기
+                                        가격검색하기<small>(입력시 최소,최대 둘다입력)</small>
                                     </button>
                                   </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
 								        <div class="accordion-body">
 								            <div class="row mb-3">
-								                <div class="col-6">
+								                <div class="col-5">
 								                    <p class="mb-0">최소</p>
 								                    <div class="form-outline">
-								                        <input class="form-control mb-3" type="text" aria-label="default input example" name="shLowPrice" id="shLowPrice" oninput="formatNumber(this)">
-								                        <label class="form-label small text-muted" for="shLowPrice">0</label>
+								                       <!--  <input class="form-control mb-3" type="number" aria-label="default input example" name="shLowPrice" id="shLowPrice" oninput="formatNumber(this)"> -->
+								                        <input class="form-control mb-3" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="shLowPrice" id="shLowPrice" th:value="${vo.shLowPrice}" />
 								                    </div>
 								                </div>
-								                <div class="col-6">
+								                <div class="col-1 text-center align-self-center">
+									                <span>~</span>
+									            </div>
+								                <div class="col-5">
 								                    <p class="mb-0">최대</p>
 								                    <div class="form-outline">
-								                        <input class="form-control mb-3" type="text" aria-label="default input example" name="shTopPrice" id="shTopPrice" oninput="formatNumber(this)">
-								                        <label class="form-label small text-muted" for="shTopPrice">50,000</label>
+								                        <input class="form-control mb-3" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="shTopPrice" id="shTopPrice" th:value="${vo.shTopPrice}" />
+								                        
 								                    </div>
 								                </div>
 								            </div>
@@ -176,14 +187,14 @@
                                         	<div class="col-12">
                                             	<p class="mb-0">상품명</p>
                                             	<div class="form-outline">
-                                               		<input class="form-control mb-3" type="text" aria-label="default input example" name="shName" id="shName">
+                                               		<input class="form-control mb-3" type="text" aria-label="default input example" name="shName" id="shName" th:value="${vo.shName}">
                                                 	<label class="form-label small text-muted" for="typeNumber"></label>
                                             	</div>
                                         	</div>
                                     	</div>
                                 	</div>
                               	</div>
-                                  <div class="accordion-item">
+                                  <!-- <div class="accordion-item">
                                     <h2 class="accordion-header">
                                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreew" aria-expanded="false" aria-controls="collapseThreew">
                                         별점순
@@ -191,7 +202,7 @@
                                     </h2>
                                     <div id="collapseThreew" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                       <div class="accordion-body">
-                                        <!-- Default checkbox -->
+                                        Default checkbox
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -199,7 +210,7 @@
                                                 <i class="ri-star-fill text-warning"></i>
                                             </label>
                                         </div>
-                                        <!-- Default checkbox -->
+                                        Default checkbox
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -207,7 +218,7 @@
                                                 <i class="ri-star-fill text-secondary"></i>
                                             </label>
                                         </div>
-                                        <!-- Default checkbox -->
+                                        Default checkbox
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -215,7 +226,7 @@
                                                 <i class="ri-star-fill text-secondary"></i>
                                             </label>
                                         </div>
-                                        <!-- Default checkbox -->
+                                        Default checkbox
                                         <div class="form-check mb-0">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -225,63 +236,79 @@
                                         </div>	
                                       </div>
                                     </div>
-                                  </div>
+                                  </div> -->
                                    <button type="submit" class="btn btn-outline-secondary w-100">검색하기</button>
                               </div>
                           </div>
-                    </div>
-       	</form>
+                   	</div>
+       			</form>
                     <!-- sidebar -->
                     <!-- content -->
-                    <div class="col-lg-9 ps-lg-5">
-                        <header class="d-sm-flex align-items-center pb-4">
-                            <h4 class="d-block m-0 fw-bold" th:text="${vo.totalRows} + ' 개의 상품을 찾았습니다'"></h4>
-                            <div class="ms-auto d-flex gap-2">
-                                <select class="form-select d-inline-block w-auto border pt-1">
-                                    <option value="0">인기상품</option>
-                                    <option value="1">댓글많은순</option>
-                                    <option value="2">높은 가격순</option>
-                                    <option value="3">낮은 가격순</option>
-                                </select>
-                            </div>
-                        </header>
+                  <div class="col-lg-9 ps-lg-5">
+                       <header class="d-sm-flex align-items-center pb-4">
+                           <h4 class="d-block m-0 fw-bold" th:text="${vo.totalRows} + ' 개의 상품을 찾았습니다'"></h4>
+                           <div class="ms-auto d-flex gap-2">
+                              <select class="form-select d-inline-block w-auto border pt-1" id="changeRowNum" name="changeRowNum">
+                          		<option value="6" th:selected ="${vo.rowNumToShow eq 6}">6</option>
+								<option value="10" th:selected ="${vo.rowNumToShow eq 10}">10</option>
+								<option value="15" th:selected ="${vo.rowNumToShow eq 15}">15</option>
+								<option value="20" th:selected ="${vo.rowNumToShow eq 20}">20</option>
+								<option value="25" th:selected ="${vo.rowNumToShow eq 25}">25</option>
+                              </select>
+                           </div>
+                       </header>
                        
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each="list : ${list}">
-        <form method="post" action="/usr/v1/infra/productUsrgrid/productUsrWishInst">
-            <input type="hidden" th:value="${list.pdSeq}" name="product_pdSeq">
-            <input type="hidden" th:value="${session.sessSeqUsr}" name="member_mmSeq">
-            <input type="hidden" th:value="${list.whSeq}" name="whSeq">
-            <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
-                <a th:href="@{/xdm/v1/infra/product/productMFom(pdSeq=${list.pdSeq})}">
-                    <img src="/usr/img/pages/products/product-1.jpg" class="card-img-top">
-                </a>
-                <div class="card-body d-flex flex-column p-4">
-                    <div class="d-flex flex-row mb-2">
-                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}">
-                            <h5 class="mb-0 me-1 fw-bold" th:text="${list.pdName}"></h5>
-                        </a>
-                    </div>
-                    <p class="mb-0 me-1 fw-bold" th:text="${list.pdPrice}"></p>
-                    <span th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></span>
-                    <span th:unless="${list.pdType != null}" class="pdType align-middle"></span>
-                    <span th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></span>
-                    <span th:unless="${list.pdMeat != null}" class="pdType align-middle"></span>
-
-                    <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
-                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a>
-                        <button type="button" class="wishbtn btn btn-light border icon-hover">
-                            <i th:if="${list.whSeq != null}" class="ri-heart-fill"></i>
-                            <i th:if="${list.whSeq == null}" class="ri-heart-line"></i> 
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-		<div class="modal fade" id="modalAlert" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
-			aria-hidden="true">
+					  <div class="row">
+					    <div class="col-lg-4 col-md-6 col-sm-6 d-flex" th:each="list : ${list}" >
+					        <form method="post" action="/usr/v1/infra/productUsrgrid/productUsrWishInst">
+					            <input type="hidden" th:value="${list.pdSeq}" name="product_pdSeq">
+					            <input type="hidden" th:value="${session.sessSeqUsr}" name="member_mmSeq">
+					            <input type="hidden" th:value="${list.whSeq}" name="whSeq">
+					            <div class="card w-100 my-2 shadow rounded-4 overflow-hidden border-0">
+					                <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}">
+					                    <img th:src="${list.path}" class="card-img-top">
+					                </a>
+					                <div class="card-body d-flex flex-column p-4">
+					                    <div class="d-flex flex-row mb-2">
+					                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}">
+					                            <h5 class="mb-0 me-1 fw-bold" th:text="${list.pdName}"></h5>
+					                        </a>
+					                    </div>
+					                    <p class="mb-0 me-1 fw-bold" th:text="${#numbers.formatInteger(list.pdPrice, 3, 'COMMA') + '원'}"></p>
+					
+					                    <span th:if="${list.pdType != null}" th:text="${@codeService.selectOneCachedCode(list.pdType)}"></span>
+					                    <span th:unless="${list.pdType != null}" class="pdType align-middle"></span>
+					                    <span th:if="${list.pdMeat != null}" th:text="${@codeService.selectOneCachedCode(list.pdMeat)}"></span>
+					                    <span th:unless="${list.pdMeat != null}" class="pdType align-middle"></span>
+					
+					                    <div class="osahan-card-footer d-flex align-items-end px-0 pb-0 mt-auto">
+					                        <a th:href="@{/usr/v1/infra/productUsrDetail/productUsrDetail(pdSeq=${list.pdSeq})}" class="btn btn-purple shadow-0 me-2 w-100">구매하기</a>
+					                        <button type="button" class="wishbtn btn btn-light border icon-hover">
+					                            <i th:if="${list.whSeq != null}" class="ri-heart-fill"></i>
+					                            <i th:if="${list.whSeq == null}" class="ri-heart-line"></i> 
+					                        </button>
+					                    </div>
+					                </div>
+					            </div>
+					        </form>
+					    </div>
+					    <!-- paging s  -->				
+							<div class="container-fluid px-0 mt-2 mb-2">
+								<div class="row">
+									<div class="col">
+										<ul class="pagination justify-content-center mb-0">
+											<li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="bi bi-caret-left-fill"></i></a></li>
+										<li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"><!-- ${i.index} --></a></li>
+										<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="bi bi-caret-right-fill"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- paging e  -->	
+						</div>
+					</div>
+			<div class="modal fade" id="modalAlert" tabindex="-1" aria-labelledby="verticallyCenteredLabel"
+				aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -298,17 +325,45 @@
 				</div>
 			</div>
 			
-		<script>
-	        function formatNumber(input) {
-	            // 숫자만 남기고 제거
-	            let value = input.value.replace(/[^0-9]/g, '');
-	            // 3자리마다 쉼표 추가
-	            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	            // 포맷된 값을 다시 입력
-	            input.value = value;
-	        }
-	    </script>
-
+			<script>
+			$(document).on("click", "input[name='shPdType']", function(){
+			    thisRadio = $(this);
+			    if (thisRadio.hasClass("imChecked")) {
+			        thisRadio.removeClass("imChecked");
+			        thisRadio.prop('checked', false);
+			    } else { 
+			        thisRadio.prop('checked', true);
+			        thisRadio.addClass("imChecked");
+			    };
+			})
+			</script>
+			<script>
+			$(document).on("click", "input[name='shPdMeat']", function(){
+			    thisRadio = $(this);
+			    if (thisRadio.hasClass("imChecked")) {
+			        thisRadio.removeClass("imChecked");
+			        thisRadio.prop('checked', false);
+			    } else { 
+			        thisRadio.prop('checked', true);
+			        thisRadio.addClass("imChecked");
+			    };
+			})
+			</script>
+			<script type="text/javascript">
+				goList = function (thisPage) {
+				    document.querySelector("input[name=thisPage]").value = thisPage;
+				    document.querySelector("form[name=formList]").action = "/usr/v1/infra/productUsrgrid/productUsrGridList";
+				    document.querySelector("form[name=formList]").submit();
+				}
+			</script>
+				
+				<script type="text/javascript">
+					document.getElementById("changeRowNum").onchange = function () {
+				    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+				    form.action = goUrlXdmList;
+				    form.submit();
+				}
+				</script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 			    $('.wishbtn').on('click', function(event) {

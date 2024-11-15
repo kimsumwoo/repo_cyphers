@@ -6,6 +6,94 @@
 					
 	<resultMap type="com.loras.infra.index.IndexDto" id="resultMapObj"></resultMap>
 	
+	<select id="productMostList" resultMap="resultMapObj">
+			SELECT
+				pd.pdSeq
+				,pd.pdName
+				,pd.pdPrice
+				,pd.pdUseNy
+				,pd.pdDelNy
+				,pd.pdDate
+				,pd.pdFixDate
+				,pd.pdDesc
+				,pd.pdType
+				,pd.pdMeat
+				,wh.whSeq
+				,path
+			FROM
+			 product pd
+		 	LEFT JOIN wishlist wh
+		 	ON pd.pdSeq = wh.product_pdSeq
+		 	LEFT JOIN insertuploaded
+		 	ON pd.pdSeq = pSeq
+		 	AND defaultNy = 1
+			WHERE 1=1
+		ORDER BY
+			pd.pdSeq Desc
+		limit 3
+	</select>
+	
+	
+	
+	<select id="productNewList" resultMap="resultMapObj">
+			SELECT
+				pd.pdSeq
+				,pd.pdName
+				,pd.pdPrice
+				,pd.pdUseNy
+				,pd.pdDelNy
+				,pd.pdDate
+				,pd.pdFixDate
+				,pd.pdDesc
+				,pd.pdType
+				,pd.pdMeat
+				,wh.whSeq
+				,path
+			FROM
+			 product pd
+		 	LEFT JOIN wishlist wh
+		 	ON pd.pdSeq = wh.product_pdSeq
+		 	LEFT JOIN insertuploaded
+		 	ON pd.pdSeq = pSeq
+		 	AND defaultNy = 1
+			WHERE 1=1	
+			ORDER BY
+			pd.pdSeq 
+		limit 3
+	</select>
+	
+	<select id="reviewSelectList" resultMap ="resultMapObj">
+		SELECT 
+			rv.rvSeq
+			,rv.rvRank
+			,rv.rvComment
+			,rv.rvUseNy
+			,rv.rvDelNy
+			,rv.rvDate
+			,rv.rvFixDate
+			,rv.product_pdSeq
+			,rv.member_mmSeq
+			,mm.mmSeq
+			,mm.mmRealName
+            ,pd.pdSeq
+			,pd.pdName
+			,path
+		FROM review rv
+		LEFT JOIN member mm
+		ON rv.member_mmSeq = mm.mmSeq
+        LEFT JOIN product pd
+        ON rv.product_pdSeq = pd.pdSeq
+        LEFT JOIN insertUploaded
+        ON pd.pdSeq = pSeq
+		WHERE 1=1
+		AND defaultNy=1
+		AND rvRank=5
+		limit 3
+	</select>
+	
+	
+	
+	
 	
 	
 </mapper>

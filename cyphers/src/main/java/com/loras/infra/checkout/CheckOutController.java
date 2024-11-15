@@ -17,6 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 
 
 @Controller
@@ -25,7 +27,8 @@ public class CheckOutController {
 	CheckOutService checkOutService;
 	
 	@RequestMapping(value = "/usr/v1/infra/checkout/checkOutForm")
-	public String CheckOutForm(CheckOutDto checkOutDto,Model model) {
+	public String CheckOutForm(CheckOutDto checkOutDto,Model model, HttpServletRequest request) {
+		checkOutDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		model.addAttribute("list", checkOutService.selectListAd(checkOutDto));
 		model.addAttribute("item", checkOutService.selectCheckout(checkOutDto));
 		return "/usr/v1/infra/checkout/checkOutForm";

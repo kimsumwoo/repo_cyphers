@@ -3,6 +3,7 @@ package com.loras.infra.product;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ProductDto {
 	private String pdSeq;
@@ -35,7 +36,22 @@ public class ProductDto {
 	private Integer whDelNy;
 	private Integer whDate;
 	private Integer whFixDate;
-
+	private MultipartFile uploadFile;
+	private MultipartFile[] uploadFiles;
+	private String Seq;
+	private Integer type;
+	private Integer defaultNy;
+	private Integer sort;
+	private String path;
+	private String originalName;
+	private String uuId;
+	private String ext;
+	private long size;
+	private Integer delNy;
+	private String pSeq;
+	private String regDeviceCd;
+	private Date regDate;
+	private Date modDate;
 	
 //--------------------------
 	public String getPdSeq() {
@@ -195,6 +211,105 @@ public class ProductDto {
 	public void setWhFixDate(Integer whFixDate) {
 		this.whFixDate = whFixDate;
 	}
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public MultipartFile[] getUploadFiles() {
+		return uploadFiles;
+	}
+	public void setUploadFiles(MultipartFile[] uploadFiles) {
+		this.uploadFiles = uploadFiles;
+	}
+	public String getSeq() {
+		return Seq;
+	}
+	public void setSeq(String seq) {
+		Seq = seq;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	public Integer getDefaultNy() {
+		return defaultNy;
+	}
+	public void setDefaultNy(Integer defaultNy) {
+		this.defaultNy = defaultNy;
+	}
+	public Integer getSort() {
+		return sort;
+	}
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getOriginalName() {
+		return originalName;
+	}
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
+	}
+	public String getUuId() {
+		return uuId;
+	}
+	public void setUuId(String uuId) {
+		this.uuId = uuId;
+	}
+	public String getExt() {
+		return ext;
+	}
+	public void setExt(String ext) {
+		this.ext = ext;
+	}
+	public long getSize() {
+		return size;
+	}
+	public void setSize(long size) {
+		this.size = size;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+	public String getpSeq() {
+		return pSeq;
+	}
+	public void setpSeq(String pSeq) {
+		this.pSeq = pSeq;
+	}
+	
+	public String getRegDeviceCd() {
+		return regDeviceCd;
+	}
+	public void setRegDeviceCd(String regDeviceCd) {
+		this.regDeviceCd = regDeviceCd;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	public Date getModDate() {
+		return modDate;
+	}
+	public void setModDate(Date modDate) {
+		this.modDate = modDate;
+	}
+	
+	
 	
 	
 	
