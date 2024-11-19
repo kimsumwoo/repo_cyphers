@@ -58,7 +58,7 @@
 		                        <tr th:each="list : ${list}">
 		                        	
 		                            <td class="py-3 px-0 align-middle">
-		                                <img src="/usr/img/pages/products/product-1.jpg" alt="" class="img-fluid cart-img rounded-2">
+		                                <img th:src="${list.path}" alt="" class="img-fluid cart-img rounded-2">
 		                            </td>
 		                            
 		                            <td class="py-3 px-3 align-middle">

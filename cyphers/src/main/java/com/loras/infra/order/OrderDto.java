@@ -28,6 +28,7 @@ public class OrderDto {
 	private String pdSeq;
 	private String pdName;
 	private String pdPrice;
+	private String path;
 	
 //	-------------------------
 	
@@ -156,6 +157,12 @@ public class OrderDto {
 	}
 	public void setPdPrice(String pdPrice) {
 		this.pdPrice = pdPrice;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
 	}
 	
 

@@ -124,124 +124,124 @@
             </div>
         </div>
         <script type="text/javascript">
-		document.getElementById("btnSignUp").onclick = function (){
-			var mmGender = document.getElementById("mmGender");
-		    var mmGenderValue = document.getElementById("mmGender").value.trim();
-			
-		    if (mmGenderValue == "" || mmGenderValue == null) {
-				mmGender.classList.add("is-invalid");
-				mmGender.focus();
-				return false;
-		    } else {
-		    	mmGender.classList.remove("is-invalid")
-		    	mmGender.classList.add("is-valid");
-//			 	by pass
-   		 	}
+			document.getElementById("btnSignUp").onclick = function (){
+				var mmGender = document.getElementById("mmGender");
+			    var mmGenderValue = document.getElementById("mmGender").value.trim();
+				
+			    if (mmGenderValue == "" || mmGenderValue == null) {
+					mmGender.classList.add("is-invalid");
+					mmGender.focus();
+					return false;
+			    } else {
+			    	mmGender.classList.remove("is-invalid")
+			    	mmGender.classList.add("is-valid");
+	//			 	by pass
+	   		 	}
+			    
+			    var mmBirthDay = document.getElementById("mmBirthDay");
+			    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
+			    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
+					mmBirthDay.classList.add("is-invalid");
+					mmBirthDay.focus();
+					return false;
+			    } else {
+			    	mmBirthDay.classList.remove("is-invalid")
+			    	mmBirthDay.classList.add("is-valid");
+	//	 			by pass
+			    }
+			    
+			    var mmRealName = document.getElementById("mmRealName");
+			    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
+				
+			    if (mmRealNameValue == "" || mmRealNameValue == null) {
+					mmRealName.classList.add("is-invalid");
+					mmRealName.focus();
+					return false;
+			    } else {
+			    	mmRealName.classList.remove("is-invalid")
+			    	mmRealName.classList.add("is-valid");
+	//	 			by pass
+			    }
+			    
+			    var mmTell = document.getElementById("mmTell");
+			    var mmTellValue = document.getElementById("mmTell").value.trim();
+				var mmTellRegExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+			    if (!mmIdRegExp.test(mmTellValue)) {
+			    	mmTell.classList.add("is-invalid");
+			    	mmTell.focus();
+					return false;
+		    	} else {
+		    		mmTell.classList.remove("is-invalid")
+			    	mmTell.classList.add("is-valid");
+	// 				by pass
+		    	}
+				
+			    var mmId = document.getElementById("mmId");
+			    var mmIdValue = document.getElementById("mmId").value.trim();
+				var mmIdRegExp = /^[a-z]+[a-z0-9]{5,19}$/g;
+			    if (!mmIdRegExp.test(mmIdValue)) {
+					mmId.classList.add("is-invalid");
+					mmId.focus();
+					return false;
+		    	} else {
+			    	mmId.classList.remove("is-invalid")
+			    	mmId.classList.add("is-valid");
+	// 				by pass
+		    	}
 		    
-		    var mmBirthDay = document.getElementById("mmBirthDay");
-		    var mmBirthDayValue = document.getElementById("mmBirthDay").value.trim();
-		    if (mmBirthDayValue == "" || mmBirthDayValue == null) {
-				mmBirthDay.classList.add("is-invalid");
-				mmBirthDay.focus();
-				return false;
-		    } else {
-		    	mmBirthDay.classList.remove("is-invalid")
-		    	mmBirthDay.classList.add("is-valid");
-//	 			by pass
-		    }
-		    
-		    var mmRealName = document.getElementById("mmRealName");
-		    var mmRealNameValue = document.getElementById("mmRealName").value.trim();
-			
-		    if (mmRealNameValue == "" || mmRealNameValue == null) {
-				mmRealName.classList.add("is-invalid");
-				mmRealName.focus();
-				return false;
-		    } else {
-		    	mmRealName.classList.remove("is-invalid")
-		    	mmRealName.classList.add("is-valid");
-//	 			by pass
-		    }
-		    
-		    var mmTell = document.getElementById("mmTell");
-		    var mmTellValue = document.getElementById("mmTell").value.trim();
-			var mmTellRegExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
-		    if (!mmIdRegExp.test(mmTellValue)) {
-		    	mmTell.classList.add("is-invalid");
-		    	mmTell.focus();
-				return false;
-	    	} else {
-	    		mmTell.classList.remove("is-invalid")
-		    	mmTell.classList.add("is-valid");
-// 				by pass
-	    	}
-			
-		    var mmId = document.getElementById("mmId");
-		    var mmIdValue = document.getElementById("mmId").value.trim();
-			var mmIdRegExp = /^[a-z]+[a-z0-9]{5,19}$/g;
-		    if (!mmIdRegExp.test(mmIdValue)) {
-				mmId.classList.add("is-invalid");
-				mmId.focus();
-				return false;
-	    	} else {
-		    	mmId.classList.remove("is-invalid")
-		    	mmId.classList.add("is-valid");
-// 				by pass
-	    	}
-	    
-		    var mmPasswd = document.getElementById("mmPasswd");
-		    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
-		    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
-	    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
-				mmPasswd.classList.add("is-invalid");
-				mmPasswd.focus();
-				return false;
-	    	} else {
-		    	mmPasswd.classList.remove("is-invalid")
-		    	mmPasswd.classList.add("is-valid");
-	// 			by pass
-	    	}
-		    
-		    var p1 = document.getElementById('mmPasswd').value;
-		    var p2 = document.getElementById('mmPasswd2').value;
-
-	          if( p1 != p2 ) {
-	        	  mmPasswd2.classList.add("is-invalid");
-	        	  mmPasswd2.focus();
-	            return false;
-	          } else{
-	       		 mmPasswd2.classList.remove("is-invalid")
-	    	  	 mmPasswd2.classList.add("is-valid");
-	            return true;
-	          }
-
-		    var mmNickName = document.getElementById("mmNickName");
-		    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
-		    if (mmNickNameValue == "" || mmNickNameValue == null) {
-				mmNickName.classList.add("is-invalid");
-				mmNickName.focus();
-				return false;
-		    } else {
-		    	mmNickName.classList.remove("is-invalid")
-		    	mmNickName.classList.add("is-valid");
-//	 			by pass
-		    }
-		    
-		    var mmEmail = document.getElementById("mmEmail");
-		    var mmEmailValue = document.getElementById("mmEmail").value.trim();
-		    var mmEmailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-	    	if (!mmPasswdRegExp.test(mmEmailValue)) {
-	    		mmEmail.classList.add("is-invalid");
-	    		mmEmail.focus();
-				return false;
-	    	} else {
-	    		mmEmail.classList.remove("is-invalid")
-		    	mmEmail.classList.add("is-valid");
-	// 			by pass
-	    	}
-		    form.action ="/usr/v1/infra/signUp/signUpUsrInst"
-			form.submit();
-		}
+			    var mmPasswd = document.getElementById("mmPasswd");
+			    var mmPasswdValue = document.getElementById("mmPasswd").value.trim();
+			    var mmPasswdRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,15}$/
+		    	if (!mmPasswdRegExp.test(mmPasswdValue)) {
+					mmPasswd.classList.add("is-invalid");
+					mmPasswd.focus();
+					return false;
+		    	} else {
+			    	mmPasswd.classList.remove("is-invalid")
+			    	mmPasswd.classList.add("is-valid");
+		// 			by pass
+		    	}
+			    
+			    var p1 = document.getElementById('mmPasswd').value;
+			    var p2 = document.getElementById('mmPasswd2').value;
+	
+		          if( p1 != p2 ) {
+		        	  mmPasswd2.classList.add("is-invalid");
+		        	  mmPasswd2.focus();
+		            return false;
+		          } else{
+		       		 mmPasswd2.classList.remove("is-invalid")
+		    	  	 mmPasswd2.classList.add("is-valid");
+		            return true;
+		          }
+	
+			    var mmNickName = document.getElementById("mmNickName");
+			    var mmNickNameValue = document.getElementById("mmNickName").value.trim();
+			    if (mmNickNameValue == "" || mmNickNameValue == null) {
+					mmNickName.classList.add("is-invalid");
+					mmNickName.focus();
+					return false;
+			    } else {
+			    	mmNickName.classList.remove("is-invalid")
+			    	mmNickName.classList.add("is-valid");
+	//	 			by pass
+			    }
+			    
+			    var mmEmail = document.getElementById("mmEmail");
+			    var mmEmailValue = document.getElementById("mmEmail").value.trim();
+			    var mmEmailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+		    	if (!mmPasswdRegExp.test(mmEmailValue)) {
+		    		mmEmail.classList.add("is-invalid");
+		    		mmEmail.focus();
+					return false;
+		    	} else {
+		    		mmEmail.classList.remove("is-invalid")
+			    	mmEmail.classList.add("is-valid");
+		// 			by pass
+		    	}
+			    form.action ="/usr/v1/infra/signUp/signUpUsrInst"
+				form.submit();
+			}
 		</script>
 
         <!-- Bootsrap Bundle Js -->

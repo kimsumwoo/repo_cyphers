@@ -14,11 +14,16 @@
 			,pd.pdSeq
 			,pd.pdName
 			,pd.pdPrice
+			,path
 		FROM wishlist wh
 		LEFT JOIN member mm
 		ON wh.member_mmSeq = mm.mmSeq
 		LEFT JOIN product pd
 		ON wh.product_pdSeq = pd.pdSeq
+		LEFT JOIN insertuploaded
+		ON pSeq = pd.pdSeq
+		WHERE 1=1
+		AND defaultNy = 1
 	</select>
 	<delete id="deleteWish">
     DELETE FROM wishlist

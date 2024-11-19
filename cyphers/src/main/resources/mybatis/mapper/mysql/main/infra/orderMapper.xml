@@ -20,12 +20,16 @@
 			,ad.ad2
 			,ad.ad3
 			,pd.pdSeq
+			,path
 		FROM orders od
 		LEFT JOIN product pd
 		ON od.product_pdSeq = pd.pdSeq
 		LEFT JOIN address ad
 		ON od.address_adSeq = ad.adSeq
+		LEFT JOIN  insertuploaded
+		ON pSeq = pd.pdSeq
 		WHERE 1=1
+		AND defaultNy =1
 		AND od.member_mmSeq = #{mmSeq}
 		AND od.odsituation IN ('91','90','89')
 		ORDER BY odDate DESC;
@@ -45,12 +49,16 @@
 			,ad.ad2
 			,ad.ad3
 			,pd.pdSeq
+			,path
 		FROM orders od
 		LEFT JOIN product pd
 		ON od.product_pdSeq = pd.pdSeq
 		LEFT JOIN address ad
 		ON od.address_adSeq = ad.adSeq
+		LEFT JOIN  insertuploaded
+		ON pSeq = pd.pdSeq
 		WHERE 1=1
+		AND defaultNy = 1
 		AND ad.member_mmSeq = #{mmSeq}
 		AND od.odsituation IN ('92','93')
 		ORDER BY odDate DESC;
