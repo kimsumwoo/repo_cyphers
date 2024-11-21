@@ -275,44 +275,23 @@
 			    </div>
 			</div>
             
-          <!-- delete modal -->
-			<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
-			    <div class="modal-dialog modal-dialog-centered modal-sm">
-			        <div class="modal-content bg-white border-0 rounded-4 overflow-hidden">
-			            <div class="modal-body text-center p-4">
-			                <i class="ri-delete-bin-5-fill ri-3x text-danger"></i>
-			                <h4 class="fw-bold">리뷰를 삭제하시겠습니까?</h4>
-			            </div>
-			            <div class="modal-footer border-0 p-0">
-			                <a href="#" class="btn btn-outline-dark rounded-0 m-0 py-2 w-50 border-0 border-top" data-bs-dismiss="modal"> 
-			                    <i class="ri-close-fill me-2"></i>아니요 
-			                </a>
-			                <button type="button" id="confirmDelete" class="btn btn-danger rounded-0 m-0 py-2 w-50 border-0 border-top"> 
-			                    <i class="ri-delete-bin-5-fill me-2"></i>삭제 
-			                </button>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-			
-			
-            
-			<script>
-			    // 모든 삭제 버튼에 클릭 이벤트 추가
-			    document.querySelectorAll(".delbtn").forEach(function(button) {
-			        button.onclick = function() {
-			            let form = document.querySelector("form[name=mfom]");
-			            form.action = "/usr/v1/infra/review/reviewUsrDete";
-			            // 해당 버튼의 value를 hidden input에 설정
-			            let hiddenInput = document.createElement("input");
-			            hiddenInput.type = "hidden";
-			            hiddenInput.name = "rvSeq"; // 서버에 전송할 이름
-			            hiddenInput.value = this.value; // 버튼의 value 사용
-			            form.appendChild(hiddenInput);
-			            form.submit();
-			        }
-			    });
-			</script>
+         
+		<script>
+		    // 모든 삭제 버튼에 클릭 이벤트 추가
+		    document.querySelectorAll(".delbtn").forEach(function(button) {
+		        button.onclick = function() {
+		            let form = document.querySelector("form[name=mfom]");
+		            form.action = "/usr/v1/infra/review/reviewUsrDete";
+		            // 해당 버튼의 value를 hidden input에 설정
+		            let hiddenInput = document.createElement("input");
+		            hiddenInput.type = "hidden";
+		            hiddenInput.name = "rvSeq"; // 서버에 전송할 이름
+		            hiddenInput.value = this.value; // 버튼의 value 사용
+		            form.appendChild(hiddenInput);
+		            form.submit();
+		        }
+		    });
+		</script>
 		
 		<script>
 		    let isAddedToWishList = false; // 찜목록에 추가 여부를 추적하는 플래그

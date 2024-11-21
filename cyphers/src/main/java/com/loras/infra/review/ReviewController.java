@@ -51,8 +51,6 @@ public class ReviewController {
 	@RequestMapping(value ="/usr/v1/infra/review/reviewUsrInst")
 	public String reviewUsrInst(ReviewDto reviewDto) {
 		reviewService.insert(reviewDto);
-		System.out.println(reviewDto.getPdSeq());
-		System.out.println(reviewDto.getMmSeq());
 		return "redirect:/usr/v1/infra/productUsrDetail/productUsrDetail?pdSeq="+reviewDto.getPdSeq();
 	}
 	

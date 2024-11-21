@@ -73,6 +73,7 @@ public class ProductController {
 //	유저
 	@RequestMapping(value ="/usr/v1/infra/productUsrgrid/productUsrGridList")
 	public String productUsrGridList(Model model,@ModelAttribute("vo") productVo vo,ProductDto productDto) {
+		vo.setRowNumToShow(6);
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list", productService.productList(vo));		
 		return "/usr/v1/infra/productUsrgrid/productUsrGridList";

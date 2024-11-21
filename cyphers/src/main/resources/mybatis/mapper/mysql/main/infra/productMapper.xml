@@ -184,7 +184,7 @@ select pd.* from(
 	</select>
 	
 	<insert id="insertUploaded">
-		insert into insertUploaded(
+		insert into insertuploaded(
 			type
 			,defaultNy
 			,sort
@@ -219,7 +219,7 @@ select pd.* from(
 				,path
 				,pSeq
 		FROM product pd
-		LEFT JOIN insertUploaded
+		LEFT JOIN insertuploaded
 		ON pd.pdSeq = pSeq
 		where 1=1
 		AND pdSeq = #{pdSeq}
@@ -233,7 +233,7 @@ select pd.* from(
 	        ,path
 	        ,pSeq
 	    FROM product pd
-	    LEFT JOIN insertUploaded
+	    LEFT JOIN insertuploaded
 	    ON pd.pdSeq = pSeq
 	    WHERE 1=1
 	    AND pdSeq = #{pdSeq}

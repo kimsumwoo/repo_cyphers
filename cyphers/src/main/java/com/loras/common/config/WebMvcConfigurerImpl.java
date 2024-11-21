@@ -27,6 +27,7 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer {
 							"/xdm/v1/infra/login/logInXdmForm",
 							"/xdm/v1/infra/login/loginXdmProc"
 			);
+			
 			registry.addInterceptor(new CheckLoginSessionInterceptorUsr())
 //			.order(1)
 			.addPathPatterns("/usr/v1/infra/**")

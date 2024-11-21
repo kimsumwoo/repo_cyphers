@@ -83,7 +83,7 @@
 		ON rv.member_mmSeq = mm.mmSeq
         LEFT JOIN product pd
         ON rv.product_pdSeq = pd.pdSeq
-        LEFT JOIN insertUploaded
+        LEFT JOIN insertuploaded
         ON pd.pdSeq = pSeq
 		WHERE 1=1
 		AND defaultNy=1
