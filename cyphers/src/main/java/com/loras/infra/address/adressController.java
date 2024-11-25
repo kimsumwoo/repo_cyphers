@@ -28,12 +28,12 @@ public class adressController {
 	}
 	@RequestMapping(value = "/xdm/v1/infra/address/addressXdmForm")
 	public String addressXdmForm() {
-	return "/xdm/v1/infra/address/addressXdmForm";
+	return "xdm/v1/infra/address/addressXdmForm";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/address/addressXdmMFom1")
 	public String addressXdmMFom(addressDto addressDto,Model model) {
 		model.addAttribute("item", addressService.selectOne(addressDto));
-	return "/xdm/v1/infra/address/addressXdmMFom1";
+	return "xdm/v1/infra/address/addressXdmMFom1";
 	}
 
 	@RequestMapping(value = "/xdm/v1/infra/address/addressXdmUpdt")
@@ -51,7 +51,7 @@ public class adressController {
 	public String addressUsrList(Model model, addressDto addressDto, HttpServletRequest request) {
 	    addressDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 	    model.addAttribute("list", addressService.addressUsrList(addressDto));
-	    return "/usr/v1/infra/address/addressUsrList";
+	    return "usr/v1/infra/address/addressUsrList";
 	}
 
 //	유저주소등록
@@ -70,13 +70,13 @@ public class adressController {
 //	유저주소등록폼
 	@RequestMapping(value ="/usr/v1/infra/address/addressUsrForm")
 	public String addressUsrForm(){
-		return "/usr/v1/infra/address/addressUsrForm";
+		return "usr/v1/infra/address/addressUsrForm";
 	}
 //	유저주소수정폼
 	@RequestMapping(value ="/usr/v1/infra/address/addressUsrMFom")
 	public String addressUsrMFom(addressDto addressDto,Model model){
 		model.addAttribute("item", addressService.selectOne(addressDto));
-		return "/usr/v1/infra/address/addressUsrMFom";
+		return "usr/v1/infra/address/addressUsrMFom";
 	}
 //	유저주소업데이트
 	@RequestMapping(value = "/usr/v1/infra/address/addressUsrUpdt")

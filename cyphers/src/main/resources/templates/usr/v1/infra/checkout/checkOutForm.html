@@ -78,7 +78,7 @@
                                     <h6 class="fw-bold mb-0">금액</h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between border-bottom py-3">
-                                    <h6 class="mb-0" th:text="${item?.pdName}"></h6>
+                                    <h6 class="mb-0"  th:text="${item?.pdName}"></h6>
                                     <p class="mb-0" th:text="${#numbers.formatInteger(item?.pdPrice, 3, 'COMMA') + '원'}"></p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between py-3">
@@ -96,6 +96,8 @@
             </div>
         </div>
         						<input type="hidden" name="pdSeq" th:value="${item.pdSeq}">
+        						<input type="hidden" name="pdName" th:value="${item.pdName}">
+        						<input type="hidden" name="pdPrice" th:value="${item.pdPrice}">
 								<input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}" class="form-control mb-3" id="mmSeq" >
      </form>
         <!-- footer -->
@@ -215,21 +217,37 @@
         <!-- Custom Js -->
         <script src="/usr/js/script.js"></script>
         <script type="text/javascript">
-        	$(function(){
-        		$("#apibtn").click(function(){
-	        		$.ajax({
-	        			url:"/usr/v1/infra/checkout/kakaopay" ,
-	        			dataType:"json",
-	        			success:function(data){
-	        				var box = data.next_redirect_pc_url;
-	        				window.open(box);
-	        			},
-	        			error:function(error){
-	        				alert(error);
-        				}
-        			})
-       			})
-       		})
+        $(function(){
+            $("#apibtn").click(function(){
+                // 'adSeq' 라디오 버튼에서 선택된 값 가져오기
+                var adSeq = $("input[name='adSeq']:checked").val();
+                var mmSeq = $("#mmSeq").val();  // 'mmSeq' 값 가져오기
+                var pdSeq = $("input[name='pdSeq']").val();  // 'pdSeq' 값 가져오기
+                var pdName = $("input[name='pdName']").val();  // 'pdName' 값 가져오기
+                var pdPrice = $("input[name='pdPrice']").val();  // 'pdPrice' 값 가져오기
+                // Ajax 요청
+                $.ajax({
+                    url: "/usr/v1/infra/checkout/kakaopay",  // 카카오페이 요청 URL
+                    type: "POST",  // POST 요청
+                    data: {
+                        adSeq: adSeq,
+                        mmSeq: mmSeq,
+                        pdSeq: pdSeq,
+                        pdName: pdName,
+                        pdPrice: pdPrice 
+                    },
+                    dataType: "json",  // 응답 형식
+                    success: function(data) {
+                        // 카카오페이 결제 URL로 리다이렉션
+                        var box = data.next_redirect_pc_url;
+                        window.open(box);
+                    },
+                    error: function(error) {
+                        alert("오류 발생: " + error);
+                    }
+                });
+            });
+        });
         </script>
         <script type="text/javascript">
 		    $(function(){

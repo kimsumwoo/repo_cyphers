@@ -36,11 +36,11 @@ public class ProductController {
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list",productService.productList(vo));
-		return "/xdm/v1/infra/product/productXdmList";
+		return "xdm/v1/infra/product/productXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmForm")
 	public String productXdmForm() {
-		return "/xdm/v1/infra/product/productXdmForm";
+		return "xdm/v1/infra/product/productXdmForm";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmInst")
 	public String productXdmInst(ProductDto productDto) {
@@ -51,7 +51,7 @@ public class ProductController {
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmMFom")
 	public String productXdmMFom(ProductDto productDto,Model model) {
 		model.addAttribute("item",productService.SelectOne(productDto));
-		return "/xdm/v1/infra/product/productXdmMFom";
+		return "xdm/v1/infra/product/productXdmMFom";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/product/productXdmUpdt")
 	public String productXdmUpdt(ProductDto productDto) throws Exception {
@@ -76,7 +76,7 @@ public class ProductController {
 		vo.setRowNumToShow(6);
 		vo.setParamsPaging(productService.selectOneCount(vo));
 		model.addAttribute("list", productService.productList(vo));		
-		return "/usr/v1/infra/productUsrgrid/productUsrGridList";
+		return "usr/v1/infra/productUsrgrid/productUsrGridList";
 	}
 
 	
@@ -160,7 +160,7 @@ public class ProductController {
 		model.addAttribute("item", productService.SelectOne(productDto));
 		model.addAttribute("list", productService.rvSelectList(productDto));
 		vo.setParamsPaging(reviewService.selectOneCountRv(vo));
-		return "/usr/v1/infra/productUsrDetail/productUsrDetail";
+		return "usr/v1/infra/productUsrDetail/productUsrDetail";
 	}
 	
 	

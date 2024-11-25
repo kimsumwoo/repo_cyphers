@@ -63,7 +63,7 @@ public class IndexController {
 		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.path("response").path("header").path("resultMsg").asText());
 		System.out.println("node.get(\"body\").get(\"dataType\").asText(): " + node.path("response").path("body").path("dataType").asText());
 		System.out.println("node.get(\"body\").get(\"numOfRows\").asText(): " + node.path("response").path("body").path("numOfRows").asText());
-		return "/usr/v1/infra/index/indexUsr";
+		return "usr/v1/infra/index/indexUsr";
 	}
 
 }

@@ -24,12 +24,12 @@ public class LogInController {
 	
 	@RequestMapping(value ="/xdm/v1/infra/login/logInXdmForm")
 	public String LogInXdmForm() {
-		return "/xdm/v1/infra/login/logInXdmForm";
+		return "xdm/v1/infra/login/loginXdmForm";
 	}
 	
 	@RequestMapping(value ="/xdm/v1/infra/login/indexXdmList")
 	public String indexXdmList() {
-		return "/xdm/v1/infra/login/indexXdmList";
+		return "xdm/v1/infra/login/indexXdmList";
 	}
 	@ResponseBody
 	@RequestMapping(value = "/xdm/v1/infra/login/loginXdmProc")
@@ -55,7 +55,7 @@ public class LogInController {
 //	사용자 로그인화면
 	@RequestMapping(value = "/usr/v1/infra/login/loginUsrForm")
 	public String loginUsrForm() {
-		return "/usr/v1/infra/login/loginUsrForm";
+		return "usr/v1/infra/login/loginUsrForm";
 	}
 //	사용자로그인
 	@ResponseBody

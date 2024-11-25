@@ -22,7 +22,7 @@ public class CodeController {
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 			vo.setParamsPaging(CodeService.selectOneCount(vo));
 			model.addAttribute("list", CodeService.codeSelectList(vo));
-			return "/xdm/v1/infra/code/codeXdmList";
+			return "xdm/v1/infra/code/codeXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmForm")
 	public String codeXdmForm(Model model) {
@@ -41,7 +41,7 @@ public class CodeController {
 		model.addAttribute("item", CodeService.selectOne(codeDto));
 		List<CodeDto> codes = CodeService.selectListMfom();
 		model.addAttribute("mfom", codes);
-		return "/xdm/v1/infra/code/codeXdmMfom";
+		return "xdm/v1/infra/code/codeXdmMfom";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmUpdt")
 	public String codeXdmUpdt(CodeDto codeDto) {

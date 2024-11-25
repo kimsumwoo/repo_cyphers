@@ -23,7 +23,7 @@
 		            <!-- <a href="/usr/v1/infra/wish/wishList" class="btn btn-purple btn-theme rounded-pill d-none d-lg-block"><i class="ri-heart-3-fill"></i> 찜목록 가기</a> -->
 		            <div class="d-flex align-items-center gap-4 ms-auto ms-lg-0 ps-4">
 		                <span th:if="${session.sessSeqUsr}" class="user-name d-none d-md-block" th:text ="${session.sessNameUsr} + '님 환영합니다'"></span>
-		                 <a href="/usr/v1/infra/order/OrderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
+		                 <a href="/usr/v1/infra/order/orderList" class="link-light d-none d-lg-block"><i class="ri-account-pin-circle-fill ri-lg"></i></a>
                             <span th:unless="${session.sessSeqUsr}" class="user-name d-none d-md-block"></span> 
 				                <a th:unless="${session.sessSeqUsr}" href="/usr/v1/infra/login/loginUsrForm">로그인</a>
          				        <a th:if="${session.sessSeqUsr}" id="logout" href="/usr/v1/infra/login/loginUsrForm">로그아웃</a>

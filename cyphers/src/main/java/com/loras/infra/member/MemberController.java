@@ -24,11 +24,11 @@ public class MemberController {
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(memberService.selectOneCount(vo));
 		model.addAttribute("list", memberService.memberSelectList(vo));
-		return "/xdm/v1/infra/member/memberXdmList";
+		return "xdm/v1/infra/member/memberXdmList";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/member/memberXdmForm")
 		public String memberForm() {
-		return "/xdm/v1/infra/member/memberXdmForm";
+		return "xdm/v1/infra/member/memberXdmForm";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/member/memberXdmInst")
 		public String memberXdmInst(MemberDto memberDto) {
@@ -38,7 +38,7 @@ public class MemberController {
 	@RequestMapping(value ="/xdm/v1/infra/member/memberXdmMFom")
 	public String memberXdmMFom(MemberDto memberDto, Model model) {
 		model.addAttribute("item",memberService.selectOne(memberDto));
-	return "/xdm/v1/infra/member/memberXdmMFom";
+	return "xdm/v1/infra/member/memberXdmMFom";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/member/memberXdmUpdt")
 	public String memberXdmUpdt(MemberDto memberDto) {
@@ -55,7 +55,7 @@ public class MemberController {
 	public String editMemberForm(Model model, MemberDto memberDto, HttpServletRequest request) {
 		memberDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		model.addAttribute("item", memberService.selectOneFixUsr(memberDto));
-		return "/usr/v1/infra/editmember/editMemberForm";
+		return "usr/v1/infra/editmember/editMemberForm";
 	}
 //	유저정보수정
 	@RequestMapping(value ="/usr/v1/infra/editMember/updateFixUsr")

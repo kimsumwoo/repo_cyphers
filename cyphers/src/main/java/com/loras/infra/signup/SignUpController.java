@@ -16,12 +16,12 @@ public class SignUpController {
 //	관리자
 	@RequestMapping(value ="/xdm/v1/infra/signup/signUp")
 	public String signUp() {
-		return "/xdm/v1/infra/signup/signUp";
+		return "xdm/v1/infra/signup/signUp";
 	}
 //	사용자
 	@RequestMapping(value = "/usr/v1/infra/signUp/signUpUsrForm")
 	public String signUpUsrForm() {
-		return "/usr/v1/infra/signUp/signUpUsrForm";
+		return "usr/v1/infra/signUp/signUpUsrForm";
 	}
 	@RequestMapping(value = "/usr/v1/infra/signUp/signUpUsrInst")
 	public String signUpUsrInst(SignUpDto signUpDto) {

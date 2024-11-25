@@ -19,6 +19,8 @@ public class CheckOutService {
 	public List<CheckOutDto> selectListAd(CheckOutDto checkOutDto){
 		return checkOutDao.selectListAd(checkOutDto);
 	}
+	
+	
 
 
 

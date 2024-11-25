@@ -22,11 +22,11 @@ public class ReviewController {
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
 		vo.setParamsPaging(reviewService.selectOneCountRv(vo));
 		model.addAttribute("list", reviewService.reviewSelectList(vo));
-		return "/xdm/v1/infra/review/reviewXdmList";
+		return "xdm/v1/infra/review/reviewXdmList";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmForm")
 	public String reviewXdmForm() {
-		return "/xdm/v1/infra/review/reviewXdmForm";
+		return "xdm/v1/infra/review/reviewXdmForm";
 	}
 	@RequestMapping(value ="xdm/v1/infra/review/reviewXdmInst")
 	public String reviewXdmInst(ReviewDto reviewDto) {
@@ -36,7 +36,7 @@ public class ReviewController {
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmMFom")
 	public String reviewXdmMFom(Model model, ReviewDto reviewDto) {
 		model.addAttribute("item", reviewService.selectOne(reviewDto));
-		return "/xdm/v1/infra/review/reviewXdmMFom";
+		return "xdm/v1/infra/review/reviewXdmMFom";
 	}
 	@RequestMapping(value ="/xdm/v1/infra/review/reviewXdmUpdt")
 	public String reviewXdmUpdt(ReviewDto reviewDto) {

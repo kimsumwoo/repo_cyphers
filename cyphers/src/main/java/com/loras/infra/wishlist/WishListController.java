@@ -16,7 +16,7 @@ public class WishListController {
 	public String wishList(Model model, WishListDto wishListDto, HttpServletRequest request) {
 		wishListDto.setMmSeq((String) request.getSession().getAttribute("sessSeqUsr"));
 		model.addAttribute("list", wishListService.selectWishList(wishListDto));
-		return "/usr/v1/infra/wish/wishList";
+		return "usr/v1/infra/wish/wishList";
 	}
 	@RequestMapping(value ="/usr/v1/infra/wish/wishDete")
 	public String wishDete(WishListDto wishListDto) {

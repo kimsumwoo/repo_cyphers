@@ -21,6 +21,7 @@ public class CheckOutDto {
 	private Integer adDefaultNy;
 	private String adSeq;
 	private String mmSeq;
+	private String mmRealName;
 	
 	//-----------------
 	
@@ -132,6 +133,14 @@ public class CheckOutDto {
 	public void setMmSeq(String mmSeq) {
 		this.mmSeq = mmSeq;
 	}
+	public String getMmRealName() {
+		return mmRealName;
+	}
+	public void setMmRealName(String mmRealName) {
+		this.mmRealName = mmRealName;
+	}
+	
+	
 	
 	
 	
