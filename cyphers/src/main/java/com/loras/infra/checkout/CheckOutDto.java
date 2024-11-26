@@ -22,6 +22,7 @@ public class CheckOutDto {
 	private String adSeq;
 	private String mmSeq;
 	private String mmRealName;
+	private String pgtoken;
 	
 	//-----------------
 	
@@ -139,6 +140,15 @@ public class CheckOutDto {
 	public void setMmRealName(String mmRealName) {
 		this.mmRealName = mmRealName;
 	}
+	public String getPgtoken() {
+		return pgtoken;
+	}
+	public void setPgtoken(String pgtoken) {
+		this.pgtoken = pgtoken;
+	}
+	
+	
+	
 	
 	
 	

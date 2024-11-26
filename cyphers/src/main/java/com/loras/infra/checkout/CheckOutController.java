@@ -42,7 +42,7 @@ public class CheckOutController {
 		System.out.println(checkOutDto.getMmSeq());
 		System.out.println(checkOutDto.getAdSeq());
 		checkOutService.insert(checkOutDto);
-		return "redirect:/usr/v1/infra/order/OrderList";
+		return "redirect:/usr/v1/infra/order/orderList";
 	}
 	
 //	@RequestMapping("/usr/v1/infra/checkout/approve")
