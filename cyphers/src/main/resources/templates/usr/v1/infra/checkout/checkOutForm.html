@@ -297,9 +297,8 @@
 	                // 결제 성공 시 서버로 결제 정보 전송
 	                $.ajax({
 	                    type: 'POST',
-	                    url: '/usr/v1/infra/checkout/checkOutInst',
+	                    url: '/v1/checkout/ping_checkoutInst',
 	                    data: {
-	                        adSeq: $("input[name='adSeq']:checked").val(),  // adSeq 값 가져오기
 	                        mmSeq: $("#mmSeq").val(),  // mmSeq 값 가져오기
 	                        pdSeq: $("input[name='pdSeq']").val()  // pdSeq 값 가져오기
 	                    },

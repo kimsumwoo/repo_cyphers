@@ -1,6 +1,7 @@
 package com.loras.infra.product;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,8 +161,20 @@ public class ProductController {
 		model.addAttribute("item", productService.SelectOne(productDto));
 		model.addAttribute("list", productService.rvSelectList(productDto));
 		vo.setParamsPaging(reviewService.selectOneCountRv(vo));
+		
 		return "usr/v1/infra/productUsrDetail/productUsrDetail";
 	}
+	
+	@RequestMapping(value = "reviewList")
+	@ResponseBody
+	 public Map<String, Object> reviewList(Model model,ProductDto productDto){
+		System.out.println(productDto.getPdSeq());
+		List<ProductDto> rvList = productService.rvSelectList(productDto);
+		Map<String, Object> response = new HashMap<>();
+		response.put("rvList", rvList);
+		return response;
+		}
+	
 	
 	
 	/*

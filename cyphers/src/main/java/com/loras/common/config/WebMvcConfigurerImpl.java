@@ -42,7 +42,8 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer {
 					"/usr/v1/infra/index/indexUsr",
 					"/usr/v1/infra/productUsrgrid/**",
 					"/usr/v1/infra/productUsrDetail/**",
-					"/usr/v1/infra/signUp/**"
+					"/usr/v1/infra/signUp/**",
+					"/reviewList"
 					
 					
 

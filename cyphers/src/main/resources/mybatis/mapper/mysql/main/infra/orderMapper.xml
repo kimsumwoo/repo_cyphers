@@ -6,7 +6,7 @@
 					
 	<resultMap type="com.loras.infra.order.OrderDto" id="resultMapObj"></resultMap>
 	
-	<select id="orderList">
+	<select id="orderList" resultMap="resultMapObj">
 		SELECT 
 			od.odSeq
 			,od.odSituation
@@ -35,7 +35,7 @@
 		ORDER BY odDate DESC;
 	</select>
 	
-	<select id="orderListReturn">
+	<select id="orderListReturn" resultMap="resultMapObj">
 		SELECT 
 			od.odSeq
 			,od.odSituation

@@ -22,6 +22,6 @@ public class OrderController {
 	@RequestMapping(value = "/usr/v1/infra/order/OrderReturnUpte")
 	public String OrderReturnUpte(OrderDto orderDto) {
 		orderService.updateReturn(orderDto);
-		return "redirect:/usr/v1/infra/order/OrderList";
+		return "redirect:/usr/v1/infra/order/orderList";
 	}
 }

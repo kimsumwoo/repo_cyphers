@@ -13,6 +13,7 @@
 		        display: flex;
 		        justify-content: center; 
 		    	}
+		    	
 		</style>
         <title>Pages</title>
         <!-- 별점 -->
@@ -97,8 +98,8 @@
                             <div class="col-6">
                            <form name="wish" action="/usr/v1/infra/productUsrDetail/productUsrDetailWishInst" onsubmit="return handleAddToWishList(event);">
 							    <button type="submit" class="btn btn-dark btn-lg py-3 px-3 rounded w-100">찜목록 추가</button>
-							    <input type="hidden" name="member_mmSeq" th:value="${session.sessSeqUsr}">
-                   	 			<input type="hidden" name="product_pdSeq" th:value="${item.pdSeq}">
+							    <input id="member_mmSeq" type="hidden" name="member_mmSeq" th:value="${session.sessSeqUsr}">
+                   	 			<input id="product_pdSeq" type="hidden" name="product_pdSeq" th:value="${item.pdSeq}">
 							</form>
                             </div>
                             <div class="col-6"><a th:href="@{/usr/v1/infra/checkout/checkOutForm(pdSeq=${item?.pdSeq})}" class="btn btn-purple btn-lg py-3 px-3 rounded w-100">구매하기</a></div>
@@ -124,7 +125,7 @@
                         <nav>
                             <div class="nav nav-tabs d-flex justify-content-center gap-2 nav-tabs-osahan" id="nav-tab" role="tablist">
                                 <button class="nav-link active px-lg-4 py-lg-3" id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">상품소개</button>
-                                <button class="nav-link px-lg-4 py-lg-3" id="nav-additional-information-tab" data-bs-toggle="tab" data-bs-target="#nav-additional-information" type="button" role="tab" aria-controls="nav-additional-information" aria-selected="false">구매안내</button>
+<!--                                 <button class="nav-link px-lg-4 py-lg-3" id="nav-additional-information-tab" data-bs-toggle="tab" data-bs-target="#nav-additional-information" type="button" role="tab" aria-controls="nav-additional-information" aria-selected="false">구매안내</button> -->
                                 <button class="nav-link px-lg-4 py-lg-3" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false"><span th:text="'후기 ' + ${vo.totalRows}"></span></button>
                             </div>
                         </nav>
@@ -160,17 +161,19 @@
 								</p>
                             </div>
                             </div>
-			<div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
-			    <div class="row">
+         
+	<div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
+	    <div class="row">
+    		<div id="reviewsContainer">
 				<div class="col-lg-12 col-12 pe-lg-5">
 			     	<form class="row g-3" name="mfom">                            
-				    <div class="d-flex align-items-start gap-3 py-3" th:each="list : ${list}">
+				    <div class="d-flex align-items-start gap-3 py-3" id="ms-3" th:each="list : ${list}">
 			    <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
 			    <div class="w-100">
 			        <div class="d-flex justify-content-between mb-2">
 			            <div class="d-flex align-items-end gap-2">
 			                <h5 class="fw-bold m-0" th:text="${list.mmNickName}">Black Smith</h5>
-			                <span class="text-muted fw-normal small" th:text="${#dates.format(list.rvDate, 'yyyy-MM-dd HH:mm:ss')}">/ MARCH 13, 2024</span>
+			                <span class="text-muted fw-normal small" th:text="${#dates.format(list.rvDate, 'yyyy. MM. dd HH:mm:ss')}">/ MARCH 13, 2024</span>
 			            </div>
 			            <div class="d-flex align-items-center gap-2">
 			                <i class="ri-star-fill text-warning" th:if="${list.rvRank eq 1}"></i>
@@ -183,12 +186,13 @@
 			        <p class="text-muted" th:text="${list.rvComment}">리뷰 내용입니다.</p>
 			    </div>
 			     <input type="hidden" name="pdSeq" th:value="${item?.pdSeq}">
-				<button type="button"  th:if="${session.sessSeqUsr == list.member_mmSeq}"  class="btn btn-outline-danger rounded-3 delbtn" th:value="${list.rvSeq}" aria-label="리뷰 삭제">
+				<button type="button" id="rvSeq" onclick="deleteComment(event)"  th:if="${session.sessSeqUsr == list.member_mmSeq}"  class="btn btn-outline-danger rounded-3 delbtn" th:value="${list.rvSeq}" aria-label="리뷰 삭제">
 				    <i class="ri-delete-bin-5-fill"></i>
 				</button>
 					</div>
 			    	</form>
 				</div>
+			</div>
 			                             
 			      <div class="col-lg-6 col-12">
 			     	<form method ="post" action ="/usr/v1/infra/review/reviewUsrInst">
@@ -201,23 +205,22 @@
 								<option value="3" id="star" name ="rvRank">&#9733 &#9733 &#9733</option>
 								<option value="2" id="star" name ="rvRank">&#9733 &#9733</option>
 								<option value="1" id="star" name ="rvRank">&#9733</option> 
-								</select>
+							</select>
 			            </div>
-			             	 <input type="hidden" name="pdSeq" th:value="${item.pdSeq}">
-			               	 <input type="hidden" name="mmSeq" th:value="${session.sessSeqUsr}">
+			             	 <input type="hidden" id="pdSeq" name="pdSeq" th:value="${item.pdSeq}">
+			               	 <input type="hidden" id="mmSeq" name="mmSeq" th:value="${session.sessSeqUsr}">
 			                  <div class="mb-3"><textarea class="form-control bg-transparent" id="rvComment" name="rvComment" rows="5" placeholder="리뷰를 작성해주세요"></textarea></div>
 			             </div>
 			         </div>
-				           <button type="submit" class="btn btn-dark px-3">등록하기</button>
+				           <button type="button" onclick="insertComment(event)" class="btn btn-dark px-3">등록하기</button>
 				       </form>
                       	  </div>
-                       </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-   </div>
+	                  </div>
+	               </div>
+	            </div>
+	         </div>
+	      </div>
+	  </div>
         
         <!-- footer -->
         <footer class="bg-footer text-white">
@@ -274,23 +277,165 @@
 			        </div>
 			    </div>
 			</div>
+			
             
-         
+     <script type="text/javascript">
+		  // 댓글 삭제
+		     function deleteComment(event) {
+			  
+		         var dDto = {
+		             rvSeq: $(event.target).closest('.d-flex').find('#rvSeq').val(),
+		             pdSeq: $("#product_pdSeq").val()
+		         };
+		
+		         $.ajax({
+		             url: "/usr/v1/infra/review/reviewUsrDete",  // 삭제 요청 URL
+		             type: 'POST',
+		             data: dDto,
+		             success: function(result) {
+		                 // 삭제 성공 후 댓글 목록 갱신
+		                 getCommentList();
+		             },
+		             error: function() {
+		                 alert('댓글 삭제 실패');
+		             }
+		         });
+		     }
+		
+		     // 댓글 추가 함수
+		     function insertComment(event) {
+		         // 로그인 여부 확인
+		         if (!$("#member_mmSeq").val()) {
+		             alert("로그인 후 이용하세요.");
+		             return; // 함수 종료
+		         }
+		
+		         // 댓글 내용 입력 확인
+		         if (!$("#rvComment").val()) {
+		             alert("내용을 입력하세요.");
+		         } else {
+		             var bDto = {
+		                 pdSeq: $("#product_pdSeq").val(),
+		                 mmSeq: $("#member_mmSeq").val(),
+		                 rvComment: $("#rvComment").val(),
+		                 rvRank: $("#rvRank").val() // 별점 선택 값
+		             };
+		
+		             $.ajax({
+		                 url: "/usr/v1/infra/review/reviewUsrInst",  // 댓글 추가 요청 URL
+		                 type: 'POST',
+		                 data: bDto,
+		                 success: function(result) {
+		                     // 댓글 목록 새로 고침
+		                     getCommentList();
+		                     // 댓글 입력란 초기화
+		                     $("#rvComment").val("");
+		                 },
+		                 error: function() {
+		                     console.log("리뷰 등록 실패.");
+		                 }
+		             });
+		         }
+		     }
+		
+		     // 댓글 목록을 가져오는 함수
+		     function getCommentList() {
+		         $.ajax({
+		             url: "/reviewList",  // 서버에서 리뷰 목록을 가져오는 URL
+		             type: 'get',
+		             dataType: 'json',
+		             data: { 
+		                 "mmSeq": $("#mmSeq").val(), 
+		                 "pdSeq": $("#pdSeq").val() 
+		             },
+		             success: function(response) {
+		                 console.log("response", response);
+		                 var reviewsHtml = "";  // 댓글 HTML을 저장할 변수
+		
+		                 // 서버에서 받은 댓글 데이터를 반복하여 HTML 생성
+		                 $.each(response.rvList, function(index, list) {
+		                     var starsHtml = ''; // 별 아이콘을 저장할 변수
+		                     
+		                  // 날짜 포맷 처리 (2024-12-12T07:00:50.000+00:00 -> 2024-12-12 07:00:50)
+		                     var date = new Date(list.rvDate);
+		                     var formattedDate = date.toLocaleString("ko-KR", {
+		                         year: 'numeric',
+		                         month: '2-digit',
+		                         day: '2-digit',
+		                         hour: '2-digit',
+		                         minute: '2-digit',
+		                         second: '2-digit',
+		                         hour12: false // 24시간 형식
+		                     });
+
+		                     // 별점 표시
+		                     if (list.rvRank == 1) {
+		                         starsHtml = '<i class="ri-star-fill text-warning"></i>';
+		                     } else if (list.rvRank == 2) {
+		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+		                     } else if (list.rvRank == 3) {
+		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+		                     } else if (list.rvRank == 4) {
+		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+		                     } else {
+		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+		                     }
+		
+		                     // 리뷰 HTML 생성
+		                     reviewsHtml += `
+		                         <div class="col-lg-12 col-12 pe-lg-5">
+		                             <form class="row g-3" name="mfom">                            
+		                                 <div class="d-flex align-items-start gap-3 py-3" id="ms-3">
+		                                     <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
+		                                     <div class="w-100">
+		                                         <div class="d-flex justify-content-between mb-2">
+		                                             <div class="d-flex align-items-end gap-2">
+		                                                 <h5 class="fw-bold m-0">${list.mmNickName}</h5>
+		                                                 <span class="text-muted fw-normal small">${formattedDate}</span>
+		                                             </div>
+		                                             <div class="d-flex align-items-center gap-2">
+		                                                 ${starsHtml}
+		                                             </div>
+		                                         </div>
+		                                         <p class="text-muted">${list.rvComment}</p>
+		                                     </div>
+		                                     <!-- 댓글 삭제 버튼 -->
+		                                     <button type="button" id="rvSeq" onclick="deleteComment(event)" class="btn btn-outline-danger rounded-3 delbtn" value="${list.rvSeq}" aria-label="리뷰 삭제">
+		                                         <i class="ri-delete-bin-5-fill"></i>
+		                                     </button>
+		                                 </div>
+		                             </form>
+		                         </div>
+		                     `;
+		                 });
+		
+		                 // 기존의 리뷰 목록을 새로 고침
+		                 $("#reviewsContainer").html(reviewsHtml); // 기존 내용 덮어쓰기
+		             },
+		             error: function() {
+		                 console.log("리뷰 목록 가져오기 실패.");
+		             }
+		         });
+		     }
+		</script>
+     
+
+
 		<script>
 		    // 모든 삭제 버튼에 클릭 이벤트 추가
-		    document.querySelectorAll(".delbtn").forEach(function(button) {
-		        button.onclick = function() {
-		            let form = document.querySelector("form[name=mfom]");
-		            form.action = "/usr/v1/infra/review/reviewUsrDete";
-		            // 해당 버튼의 value를 hidden input에 설정
-		            let hiddenInput = document.createElement("input");
-		            hiddenInput.type = "hidden";
-		            hiddenInput.name = "rvSeq"; // 서버에 전송할 이름
-		            hiddenInput.value = this.value; // 버튼의 value 사용
-		            form.appendChild(hiddenInput);
-		            form.submit();
-		        }
-		    });
+// 		    document.querySelectorAll(".delbtn").forEach(function(button) {
+// 		        button.onclick = function() {
+// 		            let form = document.querySelector("form[name=mfom]");
+// 		            form.action = "/usr/v1/infra/review/reviewUsrDete";
+// 		            // 해당 버튼의 value를 hidden input에 설정
+// 		            let hiddenInput = document.createElement("input");
+// 		            hiddenInput.type = "hidden";
+// 		            hiddenInput.name = "rvSeq"; // 서버에 전송할 이름
+// 		            hiddenInput.value = this.value; // 버튼의 value 사용
+// 		            form.appendChild(hiddenInput);
+// 		            form.submit();
+// 		        }
+// 		    });
 		</script>
 		
 		<script>
