@@ -167,11 +167,14 @@ public class ProductController {
 	
 	@RequestMapping(value = "reviewList")
 	@ResponseBody
-	 public Map<String, Object> reviewList(Model model,ProductDto productDto){
+	 public Map<String, Object> reviewList(Model model,ProductDto productDto,@ModelAttribute("vo") ReviewVo vo){
 		System.out.println(productDto.getPdSeq());
 		List<ProductDto> rvList = productService.rvSelectList(productDto);
+		vo.setParamsPaging(reviewService.selectOneCountRv(vo));
 		Map<String, Object> response = new HashMap<>();
 		response.put("rvList", rvList);
+		response.put("totalRows", reviewService.selectOneCountRv(vo));
+		System.out.println(reviewService.selectOneCountRv(vo));
 		return response;
 		}
 	

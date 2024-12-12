@@ -125,8 +125,8 @@
                         <nav>
                             <div class="nav nav-tabs d-flex justify-content-center gap-2 nav-tabs-osahan" id="nav-tab" role="tablist">
                                 <button class="nav-link active px-lg-4 py-lg-3" id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">상품소개</button>
-<!--                                 <button class="nav-link px-lg-4 py-lg-3" id="nav-additional-information-tab" data-bs-toggle="tab" data-bs-target="#nav-additional-information" type="button" role="tab" aria-controls="nav-additional-information" aria-selected="false">구매안내</button> -->
-                                <button class="nav-link px-lg-4 py-lg-3" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false"><span th:text="'후기 ' + ${vo.totalRows}"></span></button>
+                                <button class="nav-link px-lg-4 py-lg-3" id="nav-additional-information-tab" data-bs-toggle="tab" data-bs-target="#nav-additional-information" type="button" role="tab" aria-controls="nav-additional-information" aria-selected="false">구매안내</button>
+                                <button class="nav-link px-lg-4 py-lg-3" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false"><span id="commentCnt" th:text="'후기 ' + ${vo.totalRows}"></span></button>
                             </div>
                         </nav>
                         <div class="tab-content bg-white p-lg-5 p-4 border-end border-bottom border-start" id="nav-tabContent">
@@ -411,12 +411,30 @@
 		
 		                 // 기존의 리뷰 목록을 새로 고침
 		                 $("#reviewsContainer").html(reviewsHtml); // 기존 내용 덮어쓰기
+		            	 
+		                 var commentCnt = response.totalRows;
+							console.log("commentCnt: " + commentCnt);
+		                 // 댓글 수를 버튼에 동적으로 업데이트
+		                 var cnt = '후기 ' + commentCnt;
+		                 $("#commentCnt").text(cnt);  
 		             },
 		             error: function() {
 		                 console.log("리뷰 목록 가져오기 실패.");
 		             }
 		         });
-		     }
+		         
+		         // 댓글 수를 가져오는 AJAX 요청
+		         $.ajax({
+		             url: "/reviewList",  // 댓글 목록을 가져오는 URL
+		             type: 'GET',
+		             success: function(response) {
+		            
+		             },
+		             error: function() {
+		                 console.log("댓글 수 가져오기 실패.");
+		             }
+		         });
+		     };
 		</script>
      
 
